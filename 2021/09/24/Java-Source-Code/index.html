@@ -6,17 +6,17 @@
   
   <title>Java Source Code | Gray Dynasty</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Java Source CodeJava源码学习笔记">
+  <meta name="description" content="Java源码学习笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java Source Code">
 <meta property="og:url" content="http://example.com/2021/09/24/Java-Source-Code/index.html">
 <meta property="og:site_name" content="Gray Dynasty">
-<meta property="og:description" content="Java Source CodeJava源码学习笔记">
+<meta property="og:description" content="Java源码学习笔记">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NQcmltZXIw,size_16,color_FFFFFF,t_70.png">
 <meta property="og:image" content="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NQcmltZXIw,size_16,color_FFFFFF,t_70-20210811104418939.png">
 <meta property="article:published_time" content="2021-09-24T03:34:05.000Z">
-<meta property="article:modified_time" content="2021-09-24T03:39:14.126Z">
+<meta property="article:modified_time" content="2021-09-24T03:41:39.420Z">
 <meta property="article:author" content="Chris Gray">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NQcmltZXIw,size_16,color_FFFFFF,t_70.png">
@@ -102,7 +102,7 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="Java-Source-Code"><a href="#Java-Source-Code" class="headerlink" title="Java Source Code"></a>Java Source Code</h1><p>Java源码学习笔记</p>
+        <p>Java源码学习笔记</p>
 <span id="more"></span>
 
 <h1 id="java-lang"><a href="#java-lang" class="headerlink" title="java.lang"></a>java.lang</h1><h2 id="Object-1"><a href="#Object-1" class="headerlink" title="Object 1"></a>Object 1</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">wait</span><span class="params">(<span class="keyword">long</span> timeout, <span class="keyword">int</span> nanos)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (timeout &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">&quot;timeout value is negative&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (nanos &lt; <span class="number">0</span> || nanos &gt; <span class="number">999999</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(</span><br><span class="line">      <span class="string">&quot;nanosecond timeout value out of range&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (nanos &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    timeout++;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  wait(timeout);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -565,7 +565,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/09/24/Java-Source-Code/" data-id="cktxtg8180003q5958d337fst" data-title="Java Source Code" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/09/24/Java-Source-Code/" data-id="cktxtkzz70003t8952z9ae6xx" data-title="Java Source Code" class="article-share-link">Share</a>
       
       
       
@@ -595,30 +595,16 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/About-me/">About me</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Technology/">Technology</a></li></ul>
     </div>
   </div>
 
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/About-me/" rel="tag">About me</a></li></ul>
-    </div>
-  </div>
-
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/About-me/" style="font-size: 10px;">About me</a>
-    </div>
-  </div>
-
   
     
   <div class="widget-wrap">
