@@ -1,214 +1,405 @@
-{% extends 'includes/layout.swig' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
 
-{% block body %}
-<header class="blog-post-page-title">
-    <h4>{{ page.title }}</h4>
-    <time datetime="{{ page.date.toJSON() }}"><i class="fa fa-clock-o"></i>{{ date(page.date) }}</time>
-    {# 文章阅读次数 #}
-    {% if theme.LeanStatistics_enable==true %}
-    <span>
-        <i class="fa fa-eye"></i>
-        <span id="{{ url_for(page.path) }}" class="views views-post"  title="{{ page.title }}"></span>
-    </span>
-    {% endif %}
-    {# 文章阅读次数 #}
-    {# 文章分类 #}
-	{% if page.categories and page.categories.length %}
-        <span><i class="fa fa-folder-o"></i>
-    		{% for categories in page.categories %}
-    	       <a href="{{ url_for(categories.path) }}" rel="categories" data-toggle="tooltip" data-placement="top" title="Linux">{{ categories.name }}</a>
-    		{% endfor %}
-        </span>
-	{% endif %}
-    {# 文章分类 #}
-</header>
-<div class="blog-main-post blog-post-page-box">
-    <article class="blog-post-block blog-post-page-content">
-        <section>
-            {% if theme.post_excerpt==true %}
-                {{ page.content }}
-            {% else %}
-                {{ page.more }}
-            {% endif %}
-        </section>
-        <footer class="blog-post-page-tags">
-        {# 文章标签 #}
-			{% if page.tags and page.tags.length %}
-				{% for tag in page.tags %}
-			<a href="{{ url_for(tag.path) }}" rel="tag" data-toggle="tooltip" data-placement="top" title="Linux">{{ tag.name }}</a>
-				{% endfor %}
-			{% endif %}
-		{# 文章标签 #}
-        </footer>
-    </article>
-    <article class="blog-post-page-readmore">
-    	{# {% include 'includes/pagination.swig' %} #}
-    	{# 上一篇 #}
-		{% if page.prev_link %}
-			<a href="{{ url_for(page.prev_link) }}" class="blog-post-page-readmore-prev" data-toggle="tooltip" data-placement="top" title="{{ page.prev.title }}">上一篇</a>
-			{% elif page.prev && page.prev.path %}
-			<a href="{{ url_for(page.prev.path) }}" class="blog-post-page-readmore-prev" data-toggle="tooltip" data-placement="top" title="{{ page.prev.title }}">上一篇</a>
-		{% endif %}
 
-		{# 下一篇 #}
-		{% if page.next_link %}
-			<a href="{{ url_for(page.next_link) }}" class="blog-post-page-readmore-next" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">下一篇</a>
-			{% elif page.next && page.next.path %}
-			<a href="{{ url_for(page.next.path) }}" class="blog-post-page-readmore-next" data-toggle="tooltip" data-placement="top" title="{{ page.next.title }}">下一篇</a>
-		{% endif %}
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-        <div style="clear: both;"></div>
-    </article>
+<link rel="stylesheet" href="/css/main.css">
 
-    <article class="blog-post-block blog-post-page-content">
-            <div class="row">
-            {% if theme.comment==true %}
-                <div class="col-md-4 col-sm-4 post-page-more-btn">
-                    <span class="post-comments-btn btn btn-info btn-block" data-toggle="tooltip" data-placement="top" title="本站采用Disqus评论组件，若您没有科学上网可能会无法查看并评论">加载评论</span>
-                </div>
-            {% endif %}
-                <div class="col-md-4 col-sm-4 post-page-more-btn">
-                    <span  data-toggle="modal" data-target="#post-donate-content">
-                        <span id="post-donate-btn" class="btn btn-danger btn-block" data-toggle="tooltip" data-placement="top" title="如果您觉得本文还不错或者对您有帮助，可以考虑打赏一下作者哦">打赏本文</span>
-                    </span>
-                </div>
-                <div class="col-md-4 col-sm-4 post-page-more-btn">
-                    <span  data-toggle="modal" data-target="#post-qrcode-content">
-                        <span><span id="post-qrcode-btn" class="btn btn-success btn-block" data-toggle="tooltip" data-placement="top" title="微信扫描二维码手机端查看本文及分享本文">二维码</span></span>
-                    </span>
-                </div>
-            </div>
-        <div class="post-more-function-br"></div>
-{# 打赏模态框 #}
-        <div class="modal fade" id="post-donate-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">打赏本文</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row post-donate-content">
-                            <div class="col-md-4">
-                                <p>支付宝</p>
-                                <img class="post-donate-content-img no-lightbox" src="{{ theme.alipay }}"/>
-                            </div>
-                            <div class="col-md-4">
-                                <p>微信</p>
-                                <img class="post-donate-content-img no-lightbox" src="{{ theme.wechat }}"/>
-                            </div>
-                            <div class="col-md-4">
-                                <p>财付通</p>
-                                <img class="post-donate-content-img no-lightbox" src="{{ theme.qq }}"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-{# 文章二维码模态框 #}
-        <div class="modal fade" id="post-qrcode-content" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">文章二维码</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row post-qrcode-content">
-                            <span class="post-qrcode-content-canvas"></span>
-                            <img class="post-qrcode-content-img no-lightbox" src=""/>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {# 文章页二维码生成脚本 #}
-        <script>
-            // post QRcode
-            // 中文转码
-            function toUtf8(str) {
-                var out, i, len, c;
-                out = "";
-                len = str.length;
-                for (i = 0; i < len; i++) {
-                    c = str.charCodeAt(i);
-                    if ((c >= 0x0001) && (c <= 0x007F)) {
-                        out += str.charAt(i);
-                    } else if (c > 0x07FF) {
-                        out += String.fromCharCode(0xE0 | ((c >> 12) & 0x0F));
-                        out += String.fromCharCode(0x80 | ((c >> 6) & 0x3F));
-                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
-                    } else {
-                        out += String.fromCharCode(0xC0 | ((c >> 6) & 0x1F));
-                        out += String.fromCharCode(0x80 | ((c >> 0) & 0x3F));
-                    }
-                }
-                return out;
-            }
-            // 生成
-            var qrcode= $('.post-qrcode-content-canvas').qrcode({width: 150,height: 150,text: toUtf8("{{ page.permalink }}")}).hide();
-            var canvas=qrcode.find('canvas').get(0);
-            $('.post-qrcode-content-img').attr('src',canvas.toDataURL('image/jpg'));
-        </script>
 
-        {% if theme.disqus.enable==true %}
-        {# disqus评论 #}
-            <div id="disqus_thread"></div>
-            <script data-no-instant>
-                $(document).ready(function() {
-                    $('.post-comments-btn').on('click', function(){
-                        var disqus_shortname = '{{ theme.disqus.name }}';
-                        $.ajax({
-                            type: "GET",
-                            url: "https://" + disqus_shortname + ".disqus.com/embed.js",
-                            dataType: "script",
-                            cache: true
-                        });
-                        $('.post-more-function-br').css('height','.6em');
-                    });
-                });
-                var reset = function (newIdentifier, newUrl, newTitle, newLanguage) {
-                    DISQUS.reset({
-                        reload: true,
-                        config: function () {
-                            this.page.identifier = newIdentifier;
-                            this.page.url = newUrl;
-                            this.page.title = newTitle;
-                            this.language = newLanguage;
-                        }
-                    });
-                };
-            </script>
-            {% endif %}
-    </article>
-    {% if theme.valine_enable==true %}
-      <article class="blog-post-block blog-post-page-content" style="margin-top:2.5em;">
-      {#valine评论#}
-      <div class="comment"></div>
-      <script>
-          new Valine({
-              av: AV, // source from av-min.js
-              el: '.comment' ,
-              notify:false, // 邮件提醒 v1.1.4新增
-              verify:false, // 验证码 v1.1.4新增
-              app_id: '{{theme.leancloud.app_id}}',
-              app_key: '{{theme.leancloud.app_key}}',
-              placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!',
-              path:window.location.pathname // 路径配置 v1.1.5新增，可填window.location.href
-          });
-      </script>
-      </article>
-      {% endif %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"pingpinggray.top","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="联系方式 手机：15988434188  邮箱：&amp;#x79;&amp;#x75;&amp;#120;&amp;#105;&amp;#x61;&amp;#x6f;&amp;#x68;&amp;#117;&amp;#x69;&amp;#x30;&amp;#54;&amp;#x32;&amp;#54;&amp;#x40;&amp;#103;&amp;#109;&amp;#x61;&amp;#105;&amp;#x6c;&amp;#46;&amp;#99;&amp;#x6f;&amp;#109; QQ：3033731494  WeChat：ChrisGray0626  个人信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Resume">
+<meta property="og:url" content="https://pingpinggray.top/2021/09/23/Resume/index.html">
+<meta property="og:site_name" content="Gray Dynasty">
+<meta property="og:description" content="联系方式 手机：15988434188  邮箱：&amp;#x79;&amp;#x75;&amp;#120;&amp;#105;&amp;#x61;&amp;#x6f;&amp;#x68;&amp;#117;&amp;#x69;&amp;#x30;&amp;#54;&amp;#x32;&amp;#54;&amp;#x40;&amp;#103;&amp;#109;&amp;#x61;&amp;#105;&amp;#x6c;&amp;#46;&amp;#99;&amp;#x6f;&amp;#109; QQ：3033731494  WeChat：ChrisGray0626  个人信息">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-23T09:13:19.000Z">
+<meta property="article:modified_time" content="2021-09-24T07:01:29.562Z">
+<meta property="article:author" content="Chris Gray">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://pingpinggray.top/2021/09/23/Resume/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://pingpinggray.top/2021/09/23/Resume/","path":"2021/09/23/Resume/","title":"Resume"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Resume | Gray Dynasty</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Gray Dynasty</h1>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
 </div>
-{% endblock %}
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">2</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">2</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">联系方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF"><span class="nav-number">2.</span> <span class="nav-text">个人信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%A1%E5%9B%AD%E7%BB%8F%E5%8E%86"><span class="nav-number">3.</span> <span class="nav-text">校园经历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E8%83%BD%E8%AF%81%E4%B9%A6"><span class="nav-number">4.</span> <span class="nav-text">技能证书</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E4%B9%A0%E7%BB%8F%E5%8E%86"><span class="nav-number">5.</span> <span class="nav-text">实习经历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E7%A7%91%E9%99%A2%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A0%94%E7%A9%B6%E6%89%80%E5%AE%9E%E4%B9%A0%EF%BC%882018-7-10-2018-8-25%EF%BC%89"><span class="nav-number">5.1.</span> <span class="nav-text">中科院计算机研究所实习（2018.7.10-2018.8.25）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%AD%E5%B7%9E%E4%B8%AD%E6%88%BF%E4%BF%A1%E6%81%AF%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%EF%BC%882021-2-1-4-1%EF%BC%89"><span class="nav-number">5.2.</span> <span class="nav-text">杭州中房信息科技有限公司（2021.2.1-4.1）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%99%E6%B1%9F%E7%9C%81%E5%9F%8E%E4%B9%A1%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1%E7%A0%94%E7%A9%B6%E9%99%A2%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8%EF%BC%882021-8-5-%E8%87%B3%E4%BB%8A%EF%BC%89"><span class="nav-number">5.3.</span> <span class="nav-text">浙江省城乡规划设计研究院有限公司（2021.8.5-至今）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E5%A5%96%E9%A1%B9"><span class="nav-number">6.</span> <span class="nav-text">相关奖项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2017"><span class="nav-number">6.1.</span> <span class="nav-text">2017</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018"><span class="nav-number">6.2.</span> <span class="nav-text">2018</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2019"><span class="nav-number">6.3.</span> <span class="nav-text">2019</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020"><span class="nav-number">6.4.</span> <span class="nav-text">2020</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%91%E7%A0%94%E7%BB%8F%E5%8E%86"><span class="nav-number">7.</span> <span class="nav-text">科研经历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%99%BA%E8%83%BD%E4%BC%9A%E8%AE%AE%E5%AE%A4%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F"><span class="nav-number">7.1.</span> <span class="nav-text">基于深度学习的智能会议室管理系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BE%8A%E6%AF%9B%E5%88%B8%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8EAI%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98%E7%9A%84%E4%BA%92%E8%81%94%E7%BD%91%E4%BC%98%E6%83%A0%E4%BF%A1%E6%81%AF%E6%8E%A8%E8%8D%90%E5%BC%95%E6%93%8E%E5%8F%8A%E4%BC%98%E6%83%A0%E4%BF%A1%E6%81%AF%E6%99%BA%E8%83%BD%E6%95%B4%E5%90%88%E5%BA%94%E7%94%A8"><span class="nav-number">7.2.</span> <span class="nav-text">羊毛券——基于AI数据挖掘的互联网优惠信息推荐引擎及优惠信息智能整合应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%8C%E4%B8%8A%E4%B8%89%E4%BD%8D%E4%B8%80%E4%BD%93"><span class="nav-number">7.3.</span> <span class="nav-text">掌上三位一体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%80%E8%83%BD%E6%B8%85%E5%8D%95"><span class="nav-number">8.</span> <span class="nav-text">技能清单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3"><span class="nav-number">8.1.</span> <span class="nav-text">了解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">8.2.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B4%BB%E5%8A%A8%E7%BB%8F%E5%8E%86"><span class="nav-number">9.</span> <span class="nav-text">活动经历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2017-1"><span class="nav-number">9.1.</span> <span class="nav-text">2017</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2017%E6%9D%AD%E5%8D%81%E4%B8%80%E4%B8%AD%E6%A8%A1%E6%8B%9F%E8%81%94%E5%90%88%E5%9B%BD%E5%A4%A7%E4%BC%9A"><span class="nav-number">9.1.1.</span> <span class="nav-text">2017杭十一中模拟联合国大会</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-1"><span class="nav-number">9.2.</span> <span class="nav-text">2018</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2018%E6%9D%AD%E5%B7%9E%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%81%94%E5%90%88%E5%9B%BD%E5%A4%A7%E4%BC%9A"><span class="nav-number">9.2.1.</span> <span class="nav-text">2018杭州电子科技大学模拟联合国大会</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E5%B1%8A%E5%AD%A6%E5%86%9B%E6%A8%A1%E6%8B%9F%E8%81%94%E5%90%88%E5%9B%BD%E5%A4%A7%E4%BC%9A"><span class="nav-number">9.2.2.</span> <span class="nav-text">第七届学军模拟联合国大会</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E5%B1%8A%E6%B5%99%E6%B1%9F%E7%9C%81%E6%9A%A8%E6%9D%AD%E5%B7%9E%E5%B8%82%E6%A8%A1%E6%8B%9F%E8%81%94%E5%90%88%E5%9B%BD%E5%A4%A7%E4%BC%9A"><span class="nav-number">9.2.3.</span> <span class="nav-text">第三届浙江省暨杭州市模拟联合国大会</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2019-1"><span class="nav-number">9.3.</span> <span class="nav-text">2019</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%99%A2%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%A4%A7%E8%B5%9B"><span class="nav-number">9.3.1.</span> <span class="nav-text">院程序设计大赛</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%A1%E9%9D%92%E9%A9%AC%E9%9B%8F%E9%B9%B0%E7%8F%AD"><span class="nav-number">9.3.2.</span> <span class="nav-text">校青马雏鹰班</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2019%E8%B1%A1%E5%B1%B1%E6%A8%A1%E6%8B%9F%E8%81%94%E5%90%88%E5%9B%BD%E5%A4%A7%E4%BC%9A"><span class="nav-number">9.3.3.</span> <span class="nav-text">2019象山模拟联合国大会</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2020-1"><span class="nav-number">9.4.</span> <span class="nav-text">2020</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8E%AF%E6%A2%A62020%E5%86%AC%E5%AD%A3%E4%BC%9A%E8%AE%AE%EF%BC%88%E9%95%BF%E6%B2%99%EF%BC%89"><span class="nav-number">9.4.1.</span> <span class="nav-text">环梦2020冬季会议（长沙）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2021"><span class="nav-number">9.5.</span> <span class="nav-text">2021</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8E%AF%E6%A2%A6%E6%A8%A1%E6%8B%9F%E8%81%94%E5%90%88%E5%9B%BD2021%E5%B9%B4%E5%BA%A6%E4%BC%9A%E8%AE%AE"><span class="nav-number">9.5.1.</span> <span class="nav-text">环梦模拟联合国2021年度会议</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E7%AE%80%E8%BF%B0"><span class="nav-number">10.</span> <span class="nav-text">个人简述</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Chris Gray"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Chris Gray</p>
+  <div class="site-description" itemprop="description">Personal Web</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ChrisGray0626" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ChrisGray0626" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://pingpinggray.top/2021/09/23/Resume/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Chris Gray">
+      <meta itemprop="description" content="Personal Web">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gray Dynasty">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Resume
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-09-23 17:13:19" itemprop="dateCreated datePublished" datetime="2021-09-23T17:13:19+08:00">2021-09-23</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-09-24 15:01:29" itemprop="dateModified" datetime="2021-09-24T15:01:29+08:00">2021-09-24</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Self/" itemprop="url" rel="index"><span itemprop="name">Self</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li><strong>手机：</strong>15988434188 </li>
+<li><strong>邮箱：</strong><a href="mailto:&#x79;&#x75;&#120;&#105;&#x61;&#x6f;&#x68;&#117;&#x69;&#x30;&#54;&#x32;&#54;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#109;">&#x79;&#x75;&#120;&#105;&#x61;&#x6f;&#x68;&#117;&#x69;&#x30;&#54;&#x32;&#54;&#x40;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#99;&#x6f;&#109;</a></li>
+<li><strong>QQ：</strong>3033731494 </li>
+<li><strong>WeChat：</strong>ChrisGray0626</li>
+</ul>
+<h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><ul>
+<li><strong>姓名：</strong>余晓晖 </li>
+<li><strong>性别：</strong>男</li>
+<li><strong>出生年月：</strong>1999.6</li>
+<li><strong>政治面貌：</strong>共产党员</li>
+<li><strong>学校</strong>：杭州电子科技大学（2021届）</li>
+<li><strong>专业：</strong>自动化</li>
+<li><strong>学历</strong>：本科</li>
+<li><strong>GitHub：</strong><a target="_blank" rel="noopener" href="https://github.com/chrisgray0626">https://github.com/chrisgray0626</a></li>
+</ul>
+<h2 id="校园经历"><a href="#校园经历" class="headerlink" title="校园经历"></a>校园经历</h2><ul>
+<li>团支部团支书 （2019-2021）</li>
+<li>班级副班长 （2017-2019）</li>
+<li>院科技创新协会软件部部长 （2019-2020）</li>
+<li>校中国特色社会主义理论读书会组织部部长 （2018-2019）</li>
+<li>自动化党建工作组成员 （2018-2019）</li>
+<li>杭电模拟联合国协会负责人 （2018-2019）</li>
+</ul>
+<h2 id="技能证书"><a href="#技能证书" class="headerlink" title="技能证书"></a>技能证书</h2><ul>
+<li>雅思 6分</li>
+<li>浙江省计算机等级考试 二级Java</li>
+<li>计算机程序设计能力考试（PAT）乙级 70分</li>
+</ul>
+<h2 id="实习经历"><a href="#实习经历" class="headerlink" title="实习经历"></a>实习经历</h2><h3 id="中科院计算机研究所实习（2018-7-10-2018-8-25）"><a href="#中科院计算机研究所实习（2018-7-10-2018-8-25）" class="headerlink" title="中科院计算机研究所实习（2018.7.10-2018.8.25）"></a>中科院计算机研究所实习（2018.7.10-2018.8.25）</h3><p>学习了k-slearn算法、Fast-RCNN算法。</p>
+<h3 id="杭州中房信息科技有限公司（2021-2-1-4-1）"><a href="#杭州中房信息科技有限公司（2021-2-1-4-1）" class="headerlink" title="杭州中房信息科技有限公司（2021.2.1-4.1）"></a>杭州中房信息科技有限公司（2021.2.1-4.1）</h3><p>任职于基础研发中心-房产数仓研发部，具体负责房产信息数据仓库维护与研发等工作。</p>
+<h3 id="浙江省城乡规划设计研究院有限公司（2021-8-5-至今）"><a href="#浙江省城乡规划设计研究院有限公司（2021-8-5-至今）" class="headerlink" title="浙江省城乡规划设计研究院有限公司（2021.8.5-至今）"></a>浙江省城乡规划设计研究院有限公司（2021.8.5-至今）</h3><p>任职于创新研究中心，具体负责浙江省地下市政基础设施-城市内涝场景监测预警平台的后端开发等工作。</p>
+<h2 id="相关奖项"><a href="#相关奖项" class="headerlink" title="相关奖项"></a>相关奖项</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
+<li>2017自动化科协新生程序设计大赛 三等奖</li>
+<li>2017学生社团工作先进个人</li>
+<li>2017优秀团员</li>
+</ul>
+<h3 id="2018"><a href="#2018" class="headerlink" title="2018"></a><strong>2018</strong></h3><ul>
+<li>2018自动化学院电子设计比赛 参与奖</li>
+<li>杭电第十八届程序设计竞赛 三等奖</li>
+<li>2018浙江省暑期社会实践活动 二等奖</li>
+<li>第六期校青马雏鹰班 组织先进个人</li>
+<li>2018学生社团工作先进个人</li>
+<li>2018-2019第一学期学生工作奖</li>
+</ul>
+<h3 id="2019"><a href="#2019" class="headerlink" title="2019"></a><strong>2019</strong></h3><ul>
+<li>第五届校级“互联网+”大学生创新创业大赛 三等奖</li>
+<li>第八届“认证杯”届数学中国数学建模国际赛（小美赛） Honorable Mention</li>
+<li>2019-2020第一学期创新创业奖</li>
+</ul>
+<h3 id="2020"><a href="#2020" class="headerlink" title="2020"></a>2020</h3><ul>
+<li>美国大学生数学建模竞赛（MCM/ICM） Honorable Mention</li>
+<li>2019-2020第二学期奖学金 三等奖</li>
+</ul>
+<h2 id="科研经历"><a href="#科研经历" class="headerlink" title="科研经历"></a>科研经历</h2><h3 id="基于深度学习的智能会议室管理系统"><a href="#基于深度学习的智能会议室管理系统" class="headerlink" title="基于深度学习的智能会议室管理系统"></a>基于深度学习的智能会议室管理系统</h3><ul>
+<li><strong>校级“互联网+”大学生创新创业大赛</strong> 三等奖</li>
+<li><strong>校级/院级大学生创新创业训练计划立项</strong> </li>
+</ul>
+<p>具体负责团队领导以及后端开发等工作。</p>
+<h3 id="羊毛券——基于AI数据挖掘的互联网优惠信息推荐引擎及优惠信息智能整合应用"><a href="#羊毛券——基于AI数据挖掘的互联网优惠信息推荐引擎及优惠信息智能整合应用" class="headerlink" title="羊毛券——基于AI数据挖掘的互联网优惠信息推荐引擎及优惠信息智能整合应用"></a>羊毛券——基于AI数据挖掘的互联网优惠信息推荐引擎及优惠信息智能整合应用</h3><ul>
+<li><strong>校级“互联网+”大学生创新创业大赛</strong> 三等奖</li>
+<li><strong>校级大学生创新创业训练计划立项</strong> </li>
+</ul>
+<p>具体负责前端小程序开发等工作。</p>
+<h3 id="掌上三位一体"><a href="#掌上三位一体" class="headerlink" title="掌上三位一体"></a>掌上三位一体</h3><ul>
+<li><strong>校级大学生创新创业训练计划立项</strong></li>
+</ul>
+<p>具体负责前端Android开发等工作。</p>
+<h2 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h2><h3 id="了解"><a href="#了解" class="headerlink" title="了解"></a>了解</h3><ul>
+<li>大数据框架：Hadoop、Spark</li>
+<li>Web 应用服务器：Tomcat</li>
+<li>后端框架：Spring Boot</li>
+<li>数据库：MySQL</li>
+<li>开发环境：Linux</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<li>大数据框架：Hive、Kafka</li>
+<li>数据库：Redis</li>
+<li>Web开发：HTML、CSS、JavaScript</li>
+<li>前端框架：Vue.js</li>
+<li>移动端：Android、微信小程序</li>
+<li>深度学习：Keras、Tensorflow</li>
+</ul>
+<h2 id="活动经历"><a href="#活动经历" class="headerlink" title="活动经历"></a>活动经历</h2><h3 id="2017-1"><a href="#2017-1" class="headerlink" title="2017"></a>2017</h3><h4 id="2017杭十一中模拟联合国大会"><a href="#2017杭十一中模拟联合国大会" class="headerlink" title="2017杭十一中模拟联合国大会"></a>2017杭十一中模拟联合国大会</h4><p>由杭州第十一中学组织，作为学术总监统筹总领会议学术工作。</p>
+<h3 id="2018-1"><a href="#2018-1" class="headerlink" title="2018"></a>2018</h3><h4 id="2018杭州电子科技大学模拟联合国大会"><a href="#2018杭州电子科技大学模拟联合国大会" class="headerlink" title="2018杭州电子科技大学模拟联合国大会"></a>2018杭州电子科技大学模拟联合国大会</h4><p>由杭州电子科技大学校团委组织，作为秘书长组织大会总体工作。</p>
+<h4 id="第七届学军模拟联合国大会"><a href="#第七届学军模拟联合国大会" class="headerlink" title="第七届学军模拟联合国大会"></a>第七届学军模拟联合国大会</h4><p>由杭州学军中学组织，作为会场负责人设计领导会场，历史安理会的学术工作。</p>
+<h4 id="第三届浙江省暨杭州市模拟联合国大会"><a href="#第三届浙江省暨杭州市模拟联合国大会" class="headerlink" title="第三届浙江省暨杭州市模拟联合国大会"></a>第三届浙江省暨杭州市模拟联合国大会</h4><p>由杭州学军中学组织，作为主席团成员承担会场，欧洲议会的学术工作。</p>
+<h3 id="2019-1"><a href="#2019-1" class="headerlink" title="2019"></a>2019</h3><h4 id="院程序设计大赛"><a href="#院程序设计大赛" class="headerlink" title="院程序设计大赛"></a>院程序设计大赛</h4><p>由杭州电子科技大学自动化学院组织，作为负责人承办比赛。</p>
+<h4 id="校青马雏鹰班"><a href="#校青马雏鹰班" class="headerlink" title="校青马雏鹰班"></a>校青马雏鹰班</h4><p>由杭州电子科技大学校团委组织，作为负责人组织活动。</p>
+<h4 id="2019象山模拟联合国大会"><a href="#2019象山模拟联合国大会" class="headerlink" title="2019象山模拟联合国大会"></a>2019象山模拟联合国大会</h4><p>由杭州浙江省象山中学组织，作为学术总监统筹总领会议学术工作。</p>
+<h3 id="2020-1"><a href="#2020-1" class="headerlink" title="2020"></a>2020</h3><h4 id="环梦2020冬季会议（长沙）"><a href="#环梦2020冬季会议（长沙）" class="headerlink" title="环梦2020冬季会议（长沙）"></a>环梦2020冬季会议（长沙）</h4><p>由环梦模拟联合国组织，作为副秘书承办会务组织工作；作为主席团成员承担会场，1878西非柏林会议的学术工作。</p>
+<h3 id="2021"><a href="#2021" class="headerlink" title="2021"></a>2021</h3><h4 id="环梦模拟联合国2021年度会议"><a href="#环梦模拟联合国2021年度会议" class="headerlink" title="环梦模拟联合国2021年度会议"></a>环梦模拟联合国2021年度会议</h4><p>由环梦模拟联合国组织，作为办公室主管完成组织协调工作；作为主席团负责人承担会场，历史系统的学术工作。</p>
+<h2 id="个人简述"><a href="#个人简述" class="headerlink" title="个人简述"></a>个人简述</h2><p>本人自入学以来，长期与各种语言、代码、框架为伴，对专业技术有广泛的兴趣爱好，能够将所学用于实践，服务生活。而同样我也热爱文史，涉猎广泛，从书籍中汲取营养。在几年的大学生涯中，我既理解掌握了诸多信息技术知识，也继续完善文史方面的学术水平。亦长期接触行政管理、组织协调等方面的工作，先后长期担任班级副班长与团支书一职，为班级谋发展；亦在校中国特色社会主义读书会中担任组织建设部部长，为学校添砖加瓦。 </p>
+<p>我力求做到全方位、多层次全面发展，提升个人素质与工作能力，在实践中磨练自我。长路漫漫不可知，更需努力前行。  </p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/09/24/Java-Source-Code/" rel="next" title="Java Source Code">
+                  Java Source Code <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021.9 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chris Gray</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+
+</body>
+</html>
