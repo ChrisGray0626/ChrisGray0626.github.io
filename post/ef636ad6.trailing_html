@@ -309,14 +309,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/post/2bcbefa4.trailing_html" rel="prev" title="Hadoop">
-                  <i class="fa fa-chevron-left"></i> Hadoop
+                <a href="/post/2bcbefa4.trailing_html" rel="prev" title="Data Warehouse">
+                  <i class="fa fa-chevron-left"></i> Data Warehouse
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/post/2bcbefa4.trailing_html" rel="next" title="Data Warehouse">
-                  Data Warehouse <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
