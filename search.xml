@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>test</title>
-    <url>/post/d87f7e0c.html</url>
-    <content><![CDATA[<span id="more"></span>
-
-]]></content>
-  </entry>
-  <entry>
     <title>Hexo</title>
     <url>/post/b132932.html</url>
     <content><![CDATA[<blockquote>
@@ -54,6 +47,10 @@
         <category>Tech</category>
         <category>Hexo</category>
       </categories>
+      <tags>
+        <tag>Site</tag>
+        <tag>Course</tag>
+      </tags>
   </entry>
   <entry>
     <title>GitHub Pages</title>
@@ -103,6 +100,10 @@
         <category>Tech</category>
         <category>GitHub Pages</category>
       </categories>
+      <tags>
+        <tag>Site</tag>
+        <tag>Course</tag>
+      </tags>
   </entry>
   <entry>
     <title>Network</title>
