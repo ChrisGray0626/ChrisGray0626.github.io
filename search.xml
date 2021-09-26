@@ -1755,6 +1755,7 @@
     <url>/post/abe383d1.html</url>
     <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
 <li>位运算</li>
+<li>递归</li>
 </ul>
 <span id="more"></span>
 
@@ -1766,6 +1767,9 @@
 <li>计算来自前一位的进位结果</li>
 <li><code>(a &amp; b) &lt;&lt; 1</code></li>
 </ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><p>两者亦或运算即为加法结果</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getSum(a ^ b, (a &amp; b) &lt;&lt; <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
 <h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/sum-of-two-integers/">371. 两整数之和 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
 ]]></content>
       <categories>
@@ -1774,6 +1778,7 @@
       </categories>
       <tags>
         <tag>Bit Operation</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
 </search>
