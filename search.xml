@@ -1750,4 +1750,30 @@
         <category>Source Code</category>
       </categories>
   </entry>
+  <entry>
+    <title>371. 两整数之和</title>
+    <url>/post/abe383d1.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>位运算</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="亦或运算"><a href="#亦或运算" class="headerlink" title="亦或运算"></a>亦或运算</h3><ul>
+<li>计算当前位的无进位加法结果</li>
+<li><code>a ^ b</code></li>
+</ul>
+<h3 id="与运算"><a href="#与运算" class="headerlink" title="与运算"></a>与运算</h3><ul>
+<li>计算来自前一位的进位结果</li>
+<li><code>(a &amp; b) &lt;&lt; 1</code></li>
+</ul>
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/sum-of-two-integers/">371. 两整数之和 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Bit Operation</tag>
+      </tags>
+  </entry>
 </search>
