@@ -14,7 +14,7 @@
 <tbody><tr>
 <td align="left">学校：杭州电子科技大学</td>
 <td>手机：15988434188</td>
-<td>邮箱：<a href="mailto:&#x79;&#x75;&#x78;&#x69;&#x61;&#x6f;&#x68;&#x75;&#x69;&#48;&#x36;&#50;&#x36;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;">&#x79;&#x75;&#x78;&#x69;&#x61;&#x6f;&#x68;&#x75;&#x69;&#48;&#x36;&#50;&#x36;&#x40;&#x67;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a></td>
+<td>邮箱：<a href="mailto:&#x79;&#117;&#x78;&#105;&#x61;&#111;&#x68;&#x75;&#105;&#x30;&#54;&#x32;&#x36;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#x79;&#117;&#x78;&#105;&#x61;&#111;&#x68;&#x75;&#105;&#x30;&#54;&#x32;&#x36;&#x40;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a></td>
 </tr>
 <tr>
 <td align="left">QQ：3033731494</td>
@@ -306,7 +306,7 @@
     <url>/post/676dd596.html</url>
     <content><![CDATA[<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
 <li><strong>手机：</strong>15988434188 </li>
-<li><strong>邮箱：</strong><a href="mailto:&#121;&#x75;&#x78;&#105;&#97;&#111;&#x68;&#x75;&#105;&#x30;&#x36;&#50;&#54;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#121;&#x75;&#x78;&#105;&#97;&#111;&#x68;&#x75;&#105;&#x30;&#x36;&#50;&#54;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+<li><strong>邮箱：</strong><a href="mailto:&#121;&#117;&#x78;&#105;&#97;&#111;&#x68;&#117;&#x69;&#48;&#x36;&#x32;&#54;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#121;&#117;&#x78;&#105;&#97;&#111;&#x68;&#117;&#x69;&#48;&#x36;&#x32;&#54;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;</a></li>
 <li><strong>QQ：</strong>3033731494 </li>
 <li><strong>WeChat：</strong>ChrisGray0626</li>
 </ul>
@@ -533,6 +533,147 @@
 ]]></content>
       <categories>
         <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Internship Experience</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Data Warehouse</title>
+    <url>/post/2bcbefa4.html</url>
+    <content><![CDATA[<p>Data Warehouse（DW），顾名思义，是一个很大的数据存储集合，出于企业的分析性报告和决策支持目的而创建，对多样的业务数据进行筛选与整合。它为企业提供一定的BI(商业智能)能力，指导业务流程改进、监视时间、成本、质量以及控制。</p>
+<span id="more"></span>
+
+<h2 id="业务痛点"><a href="#业务痛点" class="headerlink" title="业务痛点"></a>业务痛点</h2><ol>
+<li>无法应对频繁临时需求</li>
+<li>数据资产模糊</li>
+<li>数据质量低</li>
+<li>重复建设</li>
+<li>代码耦合性高</li>
+<li>问题难定位，周期长</li>
+</ol>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li><p>面向主题（Subject Oriented）</p>
+</li>
+<li><p>集成（Integrate）</p>
+</li>
+<li><p>非易失（Non-Volatile）</p>
+</li>
+<li><p>反映历史变化（Time Variant）</p>
+</li>
+</ul>
+<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h3 id="联机事务处理（OLTP）"><a href="#联机事务处理（OLTP）" class="headerlink" title="联机事务处理（OLTP）"></a>联机事务处理（OLTP）</h3><p>（On-Line Transaction Processing），也可以称面向交易的处理系统，它是针对具体业务在数据库联机的日常操作，通常对少数记录进行查询、修改。用户较为关心操作的响应时间、数据的安全性、完整性和并发的支持用户数等问题。传统的数据库系统作为数据管理的主要手段，主要用于操作型处理。</p>
+<h3 id="联机分析处理（OLAP）"><a href="#联机分析处理（OLAP）" class="headerlink" title="联机分析处理（OLAP）"></a>联机分析处理（OLAP）</h3><p>（On-Line Analytical Processing）一般针对某些主题历史数据进行分析，支持管理决策。</p>
+<h2 id="架构（OneData）"><a href="#架构（OneData）" class="headerlink" title="架构（OneData）"></a>架构（OneData）</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
+<li>三特性：统一性、唯一性和规范性</li>
+<li>三效果：高扩展性、强复用性和低成本性</li>
+</ul>
+<h3 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h3><ul>
+<li>统一归口</li>
+<li>统一出口</li>
+</ul>
+<h3 id="ODS-Operation-Data-Store-，操作数据层"><a href="#ODS-Operation-Data-Store-，操作数据层" class="headerlink" title="ODS(Operation Data Store)，操作数据层"></a>ODS(Operation Data Store)，操作数据层</h3><p>数据仓库准备区，为DWD层提供基础原始数据，可减少对业务系统的影响。</p>
+<p>建模方式及原则：</p>
+<ol>
+<li>从业务系统增量抽取</li>
+<li>保留时间由业务需求决定</li>
+<li>可分表进行周期存储</li>
+<li>数据不做清洗转换与业务系统数据模型保持一致</li>
+<li>按主题逻辑划分</li>
+</ol>
+<h3 id="DWD-Data-Warehouse-Detail-，明细粒度事实层"><a href="#DWD-Data-Warehouse-Detail-，明细粒度事实层" class="headerlink" title="DWD(Data Warehouse Detail)，明细粒度事实层"></a>DWD(Data Warehouse Detail)，明细粒度事实层</h3><p>为DW层提供来源明细数据，提供业务系统细节数据的长期沉淀，为未来分析类需求的扩展提供历史数据支撑。</p>
+<p>通常分为三种：事务事实表、周期快照事实表和累积快照事实表。</p>
+<ul>
+<li><p>事务事实表用来描述业务过程，跟踪空间或时间上某点的度量事件，保存的是最原子的数据，也称为原子事实表。</p>
+</li>
+<li><p>周期快照事实表以具有规律性的、可预见的时间间隔记录事实。</p>
+</li>
+<li><p>累积快照事实表用来表述过程开始和结束之间的关键步骤事件，覆盖过程的整个生命周期，通常具有多个日期字段来记录关键时间点。当累积快照事实表随着生命周期不断变化时，记录也会随着过程的变化而被修改。</p>
+</li>
+</ul>
+<h3 id="DWT（Data-Warehouse-Topic），主题宽表层"><a href="#DWT（Data-Warehouse-Topic），主题宽表层" class="headerlink" title="DWT（Data Warehouse Topic），主题宽表层"></a>DWT（Data Warehouse Topic），主题宽表层</h3><p>对DWD各信息进行关联整合，输出主题宽表（面向业务过程，不同业务过程的信息不冗余建设，采用外键形式）。</p>
+<h3 id="DWS-Data-Warehouse-Summary-，公共汇总粒度事实层"><a href="#DWS-Data-Warehouse-Summary-，公共汇总粒度事实层" class="headerlink" title="DWS(Data Warehouse Summary)，公共汇总粒度事实层"></a>DWS(Data Warehouse Summary)，公共汇总粒度事实层</h3><p>为DW层提供细粒度数据，DWS按各个维度ID进行粗粒度汇总聚合，如按交易来源，交易类型进行汇合 。</p>
+<p>建模方式及原则：</p>
+<ol>
+<li>聚合、汇总增加派生事实；</li>
+<li>关联其它主题的事实表，DW层可能会跨主题域；</li>
+<li>保持高粒度汇总数据；</li>
+<li>数据模型可能采用反范式设计，合并信息等。</li>
+</ol>
+<h3 id="ADS-Application-Data-Store-，应用数据层"><a href="#ADS-Application-Data-Store-，应用数据层" class="headerlink" title="ADS(Application Data Store)，应用数据层"></a>ADS(Application Data Store)，应用数据层</h3><p>ADS层面向用户应用和分析需求，包括前端报表、分析图表、KPI、仪表盘、OLAP、专题等分析，面向最终结果用户；适合作OLAP、报表模型；根据DW层经过聚合汇总统计后的粗粒度事实表 </p>
+<p>建模方式及原则：</p>
+<ol>
+<li>保持数据量小；</li>
+<li>维度建模，星形模型；</li>
+<li>各位维度代理键+度量；</li>
+<li>增加数据业务日期字段，支持数据重跑；</li>
+<li>不分表存储</li>
+</ol>
+<h3 id="DIM，维度层"><a href="#DIM，维度层" class="headerlink" title="DIM，维度层"></a>DIM，维度层</h3><p>建立一致数据分析维表，可以降低数据计算口径和算法不统一风险。</p>
+<p>以维度作为建模驱动，基于每个维度的业务含义，通过定义维度及维度主键，添加维度属性、关联维度等定义计算逻辑和雪花模型，完成属性定义的过程并建立一致的数据分析维表。</p>
+<p>同时您可以定义维度主子关系，子维度的属性将合并至主维度使用，进一步保证维度的一致性和便捷使用性。</p>
+<p>建模方式及原则：</p>
+<ol>
+<li>尽可能生成丰富的维度属性。</li>
+<li>尽可能多的给出包含一些富有意义的文字性描述。</li>
+<li>区分数值型属性和事实。</li>
+<li>尽量沉淀出通用的维度属性。</li>
+</ol>
+<h2 id="数据建模"><a href="#数据建模" class="headerlink" title="数据建模"></a>数据建模</h2><ol>
+<li>所有表中的数据都为原子数据，不可再分</li>
+<li>所有表中的所有字段都必须依赖主关键字</li>
+<li>所有表中的非主关键词之间不能函数依赖关系</li>
+</ol>
+<h3 id="第一范式（1NF）"><a href="#第一范式（1NF）" class="headerlink" title="第一范式（1NF）"></a>第一范式（1NF）</h3><p>在关系模式R中的每一个具体关系r中，必须要有主键,并且每个属性值 都是不可再分的最小数据单位，则称R是第一范式的关系。</p>
+<h3 id="第二范式（2NF）"><a href="#第二范式（2NF）" class="headerlink" title="第二范式（2NF）"></a>第二范式（2NF）</h3><p>如果关系模式R中的所有非主属性都完全依赖于主关键字，则称关系R 是属于第二范式的。 </p>
+<h3 id="第三范式（3NF）"><a href="#第三范式（3NF）" class="headerlink" title="第三范式（3NF）"></a>第三范式（3NF）</h3><p>关系模式R中的非主关键字不能依赖于其他非主关键字。即非主关键字之间不能有函数（传递）依赖关系。则称关系R是属于第三范式的。</p>
+<h2 id="维度建模"><a href="#维度建模" class="headerlink" title="维度建模"></a>维度建模</h2><p>维度建模是一种将数据结构化的逻辑设计方法，它将客观世界划分为度量和上下文。</p>
+<p>度量是常常是以数值形式出现，事实周围有上下文包围着，这种上下文被直观地分成独立的逻辑块，称之为维度。</p>
+<p>实体-关系建模是面向应用，遵循第三范式，以消除数据冗余为目标的设计技术。</p>
+<p>维度建模是面向分析，为了提高查询性能可以增加数据冗余，反规范化的设计技术。</p>
+<p>用于度量的事实表，事实表一般会有两个或者多个外健与维度表的主键进行关联。事实表的主键一般是组合健，表达多对多的关系。</p>
+<p>用于描述环境的维度表，单一主键，维度表的属性是所有查询约束和报表标示的来源。维度提供数据的入口点，提供所有DW/BI分析的最终标识和分组。</p>
+<p>所以维度建模表示每个业务过程包含的事实表，事实表里面存储事件的数值化度量，围绕事实表的是多个维度表，维度表包含事件发生的实际存在的文本环境。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>便于理解</li>
+<li>提高查询性能</li>
+<li>对称性</li>
+<li>可扩展性</li>
+</ol>
+<h3 id="事实表"><a href="#事实表" class="headerlink" title="事实表"></a>事实表</h3><p>事实表存储了从业务活动或事件提炼出来的性能度量，它主要包含维度表的外键和连续变化的可加性数值或半可加事实。事实表产生于业务过程中而不是业务过程的描述性信息。它一般是行多列少，占了数据仓库的90%的空间。在维度模型中也有表示多对多关系的事实，其他都是维度表。 </p>
+<h3 id="事务事实表"><a href="#事务事实表" class="headerlink" title="事务事实表"></a>事务事实表</h3><p> 它是面向事务的，其粒度是每一行对应一个事务，它是最细粒度的事实表。</p>
+<h3 id="周期快照事实表"><a href="#周期快照事实表" class="headerlink" title="周期快照事实表"></a>周期快照事实表</h3><p>它是按照良好的时间周期间隔(每天，每月)来捕捉业务活动的执行情况，一旦装入事实表就不会再去更新，它是事务事实表的补充，而非替代品。</p>
+<h3 id="累积快照事实表"><a href="#累积快照事实表" class="headerlink" title="累积快照事实表"></a>累积快照事实表</h3><p>它用于描述业务过程中某个不确定时间跨度里的活动，它随着业务活动的发生会不断的更新。</p>
+<h3 id="维度表"><a href="#维度表" class="headerlink" title="维度表"></a>维度表</h3><p>维度表是对业务过程的上下文描述，主要包含代理键、文本信息和离散的数字。</p>
+<p>它是进入事实表的入口，丰富的维度属性给出了对事实表的分析切割能力，它一般是行少列多。</p>
+<p>如果属性值是离散的，用于过滤和标记的，就放到维度表里，如果是属性值是连续取值，用于计算的，就放到事实表中。</p>
+<h3 id="星型模型"><a href="#星型模型" class="headerlink" title="星型模型"></a>星型模型</h3><p>一种多维的数据关系，它由一个事实表（Fact Table）和一组维表（Dimension  Table）组成。</p>
+<p>每个维表都有一个维作为主键，所有这些维的主键组合成事实表的主键。</p>
+<p>事实表的非主键属性称为事实（Fact），它们一般都是数值或其他可以进行计算的数据。</p>
+<h3 id="雪花模型"><a href="#雪花模型" class="headerlink" title="雪花模型"></a>雪花模型</h3><p>当有一个或多个维表没有直接连接到事实表上，而是通过其他维表连接到事实表上时，其图解就像多个雪花连接在一起，故称雪花模型。</p>
+<p>雪花模型是对星型模型的扩展。它对星型模型的维表进一步层次化，原有的各维表可能被扩展为小的事实表，形成一些局部的 “层次 “ 区域，这些被分解的表都连接到主维度表而不是事实表。</p>
+<p>通过最大限度地减少数据存储量以及联合较小的维表来改善查询性能。雪花型结构去除了数据冗余。</p>
+<h3 id="星型模型VS雪花模型"><a href="#星型模型VS雪花模型" class="headerlink" title="星型模型VS雪花模型"></a>星型模型VS雪花模型</h3><h4 id="查询性能"><a href="#查询性能" class="headerlink" title="查询性能"></a>查询性能</h4><p>OLTP-DW环节，由于雪花型要做多个表联接，性能会低于星型架构；</p>
+<p>DW-OLAP环节，由于雪花型架构更有利于度量值的聚合，因此性能要高于星型架构。</p>
+<h4 id="模型复杂度"><a href="#模型复杂度" class="headerlink" title="模型复杂度"></a>模型复杂度</h4><p>星型架构更简单方便处理。</p>
+<h4 id="层次结构"><a href="#层次结构" class="headerlink" title="层次结构"></a>层次结构</h4><p>雪花型架构更加贴近OLTP系统的结构，比较符合业务逻辑，层次比较清晰。</p>
+<h4 id="存储角度"><a href="#存储角度" class="headerlink" title="存储角度"></a>存储角度</h4><p>雪花型架构具有关系数据模型的所有优点，不会产生冗余数据。</p>
+<p>星型架构会产生数据冗余。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>一般建议使用星型模型。因为在实际项目中，往往最关注的是查询性能问题，至于磁盘空间一般都不是问题。</p>
+<p>在维度表数据量极大，需要节省存储空间的情况下，或者是业务逻辑比较复杂、必须要体现清晰的层次概念情况下，可以使用雪花型模型。</p>
+<h2 id="宽表"><a href="#宽表" class="headerlink" title="宽表"></a>宽表</h2><p>宽表从字面意义上讲就是字段比较多的数据库表。通常是指业务主题相关的指标、维度、属性关联在一起的一张数据库表。</p>
+<p>由于把不同的内容都放在同一张表存储，宽表已经不符合三范式的模型设计规范，随之带来的主要坏处就是数据的大量冗余，与之相对应的好处就是查询性能的提高与便捷。</p>
+<p>这种宽表的设计广泛应用于数据挖掘模型训练前的数据准备，通过把相关字段放在同一张表中，可以大大提高数据挖掘模型训练过程中迭代计算时的效率问题。</p>
+<h2 id="数据一致性"><a href="#数据一致性" class="headerlink" title="数据一致性"></a>数据一致性</h2><h3 id="CAP理论"><a href="#CAP理论" class="headerlink" title="CAP理论"></a>CAP理论</h3><p>Consistency，Availability和Partition Tolerance，理论认为数据一致性（C）、系统可用性（A）和网络分区容忍性（P），在系统中的任何时刻三个性质中只能同时保证两个性质成立，而网络常常又是不可靠的。</p>
+<h3 id="数据一致性模型"><a href="#数据一致性模型" class="headerlink" title="数据一致性模型"></a>数据一致性模型</h3><p>一些分布式系统通过复制数据来提高系统的可靠性和容错性，并且将数据的不同的副本存放在不同的机器。</p>
+<p>由于维护数据副本的一致性代价高，因此许多系统采用弱一致性来提高性能。</p>
+<p>强一致性： 要求无论更新操作实在哪一个副本执行，之后所有的读操作都要能获得最新的数据。</p>
+<p>弱一致性：用户读到某一操作对系统特定数据的更新需要一段时间，我们称这段时间为“不一致性窗口”。</p>
+<p>最终一致性：是弱一致性的一种特例，保证用户最终能够读取到某操作对系统特定数据的更新。</p>
+<h2 id="元数据管理"><a href="#元数据管理" class="headerlink" title="元数据管理"></a>元数据管理</h2><h2 id="数据质量的评估"><a href="#数据质量的评估" class="headerlink" title="数据质量的评估"></a>数据质量的评估</h2>]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Big Data</category>
       </categories>
       <tags>
         <tag>Internship Experience</tag>
@@ -981,6 +1122,34 @@
       </tags>
   </entry>
   <entry>
+    <title>超级洗衣机</title>
+    <url>/post/3132132e.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>贪心</li>
+<li>计算经过当前洗衣机左右两侧洗衣机需要调整次数的最大“流量”</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h3><ul>
+<li>最大需要调整次数的位置i达到平衡时，其他需要调整的位置一定也达到平衡</li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> num: machines) &#123;</span><br><span class="line">    num -= avg; <span class="comment">// i位置需要调整的次数</span></span><br><span class="line">    sum += num; <span class="comment">// 位置0到i需要调整的总次数</span></span><br><span class="line"></span><br><span class="line">    res = Math.max(res, Math.max(Math.abs(sum), num));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Math.abs(sum)</code>，可能为负数，缺少时需要增加的情况，故为绝对值</li>
+<li><code>num</code>，可能为负数，但缺少时可以是多个位置同时向此位置增加，故不能加绝对值；仅需要考虑该值特别大时的情况（num&gt;sum）</li>
+</ul>
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/super-washing-machines/">517. 超级洗衣机 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Greedy</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL</title>
     <url>/post/547eead8.html</url>
     <content><![CDATA[<h2 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h2><p>在数据库中，B+树的高度一般都在2-4层，B+树索引可以分为聚集索引（clustered index）和辅助索引（secondary index）。</p>
@@ -1067,147 +1236,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Data Warehouse</title>
-    <url>/post/2bcbefa4.html</url>
-    <content><![CDATA[<p>Data Warehouse（DW），顾名思义，是一个很大的数据存储集合，出于企业的分析性报告和决策支持目的而创建，对多样的业务数据进行筛选与整合。它为企业提供一定的BI(商业智能)能力，指导业务流程改进、监视时间、成本、质量以及控制。</p>
-<span id="more"></span>
-
-<h2 id="业务痛点"><a href="#业务痛点" class="headerlink" title="业务痛点"></a>业务痛点</h2><ol>
-<li>无法应对频繁临时需求</li>
-<li>数据资产模糊</li>
-<li>数据质量低</li>
-<li>重复建设</li>
-<li>代码耦合性高</li>
-<li>问题难定位，周期长</li>
-</ol>
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
-<li><p>面向主题（Subject Oriented）</p>
-</li>
-<li><p>集成（Integrate）</p>
-</li>
-<li><p>非易失（Non-Volatile）</p>
-</li>
-<li><p>反映历史变化（Time Variant）</p>
-</li>
-</ul>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h3 id="联机事务处理（OLTP）"><a href="#联机事务处理（OLTP）" class="headerlink" title="联机事务处理（OLTP）"></a>联机事务处理（OLTP）</h3><p>（On-Line Transaction Processing），也可以称面向交易的处理系统，它是针对具体业务在数据库联机的日常操作，通常对少数记录进行查询、修改。用户较为关心操作的响应时间、数据的安全性、完整性和并发的支持用户数等问题。传统的数据库系统作为数据管理的主要手段，主要用于操作型处理。</p>
-<h3 id="联机分析处理（OLAP）"><a href="#联机分析处理（OLAP）" class="headerlink" title="联机分析处理（OLAP）"></a>联机分析处理（OLAP）</h3><p>（On-Line Analytical Processing）一般针对某些主题历史数据进行分析，支持管理决策。</p>
-<h2 id="架构（OneData）"><a href="#架构（OneData）" class="headerlink" title="架构（OneData）"></a>架构（OneData）</h2><h3 id="特点-1"><a href="#特点-1" class="headerlink" title="特点"></a>特点</h3><ul>
-<li>三特性：统一性、唯一性和规范性</li>
-<li>三效果：高扩展性、强复用性和低成本性</li>
-</ul>
-<h3 id="策略"><a href="#策略" class="headerlink" title="策略"></a>策略</h3><ul>
-<li>统一归口</li>
-<li>统一出口</li>
-</ul>
-<h3 id="ODS-Operation-Data-Store-，操作数据层"><a href="#ODS-Operation-Data-Store-，操作数据层" class="headerlink" title="ODS(Operation Data Store)，操作数据层"></a>ODS(Operation Data Store)，操作数据层</h3><p>数据仓库准备区，为DWD层提供基础原始数据，可减少对业务系统的影响。</p>
-<p>建模方式及原则：</p>
-<ol>
-<li>从业务系统增量抽取</li>
-<li>保留时间由业务需求决定</li>
-<li>可分表进行周期存储</li>
-<li>数据不做清洗转换与业务系统数据模型保持一致</li>
-<li>按主题逻辑划分</li>
-</ol>
-<h3 id="DWD-Data-Warehouse-Detail-，明细粒度事实层"><a href="#DWD-Data-Warehouse-Detail-，明细粒度事实层" class="headerlink" title="DWD(Data Warehouse Detail)，明细粒度事实层"></a>DWD(Data Warehouse Detail)，明细粒度事实层</h3><p>为DW层提供来源明细数据，提供业务系统细节数据的长期沉淀，为未来分析类需求的扩展提供历史数据支撑。</p>
-<p>通常分为三种：事务事实表、周期快照事实表和累积快照事实表。</p>
-<ul>
-<li><p>事务事实表用来描述业务过程，跟踪空间或时间上某点的度量事件，保存的是最原子的数据，也称为原子事实表。</p>
-</li>
-<li><p>周期快照事实表以具有规律性的、可预见的时间间隔记录事实。</p>
-</li>
-<li><p>累积快照事实表用来表述过程开始和结束之间的关键步骤事件，覆盖过程的整个生命周期，通常具有多个日期字段来记录关键时间点。当累积快照事实表随着生命周期不断变化时，记录也会随着过程的变化而被修改。</p>
-</li>
-</ul>
-<h3 id="DWT（Data-Warehouse-Topic），主题宽表层"><a href="#DWT（Data-Warehouse-Topic），主题宽表层" class="headerlink" title="DWT（Data Warehouse Topic），主题宽表层"></a>DWT（Data Warehouse Topic），主题宽表层</h3><p>对DWD各信息进行关联整合，输出主题宽表（面向业务过程，不同业务过程的信息不冗余建设，采用外键形式）。</p>
-<h3 id="DWS-Data-Warehouse-Summary-，公共汇总粒度事实层"><a href="#DWS-Data-Warehouse-Summary-，公共汇总粒度事实层" class="headerlink" title="DWS(Data Warehouse Summary)，公共汇总粒度事实层"></a>DWS(Data Warehouse Summary)，公共汇总粒度事实层</h3><p>为DW层提供细粒度数据，DWS按各个维度ID进行粗粒度汇总聚合，如按交易来源，交易类型进行汇合 。</p>
-<p>建模方式及原则：</p>
-<ol>
-<li>聚合、汇总增加派生事实；</li>
-<li>关联其它主题的事实表，DW层可能会跨主题域；</li>
-<li>保持高粒度汇总数据；</li>
-<li>数据模型可能采用反范式设计，合并信息等。</li>
-</ol>
-<h3 id="ADS-Application-Data-Store-，应用数据层"><a href="#ADS-Application-Data-Store-，应用数据层" class="headerlink" title="ADS(Application Data Store)，应用数据层"></a>ADS(Application Data Store)，应用数据层</h3><p>ADS层面向用户应用和分析需求，包括前端报表、分析图表、KPI、仪表盘、OLAP、专题等分析，面向最终结果用户；适合作OLAP、报表模型；根据DW层经过聚合汇总统计后的粗粒度事实表 </p>
-<p>建模方式及原则：</p>
-<ol>
-<li>保持数据量小；</li>
-<li>维度建模，星形模型；</li>
-<li>各位维度代理键+度量；</li>
-<li>增加数据业务日期字段，支持数据重跑；</li>
-<li>不分表存储</li>
-</ol>
-<h3 id="DIM，维度层"><a href="#DIM，维度层" class="headerlink" title="DIM，维度层"></a>DIM，维度层</h3><p>建立一致数据分析维表，可以降低数据计算口径和算法不统一风险。</p>
-<p>以维度作为建模驱动，基于每个维度的业务含义，通过定义维度及维度主键，添加维度属性、关联维度等定义计算逻辑和雪花模型，完成属性定义的过程并建立一致的数据分析维表。</p>
-<p>同时您可以定义维度主子关系，子维度的属性将合并至主维度使用，进一步保证维度的一致性和便捷使用性。</p>
-<p>建模方式及原则：</p>
-<ol>
-<li>尽可能生成丰富的维度属性。</li>
-<li>尽可能多的给出包含一些富有意义的文字性描述。</li>
-<li>区分数值型属性和事实。</li>
-<li>尽量沉淀出通用的维度属性。</li>
-</ol>
-<h2 id="数据建模"><a href="#数据建模" class="headerlink" title="数据建模"></a>数据建模</h2><ol>
-<li>所有表中的数据都为原子数据，不可再分</li>
-<li>所有表中的所有字段都必须依赖主关键字</li>
-<li>所有表中的非主关键词之间不能函数依赖关系</li>
-</ol>
-<h3 id="第一范式（1NF）"><a href="#第一范式（1NF）" class="headerlink" title="第一范式（1NF）"></a>第一范式（1NF）</h3><p>在关系模式R中的每一个具体关系r中，必须要有主键,并且每个属性值 都是不可再分的最小数据单位，则称R是第一范式的关系。</p>
-<h3 id="第二范式（2NF）"><a href="#第二范式（2NF）" class="headerlink" title="第二范式（2NF）"></a>第二范式（2NF）</h3><p>如果关系模式R中的所有非主属性都完全依赖于主关键字，则称关系R 是属于第二范式的。 </p>
-<h3 id="第三范式（3NF）"><a href="#第三范式（3NF）" class="headerlink" title="第三范式（3NF）"></a>第三范式（3NF）</h3><p>关系模式R中的非主关键字不能依赖于其他非主关键字。即非主关键字之间不能有函数（传递）依赖关系。则称关系R是属于第三范式的。</p>
-<h2 id="维度建模"><a href="#维度建模" class="headerlink" title="维度建模"></a>维度建模</h2><p>维度建模是一种将数据结构化的逻辑设计方法，它将客观世界划分为度量和上下文。</p>
-<p>度量是常常是以数值形式出现，事实周围有上下文包围着，这种上下文被直观地分成独立的逻辑块，称之为维度。</p>
-<p>实体-关系建模是面向应用，遵循第三范式，以消除数据冗余为目标的设计技术。</p>
-<p>维度建模是面向分析，为了提高查询性能可以增加数据冗余，反规范化的设计技术。</p>
-<p>用于度量的事实表，事实表一般会有两个或者多个外健与维度表的主键进行关联。事实表的主键一般是组合健，表达多对多的关系。</p>
-<p>用于描述环境的维度表，单一主键，维度表的属性是所有查询约束和报表标示的来源。维度提供数据的入口点，提供所有DW/BI分析的最终标识和分组。</p>
-<p>所以维度建模表示每个业务过程包含的事实表，事实表里面存储事件的数值化度量，围绕事实表的是多个维度表，维度表包含事件发生的实际存在的文本环境。</p>
-<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
-<li>便于理解</li>
-<li>提高查询性能</li>
-<li>对称性</li>
-<li>可扩展性</li>
-</ol>
-<h3 id="事实表"><a href="#事实表" class="headerlink" title="事实表"></a>事实表</h3><p>事实表存储了从业务活动或事件提炼出来的性能度量，它主要包含维度表的外键和连续变化的可加性数值或半可加事实。事实表产生于业务过程中而不是业务过程的描述性信息。它一般是行多列少，占了数据仓库的90%的空间。在维度模型中也有表示多对多关系的事实，其他都是维度表。 </p>
-<h3 id="事务事实表"><a href="#事务事实表" class="headerlink" title="事务事实表"></a>事务事实表</h3><p> 它是面向事务的，其粒度是每一行对应一个事务，它是最细粒度的事实表。</p>
-<h3 id="周期快照事实表"><a href="#周期快照事实表" class="headerlink" title="周期快照事实表"></a>周期快照事实表</h3><p>它是按照良好的时间周期间隔(每天，每月)来捕捉业务活动的执行情况，一旦装入事实表就不会再去更新，它是事务事实表的补充，而非替代品。</p>
-<h3 id="累积快照事实表"><a href="#累积快照事实表" class="headerlink" title="累积快照事实表"></a>累积快照事实表</h3><p>它用于描述业务过程中某个不确定时间跨度里的活动，它随着业务活动的发生会不断的更新。</p>
-<h3 id="维度表"><a href="#维度表" class="headerlink" title="维度表"></a>维度表</h3><p>维度表是对业务过程的上下文描述，主要包含代理键、文本信息和离散的数字。</p>
-<p>它是进入事实表的入口，丰富的维度属性给出了对事实表的分析切割能力，它一般是行少列多。</p>
-<p>如果属性值是离散的，用于过滤和标记的，就放到维度表里，如果是属性值是连续取值，用于计算的，就放到事实表中。</p>
-<h3 id="星型模型"><a href="#星型模型" class="headerlink" title="星型模型"></a>星型模型</h3><p>一种多维的数据关系，它由一个事实表（Fact Table）和一组维表（Dimension  Table）组成。</p>
-<p>每个维表都有一个维作为主键，所有这些维的主键组合成事实表的主键。</p>
-<p>事实表的非主键属性称为事实（Fact），它们一般都是数值或其他可以进行计算的数据。</p>
-<h3 id="雪花模型"><a href="#雪花模型" class="headerlink" title="雪花模型"></a>雪花模型</h3><p>当有一个或多个维表没有直接连接到事实表上，而是通过其他维表连接到事实表上时，其图解就像多个雪花连接在一起，故称雪花模型。</p>
-<p>雪花模型是对星型模型的扩展。它对星型模型的维表进一步层次化，原有的各维表可能被扩展为小的事实表，形成一些局部的 “层次 “ 区域，这些被分解的表都连接到主维度表而不是事实表。</p>
-<p>通过最大限度地减少数据存储量以及联合较小的维表来改善查询性能。雪花型结构去除了数据冗余。</p>
-<h3 id="星型模型VS雪花模型"><a href="#星型模型VS雪花模型" class="headerlink" title="星型模型VS雪花模型"></a>星型模型VS雪花模型</h3><h4 id="查询性能"><a href="#查询性能" class="headerlink" title="查询性能"></a>查询性能</h4><p>OLTP-DW环节，由于雪花型要做多个表联接，性能会低于星型架构；</p>
-<p>DW-OLAP环节，由于雪花型架构更有利于度量值的聚合，因此性能要高于星型架构。</p>
-<h4 id="模型复杂度"><a href="#模型复杂度" class="headerlink" title="模型复杂度"></a>模型复杂度</h4><p>星型架构更简单方便处理。</p>
-<h4 id="层次结构"><a href="#层次结构" class="headerlink" title="层次结构"></a>层次结构</h4><p>雪花型架构更加贴近OLTP系统的结构，比较符合业务逻辑，层次比较清晰。</p>
-<h4 id="存储角度"><a href="#存储角度" class="headerlink" title="存储角度"></a>存储角度</h4><p>雪花型架构具有关系数据模型的所有优点，不会产生冗余数据。</p>
-<p>星型架构会产生数据冗余。</p>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>一般建议使用星型模型。因为在实际项目中，往往最关注的是查询性能问题，至于磁盘空间一般都不是问题。</p>
-<p>在维度表数据量极大，需要节省存储空间的情况下，或者是业务逻辑比较复杂、必须要体现清晰的层次概念情况下，可以使用雪花型模型。</p>
-<h2 id="宽表"><a href="#宽表" class="headerlink" title="宽表"></a>宽表</h2><p>宽表从字面意义上讲就是字段比较多的数据库表。通常是指业务主题相关的指标、维度、属性关联在一起的一张数据库表。</p>
-<p>由于把不同的内容都放在同一张表存储，宽表已经不符合三范式的模型设计规范，随之带来的主要坏处就是数据的大量冗余，与之相对应的好处就是查询性能的提高与便捷。</p>
-<p>这种宽表的设计广泛应用于数据挖掘模型训练前的数据准备，通过把相关字段放在同一张表中，可以大大提高数据挖掘模型训练过程中迭代计算时的效率问题。</p>
-<h2 id="数据一致性"><a href="#数据一致性" class="headerlink" title="数据一致性"></a>数据一致性</h2><h3 id="CAP理论"><a href="#CAP理论" class="headerlink" title="CAP理论"></a>CAP理论</h3><p>Consistency，Availability和Partition Tolerance，理论认为数据一致性（C）、系统可用性（A）和网络分区容忍性（P），在系统中的任何时刻三个性质中只能同时保证两个性质成立，而网络常常又是不可靠的。</p>
-<h3 id="数据一致性模型"><a href="#数据一致性模型" class="headerlink" title="数据一致性模型"></a>数据一致性模型</h3><p>一些分布式系统通过复制数据来提高系统的可靠性和容错性，并且将数据的不同的副本存放在不同的机器。</p>
-<p>由于维护数据副本的一致性代价高，因此许多系统采用弱一致性来提高性能。</p>
-<p>强一致性： 要求无论更新操作实在哪一个副本执行，之后所有的读操作都要能获得最新的数据。</p>
-<p>弱一致性：用户读到某一操作对系统特定数据的更新需要一段时间，我们称这段时间为“不一致性窗口”。</p>
-<p>最终一致性：是弱一致性的一种特例，保证用户最终能够读取到某操作对系统特定数据的更新。</p>
-<h2 id="元数据管理"><a href="#元数据管理" class="headerlink" title="元数据管理"></a>元数据管理</h2><h2 id="数据质量的评估"><a href="#数据质量的评估" class="headerlink" title="数据质量的评估"></a>数据质量的评估</h2>]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>Big Data</category>
-      </categories>
-      <tags>
-        <tag>Internship Experience</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Spring Boot</title>
     <url>/post/a541262a.html</url>
     <content><![CDATA[<h2 id="IoC（控制反转）"><a href="#IoC（控制反转）" class="headerlink" title="IoC（控制反转）"></a>IoC（控制反转）</h2><p>调用类中的方法不是通过new它的对象来实现，而是通过Spring配置来创建对象，然后交给IOC容器来管理我们的对象，使用时去找IOC容器要，根本就不用去管我们需要的这个对象时怎么创建的、什么时候被销毁。</p>
@@ -1228,6 +1256,121 @@
         <category>Java</category>
         <category>Spring Boot</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Java</title>
+    <url>/post/df2849ec.html</url>
+    <content><![CDATA[<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。</p>
+<p>这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
+<p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
+<ul>
+<li>单例类只能有一个实例。</li>
+<li>单例类必须自己创建自己的唯一实例。</li>
+<li>单例类必须给所有其他对象提供这一实例。</li>
+</ul>
+<p>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
+<p>主要解决一个全局使用的类频繁地创建与销毁。</p>
+<span id="more"></span>
+
+<h3 id="饿汉模式"><a href="#饿汉模式" class="headerlink" title="饿汉模式"></a>饿汉模式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">newInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>类的构造函数定义为private，保证其他类不能实例化此类，然后提供了一个静态实例并返回给调用者。</p>
+<p>饿汉模式是最简单的一种实现方式，饿汉模式在类加载的时候就对实例进行创建，实例在整个程序周期都存在。</p>
+<p>它的好处是只在类加载的时候创建一次实例，不会存在多个线程创建多个实例的情况，避免了多线程同步的问题。</p>
+<p>它的缺点也很明显，即使这个单例没有用到也会被创建，而且在类加载之后就被创建，内存就被浪费了。</p>
+<p>这种实现方式适合单例占用内存比较小，在初始化时就会被用到的情况。但是，如果单例占用的内存比较大，或单例只是在某个特定场景下才会用到，使用饿汉模式就不合适了，这时候就需要用到懒汉模式进行延迟加载。</p>
+<h3 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">newInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == instance)&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>懒汉模式中单例是在需要的时候才去创建的，如果单例已经创建，再次调用获取接口将不会重新创建新的对象，而是直接返回之前创建的对象。</p>
+<p>如果某个单例使用的次数少，并且创建单例消耗的资源较多，那么就需要实现单例的按需创建，这个时候使用懒汉模式就是一个不错的选择。</p>
+<p>但是这里的懒汉模式并没有考虑线程安全问题，在多个线程可能会并发调用它的getInstance()方法，导致创建多个实例，因此需要加锁解决线程同步问题，但加锁会影响效率。</p>
+<h3 id="双重校验锁"><a href="#双重校验锁" class="headerlink" title="双重校验锁"></a>双重校验锁</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;</span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到在同步代码块外多了一层instance为空的判断。由于单例对象只需要创建一次，如果后面再次调用getInstance()只需要直接返回单例对象。因此，大部分情况下，调用getInstance()都不会执行到同步代码块，从而提高了程序性能。</p>
+<p>不过还需要考虑一种情况，假如两个线程A、B，A执行了if (instance == null)语句，它会认为单例对象没有创建，此时线程切到B也执行了同样的语句，B也认为单例对象没有创建，然后两个线程依次执行同步代码块，并分别创建了一个单例对象。为了解决这个问题，还需要在同步代码块中增加if (instance == null)语句。</p>
+<p>这里要提到Java中的指令重排优化。所谓指令重排优化是指在不改变原语义的情况下，通过调整指令的执行顺序让程序运行的更快。JVM中并没有规定编译器优化相关的内容，也就是说JVM可以自由的进行指令重排序的优化。</p>
+<p>这个问题的关键就在于由于指令重排优化的存在，导致初始化Singleton和将对象地址赋给instance字段的顺序是不确定的。在某个线程创建单例对象时，在构造方法被调用之前，就为该对象分配了内存空间并将对象的字段设置为默认值。此时就可以将分配的内存地址赋值给instance字段了，然而该对象可能还没有初始化，若紧接着另外一个线程来调用getInstance，取到的就是状态不正确的对象，程序就会出错。</p>
+<p>在JDK1.5及之后版本增加了volatile关键字volatile的一个语义是禁止指令重排序优化，也就保证了instance变量被赋值的时候对象已经是初始化过的，从而避免改该问题。</p>
+<h3 id="登记式-静态内部类"><a href="#登记式-静态内部类" class="headerlink" title="登记式/静态内部类"></a>登记式/静态内部类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonHolder</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span> <span class="params">()</span></span>&#123;&#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">return</span> SingletonHolder.INSTANCE;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这种方式能达到双检锁方式一样的功效，但实现更简单。对静态域使用延迟初始化，应使用这种方式而不是双检锁方式。这种方式只适用于静态域的情况，双检锁方式可在实例域需要延迟初始化时使用。</p>
+<p>这种方式是  Singleton 类被装载了，instance 不一定被初始化，利用了类加载机制来保证只创建一个instance实例。它与饿汉模式一样，也是利用了类加载机制，因此不存在多线程并发的问题。不一样的是，它是在内部类里面去创建对象实例。这样的话，只要应用中不使用内部类，JVM就不会去加载这个单例类，也就不会创建单例对象，从而实现懒汉式的延迟加载。也就是说这种方式可以同时保证延迟加载和线程安全。</p>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">	instance;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">whateverMethod</span><span class="params">()</span></span>&#123;&#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而枚举类很好的解决了两个问题：不需要额外的工作来实现序列化，否则每次反序列化一个序列化的对象时都会创建一个新的实例；其次可以使用反射强行调用私有构造器（如果要避免这种情况，可以修改构造器，让它在创建第二个实例的时候抛异常）。</p>
+<p>使用枚举除了线程安全和防止反射调用构造器之外，还提供了自动序列化机制，防止反序列化的时候创建新的对象。</p>
+<p>枚举方式虽然很完美的解决了各种问题，但是这种写法多少让人感觉有些生疏。</p>
+<h2 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h2><p>当一个共享变量被volatile修饰时，它会保证修改的值会立即被更新到主存，当有其他线程需要读取时，它会去内存中读取新值。</p>
+<ol>
+<li>保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。</li>
+<li>禁止进行指令重排序。</li>
+<li>不保证原子性</li>
+</ol>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/337690-20200705145239881-919047261.png" alt="img"></p>
+<p>Java栈：其分配是和线程绑定在一起的，当我们创建一个线程时，JVM会为这个线程创建一个新的Java栈，一个线程的方法的调用和返回对应于这个Java栈的压栈和出栈。当线程激活一个Java方法时，JVM就会在线程的Java堆栈里新压入一个帧，这个帧自然成了当前帧。在此方法执行期间，这个帧用来保存参数、局部变量、中间计算过程和其他数据。栈中主要存放一些基本的数据类型和对象句柄（引用）。存取速度比堆快，仅次于寄存器，栈数据可以共享。静态分配内存，编译时确定生存期大小。</p>
+<p>Java堆：每一个Java应用都唯一对应一个JVM实例，每一个实例唯一对应一个堆。应用程序在运行中所创建的所有类实例或数组都放在这个堆中，并由应用程序所有的线程共享。Java中分配堆内存是自动初始化，所有对象的存储空间都是在堆中分配的，但是这个对象的引用在堆栈中分配。可动态分配内存大小、运行时分配内存。</p>
+<p>创建一个对象时，堆中分配的内存实际建立这个对象，而在堆栈中分配的内存只是指向这个堆对象的指针（引用）而已。</p>
+<h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>在java中，程序员是不需要显示的去释放一个对象的内存的，而是由虚拟机自行执行。在JVM中，有一个垃圾回收线程，它是低优先级的，在正常情况下是不会执行的，只有在虚拟机空闲或者当前堆内存不足时，才会触发执行，扫描那些没有被任何引用的对象，并将它们添加到要回收的集合中，进行回收。</p>
+<p>GC 垃圾收集（Gabage Collection），当程序员创建对象时，GC就开始监控这个对象的地址、大小以及使用情况。通常，GC采用有向图的方式记录和管理堆(heap)中的所有对象。通过这种方式确定哪些对象是”可达的”，哪些对象是”不可达的”。当GC确定一些对象为”不可达”时，GC就有责任回收这些内存空间。</p>
+<h2 id="判断回收"><a href="#判断回收" class="headerlink" title="判断回收"></a>判断回收</h2><p><strong>引用计数器法</strong>：为每个对象创建一个引用计数，有对象引用时计数器 +1，引用被释放时计数 -1，当计数器为 0 时就可以被回收。但是他有一个缺点是不能解决循环引用的问题。</p>
+<p><strong>可达性分析算法</strong>：从 GC Roots 开始向下搜索，搜索所走过的路径称为引用链。当一个对象到 GC Roots 没有任何引用链相连时，则证明此对象是可以被回收的。</p>
+<h2 id="回收算法"><a href="#回收算法" class="headerlink" title="回收算法"></a>回收算法</h2><p>1.标记-清除算法：标记无用对象，然后进行清除回收。</p>
+<p>缺点：效率不高，无法清除垃圾碎片。</p>
+<p>该算法分为两个阶段，标记和清除。标记阶段标记所有需要回收的对象，清除阶段回收被标记的对象所占用的空间。该算法最大的问题就是内存碎片严重化，后续可能发生对象不能找到利用空间的问题。</p>
+<p>2.复制算法：按照容量划分二个大小相等的内存区域，当一块用完的时候将活着的对象复制到另一块上，然后再把已使用的内存空间一次清理掉。缺点：内存使用率不高，只有原来的一半。</p>
+<p>按内存容量将内存划分为等大小的两块。每次只使用其中一块，当这一块内存满后将尚存活的对象复制到另一块上去，把已使用的内存清掉。</p>
+<p>3.标记-整理算法：标记无用对象，让所有存活的对象都向一端移动，然后直接清除掉端边界以外的内存。</p>
+<p>标记后不是清理对象，而是将存活对象移向内存的一端。然后清除端边界外的对象。</p>
+<p>4.分代算法：根据对象存活周期的不同将内存划分为几块，一般是新生代和老年代，新生代基本采用复制算法，老年代采用标记整理算法。</p>
+<p>当前商业虚拟机都采用分代收集的垃圾收集算法。分代收集算法，顾名思义是根据对象的存活周期将内存划分为几块。一般包括年轻代、老年代 和 永久代。</p>
+<h3 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h3><p>Java 堆内存被划分为新生代和年老代两部分，</p>
+<p>新生代主要使用复制和标记-清除垃圾回收算法；</p>
+<p>年老代主要使用标记-整理垃圾回收算法。</p>
+<p>。。。</p>
+<h2 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h2><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW9jdWl0,size_16,color_FFFFFF,t_70.jpeg" alt="img"></p>
+<p>类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。</p>
+<h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><p>简单来说，加载指的是把class字节码文件从各个来源通过类加载器装载入内存中。</p>
+<p>这里有两个重点：</p>
+<p>字节码来源。一般的加载来源包括从本地路径下编译生成的.class文件，从jar包中的.class文件，从远程网络，以及动态代理实时编译</p>
+<p>类加载器。一般包括启动类加载器，扩展类加载器，应用类加载器，以及用户的自定义类加载器。</p>
+<p>注：为什么会有自定义类加载器？</p>
+<p>一方面是由于java代码很容易被反编译，如果需要对自己的代码加密的话，可以对编译后的代码进行加密，然后再通过实现自己的自定义类加载器进行解密，最后再加载。</p>
+<p>另一方面也有可能从非标准的来源加载代码，比如从网络来源，那就需要自己实现一个类加载器，从指定源进行加载。</p>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>主要是为了保证加载进来的字节流符合虚拟机规范，不会造成安全错误。</p>
+<p>包括对于文件格式的验证，比如常量中是否有不被支持的常量？文件中是否有不规范的或者附加的其他信息？</p>
+<p>对于元数据的验证，比如该类是否继承了被final修饰的类？类中的字段，方法是否与父类冲突？是否出现了不合理的重载？</p>
+<p>对于字节码的验证，保证程序语义的合理性，比如要保证类型转换的合理性。</p>
+<p>对于符号引用的验证，比如校验符号引用中通过全限定名是否能够找到对应的类？校验符号引用中的访问性（private，public等）是否可被当前类访问？</p>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>主要是为类变量（注意，不是实例变量）分配内存，并且赋予初值。</p>
+<p>特别需要注意，初值，不是代码中具体写的初始化的值，而是Java虚拟机根据不同变量类型的默认初始值。</p>
+<p>比如8种基本类型的初值，默认为0；引用类型的初值则为null；常量的初值即为代码中设置的值，final static tmp = 456， 那么该阶段tmp的初值就是456</p>
+<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>将常量池内的符号引用替换为直接引用的过程。</p>
+<p>两个重点：</p>
+<p>符号引用。即一个字符串，但是这个字符串给出了一些能够唯一性识别一个方法，一个变量，一个类的相关信息。</p>
+<p>直接引用。可以理解为一个内存地址，或者一个偏移量。比如类方法，类变量的直接引用是指向方法区的指针；而实例方法，实例变量的直接引用则是从实例的头指针开始算起到这个实例变量位置的偏移量</p>
+<p>举个例子来说，现在调用方法hello()，这个方法的地址是1234567，那么hello就是符号引用，1234567就是直接引用。</p>
+<p>在解析阶段，虚拟机会把所有的类名，方法名，字段名这些符号引用替换为具体的内存地址或偏移量，也就是直接引用。</p>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>这个阶段主要是对类变量初始化，是执行类构造器的过程。</p>
+<p>换句话说，只对static修饰的变量或语句进行初始化。</p>
+<p>如果初始化一个类的时候，其父类尚未初始化，则优先初始化其父类。</p>
+<p>如果同时包含多个静态变量和静态代码块，则按照自上而下的顺序依次执行。</p>
+<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><ol>
+<li>当我们调用 shutdown 等方法关闭线程池后，如果再向线程池内提交任务，就会遭到拒绝。</li>
+<li>线程池没有空闲线程（线程池的线程达到了最大线程数，并且都在执行任务）并且队列已经满了，不能在存放任务了。</li>
+</ol>
+<h3 id="AbortPolicy"><a href="#AbortPolicy" class="headerlink" title="AbortPolicy"></a>AbortPolicy</h3><p>这种拒绝策略在拒绝任务时，会直接抛出一个类型为 RejectedExecutionException 的 RuntimeException，让你感知到任务被拒绝了，于是你便可以根据业务逻辑选择重试或者放弃提交等策略。</p>
+<h3 id="DiscardPolicy"><a href="#DiscardPolicy" class="headerlink" title="DiscardPolicy"></a>DiscardPolicy</h3><p>当有新任务被提交后直接被丢弃掉，也不会给你任何的通知，相对而言存在一定的风险，因为我们提交的时候根本不知道这个任务会被丢弃，可能造成数据丢失。</p>
+<h3 id="DiscardOldestPolicy"><a href="#DiscardOldestPolicy" class="headerlink" title="DiscardOldestPolicy"></a>DiscardOldestPolicy</h3><p>丢弃任务队列中的头结点，通常是存活时间最长的任务，它也存在一定的数据丢失风险。</p>
+<h3 id="CallerRunsPolicy"><a href="#CallerRunsPolicy" class="headerlink" title="CallerRunsPolicy"></a>CallerRunsPolicy</h3><p>第四种拒绝策略是 ，相对而言它就比较完善了，当有新任务提交后，如果线程池没被关闭且没有能力执行，则把这个任务交于提交任务的线程执行，也就是谁提交任务，谁就负责执行任务。这样做主要有两点好处。</p>
+<p>第一点新提交的任务不会被丢弃，这样也就不会造成业务损失。 第二点好处是，由于谁提交任务谁就要负责执行任务，这样提交任务的线程就得负责执行任务，而执行任务又是比较耗时的，在这段期间，提交任务的线程被占用，也就不会再提交新的任务，减缓了任务提交的速度，相当于是一个负反馈。在此期间，线程池中的线程也可以充分利用这段时间来执行掉一部分任务，腾出一定的空间，相当于是给了线程池一定的缓冲期。</p>
+<h2 id="Hash-Map-Hash-Table"><a href="#Hash-Map-Hash-Table" class="headerlink" title="Hash Map/Hash Table"></a>Hash Map/Hash Table</h2><h2 id="构造器，构造代码块，静态代码块的执行顺序"><a href="#构造器，构造代码块，静态代码块的执行顺序" class="headerlink" title="构造器，构造代码块，静态代码块的执行顺序"></a>构造器，构造代码块，静态代码块的执行顺序</h2><h2 id="string，stringbuilder和stringbuffer的区别"><a href="#string，stringbuilder和stringbuffer的区别" class="headerlink" title="string，stringbuilder和stringbuffer的区别"></a>string，stringbuilder和stringbuffer的区别</h2>]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Internship Experience</tag>
+      </tags>
   </entry>
   <entry>
     <title>Java Source Code</title>
@@ -1696,120 +1839,5 @@
         <category>Java</category>
         <category>Source Code</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Java</title>
-    <url>/post/df2849ec.html</url>
-    <content><![CDATA[<h2 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h2><p>单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。</p>
-<p>这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。</p>
-<p>这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
-<ul>
-<li>单例类只能有一个实例。</li>
-<li>单例类必须自己创建自己的唯一实例。</li>
-<li>单例类必须给所有其他对象提供这一实例。</li>
-</ul>
-<p>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
-<p>主要解决一个全局使用的类频繁地创建与销毁。</p>
-<span id="more"></span>
-
-<h3 id="饿汉模式"><a href="#饿汉模式" class="headerlink" title="饿汉模式"></a>饿汉模式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">newInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>类的构造函数定义为private，保证其他类不能实例化此类，然后提供了一个静态实例并返回给调用者。</p>
-<p>饿汉模式是最简单的一种实现方式，饿汉模式在类加载的时候就对实例进行创建，实例在整个程序周期都存在。</p>
-<p>它的好处是只在类加载的时候创建一次实例，不会存在多个线程创建多个实例的情况，避免了多线程同步的问题。</p>
-<p>它的缺点也很明显，即使这个单例没有用到也会被创建，而且在类加载之后就被创建，内存就被浪费了。</p>
-<p>这种实现方式适合单例占用内存比较小，在初始化时就会被用到的情况。但是，如果单例占用的内存比较大，或单例只是在某个特定场景下才会用到，使用饿汉模式就不合适了，这时候就需要用到懒汉模式进行延迟加载。</p>
-<h3 id="懒汉模式"><a href="#懒汉模式" class="headerlink" title="懒汉模式"></a>懒汉模式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">newInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">null</span> == instance)&#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>懒汉模式中单例是在需要的时候才去创建的，如果单例已经创建，再次调用获取接口将不会重新创建新的对象，而是直接返回之前创建的对象。</p>
-<p>如果某个单例使用的次数少，并且创建单例消耗的资源较多，那么就需要实现单例的按需创建，这个时候使用懒汉模式就是一个不错的选择。</p>
-<p>但是这里的懒汉模式并没有考虑线程安全问题，在多个线程可能会并发调用它的getInstance()方法，导致创建多个实例，因此需要加锁解决线程同步问题，但加锁会影响效率。</p>
-<h3 id="双重校验锁"><a href="#双重校验锁" class="headerlink" title="双重校验锁"></a>双重校验锁</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;</span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>可以看到在同步代码块外多了一层instance为空的判断。由于单例对象只需要创建一次，如果后面再次调用getInstance()只需要直接返回单例对象。因此，大部分情况下，调用getInstance()都不会执行到同步代码块，从而提高了程序性能。</p>
-<p>不过还需要考虑一种情况，假如两个线程A、B，A执行了if (instance == null)语句，它会认为单例对象没有创建，此时线程切到B也执行了同样的语句，B也认为单例对象没有创建，然后两个线程依次执行同步代码块，并分别创建了一个单例对象。为了解决这个问题，还需要在同步代码块中增加if (instance == null)语句。</p>
-<p>这里要提到Java中的指令重排优化。所谓指令重排优化是指在不改变原语义的情况下，通过调整指令的执行顺序让程序运行的更快。JVM中并没有规定编译器优化相关的内容，也就是说JVM可以自由的进行指令重排序的优化。</p>
-<p>这个问题的关键就在于由于指令重排优化的存在，导致初始化Singleton和将对象地址赋给instance字段的顺序是不确定的。在某个线程创建单例对象时，在构造方法被调用之前，就为该对象分配了内存空间并将对象的字段设置为默认值。此时就可以将分配的内存地址赋值给instance字段了，然而该对象可能还没有初始化，若紧接着另外一个线程来调用getInstance，取到的就是状态不正确的对象，程序就会出错。</p>
-<p>在JDK1.5及之后版本增加了volatile关键字volatile的一个语义是禁止指令重排序优化，也就保证了instance变量被赋值的时候对象已经是初始化过的，从而避免改该问题。</p>
-<h3 id="登记式-静态内部类"><a href="#登记式-静态内部类" class="headerlink" title="登记式/静态内部类"></a>登记式/静态内部类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonHolder</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span> <span class="params">()</span></span>&#123;&#125;  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">return</span> SingletonHolder.INSTANCE;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这种方式能达到双检锁方式一样的功效，但实现更简单。对静态域使用延迟初始化，应使用这种方式而不是双检锁方式。这种方式只适用于静态域的情况，双检锁方式可在实例域需要延迟初始化时使用。</p>
-<p>这种方式是  Singleton 类被装载了，instance 不一定被初始化，利用了类加载机制来保证只创建一个instance实例。它与饿汉模式一样，也是利用了类加载机制，因此不存在多线程并发的问题。不一样的是，它是在内部类里面去创建对象实例。这样的话，只要应用中不使用内部类，JVM就不会去加载这个单例类，也就不会创建单例对象，从而实现懒汉式的延迟加载。也就是说这种方式可以同时保证延迟加载和线程安全。</p>
-<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">Singleton</span></span>&#123;</span><br><span class="line">	instance;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">whateverMethod</span><span class="params">()</span></span>&#123;&#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>而枚举类很好的解决了两个问题：不需要额外的工作来实现序列化，否则每次反序列化一个序列化的对象时都会创建一个新的实例；其次可以使用反射强行调用私有构造器（如果要避免这种情况，可以修改构造器，让它在创建第二个实例的时候抛异常）。</p>
-<p>使用枚举除了线程安全和防止反射调用构造器之外，还提供了自动序列化机制，防止反序列化的时候创建新的对象。</p>
-<p>枚举方式虽然很完美的解决了各种问题，但是这种写法多少让人感觉有些生疏。</p>
-<h2 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h2><p>当一个共享变量被volatile修饰时，它会保证修改的值会立即被更新到主存，当有其他线程需要读取时，它会去内存中读取新值。</p>
-<ol>
-<li>保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。</li>
-<li>禁止进行指令重排序。</li>
-<li>不保证原子性</li>
-</ol>
-<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/337690-20200705145239881-919047261.png" alt="img"></p>
-<p>Java栈：其分配是和线程绑定在一起的，当我们创建一个线程时，JVM会为这个线程创建一个新的Java栈，一个线程的方法的调用和返回对应于这个Java栈的压栈和出栈。当线程激活一个Java方法时，JVM就会在线程的Java堆栈里新压入一个帧，这个帧自然成了当前帧。在此方法执行期间，这个帧用来保存参数、局部变量、中间计算过程和其他数据。栈中主要存放一些基本的数据类型和对象句柄（引用）。存取速度比堆快，仅次于寄存器，栈数据可以共享。静态分配内存，编译时确定生存期大小。</p>
-<p>Java堆：每一个Java应用都唯一对应一个JVM实例，每一个实例唯一对应一个堆。应用程序在运行中所创建的所有类实例或数组都放在这个堆中，并由应用程序所有的线程共享。Java中分配堆内存是自动初始化，所有对象的存储空间都是在堆中分配的，但是这个对象的引用在堆栈中分配。可动态分配内存大小、运行时分配内存。</p>
-<p>创建一个对象时，堆中分配的内存实际建立这个对象，而在堆栈中分配的内存只是指向这个堆对象的指针（引用）而已。</p>
-<h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>在java中，程序员是不需要显示的去释放一个对象的内存的，而是由虚拟机自行执行。在JVM中，有一个垃圾回收线程，它是低优先级的，在正常情况下是不会执行的，只有在虚拟机空闲或者当前堆内存不足时，才会触发执行，扫描那些没有被任何引用的对象，并将它们添加到要回收的集合中，进行回收。</p>
-<p>GC 垃圾收集（Gabage Collection），当程序员创建对象时，GC就开始监控这个对象的地址、大小以及使用情况。通常，GC采用有向图的方式记录和管理堆(heap)中的所有对象。通过这种方式确定哪些对象是”可达的”，哪些对象是”不可达的”。当GC确定一些对象为”不可达”时，GC就有责任回收这些内存空间。</p>
-<h2 id="判断回收"><a href="#判断回收" class="headerlink" title="判断回收"></a>判断回收</h2><p><strong>引用计数器法</strong>：为每个对象创建一个引用计数，有对象引用时计数器 +1，引用被释放时计数 -1，当计数器为 0 时就可以被回收。但是他有一个缺点是不能解决循环引用的问题。</p>
-<p><strong>可达性分析算法</strong>：从 GC Roots 开始向下搜索，搜索所走过的路径称为引用链。当一个对象到 GC Roots 没有任何引用链相连时，则证明此对象是可以被回收的。</p>
-<h2 id="回收算法"><a href="#回收算法" class="headerlink" title="回收算法"></a>回收算法</h2><p>1.标记-清除算法：标记无用对象，然后进行清除回收。</p>
-<p>缺点：效率不高，无法清除垃圾碎片。</p>
-<p>该算法分为两个阶段，标记和清除。标记阶段标记所有需要回收的对象，清除阶段回收被标记的对象所占用的空间。该算法最大的问题就是内存碎片严重化，后续可能发生对象不能找到利用空间的问题。</p>
-<p>2.复制算法：按照容量划分二个大小相等的内存区域，当一块用完的时候将活着的对象复制到另一块上，然后再把已使用的内存空间一次清理掉。缺点：内存使用率不高，只有原来的一半。</p>
-<p>按内存容量将内存划分为等大小的两块。每次只使用其中一块，当这一块内存满后将尚存活的对象复制到另一块上去，把已使用的内存清掉。</p>
-<p>3.标记-整理算法：标记无用对象，让所有存活的对象都向一端移动，然后直接清除掉端边界以外的内存。</p>
-<p>标记后不是清理对象，而是将存活对象移向内存的一端。然后清除端边界外的对象。</p>
-<p>4.分代算法：根据对象存活周期的不同将内存划分为几块，一般是新生代和老年代，新生代基本采用复制算法，老年代采用标记整理算法。</p>
-<p>当前商业虚拟机都采用分代收集的垃圾收集算法。分代收集算法，顾名思义是根据对象的存活周期将内存划分为几块。一般包括年轻代、老年代 和 永久代。</p>
-<h3 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h3><p>Java 堆内存被划分为新生代和年老代两部分，</p>
-<p>新生代主要使用复制和标记-清除垃圾回收算法；</p>
-<p>年老代主要使用标记-整理垃圾回收算法。</p>
-<p>。。。</p>
-<h2 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h2><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW9jdWl0,size_16,color_FFFFFF,t_70.jpeg" alt="img"></p>
-<p>类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。</p>
-<h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><p>简单来说，加载指的是把class字节码文件从各个来源通过类加载器装载入内存中。</p>
-<p>这里有两个重点：</p>
-<p>字节码来源。一般的加载来源包括从本地路径下编译生成的.class文件，从jar包中的.class文件，从远程网络，以及动态代理实时编译</p>
-<p>类加载器。一般包括启动类加载器，扩展类加载器，应用类加载器，以及用户的自定义类加载器。</p>
-<p>注：为什么会有自定义类加载器？</p>
-<p>一方面是由于java代码很容易被反编译，如果需要对自己的代码加密的话，可以对编译后的代码进行加密，然后再通过实现自己的自定义类加载器进行解密，最后再加载。</p>
-<p>另一方面也有可能从非标准的来源加载代码，比如从网络来源，那就需要自己实现一个类加载器，从指定源进行加载。</p>
-<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>主要是为了保证加载进来的字节流符合虚拟机规范，不会造成安全错误。</p>
-<p>包括对于文件格式的验证，比如常量中是否有不被支持的常量？文件中是否有不规范的或者附加的其他信息？</p>
-<p>对于元数据的验证，比如该类是否继承了被final修饰的类？类中的字段，方法是否与父类冲突？是否出现了不合理的重载？</p>
-<p>对于字节码的验证，保证程序语义的合理性，比如要保证类型转换的合理性。</p>
-<p>对于符号引用的验证，比如校验符号引用中通过全限定名是否能够找到对应的类？校验符号引用中的访问性（private，public等）是否可被当前类访问？</p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>主要是为类变量（注意，不是实例变量）分配内存，并且赋予初值。</p>
-<p>特别需要注意，初值，不是代码中具体写的初始化的值，而是Java虚拟机根据不同变量类型的默认初始值。</p>
-<p>比如8种基本类型的初值，默认为0；引用类型的初值则为null；常量的初值即为代码中设置的值，final static tmp = 456， 那么该阶段tmp的初值就是456</p>
-<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>将常量池内的符号引用替换为直接引用的过程。</p>
-<p>两个重点：</p>
-<p>符号引用。即一个字符串，但是这个字符串给出了一些能够唯一性识别一个方法，一个变量，一个类的相关信息。</p>
-<p>直接引用。可以理解为一个内存地址，或者一个偏移量。比如类方法，类变量的直接引用是指向方法区的指针；而实例方法，实例变量的直接引用则是从实例的头指针开始算起到这个实例变量位置的偏移量</p>
-<p>举个例子来说，现在调用方法hello()，这个方法的地址是1234567，那么hello就是符号引用，1234567就是直接引用。</p>
-<p>在解析阶段，虚拟机会把所有的类名，方法名，字段名这些符号引用替换为具体的内存地址或偏移量，也就是直接引用。</p>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>这个阶段主要是对类变量初始化，是执行类构造器的过程。</p>
-<p>换句话说，只对static修饰的变量或语句进行初始化。</p>
-<p>如果初始化一个类的时候，其父类尚未初始化，则优先初始化其父类。</p>
-<p>如果同时包含多个静态变量和静态代码块，则按照自上而下的顺序依次执行。</p>
-<h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><ol>
-<li>当我们调用 shutdown 等方法关闭线程池后，如果再向线程池内提交任务，就会遭到拒绝。</li>
-<li>线程池没有空闲线程（线程池的线程达到了最大线程数，并且都在执行任务）并且队列已经满了，不能在存放任务了。</li>
-</ol>
-<h3 id="AbortPolicy"><a href="#AbortPolicy" class="headerlink" title="AbortPolicy"></a>AbortPolicy</h3><p>这种拒绝策略在拒绝任务时，会直接抛出一个类型为 RejectedExecutionException 的 RuntimeException，让你感知到任务被拒绝了，于是你便可以根据业务逻辑选择重试或者放弃提交等策略。</p>
-<h3 id="DiscardPolicy"><a href="#DiscardPolicy" class="headerlink" title="DiscardPolicy"></a>DiscardPolicy</h3><p>当有新任务被提交后直接被丢弃掉，也不会给你任何的通知，相对而言存在一定的风险，因为我们提交的时候根本不知道这个任务会被丢弃，可能造成数据丢失。</p>
-<h3 id="DiscardOldestPolicy"><a href="#DiscardOldestPolicy" class="headerlink" title="DiscardOldestPolicy"></a>DiscardOldestPolicy</h3><p>丢弃任务队列中的头结点，通常是存活时间最长的任务，它也存在一定的数据丢失风险。</p>
-<h3 id="CallerRunsPolicy"><a href="#CallerRunsPolicy" class="headerlink" title="CallerRunsPolicy"></a>CallerRunsPolicy</h3><p>第四种拒绝策略是 ，相对而言它就比较完善了，当有新任务提交后，如果线程池没被关闭且没有能力执行，则把这个任务交于提交任务的线程执行，也就是谁提交任务，谁就负责执行任务。这样做主要有两点好处。</p>
-<p>第一点新提交的任务不会被丢弃，这样也就不会造成业务损失。 第二点好处是，由于谁提交任务谁就要负责执行任务，这样提交任务的线程就得负责执行任务，而执行任务又是比较耗时的，在这段期间，提交任务的线程被占用，也就不会再提交新的任务，减缓了任务提交的速度，相当于是一个负反馈。在此期间，线程池中的线程也可以充分利用这段时间来执行掉一部分任务，腾出一定的空间，相当于是给了线程池一定的缓冲期。</p>
-<h2 id="Hash-Map-Hash-Table"><a href="#Hash-Map-Hash-Table" class="headerlink" title="Hash Map/Hash Table"></a>Hash Map/Hash Table</h2><h2 id="构造器，构造代码块，静态代码块的执行顺序"><a href="#构造器，构造代码块，静态代码块的执行顺序" class="headerlink" title="构造器，构造代码块，静态代码块的执行顺序"></a>构造器，构造代码块，静态代码块的执行顺序</h2><h2 id="string，stringbuilder和stringbuffer的区别"><a href="#string，stringbuilder和stringbuffer的区别" class="headerlink" title="string，stringbuilder和stringbuffer的区别"></a>string，stringbuilder和stringbuffer的区别</h2>]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Internship Experience</tag>
-      </tags>
   </entry>
 </search>
