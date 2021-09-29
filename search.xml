@@ -14,7 +14,7 @@
 <tbody><tr>
 <td align="left">学校：杭州电子科技大学</td>
 <td>手机：15988434188</td>
-<td>邮箱：<a href="mailto:&#x79;&#x75;&#120;&#x69;&#x61;&#111;&#104;&#x75;&#105;&#48;&#54;&#x32;&#x36;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x79;&#x75;&#120;&#x69;&#x61;&#111;&#104;&#x75;&#105;&#48;&#54;&#x32;&#x36;&#64;&#103;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></td>
+<td>邮箱：<a href="mailto:&#x79;&#117;&#x78;&#x69;&#x61;&#111;&#x68;&#117;&#x69;&#48;&#x36;&#x32;&#54;&#x40;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#x79;&#117;&#x78;&#x69;&#x61;&#111;&#x68;&#117;&#x69;&#48;&#x36;&#x32;&#54;&#x40;&#x67;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;</a></td>
 </tr>
 <tr>
 <td align="left">QQ：3033731494</td>
@@ -306,7 +306,7 @@
     <url>/post/676dd596.html</url>
     <content><![CDATA[<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
 <li><strong>手机：</strong>15988434188 </li>
-<li><strong>邮箱：</strong><a href="mailto:&#x79;&#117;&#120;&#x69;&#x61;&#x6f;&#x68;&#x75;&#x69;&#48;&#54;&#50;&#x36;&#x40;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#117;&#120;&#x69;&#x61;&#x6f;&#x68;&#x75;&#x69;&#48;&#54;&#50;&#x36;&#x40;&#x67;&#109;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#x6d;</a></li>
+<li><strong>邮箱：</strong><a href="mailto:&#x79;&#117;&#x78;&#x69;&#97;&#x6f;&#104;&#x75;&#105;&#x30;&#x36;&#50;&#x36;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x79;&#117;&#x78;&#x69;&#97;&#x6f;&#104;&#x75;&#105;&#x30;&#x36;&#50;&#x36;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a></li>
 <li><strong>QQ：</strong>3033731494 </li>
 <li><strong>WeChat：</strong>ChrisGray0626</li>
 </ul>
@@ -1060,6 +1060,96 @@
       </tags>
   </entry>
   <entry>
+    <title>超级洗衣机</title>
+    <url>/post/3132132e.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>贪心</li>
+<li>计算经过当前洗衣机左右两侧洗衣机需要调整次数的最大“流量”</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h3><ul>
+<li>最大需要调整次数的位置i达到平衡时，其他需要调整的位置一定也达到平衡</li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> num: machines) &#123;</span><br><span class="line">    num -= avg; <span class="comment">// i位置需要调整的次数</span></span><br><span class="line">    sum += num; <span class="comment">// 位置0到i需要调整的总次数</span></span><br><span class="line"></span><br><span class="line">    res = Math.max(res, Math.max(Math.abs(sum), num));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Math.abs(sum)</code>，可能为负数，缺少时需要增加的情况，故为绝对值</li>
+<li><code>num</code>，可能为负数，但缺少时可以是多个位置同时向此位置增加，故不能加绝对值；仅需要考虑该值特别大时的情况（num&gt;sum）</li>
+</ul>
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/super-washing-machines/">517. 超级洗衣机 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Greedy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两整数之和</title>
+    <url>/post/abe383d1.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>位运算</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="亦或运算"><a href="#亦或运算" class="headerlink" title="亦或运算"></a>亦或运算</h3><ul>
+<li>计算当前位的无进位加法结果</li>
+<li><code>a ^ b</code></li>
+</ul>
+<h3 id="与运算"><a href="#与运算" class="headerlink" title="与运算"></a>与运算</h3><ul>
+<li>计算来自前一位的进位结果</li>
+<li><code>(a &amp; b) &lt;&lt; 1</code></li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><p>两者亦或运算即为加法结果</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getSum(a ^ b, (a &amp; b) &lt;&lt; <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/sum-of-two-integers/">371. 两整数之和 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Bit Operation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>路径总和 III</title>
+    <url>/post/41308982.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>深度优先搜索</li>
+<li>前缀和</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h3><ul>
+<li>穷举所有节点，统计以当前节点为起始节点的符合要求的路径数量</li>
+<li>分别统计左右节点情况，返回数量</li>
+</ul>
+<h3 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h3><ul>
+<li>前缀和：由根节点到当前节点的路径上所有节点的和</li>
+<li>先序遍历，记录下根节点到当前节点的路径上除当前节点以外所有节点的前缀和</li>
+<li>统计在已保存的路径前缀和中是否存在当前节点到根节点的前缀和减去节点pi到根结点的前缀和为targetSum的路径</li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="深度优先搜索-1"><a href="#深度优先搜索-1" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 计算当前节点</span></span><br><span class="line">dfs(root, targetSum);</span><br><span class="line"><span class="comment">// 穷举左右节点</span></span><br><span class="line">pathSum(root.left, targetSum);</span><br><span class="line">pathSum(root.right, targetSum);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TreeNode root, <span class="keyword">int</span> targetSum)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> val = root.val;</span><br><span class="line">  <span class="keyword">if</span> (val == targetSum) &#123;</span><br><span class="line">    sum++;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 统计左右节点</span></span><br><span class="line">  dfs(root.left, targetSum - val);</span><br><span class="line">  dfs(root.right, targetSum - val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="前缀和-1"><a href="#前缀和-1" class="headerlink" title="前缀和"></a>前缀和</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TreeNode root, <span class="keyword">int</span> cur, <span class="keyword">int</span> targetSum)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算前缀和</span></span><br><span class="line">    cur += root.val;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 统计符合的前缀和</span></span><br><span class="line">    sum += prefix.getOrDefault(cur - targetSum, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 记录当前节点的前缀和</span></span><br><span class="line">    prefix.put(cur, prefix.getOrDefault(cur, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    dfs(root.left, cur, targetSum);</span><br><span class="line">    dfs(root.right, cur, targetSum);</span><br><span class="line">    <span class="comment">// 回溯时移除当前节点前缀和</span></span><br><span class="line">    prefix.put(cur, prefix.getOrDefault(cur, <span class="number">0</span>) - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/path-sum-iii/">437. 路径总和 III - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>Prefix</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL</title>
     <url>/post/547eead8.html</url>
     <content><![CDATA[<h2 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h2><p>在数据库中，B+树的高度一般都在2-4层，B+树索引可以分为聚集索引（clustered index）和辅助索引（secondary index）。</p>
@@ -1144,96 +1234,6 @@
         <category>Tech</category>
         <category>MySQL</category>
       </categories>
-  </entry>
-  <entry>
-    <title>两整数之和</title>
-    <url>/post/abe383d1.html</url>
-    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
-<li>位运算</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="亦或运算"><a href="#亦或运算" class="headerlink" title="亦或运算"></a>亦或运算</h3><ul>
-<li>计算当前位的无进位加法结果</li>
-<li><code>a ^ b</code></li>
-</ul>
-<h3 id="与运算"><a href="#与运算" class="headerlink" title="与运算"></a>与运算</h3><ul>
-<li>计算来自前一位的进位结果</li>
-<li><code>(a &amp; b) &lt;&lt; 1</code></li>
-</ul>
-<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><p>两者亦或运算即为加法结果</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getSum(a ^ b, (a &amp; b) &lt;&lt; <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/sum-of-two-integers/">371. 两整数之和 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Bit Operation</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>超级洗衣机</title>
-    <url>/post/3132132e.html</url>
-    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
-<li>贪心</li>
-<li>计算经过当前洗衣机左右两侧洗衣机需要调整次数的最大“流量”</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h3><ul>
-<li>最大需要调整次数的位置i达到平衡时，其他需要调整的位置一定也达到平衡</li>
-</ul>
-<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> num: machines) &#123;</span><br><span class="line">    num -= avg; <span class="comment">// i位置需要调整的次数</span></span><br><span class="line">    sum += num; <span class="comment">// 位置0到i需要调整的总次数</span></span><br><span class="line"></span><br><span class="line">    res = Math.max(res, Math.max(Math.abs(sum), num));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>Math.abs(sum)</code>，可能为负数，缺少时需要增加的情况，故为绝对值</li>
-<li><code>num</code>，可能为负数，但缺少时可以是多个位置同时向此位置增加，故不能加绝对值；仅需要考虑该值特别大时的情况（num&gt;sum）</li>
-</ul>
-<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/super-washing-machines/">517. 超级洗衣机 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Greedy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>路径总和 III</title>
-    <url>/post/41308982.html</url>
-    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
-<li>深度优先搜索</li>
-<li>前缀和</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h3><ul>
-<li>穷举所有节点，统计以当前节点为起始节点的符合要求的路径数量</li>
-<li>分别统计左右节点情况，返回数量</li>
-</ul>
-<h3 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h3><ul>
-<li>前缀和：由根节点到当前节点的路径上所有节点的和</li>
-<li>先序遍历，记录下根节点到当前节点的路径上除当前节点以外所有节点的前缀和</li>
-<li>统计在已保存的路径前缀和中是否存在当前节点到根节点的前缀和减去节点pi到根结点的前缀和为targetSum的路径</li>
-</ul>
-<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="深度优先搜索-1"><a href="#深度优先搜索-1" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 计算当前节点</span></span><br><span class="line">dfs(root, targetSum);</span><br><span class="line"><span class="comment">// 穷举左右节点</span></span><br><span class="line">pathSum(root.left, targetSum);</span><br><span class="line">pathSum(root.right, targetSum);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TreeNode root, <span class="keyword">int</span> targetSum)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> val = root.val;</span><br><span class="line">  <span class="keyword">if</span> (val == targetSum) &#123;</span><br><span class="line">    sum++;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 统计左右节点</span></span><br><span class="line">  dfs(root.left, targetSum - val);</span><br><span class="line">  dfs(root.right, targetSum - val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="前缀和-1"><a href="#前缀和-1" class="headerlink" title="前缀和"></a>前缀和</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TreeNode root, <span class="keyword">int</span> cur, <span class="keyword">int</span> targetSum)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 计算前缀和</span></span><br><span class="line">    cur += root.val;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 统计符合的前缀和</span></span><br><span class="line">    sum += prefix.getOrDefault(cur - targetSum, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 记录当前节点的前缀和</span></span><br><span class="line">    prefix.put(cur, prefix.getOrDefault(cur, <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">    dfs(root.left, cur, targetSum);</span><br><span class="line">    dfs(root.right, cur, targetSum);</span><br><span class="line">    <span class="comment">// 回溯时移除当前节点前缀和</span></span><br><span class="line">    prefix.put(cur, prefix.getOrDefault(cur, <span class="number">0</span>) - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/path-sum-iii/">437. 路径总和 III - 力扣（LeetCode） (leetcode-cn.com)</a></p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>DFS</tag>
-        <tag>Prefix</tag>
-      </tags>
   </entry>
   <entry>
     <title>Spring Boot</title>
