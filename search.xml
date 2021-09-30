@@ -1840,4 +1840,28 @@
         <category>Source Code</category>
       </categories>
   </entry>
+  <entry>
+    <title>矩形面积</title>
+    <url>/post/4121e703.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>容斥原理</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h3><ul>
+<li>两矩阵在水平和竖直方向上的交集投影线段构成交集面积的长和宽</li>
+<li>交集投影线段均大于0时，才说明有交集面积</li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> overlapWidth = Math.min(ax2, bx2) - Math.max(ax1, bx1);</span><br><span class="line"><span class="keyword">int</span> overlapHeight = Math.min(ay2, by2) - Math.max(ay1, by1);</span><br><span class="line"><span class="keyword">int</span> overlapArea = Math.max(overlapWidth, <span class="number">0</span>) * Math.max(overlapHeight, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/rectangle-area/">223. 矩形面积 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Math</tag>
+      </tags>
+  </entry>
 </search>
