@@ -1,6 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GitHub Pages</title>
+    <url>/post/56fd4e32.html</url>
+    <content><![CDATA[<blockquote>
+<p>GitHub Pages是免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>搭建简单</li>
+<li>完全免费</li>
+<li>静态脚本</li>
+<li>绑定域名</li>
+<li>专注内容</li>
+</ul>
+<h2 id="仓库创建"><a href="#仓库创建" class="headerlink" title="仓库创建"></a>仓库创建</h2><ul>
+<li>使用GitHub用户名，每个用户下只能建立一个</li>
+<li>仓库命名要求：{username}.github.io</li>
+<li>仓库用以存放网页的静态资源</li>
+</ul>
+<h2 id="仓库设置"><a href="#仓库设置" class="headerlink" title="仓库设置"></a>仓库设置</h2><ul>
+<li>点击Settings</li>
+<li>点击Pages</li>
+<li>配置域名</li>
+<li>配置分支</li>
+<li>选择主题</li>
+</ul>
+<h2 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h2><ul>
+<li>可自动解析域名</li>
+<li>域名管理系统中设置域名 // TODO</li>
+<li>仓库根目录创建文件，命名为CNAME，内容为域名</li>
+<li>开启HTTPS，勾选Enforce HTTPS</li>
+</ul>
+<h2 id="框架选择"><a href="#框架选择" class="headerlink" title="框架选择"></a>框架选择</h2><ul>
+<li>官方框架，Jekyll，基于Ruby</li>
+<li>第三方框架，Hexo，基于Node.js</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><p><a href="https://pages.github.com/">GitHub Pages</a></p>
+</li>
+<li><p><a href="https://jekyllrb.com/">Jekyll</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>GitHub Pages</category>
+      </categories>
+      <tags>
+        <tag>Site</tag>
+        <tag>Course</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo</title>
+    <url>/post/b132932.html</url>
+    <content><![CDATA[<blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="New"><a href="#New" class="headerlink" title="New"></a>New</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo new &#123;layout&#125; &#123;title&#125; --path &#123;path&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>新建文章</li>
+<li><code>&#123;layout&#125;</code>，可选参数</li>
+<li><code>--path &#123;path&#125;</code>，可选参数</li>
+</ul>
+<h3 id="Generate"><a href="#Generate" class="headerlink" title="Generate"></a>Generate</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo generate</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo g</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>生成静态文件</li>
+</ul>
+<h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo server</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动本地服务器</li>
+<li>默认网址：<a href="http://localhost:4000/">http://localhost:4000/</a></li>
+</ul>
+<h3 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo deploy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo d</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>部署网站</li>
+</ul>
+<h3 id="Clean"><a href="#Clean" class="headerlink" title="Clean"></a>Clean</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo clean</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>清除缓存文件 (<code>db.json</code>) </li>
+<li>清除已生成的静态文件 (<code>public</code>)。</li>
+</ul>
+<h2 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h2><ul>
+<li>NexT</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://hexo.io/zh-cn/docs/">Hexo</a></p>
+<p><a href="http://theme-next.iissnan.com/">NexT</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Site</tag>
+        <tag>Course</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Network</title>
+    <url>/post/af39be20.html</url>
+    <content><![CDATA[<h2 id="POST和GET区别"><a href="#POST和GET区别" class="headerlink" title="POST和GET区别"></a>POST和GET区别</h2><p>POST和GET是HTTP请求的两种方式，都可实现将数据从浏览器向服务器发送带参数的请求。</p>
+<p>HTTP请求底层协议都是TCP/IP，所以两者没有本质的区别。</p>
+<ul>
+<li>GET - 从指定的资源请求数据。</li>
+<li>POST - 向指定的资源提交要被处理的数据</li>
+</ul>
+<ol>
+<li>GET提交的数据放在URL中，POST则不会。这是最显而易见的差别。这点意味着GET更不安全（POST也不安全，因为HTTP是明文传输抓包就能获取数据内容，要想安全还得加密）</li>
+<li>GET回退浏览器无害，POST会再次提交请求（GET方法回退后浏览器再缓存中拿结果，POST每次都会创建新资源）</li>
+<li>GET提交的数据大小有限制（是因为浏览器对URL的长度有限制，GET本身没有限制），POST没有</li>
+<li>GET可以被保存为书签，POST不可以。</li>
+<li>GET能被缓存，POST不能</li>
+<li>GET只允许ASCII字符，POST没有限制</li>
+<li>GET会保存再浏览器历史记录中，POST不会。</li>
+</ol>
+<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/100327002629.png" alt="100327002629"></p>
+<p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/100327022731.jpg" alt="100327022731"></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+      </categories>
+      <tags>
+        <tag>Internship Experience</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MUN Resume</title>
     <url>/post/950e7d29.html</url>
     <content><![CDATA[<h2 id="个人资料"><a href="#个人资料" class="headerlink" title="个人资料"></a>个人资料</h2><table>
@@ -14,7 +147,7 @@
 <tbody><tr>
 <td align="left">学校：杭州电子科技大学</td>
 <td>手机：15988434188</td>
-<td>邮箱：<a href="mailto:&#x79;&#x75;&#120;&#105;&#x61;&#x6f;&#x68;&#117;&#105;&#x30;&#54;&#x32;&#x36;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#x79;&#x75;&#120;&#105;&#x61;&#x6f;&#x68;&#117;&#105;&#x30;&#54;&#x32;&#x36;&#x40;&#x67;&#109;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#109;</a></td>
+<td>邮箱：<a href="mailto:&#121;&#117;&#120;&#x69;&#x61;&#111;&#104;&#117;&#105;&#48;&#54;&#x32;&#x36;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#x6d;">&#121;&#117;&#120;&#x69;&#x61;&#111;&#104;&#117;&#105;&#48;&#54;&#x32;&#x36;&#x40;&#103;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#x6d;</a></td>
 </tr>
 <tr>
 <td align="left">QQ：3033731494</td>
@@ -290,6 +423,11 @@
 <td align="center">环梦模拟联合国2021年度会议</td>
 <td align="center">办公室主管</td>
 </tr>
+<tr>
+<td align="center">地区</td>
+<td align="center">2021筠辰模拟联合国大会暨第十届学军模拟联合国大会</td>
+<td align="center">学术总监</td>
+</tr>
 </tbody></table>
 <h2 id="曾任职务"><a href="#曾任职务" class="headerlink" title="曾任职务"></a>曾任职务</h2><ul>
 <li>长河模联创始人</li>
@@ -302,118 +440,14 @@
       </categories>
   </entry>
   <entry>
-    <title>Hexo</title>
-    <url>/post/b132932.html</url>
-    <content><![CDATA[<blockquote>
-<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="New"><a href="#New" class="headerlink" title="New"></a>New</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo new &#123;layout&#125; &#123;title&#125; --path &#123;path&#125;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>新建文章</li>
-<li><code>&#123;layout&#125;</code>，可选参数</li>
-<li><code>--path &#123;path&#125;</code>，可选参数</li>
-</ul>
-<h3 id="Generate"><a href="#Generate" class="headerlink" title="Generate"></a>Generate</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo generate</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo g</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>生成静态文件</li>
-</ul>
-<h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo server</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>启动本地服务器</li>
-<li>默认网址：<a href="http://localhost:4000/">http://localhost:4000/</a></li>
-</ul>
-<h3 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo deploy</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo d</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>部署网站</li>
-</ul>
-<h3 id="Clean"><a href="#Clean" class="headerlink" title="Clean"></a>Clean</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo clean</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>清除缓存文件 (<code>db.json</code>) </li>
-<li>清除已生成的静态文件 (<code>public</code>)。</li>
-</ul>
-<h2 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h2><ul>
-<li>NexT</li>
-</ul>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://hexo.io/zh-cn/docs/">Hexo</a></p>
-<p><a href="http://theme-next.iissnan.com/">NexT</a></p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Site</tag>
-        <tag>Course</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GitHub Pages</title>
-    <url>/post/56fd4e32.html</url>
-    <content><![CDATA[<blockquote>
-<p>GitHub Pages是免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
-<li>搭建简单</li>
-<li>完全免费</li>
-<li>静态脚本</li>
-<li>绑定域名</li>
-<li>专注内容</li>
-</ul>
-<h2 id="仓库创建"><a href="#仓库创建" class="headerlink" title="仓库创建"></a>仓库创建</h2><ul>
-<li>使用GitHub用户名，每个用户下只能建立一个</li>
-<li>仓库命名要求：{username}.github.io</li>
-<li>仓库用以存放网页的静态资源</li>
-</ul>
-<h2 id="仓库设置"><a href="#仓库设置" class="headerlink" title="仓库设置"></a>仓库设置</h2><ul>
-<li>点击Settings</li>
-<li>点击Pages</li>
-<li>配置域名</li>
-<li>配置分支</li>
-<li>选择主题</li>
-</ul>
-<h2 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h2><ul>
-<li>可自动解析域名</li>
-<li>域名管理系统中设置域名 // TODO</li>
-<li>仓库根目录创建文件，命名为CNAME，内容为域名</li>
-<li>开启HTTPS，勾选Enforce HTTPS</li>
-</ul>
-<h2 id="框架选择"><a href="#框架选择" class="headerlink" title="框架选择"></a>框架选择</h2><ul>
-<li>官方框架，Jekyll，基于Ruby</li>
-<li>第三方框架，Hexo，基于Node.js</li>
-</ul>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
-<li><p><a href="https://pages.github.com/">GitHub Pages</a></p>
-</li>
-<li><p><a href="https://jekyllrb.com/">Jekyll</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>GitHub Pages</category>
-      </categories>
-      <tags>
-        <tag>Site</tag>
-        <tag>Course</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Resume</title>
     <url>/post/676dd596.html</url>
     <content><![CDATA[<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
 <li><strong>手机：</strong>15988434188 </li>
-<li><strong>邮箱：</strong><a href="mailto:&#121;&#x75;&#x78;&#x69;&#x61;&#x6f;&#104;&#x75;&#x69;&#48;&#54;&#50;&#54;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#121;&#x75;&#x78;&#x69;&#x61;&#x6f;&#104;&#x75;&#x69;&#48;&#54;&#50;&#54;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a></li>
+<li><strong>邮箱：</strong><a href="mailto:&#x79;&#117;&#x78;&#105;&#x61;&#x6f;&#104;&#117;&#x69;&#48;&#54;&#x32;&#54;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#x79;&#117;&#x78;&#105;&#x61;&#x6f;&#104;&#117;&#x69;&#48;&#54;&#x32;&#54;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></li>
 <li><strong>QQ：</strong>3033731494 </li>
 <li><strong>WeChat：</strong>ChrisGray0626</li>
+<li><strong>个人网站：</strong><a href="https://pingpinggray.top/">https://pingpinggray.top/</a></li>
 </ul>
 <span id="more"></span>
 
@@ -442,7 +476,7 @@
 </ul>
 <h2 id="实习经历"><a href="#实习经历" class="headerlink" title="实习经历"></a>实习经历</h2><h3 id="中科院计算机研究所实习（2018-7-10-2018-8-25）"><a href="#中科院计算机研究所实习（2018-7-10-2018-8-25）" class="headerlink" title="中科院计算机研究所实习（2018.7.10-2018.8.25）"></a>中科院计算机研究所实习（2018.7.10-2018.8.25）</h3><p>学习了k-slearn算法、Fast-RCNN算法。</p>
 <h3 id="杭州中房信息科技有限公司（2021-2-1-4-1）"><a href="#杭州中房信息科技有限公司（2021-2-1-4-1）" class="headerlink" title="杭州中房信息科技有限公司（2021.2.1-4.1）"></a>杭州中房信息科技有限公司（2021.2.1-4.1）</h3><p>任职于基础研发中心-房产数仓研发部，具体负责房产信息数据仓库维护与研发等工作。</p>
-<h3 id="浙江省城乡规划设计研究院有限公司（2021-8-5-至今）"><a href="#浙江省城乡规划设计研究院有限公司（2021-8-5-至今）" class="headerlink" title="浙江省城乡规划设计研究院有限公司（2021.8.5-至今）"></a>浙江省城乡规划设计研究院有限公司（2021.8.5-至今）</h3><p>任职于创新研究中心，具体负责浙江省地下市政基础设施-城市内涝场景监测预警平台的后端开发等工作。</p>
+<h3 id="浙江省城乡规划设计研究院有限公司（2021-8-5-至今）"><a href="#浙江省城乡规划设计研究院有限公司（2021-8-5-至今）" class="headerlink" title="浙江省城乡规划设计研究院有限公司（2021.8.5-至今）"></a>浙江省城乡规划设计研究院有限公司（2021.8.5-至今）</h3><p>任职于创新研究中心，具体负责浙江省地下市政基础设施-城市内涝场景监测预警平台的后端开发、数据汇聚等工作。</p>
 <h2 id="相关奖项"><a href="#相关奖项" class="headerlink" title="相关奖项"></a>相关奖项</h2><h3 id="2017"><a href="#2017" class="headerlink" title="2017"></a>2017</h3><ul>
 <li>2017自动化科协新生程序设计大赛 三等奖</li>
 <li>2017学生社团工作先进个人</li>
@@ -503,40 +537,13 @@
 <h4 id="2019象山模拟联合国大会"><a href="#2019象山模拟联合国大会" class="headerlink" title="2019象山模拟联合国大会"></a>2019象山模拟联合国大会</h4><p>由杭州浙江省象山中学组织，作为学术总监统筹总领会议学术工作。</p>
 <h3 id="2020-1"><a href="#2020-1" class="headerlink" title="2020"></a>2020</h3><h4 id="环梦2020冬季会议（长沙）"><a href="#环梦2020冬季会议（长沙）" class="headerlink" title="环梦2020冬季会议（长沙）"></a>环梦2020冬季会议（长沙）</h4><p>由环梦模拟联合国组织，作为副秘书承办会务组织工作；作为主席团成员承担会场，1878西非柏林会议的学术工作。</p>
 <h3 id="2021"><a href="#2021" class="headerlink" title="2021"></a>2021</h3><h4 id="环梦模拟联合国2021年度会议"><a href="#环梦模拟联合国2021年度会议" class="headerlink" title="环梦模拟联合国2021年度会议"></a>环梦模拟联合国2021年度会议</h4><p>由环梦模拟联合国组织，作为办公室主管完成组织协调工作；作为主席团负责人承担会场，历史系统的学术工作。</p>
+<h4 id="2021筠辰模拟联合国大会暨第十届学军模拟联合国大会"><a href="#2021筠辰模拟联合国大会暨第十届学军模拟联合国大会" class="headerlink" title="2021筠辰模拟联合国大会暨第十届学军模拟联合国大会"></a>2021筠辰模拟联合国大会暨第十届学军模拟联合国大会</h4><p>由杭州学军中学、杭州第十四中学、浙江大学附属中学、杭州长河高级中学组织，作为学术总监统筹总领会议学术工作。</p>
 <h2 id="个人简述"><a href="#个人简述" class="headerlink" title="个人简述"></a>个人简述</h2><p>本人自入学以来，长期与各种语言、代码、框架为伴，对专业技术有广泛的兴趣爱好，能够将所学用于实践，服务生活。而同样我也热爱文史，涉猎广泛，从书籍中汲取营养。在几年的大学生涯中，我既理解掌握了诸多信息技术知识，也继续完善文史方面的学术水平。亦长期接触行政管理、组织协调等方面的工作，先后长期担任班级副班长与团支书一职，为班级谋发展；亦在校中国特色社会主义读书会中担任组织建设部部长，为学校添砖加瓦。 </p>
 <p>我力求做到全方位、多层次全面发展，提升个人素质与工作能力，在实践中磨练自我。长路漫漫不可知，更需努力前行。  </p>
 ]]></content>
       <categories>
         <category>Self</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Network</title>
-    <url>/post/af39be20.html</url>
-    <content><![CDATA[<h2 id="POST和GET区别"><a href="#POST和GET区别" class="headerlink" title="POST和GET区别"></a>POST和GET区别</h2><p>POST和GET是HTTP请求的两种方式，都可实现将数据从浏览器向服务器发送带参数的请求。</p>
-<p>HTTP请求底层协议都是TCP/IP，所以两者没有本质的区别。</p>
-<ul>
-<li>GET - 从指定的资源请求数据。</li>
-<li>POST - 向指定的资源提交要被处理的数据</li>
-</ul>
-<ol>
-<li>GET提交的数据放在URL中，POST则不会。这是最显而易见的差别。这点意味着GET更不安全（POST也不安全，因为HTTP是明文传输抓包就能获取数据内容，要想安全还得加密）</li>
-<li>GET回退浏览器无害，POST会再次提交请求（GET方法回退后浏览器再缓存中拿结果，POST每次都会创建新资源）</li>
-<li>GET提交的数据大小有限制（是因为浏览器对URL的长度有限制，GET本身没有限制），POST没有</li>
-<li>GET可以被保存为书签，POST不可以。</li>
-<li>GET能被缓存，POST不能</li>
-<li>GET只允许ASCII字符，POST没有限制</li>
-<li>GET会保存再浏览器历史记录中，POST不会。</li>
-</ol>
-<h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/100327002629.png" alt="100327002629"></p>
-<p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/100327022731.jpg" alt="100327022731"></p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-      </categories>
-      <tags>
-        <tag>Internship Experience</tag>
-      </tags>
   </entry>
   <entry>
     <title>Data Warehouse</title>
@@ -680,6 +687,44 @@
       </tags>
   </entry>
   <entry>
+    <title>HBase</title>
+    <url>/post/ef636ad6.html</url>
+    <content><![CDATA[<p>分布式、面向列的数据存储系统，通过在HDFS上提供随机读/写来解决Hadoop不能解决的问题。</p>
+<p>为了高可用性牺牲了一部分的一致性。</p>
+<span id="more"></span>
+
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>没有真正的索引，行是顺序存储的，每行中的列也是，不存在索引膨胀问题，插入性能和表的大小无关。</p>
+<p>自动分区，在表增长的时候，表会自动分裂成区域，并分布到可用的节点上。</p>
+<p>线性扩展和对新节点的自动处理，增加一个节点，把它指向现有集群并运行regionserver，区域自动重新进行平衡，负载均匀分布。</p>
+<p>廉价，普通商用硬件支持。</p>
+<p>容错，大量节点意味每个节点的重要性并不突出，不用担心单个节点失效。</p>
+<p>批处理，Mapreduce集成功能使我们可以用全并行的分布式作业根据“数据的位置”来处理它们。</p>
+<p>管理超大规模的稀疏表，对于为null的列，并不占用存储空间。</p>
+<h2 id="与RDBMS异同"><a href="#与RDBMS异同" class="headerlink" title="与RDBMS异同"></a>与RDBMS异同</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>RDBMS采用关系模型，具有丰富的数据类型和存储方式；</p>
+<p>HBase采用简单的数据模型，将数据存储为未解释的字符数组，所有数据都没有类型，都直接作为字符数组来看待。</p>
+<h3 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h3><p>关系型数据库有丰富的数据操作，并且涉及复杂的多表连接；</p>
+<p>HBase操作不存在复杂的表与表之间的连接关系，只有简单的插入、查询、删除、清空等操作，因为HBase在设计上就避免了复杂的表和表之间的关系。</p>
+<h3 id="存储机制"><a href="#存储机制" class="headerlink" title="存储机制"></a>存储机制</h3><p>RDBMS基于行模式存储；</p>
+<p>HBase基于列模式存储，每个列族的数据都保存在一起，不同列族的文件是相互分离的。</p>
+<h3 id="数据索引"><a href="#数据索引" class="headerlink" title="数据索引"></a>数据索引</h3><p>RDBMS中，有模式、表、视图、索引等多个概念，RDBMS可以根据不同列构建复杂的多个索引，以此来提高数据访问的性能；</p>
+<p>HBase实际上只有一个索引——行键（Row Key），表的所有访问都要通过行键，或者通过行键访问，或者通过行键扫描。</p>
+<h3 id="数据维护"><a href="#数据维护" class="headerlink" title="数据维护"></a>数据维护</h3><p>RDBMS中，更新操作会用当前的最新值去替换记录中的旧值，旧值被覆盖后就不再存在了；</p>
+<p>HBase中的每个单元格是有一个以时间戳表示的版本号的，它在执行更新操作时，并不会删除数据的旧版本，而是生成一个具有更新的版本号的新数据，原有旧数据仍然会保存。</p>
+<h3 id="可伸缩性"><a href="#可伸缩性" class="headerlink" title="可伸缩性"></a>可伸缩性</h3><p>RDBMS大多受限于一台机器的存储容量，只能进行垂直扩展（更换大容量的设备、提升设备性能等等），很难做到横向扩展；</p>
+<p>HBase设计的初衷本来是为了实现灵活的横向扩展，能够通过简单的增加节点数量来实现扩展，从而可以存储超大规模数据集，实现超大规模数据的随机访问。</p>
+<h2 id="扫描机制"><a href="#扫描机制" class="headerlink" title="扫描机制"></a>扫描机制</h2><p>调用HTable的getScanner()方法，返回扫描器(scanner)实例。</p>
+<p>可以选择提供起始行和终止行行键。</p>
+<p>可以选择使用过滤器(filter)。</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Big Data</category>
+      </categories>
+      <tags>
+        <tag>Internship Experience</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hadoop</title>
     <url>/post/2bcbefa4.html</url>
     <content><![CDATA[<ul>
@@ -801,44 +846,6 @@
       </tags>
   </entry>
   <entry>
-    <title>HBase</title>
-    <url>/post/ef636ad6.html</url>
-    <content><![CDATA[<p>分布式、面向列的数据存储系统，通过在HDFS上提供随机读/写来解决Hadoop不能解决的问题。</p>
-<p>为了高可用性牺牲了一部分的一致性。</p>
-<span id="more"></span>
-
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><p>没有真正的索引，行是顺序存储的，每行中的列也是，不存在索引膨胀问题，插入性能和表的大小无关。</p>
-<p>自动分区，在表增长的时候，表会自动分裂成区域，并分布到可用的节点上。</p>
-<p>线性扩展和对新节点的自动处理，增加一个节点，把它指向现有集群并运行regionserver，区域自动重新进行平衡，负载均匀分布。</p>
-<p>廉价，普通商用硬件支持。</p>
-<p>容错，大量节点意味每个节点的重要性并不突出，不用担心单个节点失效。</p>
-<p>批处理，Mapreduce集成功能使我们可以用全并行的分布式作业根据“数据的位置”来处理它们。</p>
-<p>管理超大规模的稀疏表，对于为null的列，并不占用存储空间。</p>
-<h2 id="与RDBMS异同"><a href="#与RDBMS异同" class="headerlink" title="与RDBMS异同"></a>与RDBMS异同</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>RDBMS采用关系模型，具有丰富的数据类型和存储方式；</p>
-<p>HBase采用简单的数据模型，将数据存储为未解释的字符数组，所有数据都没有类型，都直接作为字符数组来看待。</p>
-<h3 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h3><p>关系型数据库有丰富的数据操作，并且涉及复杂的多表连接；</p>
-<p>HBase操作不存在复杂的表与表之间的连接关系，只有简单的插入、查询、删除、清空等操作，因为HBase在设计上就避免了复杂的表和表之间的关系。</p>
-<h3 id="存储机制"><a href="#存储机制" class="headerlink" title="存储机制"></a>存储机制</h3><p>RDBMS基于行模式存储；</p>
-<p>HBase基于列模式存储，每个列族的数据都保存在一起，不同列族的文件是相互分离的。</p>
-<h3 id="数据索引"><a href="#数据索引" class="headerlink" title="数据索引"></a>数据索引</h3><p>RDBMS中，有模式、表、视图、索引等多个概念，RDBMS可以根据不同列构建复杂的多个索引，以此来提高数据访问的性能；</p>
-<p>HBase实际上只有一个索引——行键（Row Key），表的所有访问都要通过行键，或者通过行键访问，或者通过行键扫描。</p>
-<h3 id="数据维护"><a href="#数据维护" class="headerlink" title="数据维护"></a>数据维护</h3><p>RDBMS中，更新操作会用当前的最新值去替换记录中的旧值，旧值被覆盖后就不再存在了；</p>
-<p>HBase中的每个单元格是有一个以时间戳表示的版本号的，它在执行更新操作时，并不会删除数据的旧版本，而是生成一个具有更新的版本号的新数据，原有旧数据仍然会保存。</p>
-<h3 id="可伸缩性"><a href="#可伸缩性" class="headerlink" title="可伸缩性"></a>可伸缩性</h3><p>RDBMS大多受限于一台机器的存储容量，只能进行垂直扩展（更换大容量的设备、提升设备性能等等），很难做到横向扩展；</p>
-<p>HBase设计的初衷本来是为了实现灵活的横向扩展，能够通过简单的增加节点数量来实现扩展，从而可以存储超大规模数据集，实现超大规模数据的随机访问。</p>
-<h2 id="扫描机制"><a href="#扫描机制" class="headerlink" title="扫描机制"></a>扫描机制</h2><p>调用HTable的getScanner()方法，返回扫描器(scanner)实例。</p>
-<p>可以选择提供起始行和终止行行键。</p>
-<p>可以选择使用过滤器(filter)。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a></h2>]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>Big Data</category>
-      </categories>
-      <tags>
-        <tag>Internship Experience</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hive</title>
     <url>/post/7c5f14c6.html</url>
     <content><![CDATA[<p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI2ODAzNzk1,size_26,color_FFFFFF,t_70.jpeg" alt="hive架构"></p>
@@ -934,178 +941,6 @@
       </categories>
       <tags>
         <tag>Internship Experience</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MySQL</title>
-    <url>/post/547eead8.html</url>
-    <content><![CDATA[<h2 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h2><p>在数据库中，B+树的高度一般都在2-4层，B+树索引可以分为聚集索引（clustered index）和辅助索引（secondary index）。</p>
-<p>相同：内部都是B+树的形式，高度平衡，叶子结点存放着所有的数据。</p>
-<p>不同：叶子结点存放的是否是一整行的信息。</p>
-<span id="more"></span>
-
-<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><ol>
-<li>有k个子树的中间节点包含有k个元素（B树中是k-1个元素），每个元素不保存数据，只用来索引，所有数据都保存在叶子节点。</li>
-<li>所有的叶子结点中包含了全部元素的信息，及指向含这些元素记录的指针，且叶子结点本身依关键字的大小自小而大顺序链接。</li>
-<li>所有的中间节点元素都同时存在于子节点，在子节点元素中是最大（或最小）元素。</li>
-</ol>
-<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ol>
-<li>单一节点存储更多的元素，使得查询的IO次数更少。</li>
-<li>所有查询都要查找到叶子节点，查询性能稳定。</li>
-<li>所有叶子节点形成有序链表，便于范围查询。</li>
-</ol>
-<h2 id="索引原理"><a href="#索引原理" class="headerlink" title="索引原理"></a>索引原理</h2><p>索引（Index）是帮助MySQL高效获取数据的数据结构。</p>
-<p>索引的目的在于提高查询效率，通过不断地缩小想要获取数据的范围来筛选出最终想要的结果，同时把随机的事件变成顺序的事件，也就是说，有了这种索引机制，我们可以总是用同一种查找方式来锁定数据。</p>
-<p>磁盘IO操作成本高昂，每次查找数据时应把磁盘IO次数控制在一个很小的数量级，最好是常数数量级。</p>
-<h3 id="聚集索引"><a href="#聚集索引" class="headerlink" title="聚集索引"></a>聚集索引</h3><p>InnoDB存储引擎表是索引组织表，即表中数据按照主键顺序存放。而聚集索引（clustered index）就是按照每张表的主键构造一棵B+树，同时叶子结点存放的即为整张表的行记录数据，也将聚集索引的叶子结点称为数据页。聚集索引的这个特性决定了索引组织表中数据也是索引的一部分，每个数据页都通过一个双向链表来进行链接。</p>
-<p>如果未定义主键，MySQL取第一个唯一索引（unique）而且只含非空列（NOT NULL）作为主键，InnoDB使用它作为聚簇索引。</p>
-<p>如果没有这样的列，InnoDB就自己产生一个这样的ID值，它有六个字节，而且是隐藏的，使其作为聚簇索引。</p>
-<p>由于实际的数据页只能按照一棵B+树进行排序，因此每张表只能拥有一个聚集索引。</p>
-<p>在多数情况下，查询优化器倾向于采用聚集索引。因为聚集索引能够在B+树索引的叶子节点上直接找到数据。此外由于定义了数据的逻辑顺序，聚集索引能够特别快地访问针对范围值得查询。</p>
-<p>对主键的排序查找和范围查找速度非常快，叶子节点的数据就是用户所要查询的数据。</p>
-<p>范围查询（range query），如果要查找主键某一范围内的数据，通过叶子节点的上层中间节点就可以得到页的范围，之后直接读取数据页。</p>
-<h3 id="辅助索引"><a href="#辅助索引" class="headerlink" title="辅助索引"></a>辅助索引</h3><p>除了聚集索引外其他索引都是辅助索引，也称非聚集索引，与聚集索引的区别是：辅助索引的叶子节点不包含行记录的全部数据。</p>
-<p>叶子节点除了包含键值以外，每个叶子节点中的索引行中还包含一个书签（bookmark）。该书签用来告诉InnoDB存储引擎去哪里可以找到与索引相对应的行数据。</p>
-<p>由于InnoDB存储引擎是索引组织表，因此InnoDB存储引擎的辅助索引的书签就是相应行数据的聚集索引键。</p>
-<h2 id="事务（Transaction）"><a href="#事务（Transaction）" class="headerlink" title="事务（Transaction）"></a>事务（Transaction）</h2><h3 id="特性（ACID）"><a href="#特性（ACID）" class="headerlink" title="特性（ACID）"></a>特性（ACID）</h3><h4 id="原子性（Atomicity）"><a href="#原子性（Atomicity）" class="headerlink" title="原子性（Atomicity）"></a>原子性（Atomicity）</h4><p>原子性是指事务包含的所有操作要么全部成功，要么全部失败回滚，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</p>
-<h4 id="一致性（Consistency）"><a href="#一致性（Consistency）" class="headerlink" title="一致性（Consistency）"></a>一致性（Consistency）</h4><p>一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。</p>
-<p>拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性。</p>
-<h4 id="隔离性（Isolation）"><a href="#隔离性（Isolation）" class="headerlink" title="隔离性（Isolation）"></a>隔离性（Isolation）</h4><p>隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离，每个事务都感觉不到有其他事务在并发地执行。</p>
-<h4 id="持久性（Durability）"><a href="#持久性（Durability）" class="headerlink" title="持久性（Durability）"></a>持久性（Durability）</h4><p>持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作，必须要将我们的事务完全执行完成，否则就会造成我们看到提示事务处理完毕，但是数据库因为故障而没有执行事务的重大错误。</p>
-<h3 id="隔离等级"><a href="#隔离等级" class="headerlink" title="隔离等级"></a>隔离等级</h3><p>在实际应用中，数据库中的数据是要被多个用户共同访问的，在多个用户同时操作相同的数据时，可能就会出现一些事务的并发问题，具体如下。</p>
-<h4 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h4><p>指一个事务读取到另一个事务未提交的数据。</p>
-<h4 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h4><p>指一个事务对同一行数据重复读取两次，但得到的结果不同。</p>
-<h4 id="虚读-幻读"><a href="#虚读-幻读" class="headerlink" title="虚读/幻读"></a>虚读/幻读</h4><p>指一个事务执行两次查询，但第二次查询的结果包含了第一次查询中未出现的数据。</p>
-<h4 id="丢失更新"><a href="#丢失更新" class="headerlink" title="丢失更新"></a>丢失更新</h4><p>指两个事务同时更新一行数据，后提交（或撤销）的事务将之前事务提交的数据覆盖了。</p>
-<p> 丢失更新可分为两类：</p>
-<ul>
-<li>第一类丢失更新，指两个事务同时操作同一个数据时，当第一个事务撤销时，把已经提交的第二个事务的更新数据覆盖了，第二个事务就造成了数据丢失。</li>
-<li>第二类丢失更新，指当两个事务同时操作同一个数据时，第一个事务将修改结果成功提交后，对第二个事务已经提交的修改结果进行了覆盖，对第二个事务造成了数据丢失。</li>
-</ul>
-<p> 为了避免上述事务并发问题的出现，在标准的 SQL 规范中定义了四种事务隔离级别，不同的隔离级别对事务的处理有所不同。这四种事务的隔离级别如下。</p>
-<h4 id="Read-Uncommitted（读未提交）"><a href="#Read-Uncommitted（读未提交）" class="headerlink" title="Read Uncommitted（读未提交）"></a>Read Uncommitted（读未提交）</h4><p>一个事务在执行过程中，既可以访问其他事务未提交的新插入的数据，又可以访问未提交的修改数据。如果一个事务已经开始写数据，则另外一个事务不允许同时进行写操作，但允许其他事务读此行数据。此隔离级别可防止丢失更新。</p>
-<h4 id="Read-Committed（读已提交）"><a href="#Read-Committed（读已提交）" class="headerlink" title="Read Committed（读已提交）"></a>Read Committed（读已提交）</h4><p>一个事务在执行过程中，既可以访问其他事务成功提交的新插入的数据，又可以访问成功修改的数据。读取数据的事务允许其他事务继续访问该行数据，但是未提交的写事务将会禁止其他事务访问该行。此隔离级别可有效防止脏读。</p>
-<h4 id="Repeatable-Read（可重复读取）"><a href="#Repeatable-Read（可重复读取）" class="headerlink" title="Repeatable Read（可重复读取）"></a>Repeatable Read（可重复读取）</h4><p>一个事务在执行过程中，可以访问其他事务成功提交的新插入的数据，但不可以访问成功修改的数据。读取数据的事务将会禁止写事务（但允许读事务），写事务则禁止任何其他事务。此隔离级别可有效防止不可重复读和脏读。</p>
-<h4 id="Serializable（可串行化）"><a href="#Serializable（可串行化）" class="headerlink" title="Serializable（可串行化）"></a>Serializable（可串行化）</h4><p>提供严格的事务隔离。它要求事务序列化执行，事务只能一个接着一个地执行，不能并发执行。此隔离级别可有效防止脏读、不可重复读和幻读。但这个级别可能导致大量的超时现象和锁竞争，在实际应用中很少使用。</p>
-<p> 一般来说，事务的隔离级别越高，越能保证数据库的完整性和一致性，但相对来说，隔离级别越高，对并发性能的影响也越大。因此，通常将数据库的隔离级别设置为 Read  Committed，即读已提交数据，它既能防止脏读，又能有较好的并发性能。虽然这种隔离级别会导致不可重复读、幻读和第二类丢失更新这些并发问题，但可通过在应用程序中采用悲观锁和乐观锁加以控制。</p>
-<h2 id="引擎"><a href="#引擎" class="headerlink" title="引擎"></a>引擎</h2><h3 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h3><p>InnoDB是事务型数据库的首选引擎，支持事务安全表（ACID），行锁定和外键，是默认的MySQL引擎。InnoDB主要特性有：</p>
-<ol>
-<li>InnoDB给MySQL提供了具有提交、回滚和崩溃恢复能力的事物安全（ACID兼容）存储引擎。InnoDB锁定在行级并且也在SELECT语句中提供一个类似Oracle的非锁定读。这些功能增加了多用户部署和性能。在SQL查询中，可以自由地将InnoDB类型的表和其他MySQL的表类型混合起来，甚至在同一个查询中也可以混合。</li>
-<li>InnoDB是为处理巨大数据量的最大性能设计。它的CPU效率可能是任何其他基于磁盘的关系型数据库引擎锁不能匹敌的。</li>
-<li>InnoDB存储引擎完全与MySQL服务器整合，InnoDB存储引擎为在主内存中缓存数据和索引而维持它自己的缓冲池。InnoDB将它的表和索引在一个逻辑表空间中，表空间可以包含数个文件（或原始磁盘文件）InnoDB表可以是任何尺寸，即使在文件尺寸被限制为2GB的操作系统上。</li>
-<li>InnoDB支持外键完整性约束，存储表中的数据时，每张表的存储都按主键顺序存放，如果没有显示在表定义时指定主键，InnoDB会为每一行生成一个6字节的ROWID，并以此作为主键。</li>
-<li>InnoDB不创建目录，使用InnoDB时，MySQL将在MySQL数据目录下创建一个名为ibdata1的10MB大小的自动扩展数据文件，以及两个名为ib_logfile0和ib_logfile1的5MB大小的日志文件。</li>
-</ol>
-<h3 id="比较选择"><a href="#比较选择" class="headerlink" title="比较选择"></a>比较选择</h3><p><img src="https://upload-images.jianshu.io/upload_images/11464886-82267cb5926d26fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200" alt="img"></p>
-<p>如果要提供提交、回滚、崩溃恢复能力的事物安全（ACID兼容）能力，并要求实现并发控制，InnoDB是一个好的选择。</p>
-<p>如果数据表主要用来插入和查询记录，则MyISAM引擎能提供较高的处理效率。</p>
-<p>如果只是临时存放数据，数据量不大，并且不需要较高的数据安全性，可以选择将数据保存在内存中的Memory引擎，MySQL中使用该引擎作为临时表，存放查询的中间结果。</p>
-<p>如果只有INSERT和SELECT操作，可以选择Archive，Archive支持高并发的插入操作，但是本身不是事务安全的。Archive非常适合存储归档数据，如记录日志信息可以使用Archive。</p>
-<h2 id="窗口函数"><a href="#窗口函数" class="headerlink" title="窗口函数"></a>窗口函数</h2><p>窗口函数，也叫OLAP函数（Online Anallytical Processing，联机分析处理），可以对数据库数据进行实时分析处理。</p>
-<p>窗口函数的基本语法如下：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">&lt;</span>窗口函数<span class="operator">&gt;</span> <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于分组的列名<span class="operator">&gt;</span></span><br><span class="line">                <span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于排序的列名<span class="operator">&gt;</span>[<span class="keyword">ASC</span><span class="operator">/</span><span class="keyword">DESC</span>])</span><br></pre></td></tr></table></figure>
-
-<p>&lt;窗口函数&gt;的位置，可以放以下两种函数：</p>
-<ol>
-<li>专用窗口函数，包括后面要讲到的rank, dense_rank, row_number等专用窗口函数。</li>
-<li>聚合函数，如sum. avg, count, max, min等</li>
-</ol>
-<p>因为窗口函数是对where或者group by子句处理后的结果进行操作，所以窗口函数原则上只能写在select子句中。</p>
-<h2 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h2><ol>
-<li>使用连接（JOIN）代替子查询（Sub-Queries）</li>
-<li>使用联合(UNION)来代替手动创建的临时表</li>
-<li>使用索引</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>MySQL</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>两整数之和</title>
-    <url>/post/abe383d1.html</url>
-    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
-<li>位运算</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="亦或运算"><a href="#亦或运算" class="headerlink" title="亦或运算"></a>亦或运算</h3><ul>
-<li>计算当前位的无进位加法结果</li>
-<li><code>a ^ b</code></li>
-</ul>
-<h3 id="与运算"><a href="#与运算" class="headerlink" title="与运算"></a>与运算</h3><ul>
-<li>计算来自前一位的进位结果</li>
-<li><code>(a &amp; b) &lt;&lt; 1</code></li>
-</ul>
-<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><p>两者亦或运算即为加法结果</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getSum(a ^ b, (a &amp; b) &lt;&lt; <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
-<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/sum-of-two-integers/">371. 两整数之和 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Bit Operation</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>将数据流变为多个不相交区间</title>
-    <url>/post/757a9357.html</url>
-    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
-<li>有序映射</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="区间集合"><a href="#区间集合" class="headerlink" title="区间集合"></a>区间集合</h3><ol>
-<li>存在区间[l, r]，满足l&lt;= val&lt;=r，无变化；</li>
-<li>存在区间[l, r]，满足val=r+1，该区间变为[l, r+1]；</li>
-<li>存在区间[l, r]，满足val=l-1，该区间变为[l-1, r]；</li>
-<li>存在区间[l0, r0]、[l1, r1]，满足val=r0+1=l1-1，两区间合并为[l0, r1]；</li>
-<li>以上均不满足，val单独成立新区间[val, val]。</li>
-</ol>
-<h3 id="有序映射"><a href="#有序映射" class="headerlink" title="有序映射"></a>有序映射</h3><ul>
-<li>键存放左区间，值存放右区间</li>
-<li>支持查询“最大的比某个元素小的键“与“最小的比某个元素大的键”</li>
-</ul>
-<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="区间查询"><a href="#区间查询" class="headerlink" title="区间查询"></a>区间查询</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 找到l1最小且满足l1&gt;val的区间</span></span><br><span class="line">Map.Entry&lt;Integer, Integer&gt; interval1 = intervals.ceilingEntry(val + <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 找到l0最大且满足l0&lt;=val的区间</span></span><br><span class="line">Map.Entry&lt;Integer, Integer&gt; interval0 = intervals.floorEntry(val);</span><br></pre></td></tr></table></figure>
-
-<h3 id="情况讨论"><a href="#情况讨论" class="headerlink" title="情况讨论"></a>情况讨论</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 情况一</span></span><br><span class="line"><span class="keyword">if</span> (interval0 != <span class="keyword">null</span> &amp;&amp; interval0.getKey() &lt;= val &amp;&amp; val &lt;= interval0.getValue()) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">boolean</span> leftAside = interval0 != <span class="keyword">null</span> &amp;&amp; interval0.getValue() + <span class="number">1</span> == val;</span><br><span class="line">    <span class="keyword">boolean</span> rightAside = interval1 != <span class="keyword">null</span> &amp;&amp; interval1.getKey() - <span class="number">1</span> == val;</span><br><span class="line">    <span class="comment">// 情况四</span></span><br><span class="line">    <span class="keyword">if</span> (leftAside &amp;&amp; rightAside) &#123;</span><br><span class="line">        <span class="keyword">int</span> left = interval0.getKey(), right = interval1.getValue();</span><br><span class="line">        intervals.remove(interval0.getKey());</span><br><span class="line">        intervals.remove(interval1.getKey());</span><br><span class="line">        intervals.put(left, right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 情况二</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (leftAside) &#123;</span><br><span class="line">        intervals.put(interval0.getKey(), val);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 情况三</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (rightAside) &#123;</span><br><span class="line">        intervals.put(val, interval1.getValue());</span><br><span class="line">        intervals.remove(interval1.getKey());</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 情况五</span></span><br><span class="line">        intervals.put(val, val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/data-stream-as-disjoint-intervals/">352. 将数据流变为多个不相交区间 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>TreeMap</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>矩形面积</title>
-    <url>/post/4121e703.html</url>
-    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
-<li>容斥原理</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h3><ul>
-<li>两矩阵在水平和竖直方向上的交集投影线段构成交集面积的长和宽</li>
-<li>交集投影线段均大于0时，才说明有交集面积</li>
-</ul>
-<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> overlapWidth = Math.min(ax2, bx2) - Math.max(ax1, bx1);</span><br><span class="line"><span class="keyword">int</span> overlapHeight = Math.min(ay2, by2) - Math.max(ay1, by1);</span><br><span class="line"><span class="keyword">int</span> overlapArea = Math.max(overlapWidth, <span class="number">0</span>) * Math.max(overlapHeight, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/rectangle-area/">223. 矩形面积 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
@@ -1232,6 +1067,92 @@
       </tags>
   </entry>
   <entry>
+    <title>两整数之和</title>
+    <url>/post/abe383d1.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>位运算</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="亦或运算"><a href="#亦或运算" class="headerlink" title="亦或运算"></a>亦或运算</h3><ul>
+<li>计算当前位的无进位加法结果</li>
+<li><code>a ^ b</code></li>
+</ul>
+<h3 id="与运算"><a href="#与运算" class="headerlink" title="与运算"></a>与运算</h3><ul>
+<li>计算来自前一位的进位结果</li>
+<li><code>(a &amp; b) &lt;&lt; 1</code></li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><p>两者亦或运算即为加法结果</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getSum(a ^ b, (a &amp; b) &lt;&lt; <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/sum-of-two-integers/">371. 两整数之和 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Bit Operation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将数据流变为多个不相交区间</title>
+    <url>/post/757a9357.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>有序映射</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="区间集合"><a href="#区间集合" class="headerlink" title="区间集合"></a>区间集合</h3><ol>
+<li>存在区间[l, r]，满足l&lt;= val&lt;=r，无变化；</li>
+<li>存在区间[l, r]，满足val=r+1，该区间变为[l, r+1]；</li>
+<li>存在区间[l, r]，满足val=l-1，该区间变为[l-1, r]；</li>
+<li>存在区间[l0, r0]、[l1, r1]，满足val=r0+1=l1-1，两区间合并为[l0, r1]；</li>
+<li>以上均不满足，val单独成立新区间[val, val]。</li>
+</ol>
+<h3 id="有序映射"><a href="#有序映射" class="headerlink" title="有序映射"></a>有序映射</h3><ul>
+<li>键存放左区间，值存放右区间</li>
+<li>支持查询“最大的比某个元素小的键“与“最小的比某个元素大的键”</li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="区间查询"><a href="#区间查询" class="headerlink" title="区间查询"></a>区间查询</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 找到l1最小且满足l1&gt;val的区间</span></span><br><span class="line">Map.Entry&lt;Integer, Integer&gt; interval1 = intervals.ceilingEntry(val + <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 找到l0最大且满足l0&lt;=val的区间</span></span><br><span class="line">Map.Entry&lt;Integer, Integer&gt; interval0 = intervals.floorEntry(val);</span><br></pre></td></tr></table></figure>
+
+<h3 id="情况讨论"><a href="#情况讨论" class="headerlink" title="情况讨论"></a>情况讨论</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 情况一</span></span><br><span class="line"><span class="keyword">if</span> (interval0 != <span class="keyword">null</span> &amp;&amp; interval0.getKey() &lt;= val &amp;&amp; val &lt;= interval0.getValue()) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">boolean</span> leftAside = interval0 != <span class="keyword">null</span> &amp;&amp; interval0.getValue() + <span class="number">1</span> == val;</span><br><span class="line">    <span class="keyword">boolean</span> rightAside = interval1 != <span class="keyword">null</span> &amp;&amp; interval1.getKey() - <span class="number">1</span> == val;</span><br><span class="line">    <span class="comment">// 情况四</span></span><br><span class="line">    <span class="keyword">if</span> (leftAside &amp;&amp; rightAside) &#123;</span><br><span class="line">        <span class="keyword">int</span> left = interval0.getKey(), right = interval1.getValue();</span><br><span class="line">        intervals.remove(interval0.getKey());</span><br><span class="line">        intervals.remove(interval1.getKey());</span><br><span class="line">        intervals.put(left, right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 情况二</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (leftAside) &#123;</span><br><span class="line">        intervals.put(interval0.getKey(), val);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 情况三</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (rightAside) &#123;</span><br><span class="line">        intervals.put(val, interval1.getValue());</span><br><span class="line">        intervals.remove(interval1.getKey());</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 情况五</span></span><br><span class="line">        intervals.put(val, val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/data-stream-as-disjoint-intervals/">352. 将数据流变为多个不相交区间 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>TreeMap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>矩形面积</title>
+    <url>/post/4121e703.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>容斥原理</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h3><ul>
+<li>两矩阵在水平和竖直方向上的交集投影线段构成交集面积的长和宽</li>
+<li>交集投影线段均大于0时，才说明有交集面积</li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> overlapWidth = Math.min(ax2, bx2) - Math.max(ax1, bx1);</span><br><span class="line"><span class="keyword">int</span> overlapHeight = Math.min(ay2, by2) - Math.max(ay1, by1);</span><br><span class="line"><span class="keyword">int</span> overlapArea = Math.max(overlapWidth, <span class="number">0</span>) * Math.max(overlapHeight, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/rectangle-area/">223. 矩形面积 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>路径总和 III</title>
     <url>/post/41308982.html</url>
     <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
@@ -1265,28 +1186,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Spring Boot</title>
-    <url>/post/a541262a.html</url>
-    <content><![CDATA[<h2 id="IoC（控制反转）"><a href="#IoC（控制反转）" class="headerlink" title="IoC（控制反转）"></a>IoC（控制反转）</h2><p>调用类中的方法不是通过new它的对象来实现，而是通过Spring配置来创建对象，然后交给IOC容器来管理我们的对象，使用时去找IOC容器要，根本就不用去管我们需要的这个对象时怎么创建的、什么时候被销毁。</p>
-<p>这样一来，类和类之间的关系就变弱了，因为我们没有在一个类中new另一个对象，对象之间的调用、联系都是通过这个IOC容器来获取的，使每一个对象都相对比较独立。</p>
-<p>IoC的一个重点是在系统运行中，动态的向某个对象提供它所需要的其他对象。这一点是通过DI（Dependency Injection，依赖注入）来实现的。</p>
-<span id="more"></span>
-
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><h3 id="习惯优于配置"><a href="#习惯优于配置" class="headerlink" title="习惯优于配置"></a>习惯优于配置</h3><p>（Convention Over Configuration），也称作按约定编程，是一种软件设计范式，旨在减少软件开发人员需做决定的数量、获得简单的好处，而又不失灵活性。</p>
-<h3 id="内嵌容器"><a href="#内嵌容器" class="headerlink" title="内嵌容器"></a>内嵌容器</h3><p>内嵌servlet容器，可以直接执行运行项目的main函数。</p>
-<h3 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h3><p>Spring Boot Starter 中有两个核心组件∶ 自动配置代码和提供自动配置模块及其它有用的依赖。也就意味着当我们项目中引入某个  Starter，即拥有了此软件的默认使用能力，除非我们需要特定的配置，一般情况下我仅需要少量的配置或者不配置即可使用组件对应的功能。</p>
-<p>会根据我们项目中的类路径的jar包，为jar包的类进行自动装配bean。</p>
-<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>Aspect Oriented Programming，面向切面，AOP主要实现的目的是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。是提供另一种角度来思考程序的结构，来弥补面向对象编程的不足。</p>
-<p>通俗点讲就是提供一个为一个业务实现提供切面注入的机制，通过这种方式，在业务运行中将定义好的切面通过切入点绑定到业务中，以实现将一些特殊的逻辑绑定到此业务中。</p>
-<p>举个栗子，项目中有记录操作日志的需求、或者流程变更是记录变更履历，无非就是插表操作，很简单的一个save操作，都是一些记录日志或者其他辅助性的代码。一遍又一遍的重写和调用。不仅浪费了时间，又将项目变得更加的冗余，实在得不偿失。</p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>Java</category>
-        <category>Spring Boot</category>
-      </categories>
-  </entry>
-  <entry>
     <title>超级洗衣机</title>
     <url>/post/3132132e.html</url>
     <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
@@ -1313,6 +1212,114 @@
       <tags>
         <tag>Greedy</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>MySQL</title>
+    <url>/post/547eead8.html</url>
+    <content><![CDATA[<h2 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h2><p>在数据库中，B+树的高度一般都在2-4层，B+树索引可以分为聚集索引（clustered index）和辅助索引（secondary index）。</p>
+<p>相同：内部都是B+树的形式，高度平衡，叶子结点存放着所有的数据。</p>
+<p>不同：叶子结点存放的是否是一整行的信息。</p>
+<span id="more"></span>
+
+<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><ol>
+<li>有k个子树的中间节点包含有k个元素（B树中是k-1个元素），每个元素不保存数据，只用来索引，所有数据都保存在叶子节点。</li>
+<li>所有的叶子结点中包含了全部元素的信息，及指向含这些元素记录的指针，且叶子结点本身依关键字的大小自小而大顺序链接。</li>
+<li>所有的中间节点元素都同时存在于子节点，在子节点元素中是最大（或最小）元素。</li>
+</ol>
+<h3 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h3><ol>
+<li>单一节点存储更多的元素，使得查询的IO次数更少。</li>
+<li>所有查询都要查找到叶子节点，查询性能稳定。</li>
+<li>所有叶子节点形成有序链表，便于范围查询。</li>
+</ol>
+<h2 id="索引原理"><a href="#索引原理" class="headerlink" title="索引原理"></a>索引原理</h2><p>索引（Index）是帮助MySQL高效获取数据的数据结构。</p>
+<p>索引的目的在于提高查询效率，通过不断地缩小想要获取数据的范围来筛选出最终想要的结果，同时把随机的事件变成顺序的事件，也就是说，有了这种索引机制，我们可以总是用同一种查找方式来锁定数据。</p>
+<p>磁盘IO操作成本高昂，每次查找数据时应把磁盘IO次数控制在一个很小的数量级，最好是常数数量级。</p>
+<h3 id="聚集索引"><a href="#聚集索引" class="headerlink" title="聚集索引"></a>聚集索引</h3><p>InnoDB存储引擎表是索引组织表，即表中数据按照主键顺序存放。而聚集索引（clustered index）就是按照每张表的主键构造一棵B+树，同时叶子结点存放的即为整张表的行记录数据，也将聚集索引的叶子结点称为数据页。聚集索引的这个特性决定了索引组织表中数据也是索引的一部分，每个数据页都通过一个双向链表来进行链接。</p>
+<p>如果未定义主键，MySQL取第一个唯一索引（unique）而且只含非空列（NOT NULL）作为主键，InnoDB使用它作为聚簇索引。</p>
+<p>如果没有这样的列，InnoDB就自己产生一个这样的ID值，它有六个字节，而且是隐藏的，使其作为聚簇索引。</p>
+<p>由于实际的数据页只能按照一棵B+树进行排序，因此每张表只能拥有一个聚集索引。</p>
+<p>在多数情况下，查询优化器倾向于采用聚集索引。因为聚集索引能够在B+树索引的叶子节点上直接找到数据。此外由于定义了数据的逻辑顺序，聚集索引能够特别快地访问针对范围值得查询。</p>
+<p>对主键的排序查找和范围查找速度非常快，叶子节点的数据就是用户所要查询的数据。</p>
+<p>范围查询（range query），如果要查找主键某一范围内的数据，通过叶子节点的上层中间节点就可以得到页的范围，之后直接读取数据页。</p>
+<h3 id="辅助索引"><a href="#辅助索引" class="headerlink" title="辅助索引"></a>辅助索引</h3><p>除了聚集索引外其他索引都是辅助索引，也称非聚集索引，与聚集索引的区别是：辅助索引的叶子节点不包含行记录的全部数据。</p>
+<p>叶子节点除了包含键值以外，每个叶子节点中的索引行中还包含一个书签（bookmark）。该书签用来告诉InnoDB存储引擎去哪里可以找到与索引相对应的行数据。</p>
+<p>由于InnoDB存储引擎是索引组织表，因此InnoDB存储引擎的辅助索引的书签就是相应行数据的聚集索引键。</p>
+<h2 id="事务（Transaction）"><a href="#事务（Transaction）" class="headerlink" title="事务（Transaction）"></a>事务（Transaction）</h2><h3 id="特性（ACID）"><a href="#特性（ACID）" class="headerlink" title="特性（ACID）"></a>特性（ACID）</h3><h4 id="原子性（Atomicity）"><a href="#原子性（Atomicity）" class="headerlink" title="原子性（Atomicity）"></a>原子性（Atomicity）</h4><p>原子性是指事务包含的所有操作要么全部成功，要么全部失败回滚，因此事务的操作如果成功就必须要完全应用到数据库，如果操作失败则不能对数据库有任何影响。</p>
+<h4 id="一致性（Consistency）"><a href="#一致性（Consistency）" class="headerlink" title="一致性（Consistency）"></a>一致性（Consistency）</h4><p>一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，也就是说一个事务执行之前和执行之后都必须处于一致性状态。</p>
+<p>拿转账来说，假设用户A和用户B两者的钱加起来一共是5000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是5000，这就是事务的一致性。</p>
+<h4 id="隔离性（Isolation）"><a href="#隔离性（Isolation）" class="headerlink" title="隔离性（Isolation）"></a>隔离性（Isolation）</h4><p>隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离，每个事务都感觉不到有其他事务在并发地执行。</p>
+<h4 id="持久性（Durability）"><a href="#持久性（Durability）" class="headerlink" title="持久性（Durability）"></a>持久性（Durability）</h4><p>持久性是指一个事务一旦被提交了，那么对数据库中的数据的改变就是永久性的，即便是在数据库系统遇到故障的情况下也不会丢失提交事务的操作，必须要将我们的事务完全执行完成，否则就会造成我们看到提示事务处理完毕，但是数据库因为故障而没有执行事务的重大错误。</p>
+<h3 id="隔离等级"><a href="#隔离等级" class="headerlink" title="隔离等级"></a>隔离等级</h3><p>在实际应用中，数据库中的数据是要被多个用户共同访问的，在多个用户同时操作相同的数据时，可能就会出现一些事务的并发问题，具体如下。</p>
+<h4 id="脏读"><a href="#脏读" class="headerlink" title="脏读"></a>脏读</h4><p>指一个事务读取到另一个事务未提交的数据。</p>
+<h4 id="不可重复读"><a href="#不可重复读" class="headerlink" title="不可重复读"></a>不可重复读</h4><p>指一个事务对同一行数据重复读取两次，但得到的结果不同。</p>
+<h4 id="虚读-幻读"><a href="#虚读-幻读" class="headerlink" title="虚读/幻读"></a>虚读/幻读</h4><p>指一个事务执行两次查询，但第二次查询的结果包含了第一次查询中未出现的数据。</p>
+<h4 id="丢失更新"><a href="#丢失更新" class="headerlink" title="丢失更新"></a>丢失更新</h4><p>指两个事务同时更新一行数据，后提交（或撤销）的事务将之前事务提交的数据覆盖了。</p>
+<p> 丢失更新可分为两类：</p>
+<ul>
+<li>第一类丢失更新，指两个事务同时操作同一个数据时，当第一个事务撤销时，把已经提交的第二个事务的更新数据覆盖了，第二个事务就造成了数据丢失。</li>
+<li>第二类丢失更新，指当两个事务同时操作同一个数据时，第一个事务将修改结果成功提交后，对第二个事务已经提交的修改结果进行了覆盖，对第二个事务造成了数据丢失。</li>
+</ul>
+<p> 为了避免上述事务并发问题的出现，在标准的 SQL 规范中定义了四种事务隔离级别，不同的隔离级别对事务的处理有所不同。这四种事务的隔离级别如下。</p>
+<h4 id="Read-Uncommitted（读未提交）"><a href="#Read-Uncommitted（读未提交）" class="headerlink" title="Read Uncommitted（读未提交）"></a>Read Uncommitted（读未提交）</h4><p>一个事务在执行过程中，既可以访问其他事务未提交的新插入的数据，又可以访问未提交的修改数据。如果一个事务已经开始写数据，则另外一个事务不允许同时进行写操作，但允许其他事务读此行数据。此隔离级别可防止丢失更新。</p>
+<h4 id="Read-Committed（读已提交）"><a href="#Read-Committed（读已提交）" class="headerlink" title="Read Committed（读已提交）"></a>Read Committed（读已提交）</h4><p>一个事务在执行过程中，既可以访问其他事务成功提交的新插入的数据，又可以访问成功修改的数据。读取数据的事务允许其他事务继续访问该行数据，但是未提交的写事务将会禁止其他事务访问该行。此隔离级别可有效防止脏读。</p>
+<h4 id="Repeatable-Read（可重复读取）"><a href="#Repeatable-Read（可重复读取）" class="headerlink" title="Repeatable Read（可重复读取）"></a>Repeatable Read（可重复读取）</h4><p>一个事务在执行过程中，可以访问其他事务成功提交的新插入的数据，但不可以访问成功修改的数据。读取数据的事务将会禁止写事务（但允许读事务），写事务则禁止任何其他事务。此隔离级别可有效防止不可重复读和脏读。</p>
+<h4 id="Serializable（可串行化）"><a href="#Serializable（可串行化）" class="headerlink" title="Serializable（可串行化）"></a>Serializable（可串行化）</h4><p>提供严格的事务隔离。它要求事务序列化执行，事务只能一个接着一个地执行，不能并发执行。此隔离级别可有效防止脏读、不可重复读和幻读。但这个级别可能导致大量的超时现象和锁竞争，在实际应用中很少使用。</p>
+<p> 一般来说，事务的隔离级别越高，越能保证数据库的完整性和一致性，但相对来说，隔离级别越高，对并发性能的影响也越大。因此，通常将数据库的隔离级别设置为 Read  Committed，即读已提交数据，它既能防止脏读，又能有较好的并发性能。虽然这种隔离级别会导致不可重复读、幻读和第二类丢失更新这些并发问题，但可通过在应用程序中采用悲观锁和乐观锁加以控制。</p>
+<h2 id="引擎"><a href="#引擎" class="headerlink" title="引擎"></a>引擎</h2><h3 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h3><p>InnoDB是事务型数据库的首选引擎，支持事务安全表（ACID），行锁定和外键，是默认的MySQL引擎。InnoDB主要特性有：</p>
+<ol>
+<li>InnoDB给MySQL提供了具有提交、回滚和崩溃恢复能力的事物安全（ACID兼容）存储引擎。InnoDB锁定在行级并且也在SELECT语句中提供一个类似Oracle的非锁定读。这些功能增加了多用户部署和性能。在SQL查询中，可以自由地将InnoDB类型的表和其他MySQL的表类型混合起来，甚至在同一个查询中也可以混合。</li>
+<li>InnoDB是为处理巨大数据量的最大性能设计。它的CPU效率可能是任何其他基于磁盘的关系型数据库引擎锁不能匹敌的。</li>
+<li>InnoDB存储引擎完全与MySQL服务器整合，InnoDB存储引擎为在主内存中缓存数据和索引而维持它自己的缓冲池。InnoDB将它的表和索引在一个逻辑表空间中，表空间可以包含数个文件（或原始磁盘文件）InnoDB表可以是任何尺寸，即使在文件尺寸被限制为2GB的操作系统上。</li>
+<li>InnoDB支持外键完整性约束，存储表中的数据时，每张表的存储都按主键顺序存放，如果没有显示在表定义时指定主键，InnoDB会为每一行生成一个6字节的ROWID，并以此作为主键。</li>
+<li>InnoDB不创建目录，使用InnoDB时，MySQL将在MySQL数据目录下创建一个名为ibdata1的10MB大小的自动扩展数据文件，以及两个名为ib_logfile0和ib_logfile1的5MB大小的日志文件。</li>
+</ol>
+<h3 id="比较选择"><a href="#比较选择" class="headerlink" title="比较选择"></a>比较选择</h3><p><img src="https://upload-images.jianshu.io/upload_images/11464886-82267cb5926d26fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200" alt="img"></p>
+<p>如果要提供提交、回滚、崩溃恢复能力的事物安全（ACID兼容）能力，并要求实现并发控制，InnoDB是一个好的选择。</p>
+<p>如果数据表主要用来插入和查询记录，则MyISAM引擎能提供较高的处理效率。</p>
+<p>如果只是临时存放数据，数据量不大，并且不需要较高的数据安全性，可以选择将数据保存在内存中的Memory引擎，MySQL中使用该引擎作为临时表，存放查询的中间结果。</p>
+<p>如果只有INSERT和SELECT操作，可以选择Archive，Archive支持高并发的插入操作，但是本身不是事务安全的。Archive非常适合存储归档数据，如记录日志信息可以使用Archive。</p>
+<h2 id="窗口函数"><a href="#窗口函数" class="headerlink" title="窗口函数"></a>窗口函数</h2><p>窗口函数，也叫OLAP函数（Online Anallytical Processing，联机分析处理），可以对数据库数据进行实时分析处理。</p>
+<p>窗口函数的基本语法如下：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">&lt;</span>窗口函数<span class="operator">&gt;</span> <span class="keyword">over</span> (<span class="keyword">partition</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于分组的列名<span class="operator">&gt;</span></span><br><span class="line">                <span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>用于排序的列名<span class="operator">&gt;</span>[<span class="keyword">ASC</span><span class="operator">/</span><span class="keyword">DESC</span>])</span><br></pre></td></tr></table></figure>
+
+<p>&lt;窗口函数&gt;的位置，可以放以下两种函数：</p>
+<ol>
+<li>专用窗口函数，包括后面要讲到的rank, dense_rank, row_number等专用窗口函数。</li>
+<li>聚合函数，如sum. avg, count, max, min等</li>
+</ol>
+<p>因为窗口函数是对where或者group by子句处理后的结果进行操作，所以窗口函数原则上只能写在select子句中。</p>
+<h2 id="查询优化"><a href="#查询优化" class="headerlink" title="查询优化"></a>查询优化</h2><ol>
+<li>使用连接（JOIN）代替子查询（Sub-Queries）</li>
+<li>使用联合(UNION)来代替手动创建的临时表</li>
+<li>使用索引</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>MySQL</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Spring Boot</title>
+    <url>/post/a541262a.html</url>
+    <content><![CDATA[<h2 id="IoC（控制反转）"><a href="#IoC（控制反转）" class="headerlink" title="IoC（控制反转）"></a>IoC（控制反转）</h2><p>调用类中的方法不是通过new它的对象来实现，而是通过Spring配置来创建对象，然后交给IOC容器来管理我们的对象，使用时去找IOC容器要，根本就不用去管我们需要的这个对象时怎么创建的、什么时候被销毁。</p>
+<p>这样一来，类和类之间的关系就变弱了，因为我们没有在一个类中new另一个对象，对象之间的调用、联系都是通过这个IOC容器来获取的，使每一个对象都相对比较独立。</p>
+<p>IoC的一个重点是在系统运行中，动态的向某个对象提供它所需要的其他对象。这一点是通过DI（Dependency Injection，依赖注入）来实现的。</p>
+<span id="more"></span>
+
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><h3 id="习惯优于配置"><a href="#习惯优于配置" class="headerlink" title="习惯优于配置"></a>习惯优于配置</h3><p>（Convention Over Configuration），也称作按约定编程，是一种软件设计范式，旨在减少软件开发人员需做决定的数量、获得简单的好处，而又不失灵活性。</p>
+<h3 id="内嵌容器"><a href="#内嵌容器" class="headerlink" title="内嵌容器"></a>内嵌容器</h3><p>内嵌servlet容器，可以直接执行运行项目的main函数。</p>
+<h3 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h3><p>Spring Boot Starter 中有两个核心组件∶ 自动配置代码和提供自动配置模块及其它有用的依赖。也就意味着当我们项目中引入某个  Starter，即拥有了此软件的默认使用能力，除非我们需要特定的配置，一般情况下我仅需要少量的配置或者不配置即可使用组件对应的功能。</p>
+<p>会根据我们项目中的类路径的jar包，为jar包的类进行自动装配bean。</p>
+<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>Aspect Oriented Programming，面向切面，AOP主要实现的目的是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。是提供另一种角度来思考程序的结构，来弥补面向对象编程的不足。</p>
+<p>通俗点讲就是提供一个为一个业务实现提供切面注入的机制，通过这种方式，在业务运行中将定义好的切面通过切入点绑定到业务中，以实现将一些特殊的逻辑绑定到此业务中。</p>
+<p>举个栗子，项目中有记录操作日志的需求、或者流程变更是记录变更履历，无非就是插表操作，很简单的一个save操作，都是一些记录日志或者其他辅助性的代码。一遍又一遍的重写和调用。不仅浪费了时间，又将项目变得更加的冗余，实在得不偿失。</p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Java</category>
+        <category>Spring Boot</category>
+      </categories>
   </entry>
   <entry>
     <title>Java</title>
