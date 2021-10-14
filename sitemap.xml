@@ -186,13 +186,6 @@
   </url>
   
   <url>
-    <loc>https://pingpinggray.top/tags/TreeMap/</loc>
-    <lastmod>2021-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://pingpinggray.top/tags/Bit-Operation/</loc>
     <lastmod>2021-10-14</lastmod>
     <changefreq>daily</changefreq>
@@ -207,6 +200,20 @@
   </url>
   
   <url>
+    <loc>https://pingpinggray.top/tags/TreeMap/</loc>
+    <lastmod>2021-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://pingpinggray.top/tags/Greedy/</loc>
+    <lastmod>2021-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://pingpinggray.top/tags/DFS/</loc>
     <lastmod>2021-10-14</lastmod>
     <changefreq>daily</changefreq>
@@ -215,13 +222,6 @@
   
   <url>
     <loc>https://pingpinggray.top/tags/Prefix/</loc>
-    <lastmod>2021-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://pingpinggray.top/tags/Greedy/</loc>
     <lastmod>2021-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -251,13 +251,6 @@
   </url>
   
   <url>
-    <loc>https://pingpinggray.top/categories/Tech/GitHub-Pages/</loc>
-    <lastmod>2021-10-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://pingpinggray.top/categories/Tech/Hexo/</loc>
     <lastmod>2021-10-14</lastmod>
     <changefreq>daily</changefreq>
@@ -265,14 +258,21 @@
   </url>
   
   <url>
-    <loc>https://pingpinggray.top/categories/Tech/LeetCode/</loc>
+    <loc>https://pingpinggray.top/categories/Tech/MySQL/</loc>
     <lastmod>2021-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://pingpinggray.top/categories/Tech/MySQL/</loc>
+    <loc>https://pingpinggray.top/categories/Tech/GitHub-Pages/</loc>
+    <lastmod>2021-10-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://pingpinggray.top/categories/Tech/LeetCode/</loc>
     <lastmod>2021-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
