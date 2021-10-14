@@ -49,6 +49,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
+<link rel="alternate" href="/atom.xml" title="Gray Dynasty" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -216,7 +217,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://pingpinggray.top/post/2bcbefa4.html">
+    <link itemprop="mainEntityOfPage" href="https://pingpinggray.top/post/ef636ad6.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -229,7 +230,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/post/2bcbefa4.html" class="post-title-link" itemprop="url">Hadoop</a>
+          <a href="/post/ef636ad6.html" class="post-title-link" itemprop="url">HBase</a>
         </h2>
 
         <div class="post-meta-container">
@@ -241,7 +242,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-09-24 11:34:05 / Modified: 17:07:27" itemprop="dateCreated datePublished" datetime="2021-09-24T11:34:05+08:00">2021-09-24</time>
+      <time title="Created: 2021-09-24 11:34:05 / Modified: 17:07:04" itemprop="dateCreated datePublished" datetime="2021-09-24T11:34:05+08:00">2021-09-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -264,14 +265,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>6.4k</span>
+      <span>1k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
+      <span>1 mins.</span>
     </span>
 </div>
 
@@ -282,16 +283,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <ul>
-<li>Namenode，HDFS的守护进程，负责维护整个文件系统，存储着整个文件系统的元数据信息，其中fsimage和edit.log内容namenode不会持久化存储，而是在启动时重建这些数据。</li>
-<li>Datanode，是具体文件系统的工作节点，当我们需要某个数据，namenode告诉我们去哪里找，就直接和那个DataNode对应的服务器的后台进程进行通信，由DataNode进行数据的检索，然后进行具体的读/写操作。</li>
-<li>SecondaryNamenode，主要负责镜像备份以及日志与镜像的定期合并，定期的更新，和Namenode进行通信，将Namenode上的fsimage和edits进行合并。</li>
-<li>ResourceManager，是yarn平台的守护进程，负责所有资源的分配与调度，client的请求由此负责，监控nodemanager。</li>
-<li>NodeManager，是单个节点的资源管理，执行来自ResourceManager的具体任务和命令。</li>
-</ul>
+          <p>分布式、面向列的数据存储系统，通过在HDFS上提供随机读/写来解决Hadoop不能解决的问题。</p>
+<p>为了高可用性牺牲了一部分的一致性。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/post/2bcbefa4.html#more" rel="contents">
+              <a class="btn" href="/post/ef636ad6.html#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
