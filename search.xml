@@ -14,7 +14,7 @@
 <tbody><tr>
 <td align="left">学校：杭州电子科技大学</td>
 <td>手机：15988434188</td>
-<td>邮箱：<a href="mailto:&#121;&#117;&#120;&#105;&#x61;&#x6f;&#104;&#117;&#x69;&#48;&#54;&#50;&#54;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;">&#121;&#117;&#120;&#105;&#x61;&#x6f;&#104;&#117;&#x69;&#48;&#54;&#50;&#54;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#111;&#x6d;</a></td>
+<td>邮箱：<a href="mailto:&#121;&#x75;&#x78;&#105;&#97;&#x6f;&#x68;&#117;&#105;&#48;&#x36;&#x32;&#54;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#121;&#x75;&#x78;&#105;&#97;&#x6f;&#x68;&#117;&#105;&#48;&#x36;&#x32;&#54;&#x40;&#x67;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;</a></td>
 </tr>
 <tr>
 <td align="left">QQ：3033731494</td>
@@ -311,7 +311,7 @@
     <url>/post/676dd596.html</url>
     <content><![CDATA[<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
 <li><strong>手机：</strong>15988434188 </li>
-<li><strong>邮箱：</strong><a href="mailto:&#121;&#x75;&#x78;&#105;&#97;&#x6f;&#x68;&#x75;&#105;&#x30;&#x36;&#50;&#x36;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;">&#121;&#x75;&#x78;&#105;&#97;&#x6f;&#x68;&#x75;&#105;&#x30;&#x36;&#50;&#x36;&#64;&#x67;&#109;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#109;</a></li>
+<li><strong>邮箱：</strong><a href="mailto:&#121;&#117;&#x78;&#105;&#97;&#111;&#x68;&#117;&#105;&#48;&#54;&#50;&#x36;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#109;">&#121;&#117;&#x78;&#105;&#97;&#111;&#x68;&#117;&#105;&#48;&#54;&#50;&#x36;&#x40;&#x67;&#109;&#x61;&#x69;&#108;&#46;&#x63;&#111;&#109;</a></li>
 <li><strong>QQ：</strong>3033731494 </li>
 <li><strong>WeChat：</strong>ChrisGray0626</li>
 <li><strong>个人网站：</strong><a href="https://pingpinggray.top/">https://pingpinggray.top/</a></li>
@@ -413,6 +413,59 @@
       </categories>
   </entry>
   <entry>
+    <title>GitHub Pages</title>
+    <url>/post/56fd4e32.html</url>
+    <content><![CDATA[<blockquote>
+<p>GitHub Pages是免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>搭建简单</li>
+<li>完全免费</li>
+<li>静态脚本</li>
+<li>绑定域名</li>
+<li>专注内容</li>
+</ul>
+<h2 id="仓库创建"><a href="#仓库创建" class="headerlink" title="仓库创建"></a>仓库创建</h2><ul>
+<li>使用GitHub用户名，每个用户下只能建立一个</li>
+<li>仓库命名要求：{username}.github.io</li>
+<li>仓库用以存放网页的静态资源</li>
+</ul>
+<h2 id="仓库设置"><a href="#仓库设置" class="headerlink" title="仓库设置"></a>仓库设置</h2><ul>
+<li>点击Settings</li>
+<li>点击Pages</li>
+<li>配置域名</li>
+<li>配置分支</li>
+<li>选择主题</li>
+</ul>
+<h2 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h2><ul>
+<li>可自动解析域名</li>
+<li>域名管理系统中设置域名 // TODO</li>
+<li>仓库根目录创建文件，命名为CNAME，内容为域名</li>
+<li>开启HTTPS，勾选Enforce HTTPS</li>
+</ul>
+<h2 id="框架选择"><a href="#框架选择" class="headerlink" title="框架选择"></a>框架选择</h2><ul>
+<li>官方框架，Jekyll，基于Ruby</li>
+<li>第三方框架，Hexo，基于Node.js</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
+<li><p><a href="https://pages.github.com/">GitHub Pages</a></p>
+</li>
+<li><p><a href="https://jekyllrb.com/">Jekyll</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>GitHub Pages</category>
+      </categories>
+      <tags>
+        <tag>Site</tag>
+        <tag>Course</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo</title>
     <url>/post/b132932.html</url>
     <content><![CDATA[<blockquote>
@@ -490,59 +543,6 @@
       </categories>
       <tags>
         <tag>Internship Experience</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>GitHub Pages</title>
-    <url>/post/56fd4e32.html</url>
-    <content><![CDATA[<blockquote>
-<p>GitHub Pages是免费的静态站点，三个特点：免费托管、自带主题、支持自制页面和Jekyll。</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
-<li>搭建简单</li>
-<li>完全免费</li>
-<li>静态脚本</li>
-<li>绑定域名</li>
-<li>专注内容</li>
-</ul>
-<h2 id="仓库创建"><a href="#仓库创建" class="headerlink" title="仓库创建"></a>仓库创建</h2><ul>
-<li>使用GitHub用户名，每个用户下只能建立一个</li>
-<li>仓库命名要求：{username}.github.io</li>
-<li>仓库用以存放网页的静态资源</li>
-</ul>
-<h2 id="仓库设置"><a href="#仓库设置" class="headerlink" title="仓库设置"></a>仓库设置</h2><ul>
-<li>点击Settings</li>
-<li>点击Pages</li>
-<li>配置域名</li>
-<li>配置分支</li>
-<li>选择主题</li>
-</ul>
-<h2 id="域名配置"><a href="#域名配置" class="headerlink" title="域名配置"></a>域名配置</h2><ul>
-<li>可自动解析域名</li>
-<li>域名管理系统中设置域名 // TODO</li>
-<li>仓库根目录创建文件，命名为CNAME，内容为域名</li>
-<li>开启HTTPS，勾选Enforce HTTPS</li>
-</ul>
-<h2 id="框架选择"><a href="#框架选择" class="headerlink" title="框架选择"></a>框架选择</h2><ul>
-<li>官方框架，Jekyll，基于Ruby</li>
-<li>第三方框架，Hexo，基于Node.js</li>
-</ul>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ul>
-<li><p><a href="https://pages.github.com/">GitHub Pages</a></p>
-</li>
-<li><p><a href="https://jekyllrb.com/">Jekyll</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>GitHub Pages</category>
-      </categories>
-      <tags>
-        <tag>Site</tag>
-        <tag>Course</tag>
       </tags>
   </entry>
   <entry>
@@ -725,33 +725,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hive</title>
-    <url>/post/7c5f14c6.html</url>
-    <content><![CDATA[<p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI2ODAzNzk1,size_26,color_FFFFFF,t_70.jpeg" alt="hive架构"></p>
-<ol>
-<li><p>数据存储位置</p>
-<p>Hive的数据存储在<strong>hdfs上</strong>，<strong>元数据可以存储在指定的地方比如mysql，PostgreSQL</strong>等。</p>
-</li>
-<li><p>数据更新</p>
-<p>Hive处理数据时一般不对数据进行改写，因为它不支持行级别的增删操作，<strong>如果要进行更新数据，一般可以通过分区或者表直接覆盖。</strong></p>
-</li>
-<li><p><strong>执行效率</strong></p>
-<p>Hive 执行延迟较高。虽然在小数据量时传统数据库延迟更低，但<strong>是当数据规模大到超过传统数据库的处理能力的时候，Hive 的并行计算显然能体现出优势。</strong></p>
-</li>
-<li><p><strong>数据规模</strong></p>
-<p>Hive <strong>支持大规模的数据计算，通常是PB级别</strong>的数据。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>Big Data</category>
-      </categories>
-      <tags>
-        <tag>Internship Experience</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hadoop</title>
     <url>/post/2bcbefa4.html</url>
     <content><![CDATA[<ul>
@@ -863,6 +836,33 @@
 <p>这个问题也是有解的，网络上比较常见的一类说法是disable掉FileSystem内部的cache, 但是如果底层用的确实是HDFS的话，显然是有性能问题的。</p>
 <p>还有一个解法是不要去close我们拿到的FileSystem, 那么会不会有“泄漏“呢，FileSystem的设计者其实考虑到了这个问题，它有一个shutdown的hook会负责最后关掉这些FileSystem。</p>
 <p>因为缓存的粒度是文件系统级别的，一般的应用文件系统的个数不应该太多，所以不会是个大问题。</p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Big Data</category>
+      </categories>
+      <tags>
+        <tag>Internship Experience</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hive</title>
+    <url>/post/7c5f14c6.html</url>
+    <content><![CDATA[<p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI2ODAzNzk1,size_26,color_FFFFFF,t_70.jpeg" alt="hive架构"></p>
+<ol>
+<li><p>数据存储位置</p>
+<p>Hive的数据存储在<strong>hdfs上</strong>，<strong>元数据可以存储在指定的地方比如mysql，PostgreSQL</strong>等。</p>
+</li>
+<li><p>数据更新</p>
+<p>Hive处理数据时一般不对数据进行改写，因为它不支持行级别的增删操作，<strong>如果要进行更新数据，一般可以通过分区或者表直接覆盖。</strong></p>
+</li>
+<li><p><strong>执行效率</strong></p>
+<p>Hive 执行延迟较高。虽然在小数据量时传统数据库延迟更低，但<strong>是当数据规模大到超过传统数据库的处理能力的时候，Hive 的并行计算显然能体现出优势。</strong></p>
+</li>
+<li><p><strong>数据规模</strong></p>
+<p>Hive <strong>支持大规模的数据计算，通常是PB级别</strong>的数据。</p>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>Tech</category>
@@ -1182,30 +1182,6 @@
       </tags>
   </entry>
   <entry>
-    <title>矩形面积</title>
-    <url>/post/4121e703.html</url>
-    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
-<li>容斥原理</li>
-</ul>
-<span id="more"></span>
-
-<h3 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h3><ul>
-<li>两矩阵在水平和竖直方向上的交集投影线段构成交集面积的长和宽</li>
-<li>交集投影线段均大于0时，才说明有交集面积</li>
-</ul>
-<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> overlapWidth = Math.min(ax2, bx2) - Math.max(ax1, bx1);</span><br><span class="line"><span class="keyword">int</span> overlapHeight = Math.min(ay2, by2) - Math.max(ay1, by1);</span><br><span class="line"><span class="keyword">int</span> overlapArea = Math.max(overlapWidth, <span class="number">0</span>) * Math.max(overlapHeight, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/rectangle-area/">223. 矩形面积 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>Math</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>将数据流变为多个不相交区间</title>
     <url>/post/757a9357.html</url>
     <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
@@ -1236,6 +1212,30 @@
       </categories>
       <tags>
         <tag>TreeMap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>矩形面积</title>
+    <url>/post/4121e703.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>容斥原理</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="容斥原理"><a href="#容斥原理" class="headerlink" title="容斥原理"></a>容斥原理</h3><ul>
+<li>两矩阵在水平和竖直方向上的交集投影线段构成交集面积的长和宽</li>
+<li>交集投影线段均大于0时，才说明有交集面积</li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> overlapWidth = Math.min(ax2, bx2) - Math.max(ax1, bx1);</span><br><span class="line"><span class="keyword">int</span> overlapHeight = Math.min(ay2, by2) - Math.max(ay1, by1);</span><br><span class="line"><span class="keyword">int</span> overlapArea = Math.max(overlapWidth, <span class="number">0</span>) * Math.max(overlapHeight, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/rectangle-area/">223. 矩形面积 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Math</tag>
       </tags>
   </entry>
   <entry>
