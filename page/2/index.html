@@ -649,7 +649,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/post/2bcbefa4.html" class="post-title-link" itemprop="url">Data Warehouse</a>
+          <a href="/post/2bcbefa4.html" class="post-title-link" itemprop="url">Hadoop</a>
         </h2>
 
         <div class="post-meta-container">
@@ -661,7 +661,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-09-24 11:34:05 / Modified: 17:06:38" itemprop="dateCreated datePublished" datetime="2021-09-24T11:34:05+08:00">2021-09-24</time>
+      <time title="Created: 2021-09-24 11:34:05 / Modified: 17:07:27" itemprop="dateCreated datePublished" datetime="2021-09-24T11:34:05+08:00">2021-09-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -684,14 +684,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>3.8k</span>
+      <span>6.4k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
+      <span>6 mins.</span>
     </span>
 </div>
 
@@ -702,7 +702,13 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>Data Warehouse（DW），顾名思义，是一个很大的数据存储集合，出于企业的分析性报告和决策支持目的而创建，对多样的业务数据进行筛选与整合。它为企业提供一定的BI(商业智能)能力，指导业务流程改进、监视时间、成本、质量以及控制。</p>
+          <ul>
+<li>Namenode，HDFS的守护进程，负责维护整个文件系统，存储着整个文件系统的元数据信息，其中fsimage和edit.log内容namenode不会持久化存储，而是在启动时重建这些数据。</li>
+<li>Datanode，是具体文件系统的工作节点，当我们需要某个数据，namenode告诉我们去哪里找，就直接和那个DataNode对应的服务器的后台进程进行通信，由DataNode进行数据的检索，然后进行具体的读/写操作。</li>
+<li>SecondaryNamenode，主要负责镜像备份以及日志与镜像的定期合并，定期的更新，和Namenode进行通信，将Namenode上的fsimage和edits进行合并。</li>
+<li>ResourceManager，是yarn平台的守护进程，负责所有资源的分配与调度，client的请求由此负责，监控nodemanager。</li>
+<li>NodeManager，是单个节点的资源管理，执行来自ResourceManager的具体任务和命令。</li>
+</ul>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/2bcbefa4.html#more" rel="contents">
@@ -761,8 +767,29 @@
     <span title="Reading time total">49 mins.</span>
   </span>
 </div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
     </div>
   </footer>
@@ -781,6 +808,7 @@
   <script src="/js/third-party/pace.js"></script>
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
