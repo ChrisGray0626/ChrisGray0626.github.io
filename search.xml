@@ -1925,4 +1925,37 @@
         <tag>Math</tag>
       </tags>
   </entry>
+  <entry>
+    <title>加一</title>
+    <url>/post/2e394548.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>数组</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="进位检查"><a href="#进位检查" class="headerlink" title="进位检查"></a>进位检查</h3><ul>
+<li>carry初始为1</li>
+<li>逆序遍历</li>
+<li>加法操作</li>
+<li>记录每位加法之后的进位情况</li>
+<li>结果取余</li>
+</ul>
+<h3 id="首位进位"><a href="#首位进位" class="headerlink" title="首位进位"></a>首位进位</h3><ul>
+<li>当首位出现进位情况时，构造一个长度多1的新数组</li>
+<li>新数组首位置1</li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="进位检查-1"><a href="#进位检查-1" class="headerlink" title="进位检查"></a>进位检查</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">    digits[i] = digits[i] + carry;</span><br><span class="line">    carry = digits[i] == <span class="number">10</span> ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">    digits[i] %= <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="首位检查"><a href="#首位检查" class="headerlink" title="首位检查"></a>首位检查</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (carry == <span class="number">1</span>) &#123;</span><br><span class="line">    digits = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>];</span><br><span class="line">    digits[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/plus-one/">66. 加一 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+      </tags>
+  </entry>
 </search>
