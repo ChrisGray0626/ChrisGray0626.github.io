@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2021-11-01T02:58:05.318Z</updated>
+  <updated>2021-11-02T01:01:17.896Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>删除链表中的节点</title>
+    <link href="https://pingpinggray.top/post/7bf1bf61.html"/>
+    <id>https://pingpinggray.top/post/7bf1bf61.html</id>
+    <published>2021-11-02T00:58:58.000Z</published>
+    <updated>2021-11-02T01:01:17.896Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>链表</li></ul><span id="more"></span><h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><ul><li>用下一个节点直接替换当前节点</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="链表-1"><a href="#链表-1" class="headerlink" title="链表"></a>链表</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteNode</span><span class="params">(ListNode node)</span> </span>&#123;</span><br><span class="line">    ListNode next = node.next;</span><br><span class="line">    node.val = next.val;</span><br><span class="line">    node.next = next.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/delete-node-in-a-linked-list/">237. 删除链表中的节点 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;链表&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="LinkedList" scheme="https://pingpinggray.top/tags/LinkedList/"/>
+    
+  </entry>
+  
+  <entry>
     <title>分糖果</title>
     <link href="https://pingpinggray.top/post/82a9a2c2.html"/>
     <id>https://pingpinggray.top/post/82a9a2c2.html</id>
     <published>2021-11-01T02:26:01.000Z</published>
-    <updated>2021-11-01T02:58:05.318Z</updated>
+    <updated>2021-11-01T02:58:12.707Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>贪心</li></ul><span id="more"></span><h3 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h3><ul><li>能拿到的种类数量不会超过糖果总数 m 的一半</li><li>能拿到的种类数量不会超过糖果总种类数量，n</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="贪心-1"><a href="#贪心-1" class="headerlink" title="贪心"></a>贪心</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">distributeCandies</span><span class="params">(<span class="keyword">int</span>[] candyType)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = candyType.length;</span><br><span class="line">    Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (Integer candy: candyType) &#123;</span><br><span class="line">        set.add(candy);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Math.min(n / <span class="number">2</span>, set.size());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/distribute-candies/">575. 分糖果 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
     
@@ -485,32 +510,6 @@
 &lt;li&gt;ResourceManager，是yarn平台的守护进程，负责所有资源的分配与调度，client的请求由此负责，监控nodemanager。&lt;/li&gt;
 &lt;li&gt;NodeManager，是单个节点的资源管理，执行来自ResourceManager的具体任务和命令。&lt;/li&gt;
 &lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="Big Data" scheme="https://pingpinggray.top/categories/Tech/Big-Data/"/>
-    
-    
-    <category term="Internship Experience" scheme="https://pingpinggray.top/tags/Internship-Experience/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hive</title>
-    <link href="https://pingpinggray.top/post/7c5f14c6.html"/>
-    <id>https://pingpinggray.top/post/7c5f14c6.html</id>
-    <published>2021-09-24T03:34:05.000Z</published>
-    <updated>2021-09-24T09:08:07.002Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzI2ODAzNzk1,size_26,color_FFFFFF,t_70.jpeg" alt="hive架构"></p><ol><li><p>数据存储位置</p><p>Hive的数据存储在<strong>hdfs上</strong>，<strong>元数据可以存储在指定的地方比如mysql，PostgreSQL</strong>等。</p></li><li><p>数据更新</p><p>Hive处理数据时一般不对数据进行改写，因为它不支持行级别的增删操作，<strong>如果要进行更新数据，一般可以通过分区或者表直接覆盖。</strong></p></li><li><p><strong>执行效率</strong></p><p>Hive 执行延迟较高。虽然在小数据量时传统数据库延迟更低，但<strong>是当数据规模大到超过传统数据库的处理能力的时候，Hive 的并行计算显然能体现出优势。</strong></p></li><li><p><strong>数据规模</strong></p><p>Hive <strong>支持大规模的数据计算，通常是PB级别</strong>的数据。</p></li></ol>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNz</summary>
-      
     
     
     
