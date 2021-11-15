@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2021-11-10T01:14:22.152Z</updated>
+  <updated>2021-11-15T01:33:24.044Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>灯泡开关</title>
+    <link href="https://pingpinggray.top/post/9c3f2398.html"/>
+    <id>https://pingpinggray.top/post/9c3f2398.html</id>
+    <published>2021-11-15T01:26:57.000Z</published>
+    <updated>2021-11-15T01:33:24.044Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>数学</li></ul><span id="more"></span><h3 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h3><ul><li>对于第 k 个灯泡，它被切换的次数恰好就是 k 的约数个数；当 k 的约数个数为奇数时，第 k 个灯泡亮</li><li>若某个数 x 为 k 的约数，则$\frac{k}{x}$亦为 k 的约数，即约数必然成对出现；只有当 x 为完全平方数时，约数个数为奇数</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="数学-1"><a href="#数学-1" class="headerlink" title="数学"></a>数学</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">bulbSwitch</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)Math.sqrt(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/bulb-switcher/">319. 灯泡开关 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;数学&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="Math" scheme="https://pingpinggray.top/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
     <title>提莫攻击</title>
     <link href="https://pingpinggray.top/post/d28cdc4f.html"/>
     <id>https://pingpinggray.top/post/d28cdc4f.html</id>
     <published>2021-11-10T01:09:28.000Z</published>
-    <updated>2021-11-10T01:14:22.152Z</updated>
+    <updated>2021-11-10T01:14:31.202Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>模拟</li></ul><span id="more"></span><h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h3><ul><li>模拟中毒时间区间的合并</li><li>若下一个区间的左边界大于上一个区间的右边界，则统计上一个区间的范围</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="模拟-1"><a href="#模拟-1" class="headerlink" title="模拟"></a>模拟</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> time: timeSeries) &#123;</span><br><span class="line">    <span class="keyword">if</span> (time &gt; r) &#123;</span><br><span class="line">        cnt += (r - l);</span><br><span class="line">        l = time;</span><br><span class="line">    &#125;</span><br><span class="line">    r = time + duration;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/teemo-attacking/">495. 提莫攻击 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
     
@@ -494,30 +519,6 @@
     <category term="Site" scheme="https://pingpinggray.top/tags/Site/"/>
     
     <category term="Course" scheme="https://pingpinggray.top/tags/Course/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Network</title>
-    <link href="https://pingpinggray.top/post/af39be20.html"/>
-    <id>https://pingpinggray.top/post/af39be20.html</id>
-    <published>2021-09-24T03:34:05.000Z</published>
-    <updated>2021-09-25T05:31:18.179Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="POST和GET区别"><a href="#POST和GET区别" class="headerlink" title="POST和GET区别"></a>POST和GET区别</h2><p>POST和GET是HTTP请求的两种方式，都可实现将数据从浏览器向服务器发送带参数的请求。</p><p>HTTP请求底层协议都是TCP/IP，所以两者没有本质的区别。</p><ul><li>GET - 从指定的资源请求数据。</li><li>POST - 向指定的资源提交要被处理的数据</li></ul><ol><li>GET提交的数据放在URL中，POST则不会。这是最显而易见的差别。这点意味着GET更不安全（POST也不安全，因为HTTP是明文传输抓包就能获取数据内容，要想安全还得加密）</li><li>GET回退浏览器无害，POST会再次提交请求（GET方法回退后浏览器再缓存中拿结果，POST每次都会创建新资源）</li><li>GET提交的数据大小有限制（是因为浏览器对URL的长度有限制，GET本身没有限制），POST没有</li><li>GET可以被保存为书签，POST不可以。</li><li>GET能被缓存，POST不能</li><li>GET只允许ASCII字符，POST没有限制</li><li>GET会保存再浏览器历史记录中，POST不会。</li></ol><h2 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h2><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/100327002629.png" alt="100327002629"></p><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/100327022731.jpg" alt="100327022731"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;POST和GET区别&quot;&gt;&lt;a href=&quot;#POST和GET区别&quot; class=&quot;headerlink&quot; title=&quot;POST和GET区别&quot;&gt;&lt;/a&gt;POST和GET区别&lt;/h2&gt;&lt;p&gt;POST和GET是HTTP请求的两种方式，都可实现将数据从浏览器向服务器发送</summary>
-      
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    
-    <category term="Internship Experience" scheme="https://pingpinggray.top/tags/Internship-Experience/"/>
     
   </entry>
   
