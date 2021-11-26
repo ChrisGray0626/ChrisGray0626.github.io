@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2021-11-25T02:46:24.658Z</updated>
+  <updated>2021-11-26T01:26:26.358Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -17,11 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>二叉搜索树中的搜索</title>
+    <link href="https://pingpinggray.top/post/b3250fa1.html"/>
+    <id>https://pingpinggray.top/post/b3250fa1.html</id>
+    <published>2021-11-26T01:21:52.000Z</published>
+    <updated>2021-11-26T01:26:26.358Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>递归</li><li>深度优先搜索</li></ul><span id="more"></span><h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><ul><li>左子树所有节点的元素值均小于根的元素值</li><li>右子树所有节点的元素值均大于根的元素值</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">dfs</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (node.val == val) &#123;</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dfs(node.val &lt; val ? node.right : node.left);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/search-in-a-binary-search-tree/">700. 二叉搜索树中的搜索 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;递归&lt;/li&gt;
+&lt;li&gt;深度优先搜索&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="DFS" scheme="https://pingpinggray.top/tags/DFS/"/>
+    
+    <category term="Recursion" scheme="https://pingpinggray.top/tags/Recursion/"/>
+    
+    <category term="Binary Tree" scheme="https://pingpinggray.top/tags/Binary-Tree/"/>
+    
+    <category term="Binary Search Tree" scheme="https://pingpinggray.top/tags/Binary-Search-Tree/"/>
+    
+  </entry>
+  
+  <entry>
     <title>可怜的小猪</title>
     <link href="https://pingpinggray.top/post/7012e621.html"/>
     <id>https://pingpinggray.top/post/7012e621.html</id>
     <published>2021-11-25T02:35:25.000Z</published>
-    <updated>2021-11-25T02:46:24.658Z</updated>
+    <updated>2021-11-25T02:46:31.624Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>数学：信息论</li></ul><span id="more"></span><h3 id="数学：信息论"><a href="#数学：信息论" class="headerlink" title="数学：信息论"></a>数学：信息论</h3><ul><li><p>表达 n 桶水状态所需的位数：$\log_2 n$</p></li><li><p>一个猪实验 k 次的状态所实现的位数：$\log_2 (k+1)$</p></li><li><p>所需猪的最小数量 m：</p><p>$$<br>m \geq \frac{\log_2 n}{\log_2 (k+1)}<br>$$</p></li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">poorPigs</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> d, <span class="keyword">int</span> t)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> k = t / d;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">int</span>) Math.ceil(Math.log(n) / Math.log(k + <span class="number">1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/poor-pigs/">458. 可怜的小猪 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
     
@@ -491,32 +523,6 @@
     
     
     <category term="Math" scheme="https://pingpinggray.top/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>超级洗衣机</title>
-    <link href="https://pingpinggray.top/post/3132132e.html"/>
-    <id>https://pingpinggray.top/post/3132132e.html</id>
-    <published>2021-09-29T01:13:05.000Z</published>
-    <updated>2021-09-29T01:30:41.918Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>贪心</li><li>计算经过当前洗衣机左右两侧洗衣机需要调整次数的最大“流量”</li></ul><span id="more"></span><h3 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h3><ul><li>最大需要调整次数的位置i达到平衡时，其他需要调整的位置一定也达到平衡</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> num: machines) &#123;</span><br><span class="line">    num -= avg; <span class="comment">// i位置需要调整的次数</span></span><br><span class="line">    sum += num; <span class="comment">// 位置0到i需要调整的总次数</span></span><br><span class="line"></span><br><span class="line">    res = Math.max(res, Math.max(Math.abs(sum), num));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li><code>Math.abs(sum)</code>，可能为负数，缺少时需要增加的情况，故为绝对值</li><li><code>num</code>，可能为负数，但缺少时可以是多个位置同时向此位置增加，故不能加绝对值；仅需要考虑该值特别大时的情况（num&gt;sum）</li></ul><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/super-washing-machines/">517. 超级洗衣机 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;贪心&lt;/li&gt;
-&lt;li&gt;计算经过当前洗衣机左右两侧洗衣机需要调整次数的最大“流量”&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Greedy" scheme="https://pingpinggray.top/tags/Greedy/"/>
     
   </entry>
   

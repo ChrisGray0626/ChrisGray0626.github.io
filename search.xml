@@ -2453,4 +2453,32 @@
         <tag>Math</tag>
       </tags>
   </entry>
+  <entry>
+    <title>二叉搜索树中的搜索</title>
+    <url>/post/b3250fa1.html</url>
+    <content><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul>
+<li>递归</li>
+<li>深度优先搜索</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><ul>
+<li>左子树所有节点的元素值均小于根的元素值</li>
+<li>右子树所有节点的元素值均大于根的元素值</li>
+</ul>
+<h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">dfs</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (node.val == val) &#123;</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dfs(node.val &lt; val ? node.right : node.left);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/search-in-a-binary-search-tree/">700. 二叉搜索树中的搜索 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>Recursion</tag>
+        <tag>Binary Tree</tag>
+        <tag>Binary Search Tree</tag>
+      </tags>
+  </entry>
 </search>
