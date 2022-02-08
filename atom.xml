@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2022-01-28T03:01:57.734Z</updated>
+  <updated>2022-02-08T09:05:51.925Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -17,11 +17,65 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>22.1.24</title>
+    <title>22-2-07</title>
+    <link href="https://pingpinggray.top/post/df3f5073.html"/>
+    <id>https://pingpinggray.top/post/df3f5073.html</id>
+    <published>2022-02-07T08:41:53.000Z</published>
+    <updated>2022-02-08T09:05:51.925Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="22-2-7"><a href="#22-2-7" class="headerlink" title="22.2.7"></a>22.2.7</h1><ul><li>三名系统：<ul><li>新增模糊分页查询</li><li>修改新增申请接口为保护规划+多个编制单位及成员</li><li>移除多余接口</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;22-2-7&quot;&gt;&lt;a href=&quot;#22-2-7&quot; class=&quot;headerlink&quot; title=&quot;22.2.7&quot;&gt;&lt;/a&gt;22.2.7&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;三名系统：&lt;ul&gt;
+&lt;li&gt;新增模糊分页查询&lt;/li&gt;
+&lt;li&gt;修改新增申请接口为保护规划+多个</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>22-1-30</title>
+    <link href="https://pingpinggray.top/post/78c339fd.html"/>
+    <id>https://pingpinggray.top/post/78c339fd.html</id>
+    <published>2022-01-30T08:38:47.000Z</published>
+    <updated>2022-02-08T08:41:35.362Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="22-1-30"><a href="#22-1-30" class="headerlink" title="22.1.30"></a>22.1.30</h1><ul><li>三名系统<ul><li>移除通用查询，重写CRUD</li><li>流程与具体业务分离</li><li>新增单位成员</li><li>修改审批为候选组（角色）审批</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;22-1-30&quot;&gt;&lt;a href=&quot;#22-1-30&quot; class=&quot;headerlink&quot; title=&quot;22.1.30&quot;&gt;&lt;/a&gt;22.1.30&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;三名系统&lt;ul&gt;
+&lt;li&gt;移除通用查询，重写CRUD&lt;/li&gt;
+&lt;li&gt;流程与具体业务分</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>22-1-24</title>
     <link href="https://pingpinggray.top/post/2353082c.html"/>
     <id>https://pingpinggray.top/post/2353082c.html</id>
     <published>2022-01-24T03:00:45.000Z</published>
-    <updated>2022-01-28T03:01:57.734Z</updated>
+    <updated>2022-02-08T08:39:21.367Z</updated>
     
     <content type="html"><![CDATA[<h1 id="22-1-24"><a href="#22-1-24" class="headerlink" title="22.1.24"></a>22.1.24</h1><ul><li><p>三名系统</p><ul><li><p>重构Module</p></li><li><p>新增编制单位成员信息表</p></li><li><p>名称修改（简写）</p></li><li><p>新增流程统计</p></li><li><p>新增历史建筑录入流程</p></li></ul></li></ul>]]></content>
     
@@ -474,57 +528,6 @@
     
     
     <category term="Array" scheme="https://pingpinggray.top/tags/Array/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>最小操作次数使数组元素相等</title>
-    <link href="https://pingpinggray.top/post/c4d94f41.html"/>
-    <id>https://pingpinggray.top/post/c4d94f41.html</id>
-    <published>2021-10-20T02:03:06.000Z</published>
-    <updated>2021-10-20T02:06:53.025Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>数学</li></ul><h3 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h3><p>使 n−1 个元素增加 1，等价于使1 个元素减少 1</p><span id="more"></span><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> minNum = Arrays.stream(nums).min().getAsInt();</span><br><span class="line"><span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">  res += num - minNum;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/minimum-moves-to-equal-array-elements/">453. 最小操作次数使数组元素相等 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;数学&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;数学&quot;&gt;&lt;a href=&quot;#数学&quot; class=&quot;headerlink&quot; title=&quot;数学&quot;&gt;&lt;/a&gt;数学&lt;/h3&gt;&lt;p&gt;使 n−1 个元素增加 1，等价于使1 个元素减少 1&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Math" scheme="https://pingpinggray.top/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>将数据流变为多个不相交区间</title>
-    <link href="https://pingpinggray.top/post/757a9357.html"/>
-    <id>https://pingpinggray.top/post/757a9357.html</id>
-    <published>2021-10-09T01:04:04.000Z</published>
-    <updated>2021-10-09T01:58:23.078Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>有序映射</li></ul><span id="more"></span><h3 id="区间集合"><a href="#区间集合" class="headerlink" title="区间集合"></a>区间集合</h3><ol><li>存在区间[l, r]，满足l&lt;= val&lt;=r，无变化；</li><li>存在区间[l, r]，满足val=r+1，该区间变为[l, r+1]；</li><li>存在区间[l, r]，满足val=l-1，该区间变为[l-1, r]；</li><li>存在区间[l0, r0]、[l1, r1]，满足val=r0+1=l1-1，两区间合并为[l0, r1]；</li><li>以上均不满足，val单独成立新区间[val, val]。</li></ol><h3 id="有序映射"><a href="#有序映射" class="headerlink" title="有序映射"></a>有序映射</h3><ul><li>键存放左区间，值存放右区间</li><li>支持查询“最大的比某个元素小的键“与“最小的比某个元素大的键”</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="区间查询"><a href="#区间查询" class="headerlink" title="区间查询"></a>区间查询</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 找到l1最小且满足l1&gt;val的区间</span></span><br><span class="line">Map.Entry&lt;Integer, Integer&gt; interval1 = intervals.ceilingEntry(val + <span class="number">1</span>);</span><br><span class="line"><span class="comment">// 找到l0最大且满足l0&lt;=val的区间</span></span><br><span class="line">Map.Entry&lt;Integer, Integer&gt; interval0 = intervals.floorEntry(val);</span><br></pre></td></tr></table></figure><h3 id="情况讨论"><a href="#情况讨论" class="headerlink" title="情况讨论"></a>情况讨论</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 情况一</span></span><br><span class="line"><span class="keyword">if</span> (interval0 != <span class="keyword">null</span> &amp;&amp; interval0.getKey() &lt;= val &amp;&amp; val &lt;= interval0.getValue()) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">boolean</span> leftAside = interval0 != <span class="keyword">null</span> &amp;&amp; interval0.getValue() + <span class="number">1</span> == val;</span><br><span class="line">    <span class="keyword">boolean</span> rightAside = interval1 != <span class="keyword">null</span> &amp;&amp; interval1.getKey() - <span class="number">1</span> == val;</span><br><span class="line">    <span class="comment">// 情况四</span></span><br><span class="line">    <span class="keyword">if</span> (leftAside &amp;&amp; rightAside) &#123;</span><br><span class="line">        <span class="keyword">int</span> left = interval0.getKey(), right = interval1.getValue();</span><br><span class="line">        intervals.remove(interval0.getKey());</span><br><span class="line">        intervals.remove(interval1.getKey());</span><br><span class="line">        intervals.put(left, right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 情况二</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (leftAside) &#123;</span><br><span class="line">        intervals.put(interval0.getKey(), val);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 情况三</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (rightAside) &#123;</span><br><span class="line">        intervals.put(val, interval1.getValue());</span><br><span class="line">        intervals.remove(interval1.getKey());</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 情况五</span></span><br><span class="line">        intervals.put(val, val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/data-stream-as-disjoint-intervals/">352. 将数据流变为多个不相交区间 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;有序映射&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="TreeMap" scheme="https://pingpinggray.top/tags/TreeMap/"/>
     
   </entry>
   
