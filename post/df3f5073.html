@@ -22,15 +22,15 @@
   <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"pingpinggray.top","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.7.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="22.2.7 三名系统： 新增模糊分页查询 修改新增申请接口为保护规划+多个编制单位及成员 移除多余接口">
+<meta name="description" content="22.2.7 三名-保护规划-服务： 新增模糊分页查询 修改新增申请接口为保护规划+多个编制单位及成员 移除多余接口 新增项目编码（流水号）生成   三名-历史建筑-服务： 新建基础服务">
 <meta property="og:type" content="article">
 <meta property="og:title" content="22-2-07">
 <meta property="og:url" content="https://pingpinggray.top/post/df3f5073.html">
 <meta property="og:site_name" content="Gray Dynasty">
-<meta property="og:description" content="22.2.7 三名系统： 新增模糊分页查询 修改新增申请接口为保护规划+多个编制单位及成员 移除多余接口">
+<meta property="og:description" content="22.2.7 三名-保护规划-服务： 新增模糊分页查询 修改新增申请接口为保护规划+多个编制单位及成员 移除多余接口 新增项目编码（流水号）生成   三名-历史建筑-服务： 新建基础服务">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-07T08:41:53.000Z">
-<meta property="article:modified_time" content="2022-02-08T09:05:51.925Z">
+<meta property="article:modified_time" content="2022-02-12T13:36:09.660Z">
 <meta property="article:author" content="Chris Gray">
 <meta name="twitter:card" content="summary">
 
@@ -91,7 +91,7 @@
         <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
         <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">22</span></a></li>
         <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">41</span></a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">42</span></a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -163,7 +163,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">41</span>
+          <span class="site-state-item-count">42</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -255,7 +255,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2022-02-08 17:05:51" itemprop="dateModified" datetime="2022-02-08T17:05:51+08:00">2022-02-08</time>
+        <time title="Modified: 2022-02-12 21:36:09" itemprop="dateModified" datetime="2022-02-12T21:36:09+08:00">2022-02-12</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -285,7 +285,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>48</span>
+      <span>84</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -304,10 +304,15 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="22-2-7"><a href="#22-2-7" class="headerlink" title="22.2.7"></a>22.2.7</h1><ul>
-<li>三名系统：<ul>
+<li>三名-保护规划-服务：<ul>
 <li>新增模糊分页查询</li>
 <li>修改新增申请接口为保护规划+多个编制单位及成员</li>
 <li>移除多余接口</li>
+<li>新增项目编码（流水号）生成</li>
+</ul>
+</li>
+<li>三名-历史建筑-服务：<ul>
+<li>新建基础服务</li>
 </ul>
 </li>
 </ul>
@@ -349,6 +354,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/post/5f2d3088.html" rel="next" title="22-2-14">
+                  22-2-14 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
