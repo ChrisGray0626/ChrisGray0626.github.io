@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2022-02-14T01:39:34.196Z</updated>
+  <updated>2022-02-14T10:29:57.867Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -17,21 +17,48 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>有序数组中的单一元素</title>
+    <link href="https://pingpinggray.top/post/fe62bbc2.html"/>
+    <id>https://pingpinggray.top/post/fe62bbc2.html</id>
+    <published>2022-02-14T09:18:47.000Z</published>
+    <updated>2022-02-14T10:29:57.867Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><ul><li>判断当前位置的数是否唯一</li><li>若当前位置为奇数，则比较当前位置和前一位置的数是否相等，反之亦然</li><li>若相等则唯一数在右侧（含），反之在左侧（不含）</li></ul><span id="more"></span><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">searchSingle</span><span class="params">(<span class="keyword">int</span> idx)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (idx % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[idx] == nums[idx - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[idx] == nums[idx + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array/">540. 有序数组中的单一元素 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;h3 id=&quot;二分查找&quot;&gt;&lt;a href=&quot;#二分查找&quot; class=&quot;headerlink&quot; title=&quot;二分查找&quot;&gt;&lt;/a&gt;二分查找&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;判断当前位置的数是否唯一&lt;/li&gt;
+&lt;li&gt;若当前位置为奇数，则比较当前位置和前一位置的数是否相等，反之亦然&lt;/li&gt;
+&lt;li&gt;若相等则唯一数在右侧（含），反之在左侧（不含）&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="BinarySearch" scheme="https://pingpinggray.top/tags/BinarySearch/"/>
+    
+  </entry>
+  
+  <entry>
     <title>22-2-14</title>
     <link href="https://pingpinggray.top/post/5f2d3088.html"/>
     <id>https://pingpinggray.top/post/5f2d3088.html</id>
     <published>2022-02-14T01:38:06.000Z</published>
-    <updated>2022-02-14T01:39:34.196Z</updated>
+    <updated>2022-02-14T09:01:08.690Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="22-2-14"><a href="#22-2-14" class="headerlink" title="22-2-14"></a>22-2-14</h1><ul><li>三名-保护规划-服务：<ul><li>新增查询任务定义的全部流程</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="22-2-14"><a href="#22-2-14" class="headerlink" title="22-2-14"></a>22-2-14</h1><ul><li>三名-保护规划-服务：<ul><li>根据任务定义查询全部流程</li><li>（根据行政区划代码）查询全部申请</li><li>修改申请（含编制单位、附件）</li><li>根据任务名称查询全部流程</li></ul></li><li>三名-历史建筑-服务：<ul><li>整合至一个审批</li></ul></li></ul>]]></content>
     
     
       
       
     <summary type="html">&lt;h1 id=&quot;22-2-14&quot;&gt;&lt;a href=&quot;#22-2-14&quot; class=&quot;headerlink&quot; title=&quot;22-2-14&quot;&gt;&lt;/a&gt;22-2-14&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;三名-保护规划-服务：&lt;ul&gt;
-&lt;li&gt;新增查询任务定义的全部流程&lt;/li&gt;
-&lt;/ul&gt;</summary>
+&lt;li&gt;根据任务定义查询全部流程&lt;/li&gt;
+&lt;li&gt;（根</summary>
       
     
     
@@ -505,31 +532,6 @@
     
     
     <category term="searchBinary" scheme="https://pingpinggray.top/tags/searchBinary/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>求众数 II</title>
-    <link href="https://pingpinggray.top/post/be1b1658.html"/>
-    <id>https://pingpinggray.top/post/be1b1658.html</id>
-    <published>2021-10-22T02:47:23.000Z</published>
-    <updated>2021-10-22T03:00:33.861Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>摩尔投票法</li></ul><span id="more"></span><h3 id="摩尔投票法"><a href="#摩尔投票法" class="headerlink" title="摩尔投票法"></a>摩尔投票法</h3><ul><li>抵消阶段：两个不同投票进行对坑，并且同时抵消掉各一张票，如果两个投票相同，则累加可抵消的次数</li><li>计数阶段：在抵消阶段最后得到的抵消计数只要不为 0，那这个候选人是有可能超过一半的票数的，为了验证，则需要遍历一次，统计票数，才可确定。</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="抵消阶段"><a href="#抵消阶段" class="headerlink" title="抵消阶段"></a>抵消阶段</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> candidate1 = Integer.MAX_VALUE;</span><br><span class="line"><span class="keyword">int</span> candidate2 = Integer.MAX_VALUE;</span><br><span class="line"><span class="keyword">int</span> vote1 = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> vote2 = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> num: nums) &#123;</span><br><span class="line">    <span class="keyword">if</span> (candidate1 == num) &#123;</span><br><span class="line">        vote1++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (candidate2 == num) &#123;</span><br><span class="line">        vote2++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (vote1 == <span class="number">0</span>) &#123;</span><br><span class="line">        candidate1 = num;</span><br><span class="line">        vote1++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (vote2 == <span class="number">0</span>) &#123;</span><br><span class="line">        candidate2 = num;</span><br><span class="line">        vote2++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        vote1--;</span><br><span class="line">        vote2--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="计数阶段"><a href="#计数阶段" class="headerlink" title="计数阶段"></a>计数阶段</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vote1 = <span class="number">0</span>;</span><br><span class="line">vote2 = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">    <span class="keyword">if</span> (candidate1 == num) &#123;</span><br><span class="line">        vote1++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (candidate2 == num) &#123;</span><br><span class="line">        vote2++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/majority-element-ii/">229. 求众数 II - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;摩尔投票法&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Boyer–Moore majority vote algorithm" scheme="https://pingpinggray.top/tags/Boyer%E2%80%93Moore-majority-vote-algorithm/"/>
     
   </entry>
   
