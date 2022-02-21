@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2022-02-15T10:38:57.630Z</updated>
+  <updated>2022-02-21T11:20:29.053Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>22-2-21</title>
+    <link href="https://pingpinggray.top/post/46a97c4.html"/>
+    <id>https://pingpinggray.top/post/46a97c4.html</id>
+    <published>2022-02-21T11:11:35.000Z</published>
+    <updated>2022-02-21T11:20:29.053Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="22-2-21"><a href="#22-2-21" class="headerlink" title="22-2-21"></a>22-2-21</h1><h2 id="三名服务"><a href="#三名服务" class="headerlink" title="三名服务"></a>三名服务</h2><ul><li>BaseAppDO：整合通用审批</li><li>合并流程查询</li><li>新增“申请状态”</li><li>README文档整理</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;22-2-21&quot;&gt;&lt;a href=&quot;#22-2-21&quot; class=&quot;headerlink&quot; title=&quot;22-2-21&quot;&gt;&lt;/a&gt;22-2-21&lt;/h1&gt;&lt;h2 id=&quot;三名服务&quot;&gt;&lt;a href=&quot;#三名服务&quot; class=&quot;headerlink&quot; titl</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>矩阵中的幸运数</title>
     <link href="https://pingpinggray.top/post/f5f54f75.html"/>
     <id>https://pingpinggray.top/post/f5f54f75.html</id>
     <published>2022-02-15T10:33:18.000Z</published>
-    <updated>2022-02-15T10:38:57.630Z</updated>
+    <updated>2022-02-15T10:39:06.531Z</updated>
     
     <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>模拟</li></ul><span id="more"></span><h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h3><ul><li>幸运数应满足：在同一行的所有元素中最小；在同一列的所有元素中最大</li><li>预处理每行每列的最值</li><li>遍历比较当前数是否等于所在行列的最值</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="预处理最值"><a href="#预处理最值" class="headerlink" title="预处理最值"></a>预处理最值</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] minRow = <span class="keyword">new</span> <span class="keyword">int</span>[m];</span><br><span class="line"><span class="keyword">int</span>[] maxCol = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">Arrays.fill(minRow, Integer.MAX_VALUE);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> num = matrix[i][j];</span><br><span class="line">        minRow[i] = Math.min(minRow[i], num);</span><br><span class="line">        maxCol[j] = Math.max(maxCol[j], num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="遍历比较"><a href="#遍历比较" class="headerlink" title="遍历比较"></a>遍历比较</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; res = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> num = matrix[i][j];</span><br><span class="line">        <span class="keyword">if</span> (num == minRow[i] &amp;&amp; num == maxCol[j]) &#123;</span><br><span class="line">            res.add(num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/lucky-numbers-in-a-matrix/">1380. 矩阵中的幸运数 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
     
@@ -71,17 +95,14 @@
     <link href="https://pingpinggray.top/post/5f2d3088.html"/>
     <id>https://pingpinggray.top/post/5f2d3088.html</id>
     <published>2022-02-14T01:38:06.000Z</published>
-    <updated>2022-02-15T10:05:13.873Z</updated>
+    <updated>2022-02-21T11:11:01.193Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="22-2-14"><a href="#22-2-14" class="headerlink" title="22-2-14"></a>22-2-14</h1><ul><li>sanming-server：<ul><li>根据任务定义查询全部流程</li><li>（根据行政区划代码）查询全部申请</li><li>修改申请（含编制单位、附件）</li><li>根据任务名称查询全部流程</li><li>整合两审批</li><li>接入用户系统</li><li>（条件）查询流程</li><li>新增任务的状态字段</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="22-2-14"><a href="#22-2-14" class="headerlink" title="22-2-14"></a>22-2-14</h1><h2 id="三名服务"><a href="#三名服务" class="headerlink" title="三名服务"></a>三名服务</h2><ul><li>接入用户系统</li><li>DO基类：记录创建日期、更新日期</li><li>整理无用流程接口</li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;22-2-14&quot;&gt;&lt;a href=&quot;#22-2-14&quot; class=&quot;headerlink&quot; title=&quot;22-2-14&quot;&gt;&lt;/a&gt;22-2-14&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;sanming-server：&lt;ul&gt;
-&lt;li&gt;根据任务定义查询全部流程&lt;/li&gt;
-&lt;l</summary>
+    <summary type="html">&lt;h1 id=&quot;22-2-14&quot;&gt;&lt;a href=&quot;#22-2-14&quot; class=&quot;headerlink&quot; title=&quot;22-2-14&quot;&gt;&lt;/a&gt;22-2-14&lt;/h1&gt;&lt;h2 id=&quot;三名服务&quot;&gt;&lt;a href=&quot;#三名服务&quot; class=&quot;headerlink&quot; titl</summary>
       
     
     
@@ -502,34 +523,6 @@
     
     <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>重新排序得到 2 的幂</title>
-    <link href="https://pingpinggray.top/post/ee640515.html"/>
-    <id>https://pingpinggray.top/post/ee640515.html</id>
-    <published>2021-10-28T06:25:25.000Z</published>
-    <updated>2021-11-24T01:57:52.253Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>词频统计</li><li>哈希</li></ul><span id="more"></span><h3 id="词频统计"><a href="#词频统计" class="headerlink" title="词频统计"></a>词频统计</h3><ul><li>题目要求，按任何顺序（包括原始顺序）将数字重新排序，因此针对每一个数字，只需统计其每一位数字出现的次数，统计结果用字符串存储</li><li>题目要求，1 &lt;= N &lt;= 10^9，因此可以预处理所有2的幂数</li></ul><h3 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h3><ul><li>根据词频统计结果进行哈希查找，确认其是否有匹配的2的幂数的词频统计结果</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="2的幂数预处理"><a href="#2的幂数预处理" class="headerlink" title="2的幂数预处理"></a>2的幂数预处理</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">reorderedPowerOf2</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 2的幂数预处理</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="number">1e9</span>; i &lt;&lt;= <span class="number">1</span>) &#123;</span><br><span class="line">    set.add(countDigits(i));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> set.contains(countDigits(n));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="词频统计-1"><a href="#词频统计-1" class="headerlink" title="词频统计"></a>词频统计</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每个数字出现次数统计，用字符串形式存储</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">countDigits</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] cnt = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        ++cnt[n % <span class="number">10</span>];</span><br><span class="line">        n /= <span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> Arrays.toString(cnt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/reordered-power-of-2/">869. 重新排序得到 2 的幂 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;词频统计&lt;/li&gt;
-&lt;li&gt;哈希&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Hash" scheme="https://pingpinggray.top/tags/Hash/"/>
-    
-    <category term="Word Frequency Statistics" scheme="https://pingpinggray.top/tags/Word-Frequency-Statistics/"/>
     
   </entry>
   

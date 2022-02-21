@@ -2518,18 +2518,10 @@
   <entry>
     <title>22-2-14</title>
     <url>/post/5f2d3088.html</url>
-    <content><![CDATA[<h1 id="22-2-14"><a href="#22-2-14" class="headerlink" title="22-2-14"></a>22-2-14</h1><ul>
-<li>sanming-server：<ul>
-<li>根据任务定义查询全部流程</li>
-<li>（根据行政区划代码）查询全部申请</li>
-<li>修改申请（含编制单位、附件）</li>
-<li>根据任务名称查询全部流程</li>
-<li>整合两审批</li>
+    <content><![CDATA[<h1 id="22-2-14"><a href="#22-2-14" class="headerlink" title="22-2-14"></a>22-2-14</h1><h2 id="三名服务"><a href="#三名服务" class="headerlink" title="三名服务"></a>三名服务</h2><ul>
 <li>接入用户系统</li>
-<li>（条件）查询流程</li>
-<li>新增任务的状态字段</li>
-</ul>
-</li>
+<li>DO基类：记录创建日期、更新日期</li>
+<li>整理无用流程接口</li>
 </ul>
 ]]></content>
       <categories>
@@ -2622,5 +2614,20 @@
       <tags>
         <tag>Simulation</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>22-2-21</title>
+    <url>/post/46a97c4.html</url>
+    <content><![CDATA[<h1 id="22-2-21"><a href="#22-2-21" class="headerlink" title="22-2-21"></a>22-2-21</h1><h2 id="三名服务"><a href="#三名服务" class="headerlink" title="三名服务"></a>三名服务</h2><ul>
+<li>BaseAppDO：整合通用审批</li>
+<li>合并流程查询</li>
+<li>新增“申请状态”</li>
+<li>README文档整理</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Weekly Work Report</category>
+      </categories>
   </entry>
 </search>
