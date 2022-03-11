@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2022-02-21T11:20:29.053Z</updated>
+  <updated>2022-03-11T09:45:00.723Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -17,13 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>22-3-7</title>
+    <link href="https://pingpinggray.top/post/cf733f29.html"/>
+    <id>https://pingpinggray.top/post/cf733f29.html</id>
+    <published>2022-03-11T09:36:38.000Z</published>
+    <updated>2022-03-11T09:45:00.723Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="22-3-7"><a href="#22-3-7" class="headerlink" title="22-3-7"></a>22-3-7</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul><li><input checked="" disabled="" type="checkbox"> 异常处理</li><li><input checked="" disabled="" type="checkbox"> 时间序列化处理</li><li><input checked="" disabled="" type="checkbox"> 流程全局监听</li><li><input checked="" disabled="" type="checkbox"> 日志推送</li><li><input disabled="" type="checkbox"> 消息推送</li><li><input disabled="" type="checkbox"> 成果数据</li><li><input disabled="" type="checkbox"> 通用CRUD</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;22-3-7&quot;&gt;&lt;a href=&quot;#22-3-7&quot; class=&quot;headerlink&quot; title=&quot;22-3-7&quot;&gt;&lt;/a&gt;22-3-7&lt;/h1&gt;&lt;h2 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; title=&quot;三</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>22-2-28</title>
+    <link href="https://pingpinggray.top/post/7db62f60.html"/>
+    <id>https://pingpinggray.top/post/7db62f60.html</id>
+    <published>2022-02-28T03:37:17.000Z</published>
+    <updated>2022-03-04T06:16:39.899Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="22-2-28"><a href="#22-2-28" class="headerlink" title="22-2-28"></a>22-2-28</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul><li><input checked="" disabled="" type="checkbox"> 需求说明文档整理</li><li><input checked="" disabled="" type="checkbox"> 功能设计文档整理</li><li><input disabled="" type="checkbox"> 技术说明文档（README）整理</li><li><input checked="" disabled="" type="checkbox"> 数据库映射字段名称修改</li><li><input checked="" disabled="" type="checkbox"> 服务器部署调整</li><li><input checked="" disabled="" type="checkbox"> 返回值统一处理</li><li><input checked="" disabled="" type="checkbox"> 异常统一处理</li><li><input checked="" disabled="" type="checkbox"> 申请进度统计接口</li><li><input disabled="" type="checkbox"> 日志过滤</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;22-2-28&quot;&gt;&lt;a href=&quot;#22-2-28&quot; class=&quot;headerlink&quot; title=&quot;22-2-28&quot;&gt;&lt;/a&gt;22-2-28&lt;/h1&gt;&lt;h2 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; titl</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>22-2-21</title>
     <link href="https://pingpinggray.top/post/46a97c4.html"/>
     <id>https://pingpinggray.top/post/46a97c4.html</id>
     <published>2022-02-21T11:11:35.000Z</published>
-    <updated>2022-02-21T11:20:29.053Z</updated>
+    <updated>2022-02-25T08:09:29.910Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="22-2-21"><a href="#22-2-21" class="headerlink" title="22-2-21"></a>22-2-21</h1><h2 id="三名服务"><a href="#三名服务" class="headerlink" title="三名服务"></a>三名服务</h2><ul><li>BaseAppDO：整合通用审批</li><li>合并流程查询</li><li>新增“申请状态”</li><li>README文档整理</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="22-2-21"><a href="#22-2-21" class="headerlink" title="22-2-21"></a>22-2-21</h1><h2 id="三名服务"><a href="#三名服务" class="headerlink" title="三名服务"></a>三名服务</h2><ul><li>BaseAppDO：整合通用审批</li><li>合并流程查询</li><li>README文档整理</li><li>合并申请表查询</li></ul>]]></content>
     
     
       
@@ -479,50 +527,6 @@
     
     
     <category term="Greedy" scheme="https://pingpinggray.top/tags/Greedy/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>路径交叉</title>
-    <link href="https://pingpinggray.top/post/46d62dcd.html"/>
-    <id>https://pingpinggray.top/post/46d62dcd.html</id>
-    <published>2021-10-29T02:41:22.000Z</published>
-    <updated>2021-10-29T02:59:38.698Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>数学归纳</li></ul><span id="more"></span><h3 id="数学归纳"><a href="#数学归纳" class="headerlink" title="数学归纳"></a>数学归纳</h3><h4 id="第一种情况"><a href="#第一种情况" class="headerlink" title="第一种情况"></a>第一种情况</h4><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/cross_1.png" alt="cross_1"></p><ul><li>第 i 次移动和第 i−3 次移动（包含端点）交叉的情况</li><li>第 i−1 次移动距离小于等于第 i−3 次移动距离</li><li>第 i 次移动距离大于等于第 i−2 次移动距离</li></ul><h4 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h4><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/cross_2.png" alt="cross_2"></p><ul><li>第 4 次移动距离等于第 2 次移动距离。</li><li>第 5 次移动距离大于等于第 3 次移动距离减第 1 次移动距离的差</li></ul><h4 id="第三种情况"><a href="#第三种情况" class="headerlink" title="第三种情况"></a>第三种情况</h4><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/cross_3.png" alt="cross_3"></p><ul><li><p>第 i−1 次移动距离大于等于第 i−3 次移动距离</p></li><li><p>第 i−2 次移动距离大于等于第 i−4 次移动距离</p></li><li><p>第 i 次移动距离大于等于第 i−2 次移动距离减第 i−4 次移动距离的差</p></li><li><p>第 i−1 次移动距离大于等于第 i−3 次移动距离减第 i−5 次移动距离的差</p></li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="数学归纳-1"><a href="#数学归纳-1" class="headerlink" title="数学归纳"></a>数学归纳</h3><h4 id="第一种情况-1"><a href="#第一种情况-1" class="headerlink" title="第一种情况"></a>第一种情况</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一类情况</span></span><br><span class="line"><span class="keyword">if</span> (distance[i - <span class="number">1</span>] &lt;= distance[i - <span class="number">3</span>]</span><br><span class="line">        &amp;&amp; distance[i] &gt;= distance[i - <span class="number">2</span>]) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="第二种情况-1"><a href="#第二种情况-1" class="headerlink" title="第二种情况"></a>第二种情况</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第二类情况</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (i == <span class="number">4</span></span><br><span class="line">        &amp;&amp; distance[i - <span class="number">2</span>] &gt;= distance[i - <span class="number">4</span>]</span><br><span class="line">        &amp;&amp; distance[i - <span class="number">1</span>] == distance[i - <span class="number">3</span>]</span><br><span class="line">        &amp;&amp; distance[i] &gt;= distance[i - <span class="number">2</span>] - distance[i - <span class="number">4</span>]) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="第三种情况-1"><a href="#第三种情况-1" class="headerlink" title="第三种情况"></a>第三种情况</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第三类情况</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (i &gt; <span class="number">4</span></span><br><span class="line">        &amp;&amp; distance[i - <span class="number">1</span>] &lt;= distance[i - <span class="number">3</span>]</span><br><span class="line">        &amp;&amp; distance[i - <span class="number">2</span>] &gt;= distance[i - <span class="number">4</span>]</span><br><span class="line">        &amp;&amp; distance[i] &gt;= distance[i - <span class="number">2</span>] - distance[i - <span class="number">4</span>]</span><br><span class="line">        &amp;&amp; distance[i - <span class="number">1</span>] &gt;= distance[i - <span class="number">3</span>] - distance[i - <span class="number">5</span>]) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/self-crossing/">335. 路径交叉 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;数学归纳&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Mathematical Induction" scheme="https://pingpinggray.top/tags/Mathematical-Induction/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>中国重返联合国50周年纪——中模会总结</title>
-    <link href="https://pingpinggray.top/post/ec64b281.html"/>
-    <id>https://pingpinggray.top/post/ec64b281.html</id>
-    <published>2021-10-28T07:09:57.000Z</published>
-    <updated>2022-01-28T02:53:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>会议落下帷幕，入坑的第七年有余，算是终于开了一场英文会。</p><span id="more"></span><p>如果不是因为出国的现实需求，也许我到离开也没有勇气参与一次英文会议，但哪怕是在迫切的现实压力下，我也没能超常发挥，依旧徘徊在努力听懂别的代表在说什么的窘境之中，自己会议上为数不多的发言也以念稿为主，不过文件的读写倒是流畅了些许。</p><p>作为一个身处五海三洲、四战之地、百废待兴的国家，叙利亚无疑急切的需要来自国际社会的更多援助，但在美国的制裁之下，有大量本该到位的物资被半路截胡。对此我们在会前制定的战略之中，是一边在UNDP的会场上大力卖惨，一边抱紧大哥毛子和兔子，一边求着西方老爷给点、再多给一点。</p><p>然而真到了会前会中，却是另一番景象。因为个人原因，美国的存在感几乎为零，最大的后顾之忧一扫而光。而欧洲诸国，在撒钱这个问题上，却又如此积极，省却了我们原本计划对欧洲国家大打难民牌、中国牌的设想。我们作为棋子国家，以小搏大本就是与虎谋皮。故此我们的会前战略，一是通过反复强化难民问题——这个当前全欧洲最烫手的山芋，反复刺激欧洲各国敏感的神经，强调中东、非洲地区的混乱与贫穷和难民潮的因果关系，同时联系到各国趁势崛起的极右翼势力（法国勒庞女士、德国另类选择党、瑞典民主党等）对传统政治精英的挑战，明确大家的利益相关性；其次便是似有若无的提及中国与一带一路倡议，让欧洲诸国提起必要的警觉；最后在我们的设想中，最大的担忧的莫过于西方国家一以贯之的所谓人道主义援助会与政治条款挂钩的问题，例如民主化改造、经济改革等等。对此我们的应对是无力的，试图提出人道主义援助非政治化这一比较苍白的论调，努力强调“阿拉伯之春”对于欧洲的负面影响，再学着西方的说辞讲讲尊重当地的文化与宗教信仰。</p><p>具体到法德，就更有意思了。对于德国，默克尔女士离任在即，我们声称积极处理好该问题，有助于德国在政权过渡期进一步巩固欧盟一哥的身份；对于法国，默克尔女士离任在即，我们声称积极处理好该问题，有助于法国在德国政局不稳时期彻底压过一头。诸如此类，不一而足。</p><p>对于中俄而言，问题就简单很多了，只要我们提前把我朝的“人类命运共同体”“互相尊重主权与领土完整”等说辞给说完了，再时不时吹一下一带一路倡议，本就不愁源源不断的经济援助。至于俄国，他在中东的战略支点还剩下几个，不保证叙利亚的稳定又能靠谁呢，难不成是野心勃勃的埃苏丹吗？</p><p>当然我们必须承认，联合国诞生的重要基石之一，就是理想主义。《联合国宪章》开宗明义——“我联合国人民同兹决心“——便是最好的注解。但各会员国与其代表，终究首先需要考虑的，仍是现实主义的本国利益。大国有大国的出跳玩法，小国有小国的求生之道。我们从不在乎存在感与会上的抢眼表现，只要我们想要的都写进了文件，我们不想要的都得到大家的一致反对，最后在欢呼与鼓掌中通过决议，就是我们外交上最大的胜利。我们也时常会将游说妥协、利益交换挂在嘴边，但这也是有条件，逆风时要求着人家，要多讲妥协，必要的妥协是必要，强调一下命运与共，争取“绑架”别人；顺风的时候呢，当然是明确少数服从多数原则，必要的施压也是必要的，让少数派屈服，胡萝卜加大棒，绝不能只有胡萝卜。</p><p>很多时候我也要问自己，不知道从何时，我们不知不觉从一个满怀全人类解放的理想主义斗士，变成了事事不忘金钱与利益的现实主义无情工具人。是时代变了吗？不，现实一直就在那里，不悲不喜，从不为个人意志而转移；不知道从何时起，看到各国代表大谈援助的场景，我首先想到的，是这都是纳税人的钱，怎么花才能不糟蹋；不知道从何时起，看到西方国家提出大把大把的无偿援助的时刻，我首先想到的，是他们居然无私奉献，不求回报，我的内心只有感恩；不知道从何时起，当一国外交官提及“人家提的有道理，为什么要用数量来评判”的时候，我首先想到的，是既然我朝这么“讲道理”，怎么联合国军还是通过决议打进了半岛，怎么一直到了71年，我们才重返联合国。但是这话说错了吗，真理本不因为支持的人数多寡而变质不是吗？但是这就是现实，把中国抬进联合国的，就是多数票数，少一票都不行。</p><p>忍不住还是提及一些场中轶事，比如说南亚某大国屡次在其正式发言中提及童工、人权、女性权益、弱势少数群体权益等问题，属实怒打莫迪老仙的脸，国内大量的达利特人口、穆斯林群体与处于极度不平等地位的女性，在莫迪政府大行大印度民族主义政策的今天，敢于触及自身软肋的外交官确乎勇气可嘉。</p><p> 还有英联邦三兄弟手牵手，作为一个单独的bloc存在，尽管我们注意到正式外交场合中，英印数次有意见相左的情况出现，但是他们仍然能“不计前嫌”，继续抱团前行。总之，我相信在场的所有其他国家代表，都尊重三国的选择。</p><p>作为鼎鼎大名的ABC会中的国字号C会，体验一下已是荣幸，反正既然大家都愿意将其定性为比赛，那我们作为“比赛选手”的心理预期也应该随之调整，这样，人也就不会失望了。</p><p>江湖虽远，各位有缘再见。</p><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/5FE8A1CA-898E-4D1B-84C8-8E9AE485191A.jpeg" alt="5FE8A1CA-898E-4D1B-84C8-8E9AE485191A"></p><center>人生五十年，如梦似幻</center><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/B4C7F378-624B-4A4C-8CFF-542EBB3B2AB6_1_201_a.jpeg" alt="B4C7F378-624B-4A4C-8CFF-542EBB3B2AB6_1_201_a"></p><center>我小小的UNDP外交官，怎么就代表其他国家组织了呢</center><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/A11D1D48-F8AC-43BE-AD46-22D15FC19A3B_1_105_c.jpeg" alt="A11D1D48-F8AC-43BE-AD46-22D15FC19A3B_1_105_c"></p><center>这印刷真的没谁了</center><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/image-20211028151448575.png" alt="image-20211028151448575"></p><center>太久不开会，文件产出都少了</center>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;会议落下帷幕，入坑的第七年有余，算是终于开了一场英文会。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
-    
     
   </entry>
   

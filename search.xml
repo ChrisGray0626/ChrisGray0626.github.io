@@ -2621,8 +2621,46 @@
     <content><![CDATA[<h1 id="22-2-21"><a href="#22-2-21" class="headerlink" title="22-2-21"></a>22-2-21</h1><h2 id="三名服务"><a href="#三名服务" class="headerlink" title="三名服务"></a>三名服务</h2><ul>
 <li>BaseAppDO：整合通用审批</li>
 <li>合并流程查询</li>
-<li>新增“申请状态”</li>
 <li>README文档整理</li>
+<li>合并申请表查询</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Weekly Work Report</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>22-2-28</title>
+    <url>/post/7db62f60.html</url>
+    <content><![CDATA[<h1 id="22-2-28"><a href="#22-2-28" class="headerlink" title="22-2-28"></a>22-2-28</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> 需求说明文档整理</li>
+<li><input checked="" disabled="" type="checkbox"> 功能设计文档整理</li>
+<li><input disabled="" type="checkbox"> 技术说明文档（README）整理</li>
+<li><input checked="" disabled="" type="checkbox"> 数据库映射字段名称修改</li>
+<li><input checked="" disabled="" type="checkbox"> 服务器部署调整</li>
+<li><input checked="" disabled="" type="checkbox"> 返回值统一处理</li>
+<li><input checked="" disabled="" type="checkbox"> 异常统一处理</li>
+<li><input checked="" disabled="" type="checkbox"> 申请进度统计接口</li>
+<li><input disabled="" type="checkbox"> 日志过滤</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Weekly Work Report</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>22-3-7</title>
+    <url>/post/cf733f29.html</url>
+    <content><![CDATA[<h1 id="22-3-7"><a href="#22-3-7" class="headerlink" title="22-3-7"></a>22-3-7</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> 异常处理</li>
+<li><input checked="" disabled="" type="checkbox"> 时间序列化处理</li>
+<li><input checked="" disabled="" type="checkbox"> 流程全局监听</li>
+<li><input checked="" disabled="" type="checkbox"> 日志推送</li>
+<li><input disabled="" type="checkbox"> 消息推送</li>
+<li><input disabled="" type="checkbox"> 成果数据</li>
+<li><input disabled="" type="checkbox"> 通用CRUD</li>
 </ul>
 ]]></content>
       <categories>
