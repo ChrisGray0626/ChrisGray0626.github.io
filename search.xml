@@ -2659,8 +2659,20 @@
 <li><input checked="" disabled="" type="checkbox"> 流程全局监听</li>
 <li><input checked="" disabled="" type="checkbox"> 日志推送</li>
 <li><input disabled="" type="checkbox"> 消息推送</li>
-<li><input disabled="" type="checkbox"> 成果数据</li>
-<li><input disabled="" type="checkbox"> 通用CRUD</li>
+<li><input checked="" disabled="" type="checkbox"> 通用CRUD</li>
+<li><input disabled="" type="checkbox"> 技术说明文档（README）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Weekly Work Report</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>22-3-14</title>
+    <url>/post/e79157ed.html</url>
+    <content><![CDATA[<h1 id="22-3-14"><a href="#22-3-14" class="headerlink" title="22-3-14"></a>22-3-14</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul>
+<li><input disabled="" type="checkbox"> 技术说明文档（README）</li>
 </ul>
 ]]></content>
       <categories>
