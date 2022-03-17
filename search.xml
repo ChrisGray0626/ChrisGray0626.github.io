@@ -2642,7 +2642,7 @@
 <li><input checked="" disabled="" type="checkbox"> 返回值统一处理</li>
 <li><input checked="" disabled="" type="checkbox"> 异常统一处理</li>
 <li><input checked="" disabled="" type="checkbox"> 申请进度统计接口</li>
-<li><input disabled="" type="checkbox"> 日志过滤</li>
+<li><input checked="" disabled="" type="checkbox"> 日志管理</li>
 </ul>
 ]]></content>
       <categories>
@@ -2672,7 +2672,16 @@
     <title>22-3-14</title>
     <url>/post/e79157ed.html</url>
     <content><![CDATA[<h1 id="22-3-14"><a href="#22-3-14" class="headerlink" title="22-3-14"></a>22-3-14</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul>
-<li><input disabled="" type="checkbox"> 技术说明文档（README）</li>
+<li><input checked="" disabled="" type="checkbox"> 技术说明文档（README）</li>
+</ul>
+<h2 id="个人Spring模板"><a href="#个人Spring模板" class="headerlink" title="个人Spring模板"></a>个人Spring模板</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> 通用CRUD</li>
+<li><input checked="" disabled="" type="checkbox"> Swagger配置</li>
+<li><input checked="" disabled="" type="checkbox"> 静态资源映射</li>
+<li><input checked="" disabled="" type="checkbox"> 异常处理</li>
+<li><input checked="" disabled="" type="checkbox"> 通用条件查询</li>
+<li><input checked="" disabled="" type="checkbox"> 技术说明文档（README）</li>
+<li><input disabled="" type="checkbox"> 统一HTTP访问</li>
 </ul>
 ]]></content>
       <categories>

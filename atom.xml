@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2022-03-15T05:18:44.115Z</updated>
+  <updated>2022-03-17T09:09:11.708Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://pingpinggray.top/post/e79157ed.html"/>
     <id>https://pingpinggray.top/post/e79157ed.html</id>
     <published>2022-03-15T05:18:06.000Z</published>
-    <updated>2022-03-15T05:18:44.115Z</updated>
+    <updated>2022-03-17T09:09:11.708Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="22-3-14"><a href="#22-3-14" class="headerlink" title="22-3-14"></a>22-3-14</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul><li><input disabled="" type="checkbox"> 技术说明文档（README）</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="22-3-14"><a href="#22-3-14" class="headerlink" title="22-3-14"></a>22-3-14</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul><li><input checked="" disabled="" type="checkbox"> 技术说明文档（README）</li></ul><h2 id="个人Spring模板"><a href="#个人Spring模板" class="headerlink" title="个人Spring模板"></a>个人Spring模板</h2><ul><li><input checked="" disabled="" type="checkbox"> 通用CRUD</li><li><input checked="" disabled="" type="checkbox"> Swagger配置</li><li><input checked="" disabled="" type="checkbox"> 静态资源映射</li><li><input checked="" disabled="" type="checkbox"> 异常处理</li><li><input checked="" disabled="" type="checkbox"> 通用条件查询</li><li><input checked="" disabled="" type="checkbox"> 技术说明文档（README）</li><li><input disabled="" type="checkbox"> 统一HTTP访问</li></ul>]]></content>
     
     
       
@@ -69,9 +69,9 @@
     <link href="https://pingpinggray.top/post/7db62f60.html"/>
     <id>https://pingpinggray.top/post/7db62f60.html</id>
     <published>2022-02-28T03:37:17.000Z</published>
-    <updated>2022-03-11T09:55:33.639Z</updated>
+    <updated>2022-03-15T05:20:06.322Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="22-2-28"><a href="#22-2-28" class="headerlink" title="22-2-28"></a>22-2-28</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul><li><input checked="" disabled="" type="checkbox"> 需求说明文档整理</li><li><input checked="" disabled="" type="checkbox"> 功能设计文档整理</li><li><input disabled="" type="checkbox"> 技术说明文档（README）整理</li><li><input checked="" disabled="" type="checkbox"> 数据库映射字段名称修改</li><li><input checked="" disabled="" type="checkbox"> 服务器部署调整</li><li><input checked="" disabled="" type="checkbox"> 返回值统一处理</li><li><input checked="" disabled="" type="checkbox"> 异常统一处理</li><li><input checked="" disabled="" type="checkbox"> 申请进度统计接口</li><li><input disabled="" type="checkbox"> 日志过滤</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="22-2-28"><a href="#22-2-28" class="headerlink" title="22-2-28"></a>22-2-28</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul><li><input checked="" disabled="" type="checkbox"> 需求说明文档整理</li><li><input checked="" disabled="" type="checkbox"> 功能设计文档整理</li><li><input disabled="" type="checkbox"> 技术说明文档（README）整理</li><li><input checked="" disabled="" type="checkbox"> 数据库映射字段名称修改</li><li><input checked="" disabled="" type="checkbox"> 服务器部署调整</li><li><input checked="" disabled="" type="checkbox"> 返回值统一处理</li><li><input checked="" disabled="" type="checkbox"> 异常统一处理</li><li><input checked="" disabled="" type="checkbox"> 申请进度统计接口</li><li><input checked="" disabled="" type="checkbox"> 日志管理</li></ul>]]></content>
     
     
       
