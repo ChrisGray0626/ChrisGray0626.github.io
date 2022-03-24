@@ -29,14 +29,11 @@
 <meta property="og:site_name" content="Gray Dynasty">
 <meta property="og:description" content="单例模式单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。 这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。 这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。  单例类只能有一个实例。 单例类必须自己创建自己的唯一实例。 单例类必须给所有">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/337690-20200705145239881-919047261.png">
-<meta property="og:image" content="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW9jdWl0,size_16,color_FFFFFF,t_70.jpeg">
 <meta property="article:published_time" content="2021-09-24T03:34:05.000Z">
-<meta property="article:modified_time" content="2021-09-24T09:09:24.810Z">
+<meta property="article:modified_time" content="2022-03-23T09:31:50.831Z">
 <meta property="article:author" content="Chris Gray">
 <meta property="article:tag" content="Internship Experience">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/337690-20200705145239881-919047261.png">
 
 
 <link rel="canonical" href="https://pingpinggray.top/post/df2849ec.html">
@@ -152,7 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile"><span class="nav-text">volatile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">内存管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="nav-text">垃圾回收</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E5%9B%9E%E6%94%B6"><span class="nav-text">判断回收</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95"><span class="nav-text">回收算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6"><span class="nav-text">类加载机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="nav-text">线程池</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hash-Map-Hash-Table"><span class="nav-text">Hash Map&#x2F;Hash Table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%99%A8%EF%BC%8C%E6%9E%84%E9%80%A0%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%8C%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="nav-text">构造器，构造代码块，静态代码块的执行顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string%EF%BC%8Cstringbuilder%E5%92%8Cstringbuffer%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">string，stringbuilder和stringbuffer的区别</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="nav-text">单例模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#volatile"><span class="nav-text">volatile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="nav-text">线程池</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hash-Map-Hash-Table"><span class="nav-text">Hash Map&#x2F;Hash Table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%99%A8%EF%BC%8C%E6%9E%84%E9%80%A0%E4%BB%A3%E7%A0%81%E5%9D%97%EF%BC%8C%E9%9D%99%E6%80%81%E4%BB%A3%E7%A0%81%E5%9D%97%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="nav-text">构造器，构造代码块，静态代码块的执行顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string%EF%BC%8Cstringbuilder%E5%92%8Cstringbuffer%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">string，stringbuilder和stringbuffer的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NIO-IO"><span class="nav-text">NIO&#x2F;IO</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -251,10 +248,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-09-24 11:34:05 / Modified: 17:09:24" itemprop="dateCreated datePublished" datetime="2021-09-24T11:34:05+08:00">2021-09-24</time>
+      <time title="Created: 2021-09-24 11:34:05" itemprop="dateCreated datePublished" datetime="2021-09-24T11:34:05+08:00">2021-09-24</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2022-03-23 17:31:50" itemprop="dateModified" datetime="2022-03-23T17:31:50+08:00">2022-03-23</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -283,14 +286,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>6.6k</span>
+      <span>3.9k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
+      <span>4 mins.</span>
     </span>
 </div>
 
@@ -347,54 +350,6 @@
 <li>禁止进行指令重排序。</li>
 <li>不保证原子性</li>
 </ol>
-<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/337690-20200705145239881-919047261.png" alt="img"></p>
-<p>Java栈：其分配是和线程绑定在一起的，当我们创建一个线程时，JVM会为这个线程创建一个新的Java栈，一个线程的方法的调用和返回对应于这个Java栈的压栈和出栈。当线程激活一个Java方法时，JVM就会在线程的Java堆栈里新压入一个帧，这个帧自然成了当前帧。在此方法执行期间，这个帧用来保存参数、局部变量、中间计算过程和其他数据。栈中主要存放一些基本的数据类型和对象句柄（引用）。存取速度比堆快，仅次于寄存器，栈数据可以共享。静态分配内存，编译时确定生存期大小。</p>
-<p>Java堆：每一个Java应用都唯一对应一个JVM实例，每一个实例唯一对应一个堆。应用程序在运行中所创建的所有类实例或数组都放在这个堆中，并由应用程序所有的线程共享。Java中分配堆内存是自动初始化，所有对象的存储空间都是在堆中分配的，但是这个对象的引用在堆栈中分配。可动态分配内存大小、运行时分配内存。</p>
-<p>创建一个对象时，堆中分配的内存实际建立这个对象，而在堆栈中分配的内存只是指向这个堆对象的指针（引用）而已。</p>
-<h2 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h2><p>在java中，程序员是不需要显示的去释放一个对象的内存的，而是由虚拟机自行执行。在JVM中，有一个垃圾回收线程，它是低优先级的，在正常情况下是不会执行的，只有在虚拟机空闲或者当前堆内存不足时，才会触发执行，扫描那些没有被任何引用的对象，并将它们添加到要回收的集合中，进行回收。</p>
-<p>GC 垃圾收集（Gabage Collection），当程序员创建对象时，GC就开始监控这个对象的地址、大小以及使用情况。通常，GC采用有向图的方式记录和管理堆(heap)中的所有对象。通过这种方式确定哪些对象是”可达的”，哪些对象是”不可达的”。当GC确定一些对象为”不可达”时，GC就有责任回收这些内存空间。</p>
-<h2 id="判断回收"><a href="#判断回收" class="headerlink" title="判断回收"></a>判断回收</h2><p><strong>引用计数器法</strong>：为每个对象创建一个引用计数，有对象引用时计数器 +1，引用被释放时计数 -1，当计数器为 0 时就可以被回收。但是他有一个缺点是不能解决循环引用的问题。</p>
-<p><strong>可达性分析算法</strong>：从 GC Roots 开始向下搜索，搜索所走过的路径称为引用链。当一个对象到 GC Roots 没有任何引用链相连时，则证明此对象是可以被回收的。</p>
-<h2 id="回收算法"><a href="#回收算法" class="headerlink" title="回收算法"></a>回收算法</h2><p>1.标记-清除算法：标记无用对象，然后进行清除回收。</p>
-<p>缺点：效率不高，无法清除垃圾碎片。</p>
-<p>该算法分为两个阶段，标记和清除。标记阶段标记所有需要回收的对象，清除阶段回收被标记的对象所占用的空间。该算法最大的问题就是内存碎片严重化，后续可能发生对象不能找到利用空间的问题。</p>
-<p>2.复制算法：按照容量划分二个大小相等的内存区域，当一块用完的时候将活着的对象复制到另一块上，然后再把已使用的内存空间一次清理掉。缺点：内存使用率不高，只有原来的一半。</p>
-<p>按内存容量将内存划分为等大小的两块。每次只使用其中一块，当这一块内存满后将尚存活的对象复制到另一块上去，把已使用的内存清掉。</p>
-<p>3.标记-整理算法：标记无用对象，让所有存活的对象都向一端移动，然后直接清除掉端边界以外的内存。</p>
-<p>标记后不是清理对象，而是将存活对象移向内存的一端。然后清除端边界外的对象。</p>
-<p>4.分代算法：根据对象存活周期的不同将内存划分为几块，一般是新生代和老年代，新生代基本采用复制算法，老年代采用标记整理算法。</p>
-<p>当前商业虚拟机都采用分代收集的垃圾收集算法。分代收集算法，顾名思义是根据对象的存活周期将内存划分为几块。一般包括年轻代、老年代 和 永久代。</p>
-<h3 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h3><p>Java 堆内存被划分为新生代和年老代两部分，</p>
-<p>新生代主要使用复制和标记-清除垃圾回收算法；</p>
-<p>年老代主要使用标记-整理垃圾回收算法。</p>
-<p>。。。</p>
-<h2 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h2><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW9jdWl0,size_16,color_FFFFFF,t_70.jpeg" alt="img"></p>
-<p>类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。</p>
-<h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><p>简单来说，加载指的是把class字节码文件从各个来源通过类加载器装载入内存中。</p>
-<p>这里有两个重点：</p>
-<p>字节码来源。一般的加载来源包括从本地路径下编译生成的.class文件，从jar包中的.class文件，从远程网络，以及动态代理实时编译</p>
-<p>类加载器。一般包括启动类加载器，扩展类加载器，应用类加载器，以及用户的自定义类加载器。</p>
-<p>注：为什么会有自定义类加载器？</p>
-<p>一方面是由于java代码很容易被反编译，如果需要对自己的代码加密的话，可以对编译后的代码进行加密，然后再通过实现自己的自定义类加载器进行解密，最后再加载。</p>
-<p>另一方面也有可能从非标准的来源加载代码，比如从网络来源，那就需要自己实现一个类加载器，从指定源进行加载。</p>
-<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>主要是为了保证加载进来的字节流符合虚拟机规范，不会造成安全错误。</p>
-<p>包括对于文件格式的验证，比如常量中是否有不被支持的常量？文件中是否有不规范的或者附加的其他信息？</p>
-<p>对于元数据的验证，比如该类是否继承了被final修饰的类？类中的字段，方法是否与父类冲突？是否出现了不合理的重载？</p>
-<p>对于字节码的验证，保证程序语义的合理性，比如要保证类型转换的合理性。</p>
-<p>对于符号引用的验证，比如校验符号引用中通过全限定名是否能够找到对应的类？校验符号引用中的访问性（private，public等）是否可被当前类访问？</p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>主要是为类变量（注意，不是实例变量）分配内存，并且赋予初值。</p>
-<p>特别需要注意，初值，不是代码中具体写的初始化的值，而是Java虚拟机根据不同变量类型的默认初始值。</p>
-<p>比如8种基本类型的初值，默认为0；引用类型的初值则为null；常量的初值即为代码中设置的值，final static tmp = 456， 那么该阶段tmp的初值就是456</p>
-<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>将常量池内的符号引用替换为直接引用的过程。</p>
-<p>两个重点：</p>
-<p>符号引用。即一个字符串，但是这个字符串给出了一些能够唯一性识别一个方法，一个变量，一个类的相关信息。</p>
-<p>直接引用。可以理解为一个内存地址，或者一个偏移量。比如类方法，类变量的直接引用是指向方法区的指针；而实例方法，实例变量的直接引用则是从实例的头指针开始算起到这个实例变量位置的偏移量</p>
-<p>举个例子来说，现在调用方法hello()，这个方法的地址是1234567，那么hello就是符号引用，1234567就是直接引用。</p>
-<p>在解析阶段，虚拟机会把所有的类名，方法名，字段名这些符号引用替换为具体的内存地址或偏移量，也就是直接引用。</p>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>这个阶段主要是对类变量初始化，是执行类构造器的过程。</p>
-<p>换句话说，只对static修饰的变量或语句进行初始化。</p>
-<p>如果初始化一个类的时候，其父类尚未初始化，则优先初始化其父类。</p>
-<p>如果同时包含多个静态变量和静态代码块，则按照自上而下的顺序依次执行。</p>
 <h2 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h2><ol>
 <li>当我们调用 shutdown 等方法关闭线程池后，如果再向线程池内提交任务，就会遭到拒绝。</li>
 <li>线程池没有空闲线程（线程池的线程达到了最大线程数，并且都在执行任务）并且队列已经满了，不能在存放任务了。</li>
@@ -404,7 +359,7 @@
 <h3 id="DiscardOldestPolicy"><a href="#DiscardOldestPolicy" class="headerlink" title="DiscardOldestPolicy"></a>DiscardOldestPolicy</h3><p>丢弃任务队列中的头结点，通常是存活时间最长的任务，它也存在一定的数据丢失风险。</p>
 <h3 id="CallerRunsPolicy"><a href="#CallerRunsPolicy" class="headerlink" title="CallerRunsPolicy"></a>CallerRunsPolicy</h3><p>第四种拒绝策略是 ，相对而言它就比较完善了，当有新任务提交后，如果线程池没被关闭且没有能力执行，则把这个任务交于提交任务的线程执行，也就是谁提交任务，谁就负责执行任务。这样做主要有两点好处。</p>
 <p>第一点新提交的任务不会被丢弃，这样也就不会造成业务损失。 第二点好处是，由于谁提交任务谁就要负责执行任务，这样提交任务的线程就得负责执行任务，而执行任务又是比较耗时的，在这段期间，提交任务的线程被占用，也就不会再提交新的任务，减缓了任务提交的速度，相当于是一个负反馈。在此期间，线程池中的线程也可以充分利用这段时间来执行掉一部分任务，腾出一定的空间，相当于是给了线程池一定的缓冲期。</p>
-<h2 id="Hash-Map-Hash-Table"><a href="#Hash-Map-Hash-Table" class="headerlink" title="Hash Map/Hash Table"></a>Hash Map/Hash Table</h2><h2 id="构造器，构造代码块，静态代码块的执行顺序"><a href="#构造器，构造代码块，静态代码块的执行顺序" class="headerlink" title="构造器，构造代码块，静态代码块的执行顺序"></a>构造器，构造代码块，静态代码块的执行顺序</h2><h2 id="string，stringbuilder和stringbuffer的区别"><a href="#string，stringbuilder和stringbuffer的区别" class="headerlink" title="string，stringbuilder和stringbuffer的区别"></a>string，stringbuilder和stringbuffer的区别</h2>
+<h2 id="Hash-Map-Hash-Table"><a href="#Hash-Map-Hash-Table" class="headerlink" title="Hash Map/Hash Table"></a>Hash Map/Hash Table</h2><h2 id="构造器，构造代码块，静态代码块的执行顺序"><a href="#构造器，构造代码块，静态代码块的执行顺序" class="headerlink" title="构造器，构造代码块，静态代码块的执行顺序"></a>构造器，构造代码块，静态代码块的执行顺序</h2><h2 id="string，stringbuilder和stringbuffer的区别"><a href="#string，stringbuilder和stringbuffer的区别" class="headerlink" title="string，stringbuilder和stringbuffer的区别"></a>string，stringbuilder和stringbuffer的区别</h2><h1 id="NIO-IO"><a href="#NIO-IO" class="headerlink" title="NIO/IO"></a>NIO/IO</h1>
     </div>
 
     
@@ -465,6 +420,9 @@
   <footer class="footer">
     <div class="footer-inner">
 
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备19041488号-1 </a>
+      <img src="http://www.beian.gov.cn/portal/download" alt="">
+  </div>
 
 <div class="copyright">
   &copy; 2021.9 – 
@@ -479,13 +437,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">65k</span>
+    <span title="Symbols count total">62k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">59 mins.</span>
+    <span title="Reading time total">56 mins.</span>
   </span>
 </div>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
