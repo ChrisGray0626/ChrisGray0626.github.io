@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2022-03-24T02:22:45.428Z</updated>
+  <updated>2022-04-15T05:36:55.000Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -17,13 +17,286 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>GIS-数据模型</title>
+    <link href="https://pingpinggray.top/post/7409e1a4.html"/>
+    <id>https://pingpinggray.top/post/7409e1a4.html</id>
+    <published>2022-04-14T03:36:00.000Z</published>
+    <updated>2022-04-15T05:36:55.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="矢量数据"><a href="#矢量数据" class="headerlink" title="矢量数据"></a>矢量数据</h1><h1 id="栅格数据"><a href="#栅格数据" class="headerlink" title="栅格数据"></a>栅格数据</h1><h2 id="像元"><a href="#像元" class="headerlink" title="像元"></a>像元</h2><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="逐个像元编码"><a href="#逐个像元编码" class="headerlink" title="逐个像元编码"></a>逐个像元编码</h3><h3 id="游程编码"><a href="#游程编码" class="headerlink" title="游程编码"></a>游程编码</h3><h3 id="四叉树"><a href="#四叉树" class="headerlink" title="四叉树"></a>四叉树</h3><h1 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h1><h2 id="矢量化"><a href="#矢量化" class="headerlink" title="矢量化"></a>矢量化</h2><h2 id="栅格化"><a href="#栅格化" class="headerlink" title="栅格化"></a>栅格化</h2><h3 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h3><h2 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h2><p>在过去20年中，矢量数据模型是GIS中变化最大的方面，例如，ESRI公司所开发每种新软件包都对应一种新的矢量数据模型，Arc&#x2F;Info对应Coverage，ArcView对应Shapefile，<a href="https://so.csdn.net/so/search?q=ArcGIS&spm=1001.2101.3001.7020">ArcGIS</a>对应Geodatabase。Coverage和Shapefile是地理关系数据模型，它利用分离的系统来存储空间数据和属性数据，而Geodatabase是基于对象数据模型，它把空间数据和属性数据存储在唯一的系统中。</p><p>　　Coverage是拓扑的，Shapefile是非拓扑的。</p><p>　　Coverage支持三种基本拓扑关系：连接性、面定义、邻接性。</p><p>　　Shapefile多边形对于共享边界实际上有重复弧段且可彼此重叠，不同于Coverage所用的多个文件，它用几何学性质存储两个基本文件：以.shp为扩展名的文件存储要素几何学特征;以.shx为扩展名的文件保留要素几何特征的空间索引。</p><p>　　Shapefile:一种基于文件方式存储GIS数据的文件格式。至少由.shp,.dbf,.shx三个文件作成，分别存储空间，属性和前两者的关系。是GIS中比较通用的一种数据格式。</p><p>　　Coverage:一种拓扑数据结构，一般的GIS原理书中都有它的原理论述。数据结构复杂，属性缺省存储在Info表中。目前ArcGIS中仍然有一些分析操作只能基于这种数据格式进行操作。</p><p>　　Geodatabase:ArcInfo发展到ArcGIS时候推出的一种数据格式，一种基于RDBMS存储的数据格式，其有两大类：1.PersonalGeodatabse 用来存储小数据量数据，存储在Access的mdb格式中。2.ArcSDE Geodatabse存储大型数据，存储在大型数据库中Oracle,Sql Server,DB2等。可以实现并发操作，不过需要单独的用户许可。</p><p>　　<strong>Coverage数据模型</strong></p><p>　　Coverage是一个集合，它可以包含一个或多个要素类。在第一个商业化GIS软件Arc&#x2F;INFO之前，计算计划的图形表示源自通用的CAD软件，属性信息和几何要素放在一起，不利于空间信息的描述和分析。</p><p>　　Coverage的优势：</p><p>　　(1)空间数据与属性数据关联。空间数据存储于建立了索引的二进制文件中，属性数据存放在DBMS表中，二者以公共的标识编码关联。</p><p>　　(2)矢量数据间的拓扑关系得以保存。</p><p>　　<strong>Shapefile数据模型</strong></p><p>　　Shapefile是ArcView GIS3.x的原生数据格式，属于简单要素类，用点、线、多边形存储要素的形状，却不能存储拓扑关系，具有简单、快速显示的优点。一个shapefile是由若干个文件组成的，空间信息和属性信息分离存储，所以称之为“基于文件”。每个shapefile，都至少由三个文件组成，其中：*.shp存储的是几何要素的的空间信息，也就是XY坐标。*.shx存储的是有关*.shp存储的索引信息，它记录了在*.shp中，空间数据是如何存储的，XY坐标的输入点在哪里，有多少XY坐标对等信息。.dbf存储地理数据的属性信息的dBase表。这三个文件是一个shapefile的基本文件，shapefile还可以有其他一些文件，但所有这些文件都与该shapefile同名，并且存储在同一路径下。下面简要介绍一下其他一些较为常见文件：.prj如果shapefile定义了坐标系统，那么它的空间参考信息将会存储在*.prj文件中;<em>.shp.<a href="https://so.csdn.net/so/search?q=xml&spm=1001.2101.3001.7020">xml</a>这是对shapefile进行元数据浏览后生成的xml元数据文件;</em>.sbn和*.sbx这两个存储的是shapefile的空间索引，它能加速空间数据的读取，这两个文件是在对数据进行操作、浏览或连接后才产生的，也可以通过ArcToolbox&gt;DataManagementTools&gt;Indexes&gt;Add spatial Index工具生成。</p><p>　　几种常见的shapefile文件：当使用ArcCatalog对shapefile进行创建、移动、删除或重命名等操作，或使用ArcMap对shapefile进行编辑时，ArcCatalog将自动维护数据的完整性，将所有文件同步改变。所以需要使用ArcCatalog管理shapefile。虽然Shapefile无法存储拓扑关系，但它并不是普通用于显示的图形文件，作为地理数据，它自身有拓扑的。比如一个多边形要素类，shapefile会按顺时针方向为它的所有顶点排序，然后按顶点顺序两两连接成的边线向量，在向量右侧的为多边形的内部，在向量左侧的是多边形的外部。由于1990年代地理信息的迅速发展以及ArcViewGIS3.x软件在世界范围内的推广，shapefile格式的数据使用非常广泛，数据来源也较多。很多软件都提供了向shapefile转换的接口(eg：MapInfo、MapGIS等)。ArcGIS支持对shapefile的编辑操作，也支持shapefile向第三代数据模型geodatabase的转换。</p><p>　　<strong>Geodatabase数据模型</strong></p><p>　　Geodatabase作为ArcGIS的原生数据格式，体现了很多第三代地理数据模型的优势。随着IT技术的发展，普通的事务型数据的管理模式，早已从传统的基于文件的管理转向利用基于工业标准建立的关系型数据库进行管理，这种基于数据库的管理方式的优点是不言而喻的。那么带有空间信息的地理数据是否也可以利用这种非常成熟的数据库技术进行管理呢?于是ESRI推出了geodatabase数据模型，利用数据库技术高效安全地管理我们的地理数据。</p><p>　　Geodatabase可以分为两种，一种是基于Microsoft Access的personalgeodatabase，另一种是基于oracle、SQL Server、Informix或者DB2的enterprisegeodatabase，由于它需要中间件ArcSDE进行连接，所以nterprise geodatabase又称为ArcSDEgeodatabase。由于Microsoft Access自身容量的限制，personalgeodatabase的容量上限为2GB，这显然不能满足企业级的海量地理数据的存储需求。于是可以将geodatabase扩展为ArcSDEgeodatabase，底层数据库可以使用oracle这样的大型关系数据库，能够存储近乎“无限”的海量数据(仅受硬盘大小的限制)。虽然底层使用的数据库各不相同，但是geodatabase给用户提供的是一个一致的操作环境。在geodatabase中，不仅可以存储类似shapefile的简单要素类还可以存储类似coverage的要素集并且支持一系列的行为规则对其空间信息和属性信息进行验证表格、关联类、栅格、注记和尺寸都可以作为eodatabase对象存储。这些在perasonalgeodatabase和ArcSDE geodatabase中都是一样的(栅格的存储有点小差异，但对用户来说都是一样的)。</p><p>　　Geodatabase的模型结构：</p><p>　　(1)对象类(Object class)</p><p>　　对象类是一种特殊的类，没有空间特征。其实例是可关联某特定行为的表记录。如，某地块的主人，在“地块”“主人”间可建立某种关系。</p><p>　　(2)要素类(Feature class)</p><p>　　要素类是同类空间要素的集合。如，河流、道路、植被、电缆等。要素类可以独立存在，也可以具有某种联系。当不同的要素类之间存在关系时，就将其组织到一个要素数据集(Featuredataset)中。</p><p>　　(3)要素数据集(Feature dataset)</p><p>　　要素数据集由一组具有相同空间参考(Spatialreference)的要素类组成。将不同要素类放入要素数据集的原因：</p><p>　　a.专题归类表示——当不同的要素类属于同一范畴。比如，全国范围内某种比例尺的水系数据，其点线面类型的要素类可组织成同一个要素数据集。</p><p>　　b.创建几何网络——在同一几何网络中充当连接点和边的各种要素类，须组织到同一要素数据集中。比如，配电网络中，有各种开关、变压器、电缆等，它们分别对应点或线类型的要素类，在配电网络建模时，我们要将其全部考虑到配电网络对应的几何网络模型中。此时这些要素类就要放在统一要素数据集下。</p><p>　　c.考虑平面拓扑——共享公共几何特征的要素类。比如，用地、水系、行政区界等。当移动其中一个要素时，其公共部分也要一起移动，并保持这种公共的几何关系不变。</p><p>　　(4)关系类(Relationship class)</p><p>　　定义不同要素类或对象类之间的关联关系。如我们可以定义房子和主人之间的关系、房子和地块之间的关系等。</p><p>　　(5)几何网络</p><p>　　在若干要素类的基础上建立起的新类。定义几何网络时，我们指定哪些要素类加入其中，同时指定其在几何网络中扮演什么角色。比如，定义一个供水网络，我们指定同属一个要素数据集的“阀门”、“泵站”、“接头”对应的要素类加入其中，并扮演“连接”的角色;同时，我们要指定同属一个要素数据集的“供水干管”、“供水支管”、“入户管”等对应的要素类加入供水网络，由其扮演“边”的角色。</p><p>　　(6)Domains</p><p>　　定义属性的有效范围，可是连续的，也可是离散数值。</p><p>　　(7)Validationrules对要素类的行为和取值加以约束的规则。如不同管径的水管连接必须通过合适的接头，规定一个地块可拥有一到三个主人等。</p><p>　　(8)Raster datasets</p><p>　　用于存放栅格数据。支持海量栅格数据，支持影像镶嵌，可通过建立“金字塔”形索引，在使用时指定可视范围提高检索和显示效率。</p><p>　　(9)TIN Datasets</p><p>　　ARC&#x2F;INFO的经典数据模型，用不规则分布的采样点的采样值构成不规则的三角集合。用于表达地形或其他类型的空间连续分布特征。</p><p>　　(10)Locators</p><p>　　定位参考和定位方法的组合。对于不同的参考，用不同的定位方法进行定位操作。所谓定位参考，不同的定位信息有不同的表达方法。在Geodatabase中，有四种定位信息：地址编码、、地名及邮编、路径定位。定位参考数据放在数据库表中，定位器根据该定位参考数据在地图上生成空间定位点。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;矢量数据&quot;&gt;&lt;a href=&quot;#矢量数据&quot; class=&quot;headerlink&quot; title=&quot;矢量数据&quot;&gt;&lt;/a&gt;矢量数据&lt;/h1&gt;&lt;h1 id=&quot;栅格数据&quot;&gt;&lt;a href=&quot;#栅格数据&quot; class=&quot;headerlink&quot; title=&quot;栅格数据&quot;&gt;&lt;/a</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="GIS" scheme="https://pingpinggray.top/categories/Tech/GIS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>GIS-坐标投影</title>
+    <link href="https://pingpinggray.top/post/72b26748.html"/>
+    <id>https://pingpinggray.top/post/72b26748.html</id>
+    <published>2022-04-14T03:35:00.000Z</published>
+    <updated>2022-04-15T04:43:44.745Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="变换方法"><a href="#变换方法" class="headerlink" title="变换方法"></a>变换方法</h1><p>等积</p><p>相似</p><p>仿射</p><p>投影</p><p>控制点</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;变换方法&quot;&gt;&lt;a href=&quot;#变换方法&quot; class=&quot;headerlink&quot; title=&quot;变换方法&quot;&gt;&lt;/a&gt;变换方法&lt;/h1&gt;&lt;p&gt;等积&lt;/p&gt;
+&lt;p&gt;相似&lt;/p&gt;
+&lt;p&gt;仿射&lt;/p&gt;
+&lt;p&gt;投影&lt;/p&gt;
+&lt;p&gt;控制点&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="GIS" scheme="https://pingpinggray.top/categories/Tech/GIS/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA-Installation</title>
+    <link href="https://pingpinggray.top/post/a1962535.html"/>
+    <id>https://pingpinggray.top/post/a1962535.html</id>
+    <published>2022-04-13T03:35:00.000Z</published>
+    <updated>2022-04-15T04:40:43.047Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><ul><li>Version：2020.3</li><li>官网：<a href="https://www.jetbrains.com/idea/download/other.html">https://www.jetbrains.com/idea/download/other.html</a></li></ul><h1 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h1><h2 id="插件下载"><a href="#插件下载" class="headerlink" title="插件下载"></a>插件下载</h2><ul><li>BetterIntelliJ：<a href="https://chrisgray.oss-cn-beijing.aliyuncs.com/Archive/BetterIntelliJ.zip">https://chrisgray.oss-cn-beijing.aliyuncs.com/Archive/BetterIntelliJ.zip</a></li></ul><h2 id="试用勾选"><a href="#试用勾选" class="headerlink" title="试用勾选"></a>试用勾选</h2><ul><li>Evaluate for free</li><li>Evaluate</li></ul><h2 id="插件导入"><a href="#插件导入" class="headerlink" title="插件导入"></a>插件导入</h2><ul><li>File-Settings-Plugins-Install Plugin From Disk</li></ul><h3 id="插件确认"><a href="#插件确认" class="headerlink" title="插件确认"></a>插件确认</h3><ul><li><p>idea64.exe.vmoptions</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-javaagent:C:\Users\Public\.BetterIntelliJ\BetterIntelliJ-1.15.jar</span><br></pre></td></tr></table></figure></li></ul><h2 id="IDE重启"><a href="#IDE重启" class="headerlink" title="IDE重启"></a>IDE重启</h2><ul><li>必须重启</li></ul><h2 id="激活码输入"><a href="#激活码输入" class="headerlink" title="激活码输入"></a>激活码输入</h2><ul><li><p>Activation Code：</p><p><code>BISACXYELK-eyJsaWNlbnNlSWQiOiJCSVNBQ1hZRUxLIiwibGljZW5zZWVOYW1lIjoiQ2hpbmFOQiIsImFzc2lnbmVlTmFtZSI6IiIsImFzc2lnbmVlRW1haWwiOiIiLCJsaWNlbnNlUmVzdHJpY3Rpb24iOiIiLCJjaGVja0NvbmN1cnJlbnRVc2UiOmZhbHNlLCJwcm9kdWN0cyI6W3siY29kZSI6IklJIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOmZhbHNlfSx7ImNvZGUiOiJBQyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiRFBOIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlJTQyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJQUyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiUlNGIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IkdPIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOmZhbHNlfSx7ImNvZGUiOiJETSIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJDTCIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiUlMwIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlJDIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlJEIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOmZhbHNlfSx7ImNvZGUiOiJQQyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiUlNWIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlJTVSIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiUk0iLCJwYWlkVXBUbyI6IjIwOTktMTItMzEiLCJleHRlbmRlZCI6ZmFsc2V9LHsiY29kZSI6IldTIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOmZhbHNlfSx7ImNvZGUiOiJEQiIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiREMiLCJwYWlkVXBUbyI6IjIwOTktMTItMzEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiUERCIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlBXUyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJQR08iLCJwYWlkVXBUbyI6IjIwOTktMTItMzEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiUFBTIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlBQQyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJQUkIiLCJwYWlkVXBUbyI6IjIwOTktMTItMzEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiUFNXIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IkRQIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlJTIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9XSwibWV0YWRhdGEiOiIwMTIwMjAwNzI4RVBKQTAwODAwNiIsImhhc2giOiIxNTAyMTM1NC8wOi0xMjUxMTE0NzE3IiwiZ3JhY2VQZXJpb2REYXlzIjowLCJhdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlLCJpc0F1dG9Qcm9sb25nYXRlZCI6ZmFsc2V9-H7NUmWcLyUNV1ctnlzc4P79j15qL56G0jeIYWPk/HViNdMg1MqPM7BR+aHR28yyuxK7Odb2bFDS8CeHNUtv7nT+4fUs85JJiqc3wc1psRpZq5R77apXLOmvmossWpbAw8T1hOGV9IPUm1f2O1+kLBxrOkdqPpv9+JanbdL7bvchAid2v4/dyQMBYJme/feZ0Dy2l7Jjpwno1TeblEAu0KZmarEo15or5RUNwtaGBL5+396TLhnw1qL904/uPnGftjxWYluLjabO/uRu/+5td8UA/39a1nvGU2nORNLk2IdRGIheiwIiuirAZrII9+OxB+p52i3TIv7ugtkw0E3Jpkw==-MIIDlzCCAn+gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDEw1KZXRQcm9maWxlIENBMCAXDTE4MTEwMTEyMjk0NloYDzIwOTkwODA5MDIyNjA3WjBoMQswCQYDVQQGEwJDWjEOMAwGA1UECBMFTnVzbGUxDzANBgNVBAcTBlByYWd1ZTEZMBcGA1UEChMQSmV0QnJhaW5zIHMuci5vLjEdMBsGA1UEAxMUcHJvZDN5LWZyb20tMjAxODExMDEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCdXyaNhhRySH1a8d7c8SlLLFdNcQP8M3gNnq7gudcpHC651qxRrN7Qks8gdXlIkA4u3/lp9ylp95GiIIDo4ydYje8vlTWDq02bkyWW/G7gZ3hkbBhRUK/WnNyr2vwWoOgwx5CfTRMjKkPkfD/+jffkfNfdGmGcg9yfnqPP9/AizKzWTsXSeS+0jZ8Nw5tiYFW+lpceqlzwzKdTHug7Vs0QomUPccRtZB/TBBEuiC7YzrvLg4Amu0I48ETAcch/ztt00nx/oj/fu1DTnz4Iz4ilrNY+WVIEfDz/n3mz+PKI9kM+ZeB0jAuyLsiC7skGpIVGX/2HqmZTtJKBZCoveAiVAgMBAAGjgZkwgZYwSAYDVR0jBEEwP4AUo562SGdCEjZBvW3gubSgUouX8bOhHKQaMBgxFjAUBgNVBAMMDUpldFByb2ZpbGUgQ0GCCQDSbLGDsoN54TAJBgNVHRMEAjAAMBMGA1UdJQQMMAoGCCsGAQUFBwMBMAsGA1UdDwQEAwIFoDAdBgNVHQ4EFgQUYSkb2hkZx8swY0GRjtKAeIwaBNwwDQYJKoZIhvcNAQELBQADggEBAJZOakWgjfY359glviVffBQFxFS6C+4WjYDYzvzjWHUQoGBFKTHG4xUmTVW7y5GnPSvIlkaj49SzbD9KuiTc77GHyFCTwYMz+qITgbDg3/ao/x/be4DD/k/byWqW4Rb8OSYCshX/fNI4Xu+hxazh179taHX4NaH92ReLVyXNYsooq7mE5YhR9Qsiy35ORviQLrgFrMCGCxT9DWlFBuiPWIOqN544sL9OzFMz+bjqjCoAE/xfIJjI7H7SqGFNrx/8/IuF0hvZbO3bLIz+BOR1L2O+qT728wK6womnp2LLANTPbwu7nf39rpP182WW+xw2z9MKYwwMDwGR1iTYnD4/Sjw=</code></p></li></ul><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li><a href="https://www.jb51.net/article/204399.htm">IDEA 2020.3最新永久激活码(免费激活到 2099 年,亲测有效)_java_脚本之家 (jb51.net)</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Version：2020.3&lt;/li&gt;
+&lt;li&gt;官网：&lt;a href=&quot;https://www.jetbrains.com/id</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="IDEA" scheme="https://pingpinggray.top/categories/Tech/IDEA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA-Config</title>
+    <link href="https://pingpinggray.top/post/ec6f66d2.html"/>
+    <id>https://pingpinggray.top/post/ec6f66d2.html</id>
+    <published>2022-04-13T03:34:00.000Z</published>
+    <updated>2022-04-15T04:40:43.046Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h1><ul><li>File-Settings</li></ul><h2 id="Export"><a href="#Export" class="headerlink" title="Export"></a>Export</h2><ul><li>File-Manage IDE Settings-Export Settings…</li></ul><h2 id="Appearance-amp-Behavior"><a href="#Appearance-amp-Behavior" class="headerlink" title="Appearance &amp; Behavior"></a>Appearance &amp; Behavior</h2><h3 id="Appearance"><a href="#Appearance" class="headerlink" title="Appearance"></a>Appearance</h3><ul><li>Theme：Atom One Dark（配合插件 Material Theme UI Lite 使用）</li><li><input checked="" disabled="" type="checkbox"> Use custom font：<ul><li>Size：13</li></ul></li></ul><h2 id="Keymap"><a href="#Keymap" class="headerlink" title="Keymap"></a>Keymap</h2><ul><li>Close：Ctrl+W</li></ul><h2 id="Editor"><a href="#Editor" class="headerlink" title="Editor"></a>Editor</h2><h3 id="General"><a href="#General" class="headerlink" title="General"></a>General</h3><ul><li><input checked="" disabled="" type="checkbox"> Change font size with Ctrl+Mouse wheel</li></ul><h4 id="Auto-Import"><a href="#Auto-Import" class="headerlink" title="Auto Import"></a>Auto Import</h4><ul><li><input checked="" disabled="" type="checkbox"> Add unambiguous imports on the fly</li><li><input checked="" disabled="" type="checkbox"> Optimize imports on the fly</li></ul><h4 id="Appearance-1"><a href="#Appearance-1" class="headerlink" title="Appearance"></a>Appearance</h4><ul><li><input checked="" disabled="" type="checkbox"> Show method separators</li></ul><h4 id="Editor-Tabs"><a href="#Editor-Tabs" class="headerlink" title="Editor Tabs"></a>Editor Tabs</h4><ul><li><input disabled="" type="checkbox"> Show tabs in one row</li></ul><h3 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h3><ul><li>Size：16</li><li>Line spacing：1.1</li><li><em>会被主题样式覆盖</em></li></ul><h3 id="Color-Scheme"><a href="#Color-Scheme" class="headerlink" title="Color Scheme"></a>Color Scheme</h3><h4 id="Color-Scheme-Font"><a href="#Color-Scheme-Font" class="headerlink" title="Color Scheme Font"></a>Color Scheme Font</h4><ul><li>Size：16</li><li>Line spacing：1.1</li></ul><h3 id="File-and-Code-Templates"><a href="#File-and-Code-Templates" class="headerlink" title="File and Code Templates"></a>File and Code Templates</h3><ul><li><p>File Header：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: Chris</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Date</span>: $&#123;DATE&#125;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>: </span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure></li></ul><h2 id="Build-Execution-Deployment"><a href="#Build-Execution-Deployment" class="headerlink" title="Build, Execution, Deployment"></a>Build, Execution, Deployment</h2><h3 id="Complier"><a href="#Complier" class="headerlink" title="Complier"></a>Complier</h3><ul><li><input checked="" disabled="" type="checkbox"> Complie indepedent modules in parallel</li></ul><h1 id="View"><a href="#View" class="headerlink" title="View"></a>View</h1><ul><li>View</li></ul><h2 id="Appearance-2"><a href="#Appearance-2" class="headerlink" title="Appearance"></a>Appearance</h2><ul><li>ToolBar</li><li>Status Bar Widgets:<ul><li><input checked="" disabled="" type="checkbox"> Memory Indicator</li></ul></li></ul><h1 id="VM-Config"><a href="#VM-Config" class="headerlink" title="VM Config"></a>VM Config</h1><ul><li><p>Help-Edit Custom VM Options</p></li><li><p>idea64.exe.vmoptions：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-Xms2048m</span><br><span class="line">-Xmx4096m</span><br><span class="line">-XX:ReservedCodeCacheSize=2048m</span><br></pre></td></tr></table></figure></li></ul><h1 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h1><ul><li>File-Settings-Plugins</li><li>Alibaba Java Coding Guidelines：阿里巴巴Java开发规约</li><li>Atom File Icons：Icon 自定义</li><li>BetterIntelliJ：应用破解</li><li>IdeaVim：Vim 支持</li><li>Key Promoter X：快捷键提示</li><li>Material Theme UI Lite：Material Theme UI 插件的轻量版</li><li>Rainbow Brakets：彩虹括号</li><li>Tabnine AI Code Completion：基于 AI 的代码补全</li></ul><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li><a href="https://blog.csdn.net/qq_36135928/article/details/90348725">IDEA——最全配置_董唐强的博客-CSDN博客_idea配置</a></li><li><a href="https://blog.csdn.net/privateobject/article/details/105944578">idea 启动配置 vm参数_privateobject的博客-CSDN博客_idea vm</a></li><li><a href="https://developer.aliyun.com/article/803464">IntelliJ IDEA常用插件推荐-阿里云开发者社区 (aliyun.com)</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Settings&quot;&gt;&lt;a href=&quot;#Settings&quot; class=&quot;headerlink&quot; title=&quot;Settings&quot;&gt;&lt;/a&gt;Settings&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;File-Settings&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Export&quot;</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="IDEA" scheme="https://pingpinggray.top/categories/Tech/IDEA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Typora-Installation</title>
+    <link href="https://pingpinggray.top/post/bb5ae20b.html"/>
+    <id>https://pingpinggray.top/post/bb5ae20b.html</id>
+    <published>2022-04-12T03:34:22.000Z</published>
+    <updated>2022-04-15T04:40:43.049Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><ul><li><p>官方中文站：<a href="https://typoraio.cn/">https://typoraio.cn/</a></p></li><li><p>官网：<a href="https://www.typora.io/">https://www.typora.io/</a></p></li></ul><h1 id="购买"><a href="#购买" class="headerlink" title="购买"></a>购买</h1><ul><li>官方商城：<a href="https://secure.2checkout.com/order/checkout.php?PRODS=37673796&amp;QTY=1&amp;CART=1&amp;SHORT_FORM=1&amp;ORDERSTYLE=nLWw45S5pnE=&amp;CARD=2&amp;CURRENCY=CNY&amp;LANGUAGES=zh&amp;PAY_TYPE=WE_CHAT_PAY&amp;__c=1">https://secure.2checkout.com/order/checkout.php?PRODS=37673796&amp;QTY=1&amp;CART=1&amp;SHORT_FORM=1&amp;ORDERSTYLE=nLWw45S5pnE%3D&amp;CARD=2&amp;CURRENCY=CNY&amp;LANGUAGES=zh&amp;PAY_TYPE=WE_CHAT_PAY&amp;__c=1</a></li><li>独家代理：<a href="https://store.lizhi.io/site/products/id/520?cid=lpuwt9hw">https://store.lizhi.io/site/products/id/520?cid=lpuwt9hw</a></li></ul><h1 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h1><h2 id="文件下载"><a href="#文件下载" class="headerlink" title="文件下载"></a>文件下载</h2><ul><li>app.asar：<a href="https://chrisgray.oss-cn-beijing.aliyuncs.com/Archive/app.asar">https://chrisgray.oss-cn-beijing.aliyuncs.com/Archive/app.asar</a></li></ul><h2 id="文件覆盖"><a href="#文件覆盖" class="headerlink" title="文件覆盖"></a>文件覆盖</h2><ul><li>将下载好的 app.asar 覆盖至应用目录下的 resources 文件夹内的同名文件。</li></ul><h2 id="序列号输入"><a href="#序列号输入" class="headerlink" title="序列号输入"></a>序列号输入</h2><ul><li>打开应用，输入序列号<ul><li>DZTX2H-6MCQZT-QL4GCT-5EBWFX</li><li>G7LPKN-HP4NLD-FA3BGF-6JDQ5R</li><li>3MH4Y8-YJWT37-G5JL9Y-UHNQDJ</li><li>85ZPHY-ELQ9FQ-94J3VP-D92YLU</li><li>VEZ7NV-USYN3G-8TL2N3-DADUG4</li></ul></li><li>邮箱可任意填写（须保证格式正确）</li></ul><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li><a href="https://www.cnblogs.com/xiaohi/p/15907083.html">Typora（morkdown编辑器）的下载和破解 - article - 博客园 (cnblogs.com)</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;官方中文站：&lt;a href=&quot;https://typoraio.cn/&quot;&gt;https://typoraio.cn/&lt;/a&gt;</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="Typora" scheme="https://pingpinggray.top/categories/Tech/Typora/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Typora-Config</title>
+    <link href="https://pingpinggray.top/post/aff035cd.html"/>
+    <id>https://pingpinggray.top/post/aff035cd.html</id>
+    <published>2022-04-12T03:34:00.000Z</published>
+    <updated>2022-04-15T04:40:43.048Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="通用"><a href="#通用" class="headerlink" title="通用"></a>通用</h1><ul><li>启动选项：重新打开上次使用的文件和目录</li><li>保存 &amp; 恢复<ul><li><input checked="" disabled="" type="checkbox"> 自动保存</li></ul></li></ul><h1 id="外观"><a href="#外观" class="headerlink" title="外观"></a>外观</h1><ul><li><p>字体大小：</p><ul><li><input checked="" disabled="" type="checkbox"> 自定义15px</li></ul></li><li><p>主题：<a href="https://github.com/liangjingkanji/DrakeTyporaTheme">Drake Purple</a></p><ul><li>样式调整</li></ul><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">2.4rem</span>;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h1 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h1><ul><li><p>使用成对的括号：</p><ul><li><input checked="" disabled="" type="checkbox"> 匹配括号和引号</li><li><input checked="" disabled="" type="checkbox"> 匹配 Markdown 字符</li></ul></li><li><p>拼写检查：不使用拼写检查</p></li></ul><h1 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h1><ul><li>插入图片时：上传图片<ul><li><input checked="" disabled="" type="checkbox"> 对本地位置的图片应用上述规则</li><li><input checked="" disabled="" type="checkbox"> 对网络位置的图片应用上述规则</li></ul></li><li>上传服务设定：PicGo(app)</li></ul><h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><ul><li><p><input checked="" disabled="" type="checkbox"> 严格模式</p></li><li><p>有序列表：1. ··· 1. ···</p></li><li><p>Markdown 扩展语法：全部勾选</p></li><li><p>代码块：全部勾选</p></li><li><p>公式：</p><ul><li><input checked="" disabled="" type="checkbox"> 自动添加序号</li><li><input checked="" disabled="" type="checkbox"> 支持使用 \\ 和 \newline 换行</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;通用&quot;&gt;&lt;a href=&quot;#通用&quot; class=&quot;headerlink&quot; title=&quot;通用&quot;&gt;&lt;/a&gt;通用&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;启动选项：重新打开上次使用的文件和目录&lt;/li&gt;
+&lt;li&gt;保存 &amp;amp; 恢复&lt;ul&gt;
+&lt;li&gt;&lt;input checked=</summary>
+      
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="Typora" scheme="https://pingpinggray.top/categories/Tech/Typora/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>220411周报</title>
+    <link href="https://pingpinggray.top/post/47134c05.html"/>
+    <id>https://pingpinggray.top/post/47134c05.html</id>
+    <published>2022-04-11T13:09:59.000Z</published>
+    <updated>2022-04-15T04:40:43.050Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="项目学习"><a href="#项目学习" class="headerlink" title="项目学习"></a>项目学习</h1><ul><li><input checked="" disabled="" type="checkbox"> 测试流程整理</li><li><input checked="" disabled="" type="checkbox"> 部署流程整理</li></ul><h1 id="配置整理"><a href="#配置整理" class="headerlink" title="配置整理"></a>配置整理</h1><ul><li><input checked="" disabled="" type="checkbox"> Typora</li><li><input checked="" disabled="" type="checkbox"> IDEA</li></ul><h1 id="代码整理"><a href="#代码整理" class="headerlink" title="代码整理"></a>代码整理</h1><ul><li><input disabled="" type="checkbox"> Python</li></ul><h1 id="Kafka学习"><a href="#Kafka学习" class="headerlink" title="Kafka学习"></a>Kafka学习</h1><ul><li><input disabled="" type="checkbox"> 并行度</li><li><input disabled="" type="checkbox"> 消费组</li><li><input disabled="" type="checkbox"> MessageListener</li></ul><h1 id="OneDrive修复"><a href="#OneDrive修复" class="headerlink" title="OneDrive修复"></a>OneDrive修复</h1><ul><li><input checked="" disabled="" type="checkbox"> 应用重装</li><li><input disabled="" type="checkbox"> 数据同步</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;项目学习&quot;&gt;&lt;a href=&quot;#项目学习&quot; class=&quot;headerlink&quot; title=&quot;项目学习&quot;&gt;&lt;/a&gt;项目学习&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 测试流程整理&lt;/l</summary>
+      
+    
+    
+    
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>220404周报</title>
+    <link href="https://pingpinggray.top/post/d981633c.html"/>
+    <id>https://pingpinggray.top/post/d981633c.html</id>
+    <published>2022-04-07T13:09:59.000Z</published>
+    <updated>2022-04-14T07:26:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="装机配置"><a href="#装机配置" class="headerlink" title="装机配置"></a>装机配置</h1><ul><li><input checked="" disabled="" type="checkbox"> IDEA</li><li><input checked="" disabled="" type="checkbox"> JDK8</li><li><input checked="" disabled="" type="checkbox"> Git</li><li><input checked="" disabled="" type="checkbox"> VSCode</li><li><input checked="" disabled="" type="checkbox"> Pycharm</li><li><input checked="" disabled="" type="checkbox"> FinalShell</li><li><input checked="" disabled="" type="checkbox"> navicat</li><li><input checked="" disabled="" type="checkbox"> 向日葵远程控制</li><li><input checked="" disabled="" type="checkbox"> 向日葵控制端</li><li><input checked="" disabled="" type="checkbox"> ToDesk</li><li><input checked="" disabled="" type="checkbox"> QGIS</li></ul><h1 id="GIS学习"><a href="#GIS学习" class="headerlink" title="GIS学习"></a>GIS学习</h1><ul><li><input disabled="" type="checkbox"> 《地理信息系统导论》</li></ul><h1 id="项目开发"><a href="#项目开发" class="headerlink" title="项目开发"></a>项目开发</h1><ul><li><input checked="" disabled="" type="checkbox"> 设计架构</li><li><input checked="" disabled="" type="checkbox"> 源码</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;装机配置&quot;&gt;&lt;a href=&quot;#装机配置&quot; class=&quot;headerlink&quot; title=&quot;装机配置&quot;&gt;&lt;/a&gt;装机配置&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; IDEA&lt;/li&gt;</summary>
+      
+    
+    
+    
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Waline</title>
+    <link href="https://pingpinggray.top/post/f44bacfb.html"/>
+    <id>https://pingpinggray.top/post/f44bacfb.html</id>
+    <published>2022-03-31T07:37:49.000Z</published>
+    <updated>2022-03-31T07:43:29.655Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>一款基于 Valine 衍生的简洁、安全的评论系统。</p></blockquote><span id="more"></span><h1 id="评论通知"><a href="#评论通知" class="headerlink" title="评论通知"></a>评论通知</h1><ul><li><a href="https://waline.js.org/guide/server/notification.html#%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5">评论通知 | Waline</a></li></ul><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul><li>环境变量在Vercel中添加，添加后需要重新部署</li><li>配置Gmail时需要设置<code>安全性较低的应用的访问权限</code></li></ul><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://waline.js.org/">Waline | Waline</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;一款基于 Valine 衍生的简洁、安全的评论系统。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="Waline" scheme="https://pingpinggray.top/categories/Tech/Waline/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>220228周报</title>
+    <link href="https://pingpinggray.top/post/2f1e77bf.html"/>
+    <id>https://pingpinggray.top/post/2f1e77bf.html</id>
+    <published>2022-03-29T01:17:55.000Z</published>
+    <updated>2022-04-14T07:26:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="管道燃气"><a href="#管道燃气" class="headerlink" title="管道燃气"></a>管道燃气</h1><ul><li><input checked="" disabled="" type="checkbox"> Mock数据</li><li><input checked="" disabled="" type="checkbox"> 企业相关CRUD</li><li><input checked="" disabled="" type="checkbox"> 数据字典转换SQL脚本</li></ul><h1 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h1><ul><li><input checked="" disabled="" type="checkbox"> 更新统计底数</li></ul><h1 id="个人博客"><a href="#个人博客" class="headerlink" title="个人博客"></a>个人博客</h1><ul><li><input checked="" disabled="" type="checkbox"> 评论通知</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;管道燃气&quot;&gt;&lt;a href=&quot;#管道燃气&quot; class=&quot;headerlink&quot; title=&quot;管道燃气&quot;&gt;&lt;/a&gt;管道燃气&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Mock数据&lt;/l</summary>
+      
+    
+    
+    
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>iTerm2</title>
+    <link href="https://pingpinggray.top/post/10a3695f.html"/>
+    <id>https://pingpinggray.top/post/10a3695f.html</id>
+    <published>2022-03-28T02:48:35.000Z</published>
+    <updated>2022-03-29T01:19:47.980Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS 10.14 or newer. iTerm2 brings the terminal into the modern age with features you never knew you always wanted.</p></blockquote><span id="more"></span><h1 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1><p><a href="https://iterm2.com/index.html">iTerm2 - macOS Terminal Replacement</a></p><h1 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h1><h2 id="Default"><a href="#Default" class="headerlink" title="Default"></a>Default</h2><ul><li>Make iTerm2 default term</li></ul><h2 id="Preferences"><a href="#Preferences" class="headerlink" title="Preferences"></a>Preferences</h2><ul><li>Shortcut Key: Profiles - General</li><li>Transparency: Profiles - Window</li><li>Status Bar: Profiles - Session - Configure Status Bar</li><li>Save Profile: Profiles - Other Actions</li></ul><h1 id="Oh-My-Zsh"><a href="#Oh-My-Zsh" class="headerlink" title="Oh My Zsh"></a>Oh My Zsh</h1><p><a href="https://ohmyz.sh/">Oh My Zsh - a delightful &amp; open source framework for Zsh</a></p><h2 id="Installation-1"><a href="#Installation-1" class="headerlink" title="Installation"></a>Installation</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">sh -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>&quot;</span></span></span><br></pre></td></tr></table></figure><h2 id="Font"><a href="#Font" class="headerlink" title="Font"></a>Font</h2><p><a href="https://cdn.jsdelivr.net/gh/powerline/fonts/Meslo%20Slashed/Meslo%20LG%20S%20Regular%20for%20Powerline.ttf">Meslo LG S Regular for Powerline</a></p><h2 id="Configuration-1"><a href="#Configuration-1" class="headerlink" title="Configuration"></a>Configuration</h2><ul><li>Directory: <code>.oh-my-zsh</code></li></ul><h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><ul><li>Recommand<ul><li>agnoster</li></ul></li><li>Configuration: <code>~/.zshrc</code></li><li>Configure: <code>ZSH_THEME=</code></li><li>Random: <code>ZSH_THEME_RANDOM_CANDIDATES=()</code></li></ul><h2 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h2><ul><li>Recommand<ul><li>zsh-autosuggestions</li><li>zsh-syntax-highlighting</li></ul></li><li>Configuration: <code>~/.zshrc</code></li><li>Configure: <code>plugins=()</code></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;iTerm2 is a replacement for Terminal and the successor to iTerm. It works on Macs with macOS 10.14 or newer. iTerm2 brings the terminal into the modern age with features you never knew you always wanted.&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="iTerm2" scheme="https://pingpinggray.top/categories/Tech/iTerm2/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Java-JVM</title>
     <link href="https://pingpinggray.top/post/424e4e36.html"/>
     <id>https://pingpinggray.top/post/424e4e36.html</id>
     <published>2022-03-23T07:16:44.000Z</published>
-    <updated>2022-03-24T02:22:45.428Z</updated>
+    <updated>2022-03-26T08:50:40.543Z</updated>
     
-    <content type="html"><![CDATA[<ul><li>是可运行 Java 代码的假想计算机 ，包括字节码指令集、寄存器、栈、 垃圾回收堆和存储方法域。</li><li>运行在操作系统之上的，它与硬件没有直接的交互。</li></ul><span id="more"></span><h1 id="内存区域"><a href="#内存区域" class="headerlink" title="内存区域"></a>内存区域</h1><ul><li>分为线程私有区域（程序计数器、Java虚拟机栈、本地方法栈）、线程共享区域（堆、方法区）、直接内存。</li></ul><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/337690-20200705145239881-919047261.png" alt="img"></p><h2 id="线程私有区域"><a href="#线程私有区域" class="headerlink" title="线程私有区域"></a>线程私有区域</h2><ul><li>随用户线程的启动/结束而创建/销毁。</li></ul><h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><ul><li>一块较小的内存空间, 是当前线程所执行的字节码的行号指示器，每个线程都有独立的程序计数器。</li><li>是唯一一个在虚拟机中没有规定任何 OutOfMemoryError 情况的内存区域。</li></ul><h3 id="Java虚拟机栈"><a href="#Java虚拟机栈" class="headerlink" title="Java虚拟机栈"></a>Java虚拟机栈</h3><ul><li><p>用于描述方法执行，一个线程的方法的调用和返回对应栈的压栈和出栈。</p></li><li><p>主要存放一些基本的数据类型和对象句柄（引用）；存取速度比堆快，仅次于寄存器，栈数据可以共享；静态分配内存，编译时确定生存期大小。</p></li><li><p>每个方法在执行的同时都会创建一个栈帧(Stack Frame) 用于存储局部变量表、操作数栈、动态链接、方法出口等信息。</p></li><li><p>栈帧是用来存储数据和部分过程结果的数据结构，同时也被用来处理动态链接 (Dynamic Linking)、 方法返回值和异常分派(Dispatch Exception)。栈帧随着方法调用而创建，随着方法结束而销毁。</p></li></ul><h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><ul><li>与Java虚拟机栈作用类似，区别是前者为Native 方法服务，后者为 Java 方法服务。</li></ul><h2 id="线程共享区域"><a href="#线程共享区域" class="headerlink" title="线程共享区域"></a>线程共享区域</h2><ul><li>随虚拟机的启动/关闭而创建/销毁。</li></ul><h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><ul><li><p>保存创建的对象和数组，是垃圾收集器进行垃圾收集的最重要的内存区域。</p></li><li><p>从垃圾收集的角度细分为: 新生代(Eden 区、From Survivor 区、To Survivor 区)与老年代。</p></li></ul><h2 id="方法区-永久代"><a href="#方法区-永久代" class="headerlink" title="方法区/永久代"></a>方法区/永久代</h2><ul><li>永久代(Permanent Generation), 用于存储被 JVM 加载的类信息、常量、静态变量、即时编译器编译后的代码等数据. </li><li>HotSpot VM 把 GC 分代收集扩展至方法区, 即使用 Java 堆的永久代来实现方法区, 这样 HotSpot 的垃圾收集器就可以像管理 Java 堆一样管理这部分内存, 而不必为方法区开发专门的内存管理器。</li></ul><h2 id="直接内容"><a href="#直接内容" class="headerlink" title="直接内容"></a>直接内容</h2><ul><li>不是 JVM 运行时数据区的一部分, 但也会被频繁的使用。</li><li>在 JDK 1.4 引入的 NIO 提供了基于 Channel 与 Buffer 的 IO 方式, 它可以使用 Native 函数库直接分配堆外内存, 然后使用 DirectByteBuffer 对象作为这块内存的引用进行操作，这样就避免了在 Java 堆和 Native 堆中来回复制数据, 因此在一些场景中可以显著提高性能。</li></ul><h1 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h1><h2 id="运行内存"><a href="#运行内存" class="headerlink" title="运行内存"></a>运行内存</h2><h3 id="新生代-Young-Generation"><a href="#新生代-Young-Generation" class="headerlink" title="新生代(Young Generation)"></a>新生代(Young Generation)</h3><ul><li>用来存放新生的对象。一般占据堆的 1/3 空间。</li><li>由于频繁创建对象，所以新生代会频繁触发 MinorGC 进行垃圾回收。</li></ul><h4 id="Eden"><a href="#Eden" class="headerlink" title="Eden"></a>Eden</h4><ul><li>Java 新对象的出生地。</li><li>如果新创建的对象占用内存很大，则直接分配到老年代。</li><li>当区内存不够的时候就会触发 MinorGC，对新生代进行一次垃圾回收。</li></ul><h4 id="From-Survivor"><a href="#From-Survivor" class="headerlink" title="From Survivor"></a>From Survivor</h4><ul><li>上一次 GC 的幸存者，作为这一次 GC 的被扫描者。</li></ul><h4 id="To-Survivor"><a href="#To-Survivor" class="headerlink" title="To Survivor"></a>To Survivor</h4><ul><li>保留了一次 MinorGC 过程中的幸存者。</li></ul><h3 id="老年代-Tenured-Old-Generation"><a href="#老年代-Tenured-Old-Generation" class="headerlink" title="老年代(Tenured/Old Generation)"></a>老年代(Tenured/Old Generation)</h3><ul><li>主要存放生命周期长的内存对象。</li><li>对象比较稳定，所以 MajorGC 不会频繁执行。</li></ul><h2 id="判断回收"><a href="#判断回收" class="headerlink" title="判断回收"></a>判断回收</h2><h3 id="引用计数器法"><a href="#引用计数器法" class="headerlink" title="引用计数器法"></a>引用计数器法</h3><ul><li>为每个对象创建一个引用计数，有对象引用时计数器 +1，引用被释放时计数 -1，当计数器为 0 时就可以被回收。</li><li>缺点是不能解决循环引用的问题。</li></ul><h3 id="可达性分析算法"><a href="#可达性分析算法" class="headerlink" title="可达性分析算法"></a>可达性分析算法</h3><ul><li>从 GC Roots 开始向下搜索，搜索所走过的路径称为引用链。当一个对象到 GC Roots 没有任何引用链相连时，则称该对象是不可达达。</li><li>不可达对象不等价于可回收对象，不可达对象经历两次标记后仍然是可回收对象，则将面临回收。</li></ul><h2 id="回收算法"><a href="#回收算法" class="headerlink" title="回收算法"></a>回收算法</h2><h3 id="标记-清除算法（Mark-Sweep）"><a href="#标记-清除算法（Mark-Sweep）" class="headerlink" title="标记-清除算法（Mark-Sweep）"></a>标记-清除算法（Mark-Sweep）</h3><ul><li>最基础的垃圾回收算法，分为两个阶段，标记和清除。</li><li>标记阶段标记出所有需要回收的对象，清除阶段回收被标记的对象所占用的空间。</li><li>缺点：内存碎片化严重。</li></ul><h3 id="复制算法（Copying）"><a href="#复制算法（Copying）" class="headerlink" title="复制算法（Copying）"></a>复制算法（Copying）</h3><ul><li><p>为了解决标记-清除算法算法内存碎片化的缺陷而被提出的算法。</p></li><li><p>按内存容量将内存划分为等大小的两块。每次只使用其中一块，当这一块内存满后将尚存活的对象复制到另一块上去，把已使用的内存清理掉。</p></li><li><p>缺点：内存使用率不高，且存活对象过多，效率会大大降低。</p></li></ul><h3 id="标记-整理算法（Mark-Compact）"><a href="#标记-整理算法（Mark-Compact）" class="headerlink" title="标记-整理算法（Mark-Compact）"></a>标记-整理算法（Mark-Compact）</h3><ul><li>结合了以上两个算法，为了避免缺陷而提出。</li><li>标记阶段和 Mark-Sweep 算法相同，标记后不是清理对象，而是将存活对象移向内存的一端。然后清除端边界外的对象。如图:</li></ul><h3 id="分代收集算法"><a href="#分代收集算法" class="headerlink" title="分代收集算法"></a>分代收集算法</h3><ul><li>目前大部分 JVM 所采用的方法，核心思想是根据对象存活的不同生命周期将内存划分为不同区域，根据不同区域选择不同算法。</li><li>一般情况下将堆划分为新生代和老生代，新生代一般采用复制算法，老年代一般采用标记-整理算法。</li></ul><h4 id="新生代与复制算法"><a href="#新生代与复制算法" class="headerlink" title="新生代与复制算法"></a>新生代与复制算法</h4><ul><li>每次只使用 Eden 和 From Survivor 区域存储，当内存不够时触发 MinorGC 进行垃圾回收。</li><li>Eden 和 From Survivor 区域中存活的对象复制到 To Survivor 区域，同时把这些对象的年龄+1。</li><li>如果有对象的年龄达到了老年的标准（默认为15岁），或者 To Servicor 区域位置不够，就复制到老年代。</li><li>清空 Eden 和 From Survivor 区域。</li><li>From Survivor 和 To Survivor 互换，原 To Survivor 成为下一次 GC 时的 From Survivor 区域。</li></ul><h4 id="老年代与标记-整理算法"><a href="#老年代与标记-整理算法" class="headerlink" title="老年代与标记-整理算法"></a>老年代与标记-整理算法</h4><ul><li>在进行 MajorGC 前一般都先进行 了一次 MinorGC，使得有新生代的对象晋身入老年代。</li><li>当无法找到足够大的连续空间分配给新创建的较大对象时会抛出OOM(Out of Memory)异常，并提前触发一次  MajorGC 以腾出空间。</li></ul><h4 id="分区收集算法"><a href="#分区收集算法" class="headerlink" title="分区收集算法"></a>分区收集算法</h4><ul><li>将整个堆空间划分为连续的不同小区间, 每个小区间独立使用，独立回收。</li><li>可以控制一次回收多少个小区间，根据目标停顿时间，每次合理地回收若干个小区间(而非整个堆)，从而减少一次 GC 所产生的停顿。</li></ul><h2 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h2><h3 id="Serial"><a href="#Serial" class="headerlink" title="Serial"></a>Serial</h3><ul><li><p>单线程、复制算法</p></li><li><p>最基本的垃圾收集器， JDK1.3.1 之前新生代唯一的垃圾收集器。</p></li><li><p>在进行垃圾收集的同时，必须暂停其他所有的工作线程，直到垃圾收集结束。</p></li><li><p>简单高效，对于限定单 CPU 环境来说，没有线程交互的开销，可以获得最高的单线程垃圾收集效率。</p></li><li><p> JVM 运行在 Client 模式下默认的新生代垃圾收集器。</p></li></ul><h3 id="ParNew"><a href="#ParNew" class="headerlink" title="ParNew"></a>ParNew</h3><ul><li><p>多线程、复制算法</p></li><li><p>Serial 收集器的多线程版本，其余的行为和 Serial 收集器完全一样。</p></li><li><p>默认开启和 CPU 数目相同的线程数。</p></li><li><p> JVM 运行在 Server 模式下默认的新生代垃圾收集器。</p></li></ul><h3 id="Parallel-Scavenge"><a href="#Parallel-Scavenge" class="headerlink" title="Parallel Scavenge"></a>Parallel Scavenge</h3><ul><li>多线程、复制算法、吞吐量</li><li>重点关注的是程序达到一个可控制的吞吐量（Thoughput）。</li><li>吞吐量：CPU 用于运行用户代码的时间/CPU 总消耗时间，即运行用户代码时间/(运行用户代码时间+垃圾收集时间)。</li><li>采用自适应调节策略。</li><li>主要适用于在后台运算而不需要太多交互的任务。</li></ul><h3 id="Serial-Old"><a href="#Serial-Old" class="headerlink" title="Serial Old"></a>Serial Old</h3><ul><li><p>单线程、标记-整理算法</p></li><li><p>Serial 的老年代版本。</p></li><li><p> JVM 运行在 Server 模式下默认的老年的代垃圾收集器。</p></li><li><p>在 Server 模式下，主要有两个用途:</p><ol><li>在 JDK1.5 之前版本中与 Parallel Scavenge 搭配使用。</li><li>作为年老代中使用 CMS 收集器的后备垃圾收集方案。</li></ol></li></ul><h3 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h3><ul><li>多线程、标记-整理算法、吞吐量</li><li>Parallel Scavenge 的老年代版本。</li><li> JDK1.6开始提供。</li></ul><h3 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h3><ul><li>多线程、标记-清除算法</li><li>年老代垃圾收集器，最主要目标是获取最短垃圾回收停顿时间，从而为交互比较高的程序提高用户体验。</li><li>初始标记：标记 GC Roots 能直接关联的对象，速度很快，仍然需要暂停所有的工作线程。</li><li>并发标记：进行 GC Roots 跟踪的过程，和用户线程一起工作，不需要暂停工作线程。</li><li>重新标记：为了修正在并发标记期间，因用户程序继续运行而导致标记产生变动的那一部分对象的标记记录，仍然需要暂停所有的工作线程。</li><li>并发清除：清除 GC Roots 不可达对象，和用户线程一起工作，不需要暂停工作线程。</li><li>由于耗时最长的并发标记和并发清除过程中，垃圾收集线程可以和用户现在一起并发工作，因此总体上来看 CMS 和用户线程是一起并发地执行的。</li></ul><h3 id="G1（Garbage-first）收集器"><a href="#G1（Garbage-first）收集器" class="headerlink" title="G1（Garbage first）收集器"></a>G1（Garbage first）收集器</h3><ul><li>标记-整理算法、分区收集算法、吞吐量</li><li>可以非常精确控制停顿时间，在不牺牲吞吐量前提下，实现低停顿垃圾回收。</li><li>避免全区域垃圾收集，把堆内存划分为大小固定的几个独立区域，并且跟踪这些区域 的垃圾收集进度，同时在后台维护一个优先级列表，每次根据所允许的收集时间，优先回收垃圾最多的区域。</li></ul><h2 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h2><h3 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h3><p>在 Java 中最常见的就是强引用，把一个对象赋给一个引用变量，这个引用变量就是一个强引用。当一个对象被强引用变量引用时，它处于可达状态，它是不可能被垃圾回收机制回收的，即 使该对象以后永远都不会被用到 JVM 也不会回收。因此强引用是造成 Java 内存泄漏的主要原因之 一。</p><h3 id="软引用"><a href="#软引用" class="headerlink" title="软引用"></a>软引用</h3><p>软引用需要用 SoftReference 类来实现，对于只有软引用的对象来说，当系统内存足够时它<br>不会被回收，当系统内存空间不足时它会被回收。软引用通常用在对内存敏感的程序中。</p><h3 id="弱引用"><a href="#弱引用" class="headerlink" title="弱引用"></a>弱引用</h3><p>弱引用需要用 WeakReference 类来实现，它比软引用的生存期更短，对于只有弱引用的对象<br>来说，只要垃圾回收机制一运行，不管 JVM 的内存空间是否足够，总会回收该对象占用的内存。</p><h3 id="虚引用"><a href="#虚引用" class="headerlink" title="虚引用"></a>虚引用</h3><p> 虚引用需要 PhantomReference 类来实现，它不能单独使用，必须和引用队列联合使用。虚 引用的主要作用是跟踪对象被垃圾回收的状态。</p><h2 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h2><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW9jdWl0,size_16,color_FFFFFF,t_70.jpeg" alt="img"></p><p>类的加载指的是将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。类的加载的最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。</p><h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><p>简单来说，加载指的是把class字节码文件从各个来源通过类加载器装载入内存中。</p><p>这里有两个重点：</p><p>字节码来源。一般的加载来源包括从本地路径下编译生成的.class文件，从jar包中的.class文件，从远程网络，以及动态代理实时编译</p><p>类加载器。一般包括启动类加载器，扩展类加载器，应用类加载器，以及用户的自定义类加载器。</p><p>注：为什么会有自定义类加载器？</p><p>一方面是由于java代码很容易被反编译，如果需要对自己的代码加密的话，可以对编译后的代码进行加密，然后再通过实现自己的自定义类加载器进行解密，最后再加载。</p><p>另一方面也有可能从非标准的来源加载代码，比如从网络来源，那就需要自己实现一个类加载器，从指定源进行加载。</p><h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>主要是为了保证加载进来的字节流符合虚拟机规范，不会造成安全错误。</p><p>包括对于文件格式的验证，比如常量中是否有不被支持的常量？文件中是否有不规范的或者附加的其他信息？</p><p>对于元数据的验证，比如该类是否继承了被final修饰的类？类中的字段，方法是否与父类冲突？是否出现了不合理的重载？</p><p>对于字节码的验证，保证程序语义的合理性，比如要保证类型转换的合理性。</p><p>对于符号引用的验证，比如校验符号引用中通过全限定名是否能够找到对应的类？校验符号引用中的访问性（private，public等）是否可被当前类访问？</p><h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>主要是为类变量（注意，不是实例变量）分配内存，并且赋予初值。</p><p>特别需要注意，初值，不是代码中具体写的初始化的值，而是Java虚拟机根据不同变量类型的默认初始值。</p><p>比如8种基本类型的初值，默认为0；引用类型的初值则为null；常量的初值即为代码中设置的值，final static tmp = 456， 那么该阶段tmp的初值就是456</p><h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>将常量池内的符号引用替换为直接引用的过程。</p><p>两个重点：</p><p>符号引用。即一个字符串，但是这个字符串给出了一些能够唯一性识别一个方法，一个变量，一个类的相关信息。</p><p>直接引用。可以理解为一个内存地址，或者一个偏移量。比如类方法，类变量的直接引用是指向方法区的指针；而实例方法，实例变量的直接引用则是从实例的头指针开始算起到这个实例变量位置的偏移量</p><p>举个例子来说，现在调用方法hello()，这个方法的地址是1234567，那么hello就是符号引用，1234567就是直接引用。</p><p>在解析阶段，虚拟机会把所有的类名，方法名，字段名这些符号引用替换为具体的内存地址或偏移量，也就是直接引用。</p><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>这个阶段主要是对类变量初始化，是执行类构造器的过程。</p><p>换句话说，只对static修饰的变量或语句进行初始化。</p><p>如果初始化一个类的时候，其父类尚未初始化，则优先初始化其父类。</p><p>如果同时包含多个静态变量和静态代码块，则按照自上而下的顺序依次执行。</p>]]></content>
+    <content type="html"><![CDATA[<ul><li>是可运行 Java 代码的假想计算机 ，包括字节码指令集、寄存器、栈、 垃圾回收堆和存储方法域。</li><li>运行在操作系统之上的，它与硬件没有直接的交互。</li></ul><span id="more"></span><h1 id="内存区域"><a href="#内存区域" class="headerlink" title="内存区域"></a>内存区域</h1><ul><li>分为线程私有区域（程序计数器、Java虚拟机栈、本地方法栈）、线程共享区域（堆、方法区）、直接内存。</li></ul><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/337690-20200705145239881-919047261.png" alt="img"></p><h2 id="线程私有区域"><a href="#线程私有区域" class="headerlink" title="线程私有区域"></a>线程私有区域</h2><ul><li>随用户线程的启动&#x2F;结束而创建&#x2F;销毁。</li></ul><h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><ul><li>一块较小的内存空间, 是当前线程所执行的字节码的行号指示器，每个线程都有独立的程序计数器。</li><li>是唯一一个在虚拟机中没有规定任何 OutOfMemoryError 情况的内存区域。</li></ul><h3 id="Java虚拟机栈"><a href="#Java虚拟机栈" class="headerlink" title="Java虚拟机栈"></a>Java虚拟机栈</h3><ul><li><p>用于描述方法执行，一个线程的方法的调用和返回对应栈的压栈和出栈。</p></li><li><p>主要存放一些基本的数据类型和对象句柄（引用）；存取速度比堆快，仅次于寄存器，栈数据可以共享；静态分配内存，编译时确定生存期大小。</p></li><li><p>每个方法在执行的同时都会创建一个栈帧(Stack Frame) 用于存储局部变量表、操作数栈、动态链接、方法出口等信息。</p></li><li><p>栈帧是用来存储数据和部分过程结果的数据结构，同时也被用来处理动态链接 (Dynamic Linking)、 方法返回值和异常分派(Dispatch Exception)。栈帧随着方法调用而创建，随着方法结束而销毁。</p></li></ul><h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><ul><li>与Java虚拟机栈作用类似，区别是前者为Native 方法服务，后者为 Java 方法服务。</li></ul><h2 id="线程共享区域"><a href="#线程共享区域" class="headerlink" title="线程共享区域"></a>线程共享区域</h2><ul><li>随虚拟机的启动&#x2F;关闭而创建&#x2F;销毁。</li></ul><h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><ul><li><p>保存创建的对象和数组，是垃圾收集器进行垃圾收集的最重要的内存区域。</p></li><li><p>从垃圾收集的角度细分为: 新生代(Eden 区、From Survivor 区、To Survivor 区)与老年代。</p></li></ul><h2 id="方法区-x2F-永久代"><a href="#方法区-x2F-永久代" class="headerlink" title="方法区&#x2F;永久代"></a>方法区&#x2F;永久代</h2><ul><li>永久代(Permanent Generation), 用于存储被 JVM 加载的类信息、常量、静态变量、即时编译器编译后的代码等数据. </li><li>HotSpot VM 把 GC 分代收集扩展至方法区, 即使用 Java 堆的永久代来实现方法区, 这样 HotSpot 的垃圾收集器就可以像管理 Java 堆一样管理这部分内存, 而不必为方法区开发专门的内存管理器。</li></ul><h2 id="直接内容"><a href="#直接内容" class="headerlink" title="直接内容"></a>直接内容</h2><ul><li>不是 JVM 运行时数据区的一部分, 但也会被频繁的使用。</li><li>在 JDK 1.4 引入的 NIO 提供了基于 Channel 与 Buffer 的 IO 方式, 它可以使用 Native 函数库直接分配堆外内存, 然后使用 DirectByteBuffer 对象作为这块内存的引用进行操作，这样就避免了在 Java 堆和 Native 堆中来回复制数据, 因此在一些场景中可以显著提高性能。</li></ul><h1 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h1><h2 id="运行内存"><a href="#运行内存" class="headerlink" title="运行内存"></a>运行内存</h2><h3 id="新生代-Young-Generation"><a href="#新生代-Young-Generation" class="headerlink" title="新生代(Young Generation)"></a>新生代(Young Generation)</h3><ul><li>用来存放新生的对象。一般占据堆的 1&#x2F;3 空间。</li><li>由于频繁创建对象，所以新生代会频繁触发 MinorGC 进行垃圾回收。</li></ul><h4 id="Eden"><a href="#Eden" class="headerlink" title="Eden"></a>Eden</h4><ul><li>Java 新对象的出生地。</li><li>如果新创建的对象占用内存很大，则直接分配到老年代。</li><li>当区内存不够的时候就会触发 MinorGC，对新生代进行一次垃圾回收。</li></ul><h4 id="From-Survivor"><a href="#From-Survivor" class="headerlink" title="From Survivor"></a>From Survivor</h4><ul><li>上一次 GC 的幸存者，作为这一次 GC 的被扫描者。</li></ul><h4 id="To-Survivor"><a href="#To-Survivor" class="headerlink" title="To Survivor"></a>To Survivor</h4><ul><li>保留了一次 MinorGC 过程中的幸存者。</li></ul><h3 id="老年代-Tenured-x2F-Old-Generation"><a href="#老年代-Tenured-x2F-Old-Generation" class="headerlink" title="老年代(Tenured&#x2F;Old Generation)"></a>老年代(Tenured&#x2F;Old Generation)</h3><ul><li>主要存放生命周期长的内存对象。</li><li>对象比较稳定，所以 MajorGC 不会频繁执行。</li></ul><h2 id="判断回收"><a href="#判断回收" class="headerlink" title="判断回收"></a>判断回收</h2><h3 id="引用计数器法"><a href="#引用计数器法" class="headerlink" title="引用计数器法"></a>引用计数器法</h3><ul><li>为每个对象创建一个引用计数，有对象引用时计数器 +1，引用被释放时计数 -1，当计数器为 0 时就可以被回收。</li><li>缺点是不能解决循环引用的问题。</li></ul><h3 id="可达性分析算法"><a href="#可达性分析算法" class="headerlink" title="可达性分析算法"></a>可达性分析算法</h3><ul><li>从 GC Roots 开始向下搜索，搜索所走过的路径称为引用链。当一个对象到 GC Roots 没有任何引用链相连时，则称该对象是不可达达。</li><li>不可达对象不等价于可回收对象，不可达对象经历两次标记后仍然是可回收对象，则将面临回收。</li></ul><h2 id="回收算法"><a href="#回收算法" class="headerlink" title="回收算法"></a>回收算法</h2><h3 id="标记-清除算法（Mark-Sweep）"><a href="#标记-清除算法（Mark-Sweep）" class="headerlink" title="标记-清除算法（Mark-Sweep）"></a>标记-清除算法（Mark-Sweep）</h3><ul><li>最基础的垃圾回收算法，分为两个阶段，标记和清除。</li><li>标记阶段标记出所有需要回收的对象，清除阶段回收被标记的对象所占用的空间。</li><li>缺点：内存碎片化严重。</li></ul><h3 id="复制算法（Copying）"><a href="#复制算法（Copying）" class="headerlink" title="复制算法（Copying）"></a>复制算法（Copying）</h3><ul><li><p>为了解决标记-清除算法算法内存碎片化的缺陷而被提出的算法。</p></li><li><p>按内存容量将内存划分为等大小的两块。每次只使用其中一块，当这一块内存满后将尚存活的对象复制到另一块上去，把已使用的内存清理掉。</p></li><li><p>缺点：内存使用率不高，且存活对象过多，效率会大大降低。</p></li></ul><h3 id="标记-整理算法（Mark-Compact）"><a href="#标记-整理算法（Mark-Compact）" class="headerlink" title="标记-整理算法（Mark-Compact）"></a>标记-整理算法（Mark-Compact）</h3><ul><li>结合了以上两个算法，为了避免缺陷而提出。</li><li>标记阶段和 Mark-Sweep 算法相同，标记后不是清理对象，而是将存活对象移向内存的一端。然后清除端边界外的对象。如图:</li></ul><h3 id="分代收集算法"><a href="#分代收集算法" class="headerlink" title="分代收集算法"></a>分代收集算法</h3><ul><li>目前大部分 JVM 所采用的方法，核心思想是根据对象存活的不同生命周期将内存划分为不同区域，根据不同区域选择不同算法。</li><li>一般情况下将堆划分为新生代和老生代，新生代一般采用复制算法，老年代一般采用标记-整理算法。</li></ul><h4 id="新生代与复制算法"><a href="#新生代与复制算法" class="headerlink" title="新生代与复制算法"></a>新生代与复制算法</h4><ul><li>每次只使用 Eden 和 From Survivor 区域存储，当内存不够时触发 MinorGC 进行垃圾回收。</li><li>Eden 和 From Survivor 区域中存活的对象复制到 To Survivor 区域，同时把这些对象的年龄+1。</li><li>如果有对象的年龄达到了老年的标准（默认为15岁），或者 To Servicor 区域位置不够，就复制到老年代。</li><li>清空 Eden 和 From Survivor 区域。</li><li>From Survivor 和 To Survivor 互换，原 To Survivor 成为下一次 GC 时的 From Survivor 区域。</li></ul><h4 id="老年代与标记-整理算法"><a href="#老年代与标记-整理算法" class="headerlink" title="老年代与标记-整理算法"></a>老年代与标记-整理算法</h4><ul><li>在进行 MajorGC 前一般都先进行 了一次 MinorGC，使得有新生代的对象晋身入老年代。</li><li>当无法找到足够大的连续空间分配给新创建的较大对象时会抛出OOM(Out of Memory)异常，并提前触发一次  MajorGC 以腾出空间。</li></ul><h4 id="分区收集算法"><a href="#分区收集算法" class="headerlink" title="分区收集算法"></a>分区收集算法</h4><ul><li>将整个堆空间划分为连续的不同小区间, 每个小区间独立使用，独立回收。</li><li>可以控制一次回收多少个小区间，根据目标停顿时间，每次合理地回收若干个小区间(而非整个堆)，从而减少一次 GC 所产生的停顿。</li></ul><h2 id="垃圾收集器"><a href="#垃圾收集器" class="headerlink" title="垃圾收集器"></a>垃圾收集器</h2><h3 id="Serial"><a href="#Serial" class="headerlink" title="Serial"></a>Serial</h3><ul><li><p>单线程、复制算法</p></li><li><p>最基本的垃圾收集器， JDK1.3.1 之前新生代唯一的垃圾收集器。</p></li><li><p>在进行垃圾收集的同时，必须暂停其他所有的工作线程，直到垃圾收集结束。</p></li><li><p>简单高效，对于限定单 CPU 环境来说，没有线程交互的开销，可以获得最高的单线程垃圾收集效率。</p></li><li><p>JVM 运行在 Client 模式下默认的新生代垃圾收集器。</p></li></ul><h3 id="ParNew"><a href="#ParNew" class="headerlink" title="ParNew"></a>ParNew</h3><ul><li><p>多线程、复制算法</p></li><li><p>Serial 收集器的多线程版本，其余的行为和 Serial 收集器完全一样。</p></li><li><p>默认开启和 CPU 数目相同的线程数。</p></li><li><p>JVM 运行在 Server 模式下默认的新生代垃圾收集器。</p></li></ul><h3 id="Parallel-Scavenge"><a href="#Parallel-Scavenge" class="headerlink" title="Parallel Scavenge"></a>Parallel Scavenge</h3><ul><li>多线程、复制算法、吞吐量</li><li>重点关注的是程序达到一个可控制的吞吐量（Thoughput）。</li><li>吞吐量：CPU 用于运行用户代码的时间&#x2F;CPU 总消耗时间，即运行用户代码时间&#x2F;(运行用户代码时间+垃圾收集时间)。</li><li>采用自适应调节策略。</li><li>主要适用于在后台运算而不需要太多交互的任务。</li></ul><h3 id="Serial-Old"><a href="#Serial-Old" class="headerlink" title="Serial Old"></a>Serial Old</h3><ul><li><p>单线程、标记-整理算法</p></li><li><p>Serial 的老年代版本。</p></li><li><p>JVM 运行在 Server 模式下默认的老年的代垃圾收集器。</p></li><li><p>在 Server 模式下，主要有两个用途:</p><ol><li>在 JDK1.5 之前版本中与 Parallel Scavenge 搭配使用。</li><li>作为年老代中使用 CMS 收集器的后备垃圾收集方案。</li></ol></li></ul><h3 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h3><ul><li>多线程、标记-整理算法、吞吐量</li><li>Parallel Scavenge 的老年代版本。</li><li>JDK1.6开始提供。</li></ul><h3 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h3><ul><li>多线程、标记-清除算法</li><li>年老代垃圾收集器，最主要目标是获取最短垃圾回收停顿时间，从而为交互比较高的程序提高用户体验。</li><li>初始标记：标记 GC Roots 能直接关联的对象，速度很快，仍然需要暂停所有的工作线程。</li><li>并发标记：进行 GC Roots 跟踪的过程，和用户线程一起工作，不需要暂停工作线程。</li><li>重新标记：为了修正在并发标记期间，因用户程序继续运行而导致标记产生变动的那一部分对象的标记记录，仍然需要暂停所有的工作线程。</li><li>并发清除：清除 GC Roots 不可达对象，和用户线程一起工作，不需要暂停工作线程。</li><li>由于耗时最长的并发标记和并发清除过程中，垃圾收集线程可以和用户现在一起并发工作，因此总体上来看 CMS 和用户线程是一起并发地执行的。</li></ul><h3 id="G1（Garbage-first）收集器"><a href="#G1（Garbage-first）收集器" class="headerlink" title="G1（Garbage first）收集器"></a>G1（Garbage first）收集器</h3><ul><li>标记-整理算法、分区收集算法、吞吐量</li><li>可以非常精确控制停顿时间，在不牺牲吞吐量前提下，实现低停顿垃圾回收。</li><li>避免全区域垃圾收集，把堆内存划分为大小固定的几个独立区域，并且跟踪这些区域 的垃圾收集进度，同时在后台维护一个优先级列表，每次根据所允许的收集时间，优先回收垃圾最多的区域。</li></ul><h1 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h1><h2 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h2><ul><li>最常见的引用类型。</li><li>把一个对象赋给一个引用变量，这个引用变量就是一个强引用。</li><li>当一个对象被强引用变量引用时，它处于可达状态，它是不可能被垃圾回收机制回收的，即使该对象以后永远都不会被用到 JVM 也不会回收。</li><li>是造成 Java 内存泄漏的主要原因之 一。</li></ul><h2 id="软引用"><a href="#软引用" class="headerlink" title="软引用"></a>软引用</h2><ul><li>用 SoftReference 类来实现。</li><li>对于只有软引用的对象来说，当系统内存足够时它不会被回收，当系统内存空间不足时它会被回收。</li><li>软引用通常用在对内存敏感的程序中。</li></ul><h2 id="弱引用"><a href="#弱引用" class="headerlink" title="弱引用"></a>弱引用</h2><ul><li>用 WeakReference 类来实现。</li><li>它比软引用的生存期更短，对于只有弱引用的对象来说，只要垃圾回收机制一运行，不管 JVM 的内存空间是否足够，总会回收该对象占用的内存。</li></ul><h2 id="虚引用"><a href="#虚引用" class="headerlink" title="虚引用"></a>虚引用</h2><ul><li>用 PhantomReference 类来实现。</li><li>不能单独使用，必须和引用队列联合使用。</li><li>主要作用是跟踪对象被垃圾回收的状态。</li></ul><h1 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h1><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW9jdWl0,size_16,color_FFFFFF,t_70.jpeg" alt="img"></p><ul><li>将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。</li><li>最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。</li></ul><h2 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h2><ul><li><p>在内存中生成一个代表这个类的 java.lang.Class 对象，作为方法区这个类的各种数据的入口。</p></li><li><p>一般的加载来源包括从本地路径下编译生成的、jar包中的、远程网络以及动态代理实时编译的.class文件。</p></li></ul><h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><ul><li><p>主要是为了保证加载进来的字节流符合虚拟机规范，不会造成安全错误。</p></li><li><p>包括对于文件格式的验证，比如常量中是否有不被支持的常量，文件中是否有不规范的或者附加的其他信息。</p></li><li><p>对于元数据的验证，比如该类是否继承了被final修饰的类，类中的字段、方法是否与父类冲突，是否出现了不合理的重载。</p></li><li><p>对于字节码的验证，保证程序语义的合理性，比如要保证类型转换的合理性。</p></li><li><p>对于符号引用的验证，比如校验符号引用中通过全限定名是否能够找到对应的类，校验符号引用中的访问性（private，public等）是否可被当前类访问。</p></li></ul><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul><li><p>主要是为类变量分配内存，并且赋予初值，即在方法区中分配这些变量所使 用的内存空间。</p></li><li><p>初值不是代码中具体写的初始化的值，而是Java虚拟机根据不同变量类型的默认初始值：8种基本类型的初值，默认为0；引用类型的初值则为null；常量的初值即为代码中设置的值。</p></li></ul><h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><ul><li>将常量池内的符号引用（类名、方法名、字段名等）替换为直接引用（具体的内存地址或偏移量）。</li></ul><h3 id="符号引用"><a href="#符号引用" class="headerlink" title="符号引用"></a>符号引用</h3><ul><li>一个字符串，这个字符串给出了一些能够唯一性识别一个方法，一个变量，一个类的相关信息。</li><li>与虚拟机实现的布局无关，引用的目标并不一定要已经加载到内存中。</li><li>各种虚拟机实现的内存布局可以各不相同，但是它们能接受的符号引用必须是一致的，因为符号引用的字面量形式明确定义在 Java 虚拟机规范的 Class 文件格式中。</li></ul><h3 id="直接引用"><a href="#直接引用" class="headerlink" title="直接引用"></a>直接引用</h3><ul><li>指向目标的指针，相对偏移量或是一个能间接定位到目标的句柄。如果有了直接引用，那引用的目标必定已经在内存中存在。</li></ul><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p> 初始化阶段是类加载最后一个阶段，前面的类加载阶段之后，除了在加载阶段可以自定义类加载 器以外，其它操作都由 JVM 主导。到了初始阶段，才开始真正执行类中定义的 Java 程序代码。</p><ul><li>对类变量初始化，是执行类构造器的过程。</li></ul><h3 id="类构造器"><a href="#类构造器" class="headerlink" title="类构造器"></a>类构造器</h3><ul><li>初始化阶段是执行类构造器<client>方法的过程。</li><li><client>方法是由编译器自动收集类中的<strong>类变量的赋值操作</strong>和<strong>静态语句块中的语句</strong>合并而成的。</li><li>虚拟机会保证子<client>方法执行之前，父类 的<client>方法已经执行完毕。</li><li>如果一个类中没有对静态变量赋值也没有静态语句块，那么编译器可以不为这个类生成<client>方法。</li><li>以下几种情况不会执行类初始化:<ul><li>通过<strong>子类引用父类的静态字段</strong>，只会触发父类的初始化，而不会触发子类的初始化。</li><li>定义<strong>对象数组</strong>，不会触发该类的初始化。</li><li><strong>常量</strong>在编译期间会存入调用类的常量池中，本质上并没有直接引用定义常量的类，不会触发定义常量所在的类的初始化。</li><li>通过<strong>类名获取 Class 对象</strong>，不会触发类的初始化。</li><li>通过 <strong>Class.forName 方法</strong>加载指定类，如果指定参数 initialize 为 false 时，也不会触发类初始化（这个参数是告诉虚拟机，是否要对类进行初始化）。</li><li>通过 <strong>ClassLoader 默认的 loadClass 方法</strong>，不会触发该类的初始化。</li></ul></li></ul><h2 id="类加载器"><a href="#类加载器" class="headerlink" title="类加载器"></a>类加载器</h2><ul><li>加载动作在  JVM 外部实现，以便让应用程序决定如何获取所需的类。</li></ul><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/IMG_2E0E61ED56CE-1.jpeg" alt="IMG_2E0E61ED56CE-1"></p><h3 id="启动类加载器-Bootstrap-ClassLoader"><a href="#启动类加载器-Bootstrap-ClassLoader" class="headerlink" title="启动类加载器(Bootstrap ClassLoader)"></a>启动类加载器(Bootstrap ClassLoader)</h3><ul><li>负责加载 JAVA_HOME\lib 目录中的，或通过-Xbootclasspath 参数指定路径中的，且 虚拟机认可的类。</li></ul><h3 id="扩展类加载器-Extension-ClassLoader"><a href="#扩展类加载器-Extension-ClassLoader" class="headerlink" title="扩展类加载器(Extension ClassLoader)"></a>扩展类加载器(Extension ClassLoader)</h3><ul><li>负责加载 JAVA_HOME\lib\ext 目录中的，或通过 java.ext.dirs 系统变量指定路径中的类库。</li></ul><h3 id="应用程序类加载器-Application-ClassLoader"><a href="#应用程序类加载器-Application-ClassLoader" class="headerlink" title="应用程序类加载器(Application ClassLoader)"></a>应用程序类加载器(Application ClassLoader)</h3><ul><li>负责加载用户路径(classpath)上的类库。</li></ul><h3 id="自定义加载器（User-ClassLoader）"><a href="#自定义加载器（User-ClassLoader）" class="headerlink" title="自定义加载器（User ClassLoader）"></a>自定义加载器（User ClassLoader）</h3><ul><li>通过继承 <strong>java.lang.ClassLoader</strong> 实现。</li></ul><h2 id="双亲委派机制"><a href="#双亲委派机制" class="headerlink" title="双亲委派机制"></a>双亲委派机制</h2><ul><li>当一个类收到了类加载请求，他首先不会尝试自己去加载这个类，而是把这个请求<strong>委派给父类</strong>去完成，每一个层次类加载器都是如此，因此所有的加载请求都应该传送到启动类加载器。</li><li>只有当父类加载器反馈自己无法完成这个请求的时候(在它的加载路径下没有找到所需加载的Class)，子类加载器才会尝试自己去加载。</li><li>好处是不管是哪个加载器加载同一个类，最终都是委托给顶层的启动类加载器进行加载，这样就保证了使用不同的类加载器最终得到的都是同一个 Object 对象。</li></ul>]]></content>
     
     
     <summary type="html">&lt;ul&gt;
@@ -43,121 +316,95 @@
   </entry>
   
   <entry>
-    <title>22-3-21</title>
+    <title>220321周报</title>
     <link href="https://pingpinggray.top/post/bcd6f0a1.html"/>
     <id>https://pingpinggray.top/post/bcd6f0a1.html</id>
     <published>2022-03-21T06:55:11.000Z</published>
-    <updated>2022-03-21T06:55:58.304Z</updated>
+    <updated>2022-04-14T07:26:08.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="22-3-21"><a href="#22-3-21" class="headerlink" title="22-3-21"></a>22-3-21</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul><li><input disabled="" type="checkbox"> API自动化测试</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h1><ul><li><input checked="" disabled="" type="checkbox"> API自动化测试</li></ul><h1 id="Java技术栈"><a href="#Java技术栈" class="headerlink" title="Java技术栈"></a>Java技术栈</h1><ul><li><input checked="" disabled="" type="checkbox"> JVM</li><li><input checked="" disabled="" type="checkbox"> Network</li><li><input disabled="" type="checkbox"> MySQL</li></ul><h1 id="博客"><a href="#博客" class="headerlink" title="博客"></a>博客</h1><ul><li><input checked="" disabled="" type="checkbox"> 版本升级</li><li><input checked="" disabled="" type="checkbox"> 评论系统</li><li><input checked="" disabled="" type="checkbox"> 目录与文件夹映射</li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;22-3-21&quot;&gt;&lt;a href=&quot;#22-3-21&quot; class=&quot;headerlink&quot; title=&quot;22-3-21&quot;&gt;&lt;/a&gt;22-3-21&lt;/h1&gt;&lt;h2 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; titl</summary>
+    <summary type="html">&lt;h1 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; title=&quot;三名系统&quot;&gt;&lt;/a&gt;三名系统&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; API自动化测试&lt;</summary>
       
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
     
     
   </entry>
   
   <entry>
-    <title>22-3-14</title>
+    <title>220314周报</title>
     <link href="https://pingpinggray.top/post/e79157ed.html"/>
     <id>https://pingpinggray.top/post/e79157ed.html</id>
     <published>2022-03-15T05:18:06.000Z</published>
-    <updated>2022-03-19T03:28:26.021Z</updated>
+    <updated>2022-04-14T07:26:08.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="22-3-14"><a href="#22-3-14" class="headerlink" title="22-3-14"></a>22-3-14</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul><li><input checked="" disabled="" type="checkbox"> 技术说明文档（README）</li><li><input checked="" disabled="" type="checkbox"> 成果数据存储</li></ul><h2 id="个人Spring模板"><a href="#个人Spring模板" class="headerlink" title="个人Spring模板"></a>个人Spring模板</h2><ul><li><input checked="" disabled="" type="checkbox"> 通用CRUD</li><li><input checked="" disabled="" type="checkbox"> Swagger配置</li><li><input checked="" disabled="" type="checkbox"> 静态资源映射</li><li><input checked="" disabled="" type="checkbox"> 异常处理</li><li><input checked="" disabled="" type="checkbox"> 通用条件查询</li><li><input checked="" disabled="" type="checkbox"> 技术说明文档（README）</li><li><input disabled="" type="checkbox"> 统一HTTP访问</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h1><ul><li><input checked="" disabled="" type="checkbox"> 技术说明文档（README）</li><li><input checked="" disabled="" type="checkbox"> 成果数据存储</li></ul><h1 id="个人Spring模板"><a href="#个人Spring模板" class="headerlink" title="个人Spring模板"></a>个人Spring模板</h1><ul><li><input checked="" disabled="" type="checkbox"> 通用CRUD</li><li><input checked="" disabled="" type="checkbox"> Swagger配置</li><li><input checked="" disabled="" type="checkbox"> 静态资源映射</li><li><input checked="" disabled="" type="checkbox"> 异常处理</li><li><input checked="" disabled="" type="checkbox"> 通用条件查询</li><li><input checked="" disabled="" type="checkbox"> 技术说明文档（README）</li><li><input disabled="" type="checkbox"> 统一HTTP访问</li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;22-3-14&quot;&gt;&lt;a href=&quot;#22-3-14&quot; class=&quot;headerlink&quot; title=&quot;22-3-14&quot;&gt;&lt;/a&gt;22-3-14&lt;/h1&gt;&lt;h2 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; titl</summary>
+    <summary type="html">&lt;h1 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; title=&quot;三名系统&quot;&gt;&lt;/a&gt;三名系统&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 技术说明文档（RE</summary>
       
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
     
     
   </entry>
   
   <entry>
-    <title>22-3-7</title>
+    <title>220307周报</title>
     <link href="https://pingpinggray.top/post/cf733f29.html"/>
     <id>https://pingpinggray.top/post/cf733f29.html</id>
     <published>2022-03-11T09:36:38.000Z</published>
-    <updated>2022-03-15T05:17:13.055Z</updated>
+    <updated>2022-04-14T07:26:08.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="22-3-7"><a href="#22-3-7" class="headerlink" title="22-3-7"></a>22-3-7</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul><li><input checked="" disabled="" type="checkbox"> 异常处理</li><li><input checked="" disabled="" type="checkbox"> 时间序列化处理</li><li><input checked="" disabled="" type="checkbox"> 流程全局监听</li><li><input checked="" disabled="" type="checkbox"> 日志推送</li><li><input disabled="" type="checkbox"> 消息推送</li><li><input checked="" disabled="" type="checkbox"> 通用CRUD</li><li><input disabled="" type="checkbox"> 技术说明文档（README）</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h1><ul><li><input checked="" disabled="" type="checkbox"> 异常处理</li><li><input checked="" disabled="" type="checkbox"> 时间序列化处理</li><li><input checked="" disabled="" type="checkbox"> 流程全局监听</li><li><input checked="" disabled="" type="checkbox"> 日志推送</li><li><input disabled="" type="checkbox"> 消息推送</li><li><input checked="" disabled="" type="checkbox"> 通用CRUD</li><li><input disabled="" type="checkbox"> 技术说明文档（README）</li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;22-3-7&quot;&gt;&lt;a href=&quot;#22-3-7&quot; class=&quot;headerlink&quot; title=&quot;22-3-7&quot;&gt;&lt;/a&gt;22-3-7&lt;/h1&gt;&lt;h2 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; title=&quot;三</summary>
+    <summary type="html">&lt;h1 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; title=&quot;三名系统&quot;&gt;&lt;/a&gt;三名系统&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 异常处理&lt;/li&gt;</summary>
       
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
     
     
   </entry>
   
   <entry>
-    <title>22-2-28</title>
-    <link href="https://pingpinggray.top/post/7db62f60.html"/>
-    <id>https://pingpinggray.top/post/7db62f60.html</id>
-    <published>2022-02-28T03:37:17.000Z</published>
-    <updated>2022-03-15T05:20:06.322Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="22-2-28"><a href="#22-2-28" class="headerlink" title="22-2-28"></a>22-2-28</h1><h2 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h2><ul><li><input checked="" disabled="" type="checkbox"> 需求说明文档整理</li><li><input checked="" disabled="" type="checkbox"> 功能设计文档整理</li><li><input disabled="" type="checkbox"> 技术说明文档（README）整理</li><li><input checked="" disabled="" type="checkbox"> 数据库映射字段名称修改</li><li><input checked="" disabled="" type="checkbox"> 服务器部署调整</li><li><input checked="" disabled="" type="checkbox"> 返回值统一处理</li><li><input checked="" disabled="" type="checkbox"> 异常统一处理</li><li><input checked="" disabled="" type="checkbox"> 申请进度统计接口</li><li><input checked="" disabled="" type="checkbox"> 日志管理</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;22-2-28&quot;&gt;&lt;a href=&quot;#22-2-28&quot; class=&quot;headerlink&quot; title=&quot;22-2-28&quot;&gt;&lt;/a&gt;22-2-28&lt;/h1&gt;&lt;h2 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; titl</summary>
-      
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>22-2-21</title>
+    <title>220221周报</title>
     <link href="https://pingpinggray.top/post/46a97c4.html"/>
     <id>https://pingpinggray.top/post/46a97c4.html</id>
     <published>2022-02-21T11:11:35.000Z</published>
-    <updated>2022-02-25T08:09:29.910Z</updated>
+    <updated>2022-04-14T07:26:08.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="22-2-21"><a href="#22-2-21" class="headerlink" title="22-2-21"></a>22-2-21</h1><h2 id="三名服务"><a href="#三名服务" class="headerlink" title="三名服务"></a>三名服务</h2><ul><li>BaseAppDO：整合通用审批</li><li>合并流程查询</li><li>README文档整理</li><li>合并申请表查询</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h1><ul><li>BaseAppDO：整合通用审批</li><li>合并流程查询</li><li>README文档整理</li><li>合并申请表查询</li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;22-2-21&quot;&gt;&lt;a href=&quot;#22-2-21&quot; class=&quot;headerlink&quot; title=&quot;22-2-21&quot;&gt;&lt;/a&gt;22-2-21&lt;/h1&gt;&lt;h2 id=&quot;三名服务&quot;&gt;&lt;a href=&quot;#三名服务&quot; class=&quot;headerlink&quot; titl</summary>
+    <summary type="html">&lt;h1 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; title=&quot;三名系统&quot;&gt;&lt;/a&gt;三名系统&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;BaseAppDO：整合通用审批&lt;/li&gt;
+&lt;li&gt;合并流程查询&lt;/li&gt;
+&lt;li&gt;README文档整理&lt;/li</summary>
       
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
     
     
   </entry>
@@ -169,7 +416,7 @@
     <published>2022-02-15T10:33:18.000Z</published>
     <updated>2022-02-15T10:39:06.531Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>模拟</li></ul><span id="more"></span><h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h3><ul><li>幸运数应满足：在同一行的所有元素中最小；在同一列的所有元素中最大</li><li>预处理每行每列的最值</li><li>遍历比较当前数是否等于所在行列的最值</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="预处理最值"><a href="#预处理最值" class="headerlink" title="预处理最值"></a>预处理最值</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] minRow = <span class="keyword">new</span> <span class="keyword">int</span>[m];</span><br><span class="line"><span class="keyword">int</span>[] maxCol = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">Arrays.fill(minRow, Integer.MAX_VALUE);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> num = matrix[i][j];</span><br><span class="line">        minRow[i] = Math.min(minRow[i], num);</span><br><span class="line">        maxCol[j] = Math.max(maxCol[j], num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="遍历比较"><a href="#遍历比较" class="headerlink" title="遍历比较"></a>遍历比较</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; res = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> num = matrix[i][j];</span><br><span class="line">        <span class="keyword">if</span> (num == minRow[i] &amp;&amp; num == maxCol[j]) &#123;</span><br><span class="line">            res.add(num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/lucky-numbers-in-a-matrix/">1380. 矩阵中的幸运数 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>模拟</li></ul><span id="more"></span><h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h3><ul><li>幸运数应满足：在同一行的所有元素中最小；在同一列的所有元素中最大</li><li>预处理每行每列的最值</li><li>遍历比较当前数是否等于所在行列的最值</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="预处理最值"><a href="#预处理最值" class="headerlink" title="预处理最值"></a>预处理最值</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] minRow = <span class="keyword">new</span> <span class="title class_">int</span>[m];</span><br><span class="line"><span class="type">int</span>[] maxCol = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">Arrays.fill(minRow, Integer.MAX_VALUE);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> matrix[i][j];</span><br><span class="line">        minRow[i] = Math.min(minRow[i], num);</span><br><span class="line">        maxCol[j] = Math.max(maxCol[j], num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="遍历比较"><a href="#遍历比较" class="headerlink" title="遍历比较"></a>遍历比较</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; res = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">num</span> <span class="operator">=</span> matrix[i][j];</span><br><span class="line">        <span class="keyword">if</span> (num == minRow[i] &amp;&amp; num == maxCol[j]) &#123;</span><br><span class="line">            res.add(num);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/lucky-numbers-in-a-matrix/">1380. 矩阵中的幸运数 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
@@ -194,7 +441,7 @@
     <published>2022-02-14T09:18:47.000Z</published>
     <updated>2022-02-15T10:35:35.919Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>二分查找</li></ul><span id="more"></span><h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><ul><li>判断当前位置的数是否唯一</li><li>若当前位置为奇数，则比较当前位置和前一位置的数是否相等，反之亦然</li><li>若相等则唯一数在右侧（含），反之在左侧（不含）</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">searchSingle</span><span class="params">(<span class="keyword">int</span> idx)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (idx % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[idx] == nums[idx - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[idx] == nums[idx + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array/">540. 有序数组中的单一元素 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>二分查找</li></ul><span id="more"></span><h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><ul><li>判断当前位置的数是否唯一</li><li>若当前位置为奇数，则比较当前位置和前一位置的数是否相等，反之亦然</li><li>若相等则唯一数在右侧（含），反之在左侧（不含）</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">searchSingle</span><span class="params">(<span class="type">int</span> idx)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (idx % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[idx] == nums[idx - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[idx] == nums[idx + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array/">540. 有序数组中的单一元素 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
     
     
     <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
@@ -213,319 +460,53 @@
   </entry>
   
   <entry>
-    <title>22-2-14</title>
+    <title>220214周报</title>
     <link href="https://pingpinggray.top/post/5f2d3088.html"/>
     <id>https://pingpinggray.top/post/5f2d3088.html</id>
     <published>2022-02-14T01:38:06.000Z</published>
-    <updated>2022-02-21T11:11:01.193Z</updated>
+    <updated>2022-04-14T07:26:08.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="22-2-14"><a href="#22-2-14" class="headerlink" title="22-2-14"></a>22-2-14</h1><h2 id="三名服务"><a href="#三名服务" class="headerlink" title="三名服务"></a>三名服务</h2><ul><li>接入用户系统</li><li>DO基类：记录创建日期、更新日期</li><li>整理无用流程接口</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h1><ul><li>接入用户系统</li><li>DO基类：记录创建日期、更新日期</li><li>整理无用流程接口</li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;22-2-14&quot;&gt;&lt;a href=&quot;#22-2-14&quot; class=&quot;headerlink&quot; title=&quot;22-2-14&quot;&gt;&lt;/a&gt;22-2-14&lt;/h1&gt;&lt;h2 id=&quot;三名服务&quot;&gt;&lt;a href=&quot;#三名服务&quot; class=&quot;headerlink&quot; titl</summary>
+    <summary type="html">&lt;h1 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; title=&quot;三名系统&quot;&gt;&lt;/a&gt;三名系统&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;接入用户系统&lt;/li&gt;
+&lt;li&gt;DO基类：记录创建日期、更新日期&lt;/li&gt;
+&lt;li&gt;整理无用流程接口&lt;/li&gt;
+</summary>
       
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
     
     
   </entry>
   
   <entry>
-    <title>22-2-07</title>
+    <title>220207周报</title>
     <link href="https://pingpinggray.top/post/df3f5073.html"/>
     <id>https://pingpinggray.top/post/df3f5073.html</id>
     <published>2022-02-07T08:41:53.000Z</published>
-    <updated>2022-02-12T13:36:09.660Z</updated>
+    <updated>2022-04-14T07:26:08.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="22-2-7"><a href="#22-2-7" class="headerlink" title="22.2.7"></a>22.2.7</h1><ul><li>三名-保护规划-服务：<ul><li>新增模糊分页查询</li><li>修改新增申请接口为保护规划+多个编制单位及成员</li><li>移除多余接口</li><li>新增项目编码（流水号）生成</li></ul></li><li>三名-历史建筑-服务：<ul><li>新建基础服务</li></ul></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;22-2-7&quot;&gt;&lt;a href=&quot;#22-2-7&quot; class=&quot;headerlink&quot; title=&quot;22.2.7&quot;&gt;&lt;/a&gt;22.2.7&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;三名-保护规划-服务：&lt;ul&gt;
-&lt;li&gt;新增模糊分页查询&lt;/li&gt;
-&lt;li&gt;修改新增申请接口为保</summary>
-      
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>22-1-30</title>
-    <link href="https://pingpinggray.top/post/78c339fd.html"/>
-    <id>https://pingpinggray.top/post/78c339fd.html</id>
-    <published>2022-01-30T08:38:47.000Z</published>
-    <updated>2022-02-08T09:14:01.691Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="22-1-30"><a href="#22-1-30" class="headerlink" title="22.1.30"></a>22.1.30</h1><ul><li>三名系统<ul><li>移除通用查询，重写CRUD</li><li>流程与具体业务分离</li><li>新增单位成员</li><li>修改审批为候选组（角色）审批</li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h1><ul><li><p>新增模糊分页查询</p></li><li><p>修改新增申请接口为保护规划+多个编制单位及成员</p></li><li><p>移除多余接口</p></li><li><p>新增项目编码（流水号）生成</p></li><li><p>新建历史建筑接口</p></li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;22-1-30&quot;&gt;&lt;a href=&quot;#22-1-30&quot; class=&quot;headerlink&quot; title=&quot;22.1.30&quot;&gt;&lt;/a&gt;22.1.30&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;三名系统&lt;ul&gt;
-&lt;li&gt;移除通用查询，重写CRUD&lt;/li&gt;
-&lt;li&gt;流程与具体业务分</summary>
-      
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>22-1-24</title>
-    <link href="https://pingpinggray.top/post/2353082c.html"/>
-    <id>https://pingpinggray.top/post/2353082c.html</id>
-    <published>2022-01-24T03:00:45.000Z</published>
-    <updated>2022-02-08T08:39:21.367Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="22-1-24"><a href="#22-1-24" class="headerlink" title="22.1.24"></a>22.1.24</h1><ul><li><p>三名系统</p><ul><li><p>重构Module</p></li><li><p>新增编制单位成员信息表</p></li><li><p>名称修改（简写）</p></li><li><p>新增流程统计</p></li><li><p>新增历史建筑录入流程</p></li></ul></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;22-1-24&quot;&gt;&lt;a href=&quot;#22-1-24&quot; class=&quot;headerlink&quot; title=&quot;22.1.24&quot;&gt;&lt;/a&gt;22.1.24&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;三名系统&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;重构Module&lt;/p&gt;
+    <summary type="html">&lt;h1 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; title=&quot;三名系统&quot;&gt;&lt;/a&gt;三名系统&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;新增模糊分页查询&lt;/p&gt;
 &lt;/li&gt;
-&lt;</summary>
+&lt;li&gt;&lt;p&gt;修改新增申请接口为保护规划+多个编制单位及成员&lt;/p&gt;</summary>
       
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
     
-    <category term="Weekly Work Report" scheme="https://pingpinggray.top/categories/Tech/Weekly-Work-Report/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>二叉搜索树中的搜索</title>
-    <link href="https://pingpinggray.top/post/b3250fa1.html"/>
-    <id>https://pingpinggray.top/post/b3250fa1.html</id>
-    <published>2021-11-26T01:21:52.000Z</published>
-    <updated>2021-11-26T01:26:35.303Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>递归</li><li>深度优先搜索</li></ul><span id="more"></span><h3 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h3><ul><li>左子树所有节点的元素值均小于根的元素值</li><li>右子树所有节点的元素值均大于根的元素值</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> TreeNode <span class="title">dfs</span><span class="params">(TreeNode node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (node.val == val) &#123;</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dfs(node.val &lt; val ? node.right : node.left);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/search-in-a-binary-search-tree/">700. 二叉搜索树中的搜索 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;递归&lt;/li&gt;
-&lt;li&gt;深度优先搜索&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="DFS" scheme="https://pingpinggray.top/tags/DFS/"/>
-    
-    <category term="Recursion" scheme="https://pingpinggray.top/tags/Recursion/"/>
-    
-    <category term="Binary Tree" scheme="https://pingpinggray.top/tags/Binary-Tree/"/>
-    
-    <category term="Binary Search Tree" scheme="https://pingpinggray.top/tags/Binary-Search-Tree/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>可怜的小猪</title>
-    <link href="https://pingpinggray.top/post/7012e621.html"/>
-    <id>https://pingpinggray.top/post/7012e621.html</id>
-    <published>2021-11-25T02:35:25.000Z</published>
-    <updated>2021-11-25T02:46:31.624Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>数学：信息论</li></ul><span id="more"></span><h3 id="数学：信息论"><a href="#数学：信息论" class="headerlink" title="数学：信息论"></a>数学：信息论</h3><ul><li><p>表达 n 桶水状态所需的位数：$\log_2 n$</p></li><li><p>一个猪实验 k 次的状态所实现的位数：$\log_2 (k+1)$</p></li><li><p>所需猪的最小数量 m：</p><p>$$<br>m \geq \frac{\log_2 n}{\log_2 (k+1)}<br>$$</p></li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">poorPigs</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> d, <span class="keyword">int</span> t)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> k = t / d;</span><br><span class="line">  <span class="keyword">return</span> (<span class="keyword">int</span>) Math.ceil(Math.log(n) / Math.log(k + <span class="number">1</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/poor-pigs/">458. 可怜的小猪 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;数学：信息论&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Math" scheme="https://pingpinggray.top/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从英文中重建数字</title>
-    <link href="https://pingpinggray.top/post/2cdd2c09.html"/>
-    <id>https://pingpinggray.top/post/2cdd2c09.html</id>
-    <published>2021-11-24T01:58:27.000Z</published>
-    <updated>2021-11-24T02:10:18.805Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>词频统计</li><li>哈希</li></ul><span id="more"></span><h3 id="词频统计"><a href="#词频统计" class="headerlink" title="词频统计"></a>词频统计</h3><ul><li>统计每个字母分别在哪些数字中出现：</li></ul><table><thead><tr><th>字母</th><th>数字</th></tr></thead><tbody><tr><td>e</td><td>0 1 3 5 7 8 9</td></tr><tr><td>f</td><td>4 5</td></tr><tr><td>g</td><td>8</td></tr><tr><td>h</td><td>3 8</td></tr><tr><td>i</td><td>5 6 8 9</td></tr><tr><td>n</td><td>1 7 9</td></tr><tr><td>o</td><td>0 1 2 4</td></tr><tr><td>r</td><td>0 3 4</td></tr><tr><td>s</td><td>6 7</td></tr><tr><td>t</td><td>2 3 8</td></tr><tr><td>u</td><td>4</td></tr><tr><td>v</td><td>5 7</td></tr><tr><td>w</td><td>2</td></tr><tr><td>x</td><td>6</td></tr><tr><td>z</td><td>0</td></tr></tbody></table><ul><li>第一轮确定 0、2、4、6、8</li><li>第二轮确定 3、5、7</li><li>第三轮确定 1、9</li><li>n 在 9 中出现了 2 次，e 在 3 中出现了 3 次</li></ul><h3 id="哈希"><a href="#哈希" class="headerlink" title="哈希"></a>哈希</h3><ul><li>根据词频统计结果依次进行哈希查找</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="词频统计-1"><a href="#词频统计-1" class="headerlink" title="词频统计"></a>词频统计</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">    cnt[s.charAt(i) - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="哈希-1"><a href="#哈希-1" class="headerlink" title="哈希"></a>哈希</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] digits = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line"><span class="comment">// Z</span></span><br><span class="line">digits[<span class="number">0</span>] = cnt[<span class="number">25</span>];</span><br><span class="line">cnt[<span class="number">14</span>] -= cnt[<span class="number">25</span>];</span><br><span class="line"><span class="comment">// W</span></span><br><span class="line">digits[<span class="number">2</span>] = cnt[<span class="number">22</span>];</span><br><span class="line">cnt[<span class="number">14</span>] -= cnt[<span class="number">22</span>];</span><br><span class="line"><span class="comment">// U</span></span><br><span class="line">digits[<span class="number">4</span>] = cnt[<span class="number">20</span>];</span><br><span class="line">cnt[<span class="number">5</span>] -= cnt[<span class="number">20</span>];</span><br><span class="line">cnt[<span class="number">14</span>] -= cnt[<span class="number">20</span>];</span><br><span class="line"><span class="comment">// X</span></span><br><span class="line">digits[<span class="number">6</span>] = cnt[<span class="number">23</span>];</span><br><span class="line">cnt[<span class="number">18</span>] -= cnt[<span class="number">23</span>];</span><br><span class="line">cnt[<span class="number">8</span>] -= cnt[<span class="number">23</span>];</span><br><span class="line"><span class="comment">// G</span></span><br><span class="line">digits[<span class="number">8</span>] = cnt[<span class="number">6</span>];</span><br><span class="line">cnt[<span class="number">7</span>] -= cnt[<span class="number">6</span>];</span><br><span class="line">cnt[<span class="number">8</span>] -= cnt[<span class="number">6</span>];</span><br><span class="line"><span class="comment">// H</span></span><br><span class="line">digits[<span class="number">3</span>] = cnt[<span class="number">7</span>];</span><br><span class="line"><span class="comment">// F</span></span><br><span class="line">digits[<span class="number">5</span>] = cnt[<span class="number">5</span>];</span><br><span class="line">cnt[<span class="number">8</span>] -= cnt[<span class="number">5</span>];</span><br><span class="line"><span class="comment">// S</span></span><br><span class="line">digits[<span class="number">7</span>] = cnt[<span class="number">18</span>];</span><br><span class="line"><span class="comment">// O</span></span><br><span class="line">digits[<span class="number">1</span>] = cnt[<span class="number">14</span>];</span><br><span class="line"><span class="comment">// I</span></span><br><span class="line">digits[<span class="number">9</span>] = cnt[<span class="number">8</span>];</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/reconstruct-original-digits-from-english/">423. 从英文中重建数字 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;词频统计&lt;/li&gt;
-&lt;li&gt;哈希&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Hash" scheme="https://pingpinggray.top/tags/Hash/"/>
-    
-    <category term="Word Frequency Statistics" scheme="https://pingpinggray.top/tags/Word-Frequency-Statistics/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>亲密字符串</title>
-    <link href="https://pingpinggray.top/post/2feb7301.html"/>
-    <id>https://pingpinggray.top/post/2feb7301.html</id>
-    <published>2021-11-23T01:32:17.000Z</published>
-    <updated>2021-11-23T01:36:29.946Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>模拟</li></ul><span id="more"></span><h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h3><ul><li>当 s 与 goal 长度或词频不同，必然不为亲密字符</li><li>当 s 与 goal 不同的字符数量为 2 或 s 与 goal 不同的字符数量为 0，且 s 中有出现数量超过 2 的字符时，必然为亲密字符</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">buddyStrings</span><span class="params">(String s, String goal)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = s.length(), n = goal.length();</span><br><span class="line">    <span class="keyword">if</span> (m != n) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span>[] cnt1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>], cnt2 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> a = s.charAt(i) - <span class="string">&#x27;a&#x27;</span>, b = goal.charAt(i) - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        cnt1[a]++; cnt2[b]++;</span><br><span class="line">        <span class="comment">// 不同字符数量统计</span></span><br><span class="line">        <span class="keyword">if</span> (a != b) &#123;</span><br><span class="line">            sum++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">boolean</span> flag = <span class="keyword">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) &#123;</span><br><span class="line">        <span class="comment">// 词频不同必然不为亲密字符</span></span><br><span class="line">        <span class="keyword">if</span> (cnt1[i] != cnt2[i]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 词频相同，且同时出现数量超过2的字符，必然为亲密字符</span></span><br><span class="line">        <span class="keyword">if</span> (cnt1[i] &gt; <span class="number">1</span>) &#123;</span><br><span class="line">            flag = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum == <span class="number">2</span> || (sum == <span class="number">0</span> &amp;&amp; flag);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/buddy-strings/">859. 亲密字符串 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;模拟&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Simulation" scheme="https://pingpinggray.top/tags/Simulation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>打乱数组</title>
-    <link href="https://pingpinggray.top/post/57ece9e2.html"/>
-    <id>https://pingpinggray.top/post/57ece9e2.html</id>
-    <published>2021-11-22T01:29:29.000Z</published>
-    <updated>2021-11-22T01:42:34.658Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>Fisher-Yates 洗牌算法</li></ul><span id="more"></span><h3 id="Fisher-Yates-洗牌算法"><a href="#Fisher-Yates-洗牌算法" class="headerlink" title="Fisher-Yates 洗牌算法"></a>Fisher-Yates 洗牌算法</h3><ul><li>对于下标 x 而言，从 [x, n - 1] 中随机出一个位置与 x 进行值交换，当所有位置都进行这样的处理后，便得到一个公平的洗牌方案</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="Fisher-Yates-洗牌算法-1"><a href="#Fisher-Yates-洗牌算法-1" class="headerlink" title="Fisher-Yates 洗牌算法"></a>Fisher-Yates 洗牌算法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] shuffle() &#123;</span><br><span class="line">    <span class="keyword">int</span>[] res = nums.clone();</span><br><span class="line">    <span class="keyword">int</span> n = res.length;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = i + random.nextInt(n - i);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> tmp = res[i];</span><br><span class="line">        res[i] = res[j];</span><br><span class="line">        res[j] = tmp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/shuffle-an-array/">384. 打乱数组 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Fisher-Yates 洗牌算法&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Shuffle" scheme="https://pingpinggray.top/tags/Shuffle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>灯泡开关</title>
-    <link href="https://pingpinggray.top/post/9c3f2398.html"/>
-    <id>https://pingpinggray.top/post/9c3f2398.html</id>
-    <published>2021-11-15T01:26:57.000Z</published>
-    <updated>2021-11-15T01:33:34.990Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>数学</li></ul><span id="more"></span><h3 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h3><ul><li>对于第 k 个灯泡，它被切换的次数恰好就是 k 的约数个数；当 k 的约数个数为奇数时，第 k 个灯泡亮</li><li>若某个数 x 为 k 的约数，则$\frac{k}{x}$亦为 k 的约数，即约数必然成对出现；只有当 x 为完全平方数时，约数个数为奇数</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="数学-1"><a href="#数学-1" class="headerlink" title="数学"></a>数学</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">bulbSwitch</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)Math.sqrt(n);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/bulb-switcher/">319. 灯泡开关 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;数学&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Math" scheme="https://pingpinggray.top/tags/Math/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>提莫攻击</title>
-    <link href="https://pingpinggray.top/post/d28cdc4f.html"/>
-    <id>https://pingpinggray.top/post/d28cdc4f.html</id>
-    <published>2021-11-10T01:09:28.000Z</published>
-    <updated>2021-11-10T01:14:31.202Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>模拟</li></ul><span id="more"></span><h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h3><ul><li>模拟中毒时间区间的合并</li><li>若下一个区间的左边界大于上一个区间的右边界，则统计上一个区间的范围</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="模拟-1"><a href="#模拟-1" class="headerlink" title="模拟"></a>模拟</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> time: timeSeries) &#123;</span><br><span class="line">    <span class="keyword">if</span> (time &gt; r) &#123;</span><br><span class="line">        cnt += (r - l);</span><br><span class="line">        l = time;</span><br><span class="line">    &#125;</span><br><span class="line">    r = time + duration;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/teemo-attacking/">495. 提莫攻击 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;模拟&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Simulation" scheme="https://pingpinggray.top/tags/Simulation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>猜数字游戏</title>
-    <link href="https://pingpinggray.top/post/96fc0eef.html"/>
-    <id>https://pingpinggray.top/post/96fc0eef.html</id>
-    <published>2021-11-08T01:30:11.000Z</published>
-    <updated>2021-11-08T01:37:14.092Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>模拟</li></ul><span id="more"></span><h3 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h3><ul><li>按位比较，若相同则公牛数量增加，若不同则分别统计词频</li><li>[0, 9] 数字的词频的最小值总和，为母牛数量</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><h3 id="按位比较"><a href="#按位比较" class="headerlink" title="按位比较"></a>按位比较</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">  <span class="keyword">char</span> chS = secret.charAt(i);</span><br><span class="line">  <span class="keyword">char</span> chG = guess.charAt(i);</span><br><span class="line">  <span class="keyword">if</span> (chS == chG) &#123;</span><br><span class="line">  bull++;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">  cntS[chS - <span class="string">&#x27;0&#x27;</span>]++;</span><br><span class="line">  cntG[chG - <span class="string">&#x27;0&#x27;</span>]++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="最小值总和"><a href="#最小值总和" class="headerlink" title="最小值总和"></a>最小值总和</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">    cow += Math.min(cntS[i], cntG[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/bulls-and-cows/">猜数字游戏</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;模拟&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Simulation" scheme="https://pingpinggray.top/tags/Simulation/"/>
     
   </entry>
   
