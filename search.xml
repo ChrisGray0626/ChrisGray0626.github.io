@@ -3440,11 +3440,14 @@
 <li><input checked="" disabled="" type="checkbox"> 并行度</li>
 <li><input checked="" disabled="" type="checkbox"> 消费组</li>
 <li><input checked="" disabled="" type="checkbox"> MessageListener</li>
+<li><input checked="" disabled="" type="checkbox"> Deployment</li>
+<li><input checked="" disabled="" type="checkbox"> 高可用</li>
+<li><input disabled="" type="checkbox"> 可靠性传输</li>
 </ul>
 <h1 id="OneDrive修复"><a href="#OneDrive修复" class="headerlink" title="OneDrive修复"></a>OneDrive修复</h1><ul>
 <li><input disabled="" type="checkbox"> 数据同步</li>
 </ul>
-]]></content>
+<h1 id="K8s学习"><a href="#K8s学习" class="headerlink" title="K8s学习"></a>K8s学习</h1><h1 id="MongoDB学习"><a href="#MongoDB学习" class="headerlink" title="MongoDB学习"></a>MongoDB学习</h1>]]></content>
       <categories>
         <category>Diary</category>
       </categories>
@@ -3553,8 +3556,22 @@
 <li>Kafka 会均匀地将一个 partition 的所有 replica 分布在不同的机器上，提高容错性。</li>
 <li>如果某个 broker 宕机了，该 broker 上面的 partition 在其他机器上都有副本。如果这个宕机的 broker 上面有某个 partition 的 leader，此时会从 follower 中重新选举一个新的 leader 出来，继续读写新的 leader 即可。</li>
 </ul>
-<h1 id="可靠性传输"><a href="#可靠性传输" class="headerlink" title="可靠性传输"></a>可靠性传输</h1><p>&#x2F;&#x2F; TODO</p>
-<p><a href="https://doocs.github.io/advanced-java/#/docs/high-concurrency/how-to-ensure-the-reliable-transmission-of-messages">如何保证消息的可靠性传输？ (doocs.github.io)</a></p>
+<h1 id="可靠性传输"><a href="#可靠性传输" class="headerlink" title="可靠性传输"></a>可靠性传输</h1><h2 id="消费端"><a href="#消费端" class="headerlink" title="消费端"></a>消费端</h2><ul>
+<li>唯一可能导致消费者弄丢数据的情况——消费者自动提交 offset，但消费端因为某些原因未能消费数据。</li>
+<li>关闭自动提交 offset，在处理完之后消费者手动提交 offset，就可以保证数据不会丢。</li>
+<li>但此时可能会有重复消费，需要消费端自行保证幂等性。</li>
+</ul>
+<h2 id="Kafka-端"><a href="#Kafka-端" class="headerlink" title="Kafka 端"></a>Kafka 端</h2><ul>
+<li>Kafka 某个 broker 宕机，然后重新选举 partition 的 leader。如果此时其他的 follower 刚好还有些数据没有同步，导致部分数据丢失。</li>
+<li>给 topic 设置 replication.factor 参数：这个值必须大于 1，要求每个 partition 必须有至少 2 个副本。</li>
+<li>在 Kafka 服务端设置 min.insync.replicas 参数：这个值必须大于 1，这个是要求一个 leader 至少感知到有至少一个 follower 还跟自己保持联系。</li>
+<li>在 producer 端设置 acks&#x3D;all ：这个是要求每条数据，必须是写入所有 replica 之后，才能认为是写成功了。</li>
+<li>在 producer 端设置 retries&#x3D;MAX （较大值）：要求一旦写入失败，就无限重试。</li>
+</ul>
+<h2 id="生产端"><a href="#生产端" class="headerlink" title="生产端"></a>生产端</h2><ul>
+<li>设置 acks&#x3D;all ，一定不会丢。</li>
+<li>你的 leader 接收到消息，所有的 follower 都同步到消息之后，才认为本次写成功；如果没满足这个条件，生产者会自动不断重试。</li>
+</ul>
 <h1 id="数据丢失"><a href="#数据丢失" class="headerlink" title="数据丢失"></a>数据丢失</h1><ol>
 <li>如果auto.commit.enable&#x3D;true，当consumer fetch了一些数据但还没有完全处理掉的时候，刚好到commit interval出发了提交offset操作，接着consumer crash掉了。这时已经fetch的数据还没有处理完成但已经被commit掉，因此没有机会再次被处理，数据丢失。</li>
 <li>网络负载很高或者磁盘很忙写入失败的情况下，没有自动重试重发消息。</li>
@@ -3575,7 +3592,7 @@
 <p>分区是kafka进行并行读写的单位，是提升kafka速度的关键。</p>
 <ol>
 <li>broker能接收消息的最大字节数的设置一定要比消费端能消费的最大字节数要小，否则broker就会因为消费端无法使用这个消息而挂起。</li>
-<li>broker可赋值的消息的最大字节数设置一定要比能接受的最大字节数大，否则broker就会因为数据量的问题无法复制副本，导致数据丢失</li>
+<li>broker可赋值的消息的最大字节数设置一定要比能接受的最大字节数大，否则broker就会因为数据量的问题无法复制副本，导致数据丢失。</li>
 </ol>
 <h2 id="Consumer-端"><a href="#Consumer-端" class="headerlink" title="Consumer 端"></a>Consumer 端</h2><ol>
 <li>enable.auto.commit&#x3D;false ，关闭自动提交位移，并在消息被完整处理之后再手动提交位移。</li>
@@ -3608,14 +3625,36 @@
 <h2 id="批量压缩"><a href="#批量压缩" class="headerlink" title="批量压缩"></a>批量压缩</h2><p>在很多情况下，系统的瓶颈不是CPU或磁盘，而是网络IO，对于需要在广域网上的数据中心之间发送消息的数据流水线尤其如此。如果每个消息都压缩，但是压缩率相对很低，所以Kafka使用了批量压缩，即将多个消息一起压缩而不是单个消息压缩。<br>Kafka允许使用递归的消息集合，批量的消息可以通过压缩的形式传输并且在日志中也可以保持压缩格式，直到被消费者解压缩。Kafka把所有的消息都变成一个批量的文件，并且进行合理的批量压缩，减少网络IO损耗。</p>
 <h1 id="蓄水池机制"><a href="#蓄水池机制" class="headerlink" title="蓄水池机制"></a>蓄水池机制</h1><p>生产的流程主要就是一个producer线程和一个sender线程，它们之间通过BatchQueue来获取数据，它们的关系是一一对应的，所以kafka的生产过程都是异步过程，它的同步和异步指的是接收响应结果的模式是同步阻塞还是异步回调。</p>
 <p>同步接收是依据send之后返回Future，再调用Future的get方法进行阻塞等待。下面我们就从producer和sender两个类所对应的流程来进行分析，他们分别是消息收集过程和消息发送过程。消息的收集过程的数据最终是放在BatchQueue，像是将水流入了一个蓄水池的场景。</p>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://blog.csdn.net/qq_34319644/article/details/96586147">https://blog.csdn.net/qq_34319644/article/details/96586147</a></p>
-<p><a href="https://doocs.github.io/advanced-java/#/docs/high-concurrency/why-mq">https://doocs.github.io/advanced-java/#/docs/high-concurrency/why-mq</a></p>
-<p><a href="https://doocs.github.io/advanced-java/#/docs/high-concurrency/how-to-ensure-high-availability-of-message-queues">https://doocs.github.io/advanced-java/#/docs/high-concurrency/how-to-ensure-high-availability-of-message-queues</a></p>
-<p><a href="https://cloud.tencent.com/developer/article/1787280">https://cloud.tencent.com/developer/article/1787280</a></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a href="https://blog.csdn.net/qq_34319644/article/details/96586147">https://blog.csdn.net/qq_34319644/article/details/96586147</a></li>
+<li><a href="https://doocs.github.io/advanced-java/#/docs/high-concurrency/why-mq">https://doocs.github.io/advanced-java/#/docs/high-concurrency/why-mq</a></li>
+<li><a href="https://doocs.github.io/advanced-java/#/docs/high-concurrency/how-to-ensure-high-availability-of-message-queues">https://doocs.github.io/advanced-java/#/docs/high-concurrency/how-to-ensure-high-availability-of-message-queues</a></li>
+<li><a href="https://doocs.github.io/advanced-java/#/docs/high-concurrency/how-to-ensure-the-reliable-transmission-of-messages">https://doocs.github.io/advanced-java/#/docs/high-concurrency/how-to-ensure-the-reliable-transmission-of-messages</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1787280">https://cloud.tencent.com/developer/article/1787280</a></li>
+</ul>
 ]]></content>
       <categories>
         <category>Tech</category>
         <category>Kafka</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>220418周报</title>
+    <url>/post/d28b09d6.html</url>
+    <content><![CDATA[<h1 id="代码整理"><a href="#代码整理" class="headerlink" title="代码整理"></a>代码整理</h1><ul>
+<li><input disabled="" type="checkbox"> Python</li>
+</ul>
+<h1 id="Kafka学习"><a href="#Kafka学习" class="headerlink" title="Kafka学习"></a>Kafka学习</h1><ul>
+<li><input checked="" disabled="" type="checkbox"> 并行度</li>
+<li><input checked="" disabled="" type="checkbox"> 消费组</li>
+<li><input checked="" disabled="" type="checkbox"> MessageListener</li>
+</ul>
+<h1 id="OneDrive修复"><a href="#OneDrive修复" class="headerlink" title="OneDrive修复"></a>OneDrive修复</h1><ul>
+<li><input disabled="" type="checkbox"> 数据同步</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Diary</category>
       </categories>
   </entry>
 </search>

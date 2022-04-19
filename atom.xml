@@ -44,7 +44,32 @@
     <link href="https://pingpinggray.top/post/d28b09d6.html"/>
     <id>https://pingpinggray.top/post/d28b09d6.html</id>
     <published>2022-04-18T04:40:31.000Z</published>
-    <updated>2022-04-18T13:07:52.883Z</updated>
+    <updated>2022-04-19T06:15:50.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="代码整理"><a href="#代码整理" class="headerlink" title="代码整理"></a>代码整理</h1><ul><li><input disabled="" type="checkbox"> Python</li></ul><h1 id="Kafka学习"><a href="#Kafka学习" class="headerlink" title="Kafka学习"></a>Kafka学习</h1><ul><li><input checked="" disabled="" type="checkbox"> 并行度</li><li><input checked="" disabled="" type="checkbox"> 消费组</li><li><input checked="" disabled="" type="checkbox"> MessageListener</li><li><input checked="" disabled="" type="checkbox"> Deployment</li><li><input checked="" disabled="" type="checkbox"> 高可用</li><li><input disabled="" type="checkbox"> 可靠性传输</li></ul><h1 id="OneDrive修复"><a href="#OneDrive修复" class="headerlink" title="OneDrive修复"></a>OneDrive修复</h1><ul><li><input disabled="" type="checkbox"> 数据同步</li></ul><h1 id="K8s学习"><a href="#K8s学习" class="headerlink" title="K8s学习"></a>K8s学习</h1><h1 id="MongoDB学习"><a href="#MongoDB学习" class="headerlink" title="MongoDB学习"></a>MongoDB学习</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;代码整理&quot;&gt;&lt;a href=&quot;#代码整理&quot; class=&quot;headerlink&quot; title=&quot;代码整理&quot;&gt;&lt;/a&gt;代码整理&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Python&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h</summary>
+      
+    
+    
+    
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>220418周报</title>
+    <link href="https://pingpinggray.top/post/d28b09d6.html"/>
+    <id>https://pingpinggray.top/post/d28b09d6.html</id>
+    <published>2022-04-18T04:40:31.000Z</published>
+    <updated>2022-04-18T13:07:52.000Z</updated>
     
     <content type="html"><![CDATA[<h1 id="代码整理"><a href="#代码整理" class="headerlink" title="代码整理"></a>代码整理</h1><ul><li><input disabled="" type="checkbox"> Python</li></ul><h1 id="Kafka学习"><a href="#Kafka学习" class="headerlink" title="Kafka学习"></a>Kafka学习</h1><ul><li><input checked="" disabled="" type="checkbox"> 并行度</li><li><input checked="" disabled="" type="checkbox"> 消费组</li><li><input checked="" disabled="" type="checkbox"> MessageListener</li></ul><h1 id="OneDrive修复"><a href="#OneDrive修复" class="headerlink" title="OneDrive修复"></a>OneDrive修复</h1><ul><li><input disabled="" type="checkbox"> 数据同步</li></ul>]]></content>
     
@@ -479,31 +504,6 @@
     
     
     <category term="Simulation" scheme="https://pingpinggray.top/tags/Simulation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有序数组中的单一元素</title>
-    <link href="https://pingpinggray.top/post/fe62bbc2.html"/>
-    <id>https://pingpinggray.top/post/fe62bbc2.html</id>
-    <published>2022-02-14T09:18:47.000Z</published>
-    <updated>2022-02-15T10:35:35.919Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h2><ul><li>二分查找</li></ul><span id="more"></span><h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><ul><li>判断当前位置的数是否唯一</li><li>若当前位置为奇数，则比较当前位置和前一位置的数是否相等，反之亦然</li><li>若相等则唯一数在右侧（含），反之在左侧（不含）</li></ul><h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">searchSingle</span><span class="params">(<span class="type">int</span> idx)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (idx % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[idx] == nums[idx - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[idx] == nums[idx + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array/">540. 有序数组中的单一元素 - 力扣（LeetCode） (leetcode-cn.com)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;二分查找&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="BinarySearch" scheme="https://pingpinggray.top/tags/BinarySearch/"/>
     
   </entry>
   
