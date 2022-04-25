@@ -2936,7 +2936,11 @@
 <li>Line spacing：1.1</li>
 <li><em>会被主题样式覆盖</em></li>
 </ul>
-<h3 id="Color-Scheme"><a href="#Color-Scheme" class="headerlink" title="Color Scheme"></a>Color Scheme</h3><h4 id="Color-Scheme-Font"><a href="#Color-Scheme-Font" class="headerlink" title="Color Scheme Font"></a>Color Scheme Font</h4><ul>
+<h3 id="Color-Scheme"><a href="#Color-Scheme" class="headerlink" title="Color Scheme"></a>Color Scheme</h3><h3 id="Code-Style"><a href="#Code-Style" class="headerlink" title="Code Style"></a>Code Style</h3><h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><h5 id="Imports"><a href="#Imports" class="headerlink" title="Imports"></a>Imports</h5><ul>
+<li>Class count to use import with ‘*’：999</li>
+<li>Names count to use static import with ‘*’：999</li>
+</ul>
+<h4 id="Color-Scheme-Font"><a href="#Color-Scheme-Font" class="headerlink" title="Color Scheme Font"></a>Color Scheme Font</h4><ul>
 <li>Size：16</li>
 <li>Line spacing：1.1</li>
 </ul>
@@ -3447,7 +3451,7 @@
 <li><input checked="" disabled="" type="checkbox"> Deployment</li>
 <li><input checked="" disabled="" type="checkbox"> 高可用</li>
 <li><input checked="" disabled="" type="checkbox"> 可靠性传输</li>
-<li><input disabled="" type="checkbox"> Kafka 账户密码</li>
+<li><input checked="" disabled="" type="checkbox"> Kafka 账户密码</li>
 </ul>
 <h1 id="OneDrive修复"><a href="#OneDrive修复" class="headerlink" title="OneDrive修复"></a>OneDrive修复</h1><ul>
 <li><input disabled="" type="checkbox"> 数据同步</li>
@@ -3745,5 +3749,13 @@
         <category>Tech</category>
         <category>Kafka</category>
       </categories>
+  </entry>
+  <entry>
+    <title>220425周报</title>
+    <url>/post/3dd36ff5.html</url>
+    <content><![CDATA[<h1 id="ProjName"><a href="#ProjName" class="headerlink" title="{ProjName}"></a>{ProjName}</h1><ul>
+<li><input disabled="" type="checkbox"> {task}</li>
+</ul>
+]]></content>
   </entry>
 </search>
