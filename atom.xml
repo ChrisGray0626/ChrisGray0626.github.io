@@ -49,18 +49,20 @@
     <link href="https://pingpinggray.top/post/3dd36ff5.html"/>
     <id>https://pingpinggray.top/post/3dd36ff5.html</id>
     <published>2022-04-25T13:20:10.000Z</published>
-    <updated>2022-04-25T13:20:10.299Z</updated>
+    <updated>2022-04-29T10:11:49.983Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="ProjName"><a href="#ProjName" class="headerlink" title="{ProjName}"></a>{ProjName}</h1><ul><li><input disabled="" type="checkbox"> {task}</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="CSP-接入-WFS-服务"><a href="#CSP-接入-WFS-服务" class="headerlink" title="CSP 接入 WFS 服务"></a>CSP 接入 WFS 服务</h1><ul><li><input checked="" disabled="" type="checkbox"> WFS 学习</li><li><input checked="" disabled="" type="checkbox"> 组件熟悉</li><li><input checked="" disabled="" type="checkbox"> 环境搭建</li><li><input checked="" disabled="" type="checkbox"> Camel 学习</li><li><input checked="" disabled="" type="checkbox"> Karaf 学习</li></ul><h1 id="代码整理"><a href="#代码整理" class="headerlink" title="代码整理"></a>代码整理</h1><ul><li><input disabled="" type="checkbox"> Python</li></ul><h1 id="OneDrive修复"><a href="#OneDrive修复" class="headerlink" title="OneDrive修复"></a>OneDrive修复</h1><ul><li><input checked="" disabled="" type="checkbox"> 数据同步</li></ul>]]></content>
     
     
       
       
-    <summary type="html">&lt;h1 id=&quot;ProjName&quot;&gt;&lt;a href=&quot;#ProjName&quot; class=&quot;headerlink&quot; title=&quot;{ProjName}&quot;&gt;&lt;/a&gt;{ProjName}&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; </summary>
+    <summary type="html">&lt;h1 id=&quot;CSP-接入-WFS-服务&quot;&gt;&lt;a href=&quot;#CSP-接入-WFS-服务&quot; class=&quot;headerlink&quot; title=&quot;CSP 接入 WFS 服务&quot;&gt;&lt;/a&gt;CSP 接入 WFS 服务&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&quot;&quot; di</summary>
       
     
     
+    
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
     
     
   </entry>

@@ -3753,9 +3753,22 @@
   <entry>
     <title>220425周报</title>
     <url>/post/3dd36ff5.html</url>
-    <content><![CDATA[<h1 id="ProjName"><a href="#ProjName" class="headerlink" title="{ProjName}"></a>{ProjName}</h1><ul>
-<li><input disabled="" type="checkbox"> {task}</li>
+    <content><![CDATA[<h1 id="CSP-接入-WFS-服务"><a href="#CSP-接入-WFS-服务" class="headerlink" title="CSP 接入 WFS 服务"></a>CSP 接入 WFS 服务</h1><ul>
+<li><input checked="" disabled="" type="checkbox"> WFS 学习</li>
+<li><input checked="" disabled="" type="checkbox"> 组件熟悉</li>
+<li><input checked="" disabled="" type="checkbox"> 环境搭建</li>
+<li><input checked="" disabled="" type="checkbox"> Camel 学习</li>
+<li><input checked="" disabled="" type="checkbox"> Karaf 学习</li>
+</ul>
+<h1 id="代码整理"><a href="#代码整理" class="headerlink" title="代码整理"></a>代码整理</h1><ul>
+<li><input disabled="" type="checkbox"> Python</li>
+</ul>
+<h1 id="OneDrive修复"><a href="#OneDrive修复" class="headerlink" title="OneDrive修复"></a>OneDrive修复</h1><ul>
+<li><input checked="" disabled="" type="checkbox"> 数据同步</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
   </entry>
 </search>
