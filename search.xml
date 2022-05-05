@@ -2277,27 +2277,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Spring Boot</title>
-    <url>/post/a541262a.html</url>
-    <content><![CDATA[<h2 id="IoC（控制反转）"><a href="#IoC（控制反转）" class="headerlink" title="IoC（控制反转）"></a>IoC（控制反转）</h2><p>调用类中的方法不是通过new它的对象来实现，而是通过Spring配置来创建对象，然后交给IOC容器来管理我们的对象，使用时去找IOC容器要，根本就不用去管我们需要的这个对象时怎么创建的、什么时候被销毁。</p>
-<p>这样一来，类和类之间的关系就变弱了，因为我们没有在一个类中new另一个对象，对象之间的调用、联系都是通过这个IOC容器来获取的，使每一个对象都相对比较独立。</p>
-<p>IoC的一个重点是在系统运行中，动态的向某个对象提供它所需要的其他对象。这一点是通过DI（Dependency Injection，依赖注入）来实现的。</p>
-<span id="more"></span>
-
-<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><h3 id="习惯优于配置"><a href="#习惯优于配置" class="headerlink" title="习惯优于配置"></a>习惯优于配置</h3><p>（Convention Over Configuration），也称作按约定编程，是一种软件设计范式，旨在减少软件开发人员需做决定的数量、获得简单的好处，而又不失灵活性。</p>
-<h3 id="内嵌容器"><a href="#内嵌容器" class="headerlink" title="内嵌容器"></a>内嵌容器</h3><p>内嵌servlet容器，可以直接执行运行项目的main函数。</p>
-<h3 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h3><p>Spring Boot Starter 中有两个核心组件∶ 自动配置代码和提供自动配置模块及其它有用的依赖。也就意味着当我们项目中引入某个  Starter，即拥有了此软件的默认使用能力，除非我们需要特定的配置，一般情况下我仅需要少量的配置或者不配置即可使用组件对应的功能。</p>
-<p>会根据我们项目中的类路径的jar包，为jar包的类进行自动装配bean。</p>
-<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>Aspect Oriented Programming，面向切面，AOP主要实现的目的是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。是提供另一种角度来思考程序的结构，来弥补面向对象编程的不足。</p>
-<p>通俗点讲就是提供一个为一个业务实现提供切面注入的机制，通过这种方式，在业务运行中将定义好的切面通过切入点绑定到业务中，以实现将一些特殊的逻辑绑定到此业务中。</p>
-<p>举个栗子，项目中有记录操作日志的需求、或者流程变更是记录变更履历，无非就是插表操作，很简单的一个save操作，都是一些记录日志或者其他辅助性的代码。一遍又一遍的重写和调用。不仅浪费了时间，又将项目变得更加的冗余，实在得不偿失。</p>
-]]></content>
-      <categories>
-        <category>Tech</category>
-        <category>Spring Boot</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Java Source Code</title>
     <url>/post/547eead8.html</url>
     <content><![CDATA[<h1 id="java-lang"><a href="#java-lang" class="headerlink" title="java.lang"></a>java.lang</h1><h2 id="Object-1"><a href="#Object-1" class="headerlink" title="Object 1"></a>Object 1</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">wait</span><span class="params">(<span class="type">long</span> timeout, <span class="type">int</span> nanos)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">  <span class="keyword">if</span> (timeout &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;timeout value is negative&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (nanos &lt; <span class="number">0</span> || nanos &gt; <span class="number">999999</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(</span><br><span class="line">      <span class="string">&quot;nanosecond timeout value out of range&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (nanos &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    timeout++;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  wait(timeout);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -3769,6 +3748,78 @@
 ]]></content>
       <categories>
         <category>Diary</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>220502周报</title>
+    <url>/post/ad2a4245.html</url>
+    <content><![CDATA[<h1 id="代码整理"><a href="#代码整理" class="headerlink" title="代码整理"></a>代码整理</h1><ul>
+<li><input disabled="" type="checkbox"> Python</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Spring-忽略大小写</title>
+    <url>/post/d7f3c5c3.html</url>
+    <content><![CDATA[<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><ul>
+<li>实现接口参数忽略大小写</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="序列化忽略大小写"><a href="#序列化忽略大小写" class="headerlink" title="序列化忽略大小写"></a>序列化忽略大小写</h1><ul>
+<li>接口使用 <code>@RequestBody</code> 实现时忽略大小写序列化</li>
+<li>配置三选一</li>
+</ul>
+<h2 id="application-yml"><a href="#application-yml" class="headerlink" title="application.yml"></a>application.yml</h2><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">jackson</span>:<span class="string"></span></span><br><span class="line">    <span class="attr">mapper</span>:<span class="string"></span></span><br><span class="line">      <span class="attr">accept-case-insensitive-properties</span>: <span class="string">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="JacksonConfig"><a href="#JacksonConfig" class="headerlink" title="JacksonConfig"></a>JacksonConfig</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JacksonConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ObjectMapper <span class="title function_">objectMapper</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">        mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> mapper;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="WebMvcConfigurationSupport"><a href="#WebMvcConfigurationSupport" class="headerlink" title="WebMvcConfigurationSupport"></a>WebMvcConfigurationSupport</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebMvcConfig</span> <span class="keyword">extends</span> <span class="title class_">WebMvcConfigurationSupport</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configureMessageConverters</span><span class="params">(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters)</span> &#123;</span><br><span class="line">        <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">        mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, <span class="literal">true</span>);</span><br><span class="line">        <span class="type">MappingJackson2HttpMessageConverter</span> <span class="variable">json</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MappingJackson2HttpMessageConverter</span>(mapper);</span><br><span class="line">        converters.add(json);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="URL-忽略大小写"><a href="#URL-忽略大小写" class="headerlink" title="URL 忽略大小写"></a>URL 忽略大小写</h1><ul>
+<li>接口路径忽略大小写</li>
+</ul>
+<h2 id="WebMvcConfigurationSupport-1"><a href="#WebMvcConfigurationSupport-1" class="headerlink" title="WebMvcConfigurationSupport"></a>WebMvcConfigurationSupport</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebMvcConfig</span> <span class="keyword">extends</span> <span class="title class_">WebMvcConfigurationSupport</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configurePathMatch</span><span class="params">(PathMatchConfigurer configurer)</span> &#123;</span><br><span class="line">        <span class="type">AntPathMatcher</span> <span class="variable">pathMatcher</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AntPathMatcher</span>();</span><br><span class="line">        pathMatcher.setCaseSensitive(<span class="literal">false</span>);</span><br><span class="line">        configurer.setPathMatcher(pathMatcher);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="参数忽略大小写"><a href="#参数忽略大小写" class="headerlink" title="参数忽略大小写"></a>参数忽略大小写</h1><h2 id="OncePerRequestFilter"><a href="#OncePerRequestFilter" class="headerlink" title="OncePerRequestFilter"></a>OncePerRequestFilter</h2><ul>
+<li>启动类添加 <code>@ServletComponentScan</code></li>
+<li>可以通过 <code>urlPatterns</code> 配置拦截路径</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Order(1)</span></span><br><span class="line"><span class="meta">@WebFilter(filterName = &quot;caseInsensitiveFilter&quot;, urlPatterns = &quot;/*&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CaseInsensitiveRequestParameterNameFilter</span> <span class="keyword">extends</span> <span class="title class_">OncePerRequestFilter</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doFilterInternal</span><span class="params">(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)</span></span><br><span class="line">            <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        filterChain.doFilter(<span class="keyword">new</span> <span class="title class_">CaseInsensitiveParameterNameHttpServletRequest</span>(request), response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">CaseInsensitiveParameterNameHttpServletRequest</span> <span class="keyword">extends</span> <span class="title class_">HttpServletRequestWrapper</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> LinkedCaseInsensitiveMap&lt;String[]&gt; map = <span class="keyword">new</span> <span class="title class_">LinkedCaseInsensitiveMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">CaseInsensitiveParameterNameHttpServletRequest</span><span class="params">(HttpServletRequest request)</span> &#123;</span><br><span class="line">            <span class="built_in">super</span>(request);</span><br><span class="line">            map.putAll(request.getParameterMap());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">getParameter</span><span class="params">(String name)</span> &#123;</span><br><span class="line"></span><br><span class="line">            String[] array = <span class="built_in">this</span>.map.get(name);</span><br><span class="line">            <span class="keyword">if</span> (array != <span class="literal">null</span> &amp;&amp; array.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> array[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> Map&lt;String, String[]&gt; getParameterMap() &#123;</span><br><span class="line">            <span class="keyword">return</span> Collections.unmodifiableMap(<span class="built_in">this</span>.map);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title function_">getParameterNames</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> Collections.enumeration(<span class="built_in">this</span>.map.keySet());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> String[] getParameterValues(String name) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>.map.get(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/277834439">https://zhuanlan.zhihu.com/p/277834439</a></li>
+<li><a href="https://blog.csdn.net/jx520/article/details/112548619">https://blog.csdn.net/jx520/article/details/112548619</a></li>
+<li><a href="https://www.cnblogs.com/kjcc/p/14355113.html">https://www.cnblogs.com/kjcc/p/14355113.html</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Spring</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Spring Boot</title>
+    <url>/post/a541262a.html</url>
+    <content><![CDATA[<h2 id="IoC（控制反转）"><a href="#IoC（控制反转）" class="headerlink" title="IoC（控制反转）"></a>IoC（控制反转）</h2><p>调用类中的方法不是通过new它的对象来实现，而是通过Spring配置来创建对象，然后交给IOC容器来管理我们的对象，使用时去找IOC容器要，根本就不用去管我们需要的这个对象时怎么创建的、什么时候被销毁。</p>
+<p>这样一来，类和类之间的关系就变弱了，因为我们没有在一个类中new另一个对象，对象之间的调用、联系都是通过这个IOC容器来获取的，使每一个对象都相对比较独立。</p>
+<p>IoC的一个重点是在系统运行中，动态的向某个对象提供它所需要的其他对象。这一点是通过DI（Dependency Injection，依赖注入）来实现的。</p>
+<span id="more"></span>
+
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><h3 id="习惯优于配置"><a href="#习惯优于配置" class="headerlink" title="习惯优于配置"></a>习惯优于配置</h3><p>（Convention Over Configuration），也称作按约定编程，是一种软件设计范式，旨在减少软件开发人员需做决定的数量、获得简单的好处，而又不失灵活性。</p>
+<h3 id="内嵌容器"><a href="#内嵌容器" class="headerlink" title="内嵌容器"></a>内嵌容器</h3><p>内嵌servlet容器，可以直接执行运行项目的main函数。</p>
+<h3 id="自动装配"><a href="#自动装配" class="headerlink" title="自动装配"></a>自动装配</h3><p>Spring Boot Starter 中有两个核心组件∶ 自动配置代码和提供自动配置模块及其它有用的依赖。也就意味着当我们项目中引入某个  Starter，即拥有了此软件的默认使用能力，除非我们需要特定的配置，一般情况下我仅需要少量的配置或者不配置即可使用组件对应的功能。</p>
+<p>会根据我们项目中的类路径的jar包，为jar包的类进行自动装配bean。</p>
+<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><p>Aspect Oriented Programming，面向切面，AOP主要实现的目的是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得逻辑过程中各部分之间低耦合性的隔离效果。是提供另一种角度来思考程序的结构，来弥补面向对象编程的不足。</p>
+<p>通俗点讲就是提供一个为一个业务实现提供切面注入的机制，通过这种方式，在业务运行中将定义好的切面通过切入点绑定到业务中，以实现将一些特殊的逻辑绑定到此业务中。</p>
+<p>举个栗子，项目中有记录操作日志的需求、或者流程变更是记录变更履历，无非就是插表操作，很简单的一个save操作，都是一些记录日志或者其他辅助性的代码。一遍又一遍的重写和调用。不仅浪费了时间，又将项目变得更加的冗余，实在得不偿失。</p>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Spring</category>
       </categories>
   </entry>
 </search>

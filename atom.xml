@@ -45,6 +45,54 @@
   </entry>
   
   <entry>
+    <title>Spring-忽略大小写</title>
+    <link href="https://pingpinggray.top/post/d7f3c5c3.html"/>
+    <id>https://pingpinggray.top/post/d7f3c5c3.html</id>
+    <published>2022-05-05T10:12:41.000Z</published>
+    <updated>2022-05-05T10:13:51.594Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><ul><li>实现接口参数忽略大小写</li></ul><span id="more"></span><h1 id="序列化忽略大小写"><a href="#序列化忽略大小写" class="headerlink" title="序列化忽略大小写"></a>序列化忽略大小写</h1><ul><li>接口使用 <code>@RequestBody</code> 实现时忽略大小写序列化</li><li>配置三选一</li></ul><h2 id="application-yml"><a href="#application-yml" class="headerlink" title="application.yml"></a>application.yml</h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">spring</span>:<span class="string"></span></span><br><span class="line">  <span class="attr">jackson</span>:<span class="string"></span></span><br><span class="line">    <span class="attr">mapper</span>:<span class="string"></span></span><br><span class="line">      <span class="attr">accept-case-insensitive-properties</span>: <span class="string">true</span></span><br></pre></td></tr></table></figure><h2 id="JacksonConfig"><a href="#JacksonConfig" class="headerlink" title="JacksonConfig"></a>JacksonConfig</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">JacksonConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ObjectMapper <span class="title function_">objectMapper</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">        mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, <span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> mapper;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="WebMvcConfigurationSupport"><a href="#WebMvcConfigurationSupport" class="headerlink" title="WebMvcConfigurationSupport"></a>WebMvcConfigurationSupport</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebMvcConfig</span> <span class="keyword">extends</span> <span class="title class_">WebMvcConfigurationSupport</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configureMessageConverters</span><span class="params">(List&lt;HttpMessageConverter&lt;?&gt;&gt; converters)</span> &#123;</span><br><span class="line">        <span class="type">ObjectMapper</span> <span class="variable">mapper</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectMapper</span>();</span><br><span class="line">        mapper.configure(MapperFeature.ACCEPT_CASE_INSENSITIVE_PROPERTIES, <span class="literal">true</span>);</span><br><span class="line">        <span class="type">MappingJackson2HttpMessageConverter</span> <span class="variable">json</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">MappingJackson2HttpMessageConverter</span>(mapper);</span><br><span class="line">        converters.add(json);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="URL-忽略大小写"><a href="#URL-忽略大小写" class="headerlink" title="URL 忽略大小写"></a>URL 忽略大小写</h1><ul><li>接口路径忽略大小写</li></ul><h2 id="WebMvcConfigurationSupport-1"><a href="#WebMvcConfigurationSupport-1" class="headerlink" title="WebMvcConfigurationSupport"></a>WebMvcConfigurationSupport</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebMvcConfig</span> <span class="keyword">extends</span> <span class="title class_">WebMvcConfigurationSupport</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">configurePathMatch</span><span class="params">(PathMatchConfigurer configurer)</span> &#123;</span><br><span class="line">        <span class="type">AntPathMatcher</span> <span class="variable">pathMatcher</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">AntPathMatcher</span>();</span><br><span class="line">        pathMatcher.setCaseSensitive(<span class="literal">false</span>);</span><br><span class="line">        configurer.setPathMatcher(pathMatcher);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="参数忽略大小写"><a href="#参数忽略大小写" class="headerlink" title="参数忽略大小写"></a>参数忽略大小写</h1><h2 id="OncePerRequestFilter"><a href="#OncePerRequestFilter" class="headerlink" title="OncePerRequestFilter"></a>OncePerRequestFilter</h2><ul><li>启动类添加 <code>@ServletComponentScan</code></li><li>可以通过 <code>urlPatterns</code> 配置拦截路径</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Order(1)</span></span><br><span class="line"><span class="meta">@WebFilter(filterName = &quot;caseInsensitiveFilter&quot;, urlPatterns = &quot;/*&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CaseInsensitiveRequestParameterNameFilter</span> <span class="keyword">extends</span> <span class="title class_">OncePerRequestFilter</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doFilterInternal</span><span class="params">(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)</span></span><br><span class="line">            <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        filterChain.doFilter(<span class="keyword">new</span> <span class="title class_">CaseInsensitiveParameterNameHttpServletRequest</span>(request), response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">CaseInsensitiveParameterNameHttpServletRequest</span> <span class="keyword">extends</span> <span class="title class_">HttpServletRequestWrapper</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">final</span> LinkedCaseInsensitiveMap&lt;String[]&gt; map = <span class="keyword">new</span> <span class="title class_">LinkedCaseInsensitiveMap</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">CaseInsensitiveParameterNameHttpServletRequest</span><span class="params">(HttpServletRequest request)</span> &#123;</span><br><span class="line">            <span class="built_in">super</span>(request);</span><br><span class="line">            map.putAll(request.getParameterMap());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> String <span class="title function_">getParameter</span><span class="params">(String name)</span> &#123;</span><br><span class="line"></span><br><span class="line">            String[] array = <span class="built_in">this</span>.map.get(name);</span><br><span class="line">            <span class="keyword">if</span> (array != <span class="literal">null</span> &amp;&amp; array.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> array[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> Map&lt;String, String[]&gt; getParameterMap() &#123;</span><br><span class="line">            <span class="keyword">return</span> Collections.unmodifiableMap(<span class="built_in">this</span>.map);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title function_">getParameterNames</span><span class="params">()</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> Collections.enumeration(<span class="built_in">this</span>.map.keySet());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> String[] getParameterValues(String name) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">this</span>.map.get(name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li><a href="https://zhuanlan.zhihu.com/p/277834439">https://zhuanlan.zhihu.com/p/277834439</a></li><li><a href="https://blog.csdn.net/jx520/article/details/112548619">https://blog.csdn.net/jx520/article/details/112548619</a></li><li><a href="https://www.cnblogs.com/kjcc/p/14355113.html">https://www.cnblogs.com/kjcc/p/14355113.html</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;实现接口参数忽略大小写&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="Spring" scheme="https://pingpinggray.top/categories/Tech/Spring/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>220502周报</title>
+    <link href="https://pingpinggray.top/post/ad2a4245.html"/>
+    <id>https://pingpinggray.top/post/ad2a4245.html</id>
+    <published>2022-05-05T10:12:20.000Z</published>
+    <updated>2022-05-05T10:13:07.670Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="代码整理"><a href="#代码整理" class="headerlink" title="代码整理"></a>代码整理</h1><ul><li><input disabled="" type="checkbox"> Python</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;代码整理&quot;&gt;&lt;a href=&quot;#代码整理&quot; class=&quot;headerlink&quot; title=&quot;代码整理&quot;&gt;&lt;/a&gt;代码整理&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; Python&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>220425周报</title>
     <link href="https://pingpinggray.top/post/3dd36ff5.html"/>
     <id>https://pingpinggray.top/post/3dd36ff5.html</id>
@@ -456,52 +504,6 @@
       
     <summary type="html">&lt;h1 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; title=&quot;三名系统&quot;&gt;&lt;/a&gt;三名系统&lt;/h1&gt;&lt;ul&gt;
 &lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; API自动化测试&lt;</summary>
-      
-    
-    
-    
-    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>220314周报</title>
-    <link href="https://pingpinggray.top/post/e79157ed.html"/>
-    <id>https://pingpinggray.top/post/e79157ed.html</id>
-    <published>2022-03-15T05:18:06.000Z</published>
-    <updated>2022-04-14T07:26:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h1><ul><li><input checked="" disabled="" type="checkbox"> 技术说明文档（README）</li><li><input checked="" disabled="" type="checkbox"> 成果数据存储</li></ul><h1 id="个人Spring模板"><a href="#个人Spring模板" class="headerlink" title="个人Spring模板"></a>个人Spring模板</h1><ul><li><input checked="" disabled="" type="checkbox"> 通用CRUD</li><li><input checked="" disabled="" type="checkbox"> Swagger配置</li><li><input checked="" disabled="" type="checkbox"> 静态资源映射</li><li><input checked="" disabled="" type="checkbox"> 异常处理</li><li><input checked="" disabled="" type="checkbox"> 通用条件查询</li><li><input checked="" disabled="" type="checkbox"> 技术说明文档（README）</li><li><input disabled="" type="checkbox"> 统一HTTP访问</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; title=&quot;三名系统&quot;&gt;&lt;/a&gt;三名系统&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 技术说明文档（RE</summary>
-      
-    
-    
-    
-    <category term="Diary" scheme="https://pingpinggray.top/categories/Diary/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>220307周报</title>
-    <link href="https://pingpinggray.top/post/cf733f29.html"/>
-    <id>https://pingpinggray.top/post/cf733f29.html</id>
-    <published>2022-03-11T09:36:38.000Z</published>
-    <updated>2022-04-14T07:26:08.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="三名系统"><a href="#三名系统" class="headerlink" title="三名系统"></a>三名系统</h1><ul><li><input checked="" disabled="" type="checkbox"> 异常处理</li><li><input checked="" disabled="" type="checkbox"> 时间序列化处理</li><li><input checked="" disabled="" type="checkbox"> 流程全局监听</li><li><input checked="" disabled="" type="checkbox"> 日志推送</li><li><input disabled="" type="checkbox"> 消息推送</li><li><input checked="" disabled="" type="checkbox"> 通用CRUD</li><li><input disabled="" type="checkbox"> 技术说明文档（README）</li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;三名系统&quot;&gt;&lt;a href=&quot;#三名系统&quot; class=&quot;headerlink&quot; title=&quot;三名系统&quot;&gt;&lt;/a&gt;三名系统&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;input checked=&quot;&quot; disabled=&quot;&quot; type=&quot;checkbox&quot;&gt; 异常处理&lt;/li&gt;</summary>
       
     
     
