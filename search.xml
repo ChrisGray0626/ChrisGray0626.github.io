@@ -3822,7 +3822,7 @@
         <th>计划</th>
   <tr>
   <tr>
-    <td rowspan="2">中青会筹备</td>
+    <td rowspan="2">中青会</td>
     <td>任务管理工具替换</td>
     <td>已将板栗看板中本周的任务进度迁移至多维表格“任务管理”中</td>
     <td>陆续迁移之前的任务进度</td>
@@ -3833,7 +3833,7 @@
     <td>尽快撰写退费政策</td>
   </tr>
   <tr>
-    <td rowspan="2">代码整理</td>
+    <td rowspan="2">个人代码</td>
     <td>Python</td>
     <td>五一假期，未安排时间</td>
     <td>尽快整理</td>
@@ -3855,9 +3855,30 @@
     <td>正式投入 WFS 服务开发</td>
   </tr>
    <tr>
-    <td>GML 格式解析</td>
-    <td>初步了解几种解析方法</td>
+    <td>GML 生成</td>
+    <td>初步了解几种生成方法</td>
     <td>进一步学习熟悉 GML 格式</td>
+  </tr>
+  <tr>
+    <td rowspan="4">个人 Spring 项目模板</td>
+    <td>自定义注解学习整理</td>
+    <td>学习并简单使用了自定义注解，初步掌握</td>
+    <td>后续可能会投入使用</td>
+  </tr>
+  <tr>
+    <td>拦截器学习整理</td>
+    <td>学习并简单使用了拦截器，初步掌握</td>
+    <td>暂无</td>
+  </tr>
+  <tr>
+    <td>HTTP 工具类整理</td>
+    <td>结合前人经验与个人使用习惯，新增 Http 请求工具类</td>
+    <td>暂无</td>
+  </tr>
+  <tr>
+    <td>代码整理</td>
+    <td>修复 JDK1.8 的 List 相关 BUG，完善注解@transactional与@Resource，调整个别命名与目录位置</td>
+    <td>暂无</td>
   </tr>
 </table>
 
