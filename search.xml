@@ -3515,37 +3515,37 @@
         <th>计划</th>
   <tr>
   <tr>
-    <td rowspan="2">CSP 接入 WFS 服务</td>
-    <td>GML 解析</td>
+    <td rowspan="3">CSP 接入 WFS 服务</td>
+    <td>GML 生成</td>
     <td>SAX/DOM操作学习：创建、解析、遍历、搜索、新增、修改、删除、写入</td>
-    <td>{plan}</td>
+    <td>已投入实际开发</td>
   </tr>
   <tr>
-    <td>{task}</td>
-    <td>{progress}</td>
-    <td>{plan}</td>
+    <td>GetCapabilities 接口开发</td>
+    <td>完成度 80%，目前没有碰到太多阻力</td>
+    <td>剩余部分待对接的数据和待明确的特定字段——命名空间</td>
   </tr>
   <tr>
-    <td rowspan="2">个人 Spring 模板</td>
+    <td>DescribeFeatureType 接口开发</td>
+    <td>完成度 20%，用 GeoTools 已经初步生成了所需数据</td>
+    <td>待进一步开发</td>
+  </tr>
+  <tr>
+    <td rowspan="1">个人 Spring 模板</td>
     <td>工具类新增</td>
     <td>新增hutool、commons-lang3</td>
-    <td>{plan}</td>
-  </tr>
-  <tr>
-    <td>{task}</td>
-    <td>{progress}</td>
-    <td>{plan}</td>
+    <td>暂无</td>
   </tr>
   <tr>
    <td rowspan="2">个人代码</td>
     <td>数据打包</td>
     <td>部分数据数量较大，打包后删除原数据，便于云同步</td>
-    <td>尽快整理</td>
+    <td>暂无</td>
   </tr>
   <tr>
     <td>第三方代码移除</td>
     <td>无用的第三方代码，尤其是 vue 相关，包含大量小文件，导致云同步非常困难</td>
-    <td></td>
+    <td>暂无</td>
   </tr>
 </table>
 
