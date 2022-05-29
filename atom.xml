@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2022-05-23T14:35:02.018Z</updated>
+  <updated>2022-05-29T09:25:11.470Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2205023周报</title>
-    <link href="https://pingpinggray.top/post/ae2ea1cf.html"/>
-    <id>https://pingpinggray.top/post/ae2ea1cf.html</id>
-    <published>2022-05-23T14:35:02.000Z</published>
-    <updated>2022-05-23T14:35:02.018Z</updated>
+    <title>2205030周报</title>
+    <link href="https://pingpinggray.top/post/536cbbcc.html"/>
+    <id>https://pingpinggray.top/post/536cbbcc.html</id>
+    <published>2022-05-29T09:25:11.000Z</published>
+    <updated>2022-05-29T09:25:11.470Z</updated>
     
     <content type="html"><![CDATA[<table>    <tr>    <th>项目</th>    <th>任务</th>        <th>进度</th>        <th>计划</th>  <tr>  <tr>    <td rowspan="2">{Project}</td>    <td>{task}</td>    <td>{progress}</td>    <td>{plan}</td>  </tr>  <tr>    <td>{task}</td>    <td>{progress}</td>    <td>{plan}</td>  </tr></table>]]></content>
     
@@ -50,9 +50,9 @@
     <link href="https://pingpinggray.top/post/49784e8c.html"/>
     <id>https://pingpinggray.top/post/49784e8c.html</id>
     <published>2022-05-23T14:33:58.000Z</published>
-    <updated>2022-05-23T14:33:58.114Z</updated>
+    <updated>2022-05-29T09:23:17.248Z</updated>
     
-    <content type="html"><![CDATA[<table>    <tr>    <th>项目</th>    <th>任务</th>        <th>进度</th>        <th>计划</th>  <tr>  <tr>    <td rowspan="2">{Project}</td>    <td>{task}</td>    <td>{progress}</td>    <td>{plan}</td>  </tr>  <tr>    <td>{task}</td>    <td>{progress}</td>    <td>{plan}</td>  </tr></table>]]></content>
+    <content type="html"><![CDATA[<table>    <tr>    <th>项目</th>    <th>任务</th>        <th>进度</th>        <th>计划</th>  <tr>  <tr>    <td rowspan="2">CSP 接入 WFS</td>    <td>参数默认值设置</td>    <td>已从参数校验移除</td>    <td>暂无</td>  </tr>  <tr>    <td>Karaf/OSGi 整理</td>    <td>已输出文档</td>    <td>根据未来项目中框架的使用情况，有针对性地学习</td>  </tr>    <tr>    <td rowspan="3">CSP 接入 WMS</td>    <td>WMS 规范整理</td>    <td>OGC 规范整理已完成，GeoServer 规范整理已完成，应急规范已截取，单独成文件</td>    <td>或考虑进一步整理操作响应规范</td>  </tr>  <tr>    <td>GeoServer 发布 WMS</td>    <td>已完成，但由于缺少合适的数据，GetFeatureInfo 操作未能测试成功</td>    <td>暂无</td>  </tr>  <tr>    <td>CSP 接入 WMS 分析</td>    <td>已完成</td>    <td>需要进一步分析 GetFeatureInfo 操作的可行性</td>  </tr></table>]]></content>
     
     
       
@@ -65,11 +65,13 @@
         &lt;th&gt;计划&lt;/th&gt;
   &lt;tr&gt;
   &lt;tr&gt;
-    &lt;td rowspan=&quot;2&quot;&gt;{Project}&lt;/td&gt;
-  </summary>
+    &lt;td rowspan=&quot;2&quot;&gt;CSP 接入 WFS&lt;/td&gt;
+ </summary>
       
     
     
+    
+    <category term="Weekly" scheme="https://pingpinggray.top/categories/Weekly/"/>
     
     
   </entry>
@@ -107,7 +109,7 @@
     <link href="https://pingpinggray.top/post/95cf66c8.html"/>
     <id>https://pingpinggray.top/post/95cf66c8.html</id>
     <published>2022-05-17T13:28:21.000Z</published>
-    <updated>2022-05-23T06:14:01.000Z</updated>
+    <updated>2022-05-24T10:27:04.125Z</updated>
     
     <content type="html"><![CDATA[<table>    <tr>    <th>项目</th>    <th>任务</th>        <th>进度</th>        <th>计划</th>  <tr>  <tr>    <td rowspan="5">CSP 接入 WFS</td>    <td>GetCapabilities 接口开发</td>    <td>已完成</td>    <td>暂无</td>  </tr>  <tr>    <td>DescribeFeatureType 接口开发</td>    <td>已完成，因为 Karaf 的依赖问题堵塞，无法最终测试待堵塞问题解决后，进行测试</td>    <td>待堵塞问题解决后，尽早完成测试</td>  </tr>    <td>参数校验</td>    <td>已完成，已测试</td>    <td>将参数默认值设置从中移除</td>  </tr>    <td>异常处理</td>    <td>已完成，已测试</td>    <td>暂无</td>  </tr>    <td>参数默认值设置</td>    <td>已完成，但需要改进，暂不会在当前版本被感知，仅影响操作返回值参数移除</td>    <td>进一步完善</td>  </tr></table>]]></content>
     
