@@ -4057,7 +4057,7 @@
   <tr>
   <tr>
     <td rowspan="2">{Project}</td>
-    <td>{task}</td>
+    <td>CSP 支持 WMS 服务</td>
     <td>{progress}</td>
     <td>{plan}</td>
   </tr>
@@ -4068,5 +4068,8 @@
   </tr>
 </table>
 ]]></content>
+      <categories>
+        <category>Weekly</category>
+      </categories>
   </entry>
 </search>
