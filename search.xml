@@ -4098,8 +4098,8 @@
       </categories>
   </entry>
   <entry>
-    <title>2205030周报</title>
-    <url>/post/536cbbcc.html</url>
+    <title>220606周报</title>
+    <url>/post/60e85a93.html</url>
     <content><![CDATA[<table>
     <tr>
     <th>项目</th>
@@ -4107,32 +4107,52 @@
         <th>进度</th>
         <th>计划</th>
   <tr>
-  <tr>
-    <td rowspan="2">CSP 支持 WMS</td>
+    <td rowspan="6">CSP 支持 WMS</td>
     <td>CSP 支持 WMS 分析</td>
-    <td>分析 GetFeatureInfo 操作可行性；新增坐标系与元数据的响应规范等内容。</td>
-    <td>GetFeatureInfo 操作一期暂不支持，继续分析。</td>
+    <td>完善文档。</td>
+    <td>根据实际需求，继续完善。</td>
   </tr>
   <tr>
     <td>空间数据接口接入指南</td>
-    <td>新增 WMS 接口。</td>
-    <td>根据分析结果待进一步完善。</td>
+    <td>完善文档，整理异常类型。</td>
+    <td>根据实际需求，继续完善。</td>
   </tr>
   <tr>
-    <td rowspan="1">Spring</td>
-    <td>重复请求参数处理分析</td>
-    <td>阅读源码，梳理处理流程，已整理文档。</td>
-    <td>暂无新增。</td>
+    <td>测试用例</td>
+    <td>已撰写。</td>
+    <td>根据实际需求，继续完善。</td>
+  </tr>
+  <tr>
+    <td>GetCapabilities 接口开发</td>
+    <td>参数校验、输出格式化已开发，文件生成待开发。</td>
+    <td>文件生成，系统测试。</td>
+  </tr>
+  <tr>
+    <td>GetMap 接口开发</td>
+    <td>参数校验、SQL 生成、输出格式化已开发。</td>
+    <td>系统测试。</td>
+  </tr>
+  <tr>
+    <td>异常处理</td>
+    <td>部分重构，新增 GisExceptionEntity 数据结构，新增 JSON 格式化。</td>
+    <td>系统测试。</td>
+  </tr>
+  <tr>
+    <td rowspan="1">CSP 支持 WFS</td>
+    <td>GetCapabilities 多图层支持</td>
+    <td>暂未开始。</td>
+    <td>FeatureType 待新增。</td>
   </tr>
 </table>
+
 ]]></content>
       <categories>
         <category>Weekly</category>
       </categories>
   </entry>
   <entry>
-    <title>220606周报</title>
-    <url>/post/60e85a93.html</url>
+    <title>220613周报</title>
+    <url>/post/fe7a75aa.html</url>
     <content><![CDATA[<table>
     <tr>
     <th>项目</th>
