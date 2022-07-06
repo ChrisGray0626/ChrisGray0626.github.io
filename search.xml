@@ -4120,39 +4120,12 @@
     <title>220620周报</title>
     <url>/post/411d68d4.html</url>
     <content><![CDATA[<table>
-    <tr>
+  <tr>
     <th>项目</th>
     <th>任务</th>
-        <th>进度</th>
-        <th>计划</th>
-  <tr>
-  <tr>
-    <td rowspan="2">{Project}</td>
-    <td>{task}</td>
-    <td>{progress}</td>
-    <td>{plan}</td>
+    <th>进度</th>
+    <th>计划</th>
   </tr>
-  <tr>
-    <td>{task}</td>
-    <td>{progress}</td>
-    <td>{plan}</td>
-  </tr>
-</table>
-]]></content>
-      <categories>
-        <category>Weekly</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>220620周报</title>
-    <url>/post/411d68d4.html</url>
-    <content><![CDATA[<table>
-    <tr>
-    <th>项目</th>
-    <th>任务</th>
-        <th>进度</th>
-        <th>计划</th>
-  <tr>
   <tr>
     <td rowspan="3">CSP 支持 WMS</td>
     <td>GetCapabilities 接口开发</td>
@@ -4181,6 +4154,7 @@
     <td>暂无。</td>
   </tr>
 </table>
+
 ]]></content>
       <categories>
         <category>Weekly</category>
@@ -4227,24 +4201,40 @@
     <title>220627周报</title>
     <url>/post/84ba565a.html</url>
     <content><![CDATA[<table>
-    <tr>
+  <tr>
     <th>项目</th>
     <th>任务</th>
-        <th>进度</th>
-        <th>计划</th>
-  <tr>
-  <tr>
-    <td rowspan="2">{Project}</td>
-    <td>{task}</td>
-    <td>{progress}</td>
-    <td>{plan}</td>
+    <th>进度</th>
+    <th>计划</th>
   </tr>
   <tr>
-    <td>{task}</td>
-    <td>{progress}</td>
-    <td>{plan}</td>
+    <td rowspan="3">CSP 支持 WMS & WFS</td>
+    <td>点线面样式支持</td>
+    <td>已支持点、线、面三类数据任意组合的情况。</td>
+    <td>暂无。</td>
   </tr>
+  <tr>
+    <td>数据为空处理</td>
+    <td>已排查并修复可能存在的由于查询的数据为空导致的 NPE 问题。</td>
+    <td>暂无。</td>
+  </tr>
+  <tr>
+    <td>Commit 合并</td>
+    <td>根据 CSP 团队的开发要求，已合并整理本月所有开发提交的 Commit。</td>
+    <td>暂无。</td>
+  </tr>
+  <tr>
+    <td rowspan="3">CSP 代码学习</td>
+    <td>WMTS 代码学习</td>
+    <td>已基本熟悉 WMTS 代码的业务逻辑。</td>
+    <td>继续跟进。</td>
+  </tr>
+  <tr>
+    <td>CSP 网关代码学习</td>
+    <td>已对于网关代码有基础性认知。</td>
+      <td>继续跟进。</td>
 </table>
+
 ]]></content>
       <categories>
         <category>Weekly</category>
