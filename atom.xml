@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2022-06-30T10:19:46.523Z</updated>
+  <updated>2022-07-08T12:16:47.497Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>220704周报</title>
+    <link href="https://pingpinggray.top/post/e00c5ff9.html"/>
+    <id>https://pingpinggray.top/post/e00c5ff9.html</id>
+    <published>2022-07-06T13:22:47.000Z</published>
+    <updated>2022-07-08T12:16:47.497Z</updated>
+    
+    <content type="html"><![CDATA[<table>    <tr>    <th>项目</th>    <th>任务</th>        <th>进度</th>        <th>计划</th>  <tr> <tr>    <td rowspan="2">CSP 代码学习</td>    <td>WMTS 代码学习</td>    <td>已有较为系统的了解</td>    <td>暂无</td>  </tr>  <tr>    <td>CSP 网关代码学习</td>    <td>已有较为系统的了解</td>    <td>暂无</td>  </tr> <tr>    <td rowspan="2">CSP 支持 WCS</td>    <td>CSP 支持 WCS 分析</td>    <td>博天同学已开始参照过往文本进行整理，以协助为主</td>    <td>需要根据当前减灾一线的公共需求，动态投入</td>  </tr>  <tr>    <td>GeoTools 操作栅格数据学习</td>    <td>已有初步了解</td>    <td>需要根据当前减灾一线的公共需求，动态投入</td>  </tr>  </table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;table&gt;
+    &lt;tr&gt;
+    &lt;th&gt;项目&lt;/th&gt;
+    &lt;th&gt;任务&lt;/th&gt;
+        &lt;th&gt;进度&lt;/th&gt;
+        &lt;th&gt;计划&lt;/th&gt;
+  &lt;tr&gt;
+ &lt;tr&gt;
+    &lt;td rowspan=&quot;2&quot;&gt;CSP 代码学习&lt;/td&gt;
+    </summary>
+      
+    
+    
+    
+    <category term="Weekly" scheme="https://pingpinggray.top/categories/Weekly/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Maven-HTTP Blocked</title>
@@ -47,9 +78,9 @@
     <link href="https://pingpinggray.top/post/84ba565a.html"/>
     <id>https://pingpinggray.top/post/84ba565a.html</id>
     <published>2022-06-27T10:11:42.000Z</published>
-    <updated>2022-07-01T09:34:23.000Z</updated>
+    <updated>2022-07-08T12:05:41.417Z</updated>
     
-    <content type="html"><![CDATA[<table>  <tr>    <th>项目</th>    <th>任务</th>    <th>进度</th>    <th>计划</th>  </tr>  <tr>    <td rowspan="3">CSP 支持 WMS & WFS</td>    <td>点线面样式支持</td>    <td>已支持点、线、面三类数据任意组合的情况。</td>    <td>暂无。</td>  </tr>  <tr>    <td>数据为空处理</td>    <td>已排查并修复可能存在的由于查询的数据为空导致的 NPE 问题。</td>    <td>暂无。</td>  </tr>  <tr>    <td>Commit 合并</td>    <td>根据 CSP 团队的开发要求，已合并整理本月所有开发提交的 Commit。</td>    <td>暂无。</td>  </tr>  <tr>    <td rowspan="3">CSP 代码学习</td>    <td>WMTS 代码学习</td>    <td>已基本熟悉 WMTS 代码的业务逻辑。</td>    <td>继续跟进。</td>  </tr>  <tr>    <td>CSP 网关代码学习</td>    <td>已对于网关代码有基础性认知。</td>      <td>继续跟进。</td></table>]]></content>
+    <content type="html"><![CDATA[<table>  <tr>    <th>项目</th>    <th>任务</th>    <th>进度</th>    <th>计划</th>  </tr>  <tr>    <td rowspan="3">CSP 支持 WMS & WFS</td>    <td>点线面样式支持</td>    <td>已支持点、线、面三类数据任意组合的情况。</td>    <td>暂无。</td>  </tr>  <tr>    <td>数据为空处理</td>    <td>已排查并修复可能存在的由于查询的数据为空导致的 NPE 问题。</td>    <td>暂无。</td>  </tr>  <tr>    <td>Commit 合并</td>    <td>根据 CSP 团队的开发要求，已合并整理本月所有开发提交的 Commit。</td>    <td>暂无。</td>  </tr>  <tr>    <td rowspan="3">CSP 代码学习</td>    <td>WMTS 代码学习</td>    <td>已基本熟悉 WMTS 代码的业务逻辑。</td>    <td>继续跟进。</td>  </tr>  <tr>    <td>CSP 网关代码学习</td>    <td>已对于网关代码有基础性认知。</td>    <td>继续跟进。</td>  </tr></table>]]></content>
     
     
       
@@ -540,32 +571,6 @@
     <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
     
     <category term="GIS" scheme="https://pingpinggray.top/categories/Tech/GIS/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>IDEA-Installation</title>
-    <link href="https://pingpinggray.top/post/a1962535.html"/>
-    <id>https://pingpinggray.top/post/a1962535.html</id>
-    <published>2022-04-13T03:35:00.000Z</published>
-    <updated>2022-04-15T04:40:43.047Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><ul><li>Version：2020.3</li><li>官网：<a href="https://www.jetbrains.com/idea/download/other.html">https://www.jetbrains.com/idea/download/other.html</a></li></ul><h1 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h1><h2 id="插件下载"><a href="#插件下载" class="headerlink" title="插件下载"></a>插件下载</h2><ul><li>BetterIntelliJ：<a href="https://chrisgray.oss-cn-beijing.aliyuncs.com/Archive/BetterIntelliJ.zip">https://chrisgray.oss-cn-beijing.aliyuncs.com/Archive/BetterIntelliJ.zip</a></li></ul><h2 id="试用勾选"><a href="#试用勾选" class="headerlink" title="试用勾选"></a>试用勾选</h2><ul><li>Evaluate for free</li><li>Evaluate</li></ul><h2 id="插件导入"><a href="#插件导入" class="headerlink" title="插件导入"></a>插件导入</h2><ul><li>File-Settings-Plugins-Install Plugin From Disk</li></ul><h3 id="插件确认"><a href="#插件确认" class="headerlink" title="插件确认"></a>插件确认</h3><ul><li><p>idea64.exe.vmoptions</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-javaagent:C:\Users\Public\.BetterIntelliJ\BetterIntelliJ-1.15.jar</span><br></pre></td></tr></table></figure></li></ul><h2 id="IDE重启"><a href="#IDE重启" class="headerlink" title="IDE重启"></a>IDE重启</h2><ul><li>必须重启</li></ul><h2 id="激活码输入"><a href="#激活码输入" class="headerlink" title="激活码输入"></a>激活码输入</h2><ul><li><p>Activation Code：</p><p><code>BISACXYELK-eyJsaWNlbnNlSWQiOiJCSVNBQ1hZRUxLIiwibGljZW5zZWVOYW1lIjoiQ2hpbmFOQiIsImFzc2lnbmVlTmFtZSI6IiIsImFzc2lnbmVlRW1haWwiOiIiLCJsaWNlbnNlUmVzdHJpY3Rpb24iOiIiLCJjaGVja0NvbmN1cnJlbnRVc2UiOmZhbHNlLCJwcm9kdWN0cyI6W3siY29kZSI6IklJIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOmZhbHNlfSx7ImNvZGUiOiJBQyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiRFBOIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlJTQyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJQUyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiUlNGIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IkdPIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOmZhbHNlfSx7ImNvZGUiOiJETSIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJDTCIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiUlMwIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlJDIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlJEIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOmZhbHNlfSx7ImNvZGUiOiJQQyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiUlNWIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlJTVSIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiUk0iLCJwYWlkVXBUbyI6IjIwOTktMTItMzEiLCJleHRlbmRlZCI6ZmFsc2V9LHsiY29kZSI6IldTIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOmZhbHNlfSx7ImNvZGUiOiJEQiIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjpmYWxzZX0seyJjb2RlIjoiREMiLCJwYWlkVXBUbyI6IjIwOTktMTItMzEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiUERCIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlBXUyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJQR08iLCJwYWlkVXBUbyI6IjIwOTktMTItMzEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiUFBTIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlBQQyIsInBhaWRVcFRvIjoiMjA5OS0xMi0zMSIsImV4dGVuZGVkIjp0cnVlfSx7ImNvZGUiOiJQUkIiLCJwYWlkVXBUbyI6IjIwOTktMTItMzEiLCJleHRlbmRlZCI6dHJ1ZX0seyJjb2RlIjoiUFNXIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IkRQIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9LHsiY29kZSI6IlJTIiwicGFpZFVwVG8iOiIyMDk5LTEyLTMxIiwiZXh0ZW5kZWQiOnRydWV9XSwibWV0YWRhdGEiOiIwMTIwMjAwNzI4RVBKQTAwODAwNiIsImhhc2giOiIxNTAyMTM1NC8wOi0xMjUxMTE0NzE3IiwiZ3JhY2VQZXJpb2REYXlzIjowLCJhdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlLCJpc0F1dG9Qcm9sb25nYXRlZCI6ZmFsc2V9-H7NUmWcLyUNV1ctnlzc4P79j15qL56G0jeIYWPk/HViNdMg1MqPM7BR+aHR28yyuxK7Odb2bFDS8CeHNUtv7nT+4fUs85JJiqc3wc1psRpZq5R77apXLOmvmossWpbAw8T1hOGV9IPUm1f2O1+kLBxrOkdqPpv9+JanbdL7bvchAid2v4/dyQMBYJme/feZ0Dy2l7Jjpwno1TeblEAu0KZmarEo15or5RUNwtaGBL5+396TLhnw1qL904/uPnGftjxWYluLjabO/uRu/+5td8UA/39a1nvGU2nORNLk2IdRGIheiwIiuirAZrII9+OxB+p52i3TIv7ugtkw0E3Jpkw==-MIIDlzCCAn+gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDEw1KZXRQcm9maWxlIENBMCAXDTE4MTEwMTEyMjk0NloYDzIwOTkwODA5MDIyNjA3WjBoMQswCQYDVQQGEwJDWjEOMAwGA1UECBMFTnVzbGUxDzANBgNVBAcTBlByYWd1ZTEZMBcGA1UEChMQSmV0QnJhaW5zIHMuci5vLjEdMBsGA1UEAxMUcHJvZDN5LWZyb20tMjAxODExMDEwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCdXyaNhhRySH1a8d7c8SlLLFdNcQP8M3gNnq7gudcpHC651qxRrN7Qks8gdXlIkA4u3/lp9ylp95GiIIDo4ydYje8vlTWDq02bkyWW/G7gZ3hkbBhRUK/WnNyr2vwWoOgwx5CfTRMjKkPkfD/+jffkfNfdGmGcg9yfnqPP9/AizKzWTsXSeS+0jZ8Nw5tiYFW+lpceqlzwzKdTHug7Vs0QomUPccRtZB/TBBEuiC7YzrvLg4Amu0I48ETAcch/ztt00nx/oj/fu1DTnz4Iz4ilrNY+WVIEfDz/n3mz+PKI9kM+ZeB0jAuyLsiC7skGpIVGX/2HqmZTtJKBZCoveAiVAgMBAAGjgZkwgZYwSAYDVR0jBEEwP4AUo562SGdCEjZBvW3gubSgUouX8bOhHKQaMBgxFjAUBgNVBAMMDUpldFByb2ZpbGUgQ0GCCQDSbLGDsoN54TAJBgNVHRMEAjAAMBMGA1UdJQQMMAoGCCsGAQUFBwMBMAsGA1UdDwQEAwIFoDAdBgNVHQ4EFgQUYSkb2hkZx8swY0GRjtKAeIwaBNwwDQYJKoZIhvcNAQELBQADggEBAJZOakWgjfY359glviVffBQFxFS6C+4WjYDYzvzjWHUQoGBFKTHG4xUmTVW7y5GnPSvIlkaj49SzbD9KuiTc77GHyFCTwYMz+qITgbDg3/ao/x/be4DD/k/byWqW4Rb8OSYCshX/fNI4Xu+hxazh179taHX4NaH92ReLVyXNYsooq7mE5YhR9Qsiy35ORviQLrgFrMCGCxT9DWlFBuiPWIOqN544sL9OzFMz+bjqjCoAE/xfIJjI7H7SqGFNrx/8/IuF0hvZbO3bLIz+BOR1L2O+qT728wK6womnp2LLANTPbwu7nf39rpP182WW+xw2z9MKYwwMDwGR1iTYnD4/Sjw=</code></p></li></ul><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul><li><a href="https://www.jb51.net/article/204399.htm">IDEA 2020.3最新永久激活码(免费激活到 2099 年,亲测有效)_java_脚本之家 (jb51.net)</a></li></ul>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;下载&quot;&gt;&lt;a href=&quot;#下载&quot; class=&quot;headerlink&quot; title=&quot;下载&quot;&gt;&lt;/a&gt;下载&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;Version：2020.3&lt;/li&gt;
-&lt;li&gt;官网：&lt;a href=&quot;https://www.jetbrains.com/id</summary>
-      
-    
-    
-    
-    <category term="Software" scheme="https://pingpinggray.top/categories/Software/"/>
-    
-    <category term="IDEA" scheme="https://pingpinggray.top/categories/Software/IDEA/"/>
     
     
   </entry>
