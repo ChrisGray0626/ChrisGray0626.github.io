@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Gray Dynasty</title>
+  
+  
+  <link href="https://pingpinggray.top/atom.xml" rel="self"/>
+  
+  <link href="https://pingpinggray.top/"/>
+  <updated>2023-04-02T12:42:08.737Z</updated>
+  <id>https://pingpinggray.top/</id>
+  
+  <author>
+    <name>Chris Gray</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树的最近公共祖先</title>
+    <link href="https://pingpinggray.top/post/fd4c32db.html"/>
+    <id>https://pingpinggray.top/post/fd4c32db.html</id>
+    <published>2023-04-02T12:26:15.000Z</published>
+    <updated>2023-04-02T12:42:08.737Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>深度优先搜索</li></ul><span id="more"></span><h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><h3 id="边界条件"><a href="#边界条件" class="headerlink" title="边界条件"></a>边界条件</h3><ol><li>当前节点为空，说明搜到底部，搜索结束。</li><li>当前节点等于目标节点，说明搜到目标节点，返回当前节点。</li></ol><h3 id="搜索路径"><a href="#搜索路径" class="headerlink" title="搜索路径"></a>搜索路径</h3><ol><li>分别搜索当前节点的左右子树。</li><li>如果某一子树为空，则说明目标节点均在另一棵子树上。</li><li>否则目标节点分别在两子树上。</li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="深度优先搜索-1"><a href="#深度优先搜索-1" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> TreeNode <span class="title function_">searchCommonAncestor</span><span class="params">(TreeNode node, TreeNode p, TreeNode q)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">null</span> == node) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (node == p || node == q) &#123;</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">TreeNode</span> <span class="variable">left</span> <span class="operator">=</span> searchCommonAncestor(node.left, p, q);</span><br><span class="line">    <span class="type">TreeNode</span> <span class="variable">right</span> <span class="operator">=</span> searchCommonAncestor(node.right, p, q);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">null</span> == left) &#123;</span><br><span class="line">        <span class="keyword">return</span> right;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">null</span> == right) &#123;</span><br><span class="line">        <span class="keyword">return</span> left;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> node;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><ul><li><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先 - 力扣（LeetCode）</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;深度优先搜索&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="DFS" scheme="https://pingpinggray.top/tags/DFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>合并两个排序的链表</title>
+    <link href="https://pingpinggray.top/post/faa1cd64.html"/>
+    <id>https://pingpinggray.top/post/faa1cd64.html</id>
+    <published>2023-04-02T11:26:24.000Z</published>
+    <updated>2023-04-02T12:42:08.743Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>递归</li></ul><span id="more"></span><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><h3 id="边界条件"><a href="#边界条件" class="headerlink" title="边界条件"></a>边界条件</h3><p>两个链表有一个为空，结束递归。</p><h3 id="递归路径"><a href="#递归路径" class="headerlink" title="递归路径"></a>递归路径</h3><ol><li>选择两个链表的头节点中值较小的作为当前节点</li><li>合并该链表的下一个节点与另一个链表，作为下一个节点</li><li>返回当前节点</li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="递归-1"><a href="#递归-1" class="headerlink" title="递归"></a>递归</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> ListNode <span class="title function_">merge</span><span class="params">(ListNode l1, ListNode l2)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (l1 == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> l2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (l2 == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> l1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (l1.val &lt; l2.val) &#123;</span><br><span class="line">        l1.next = merge(l1.next, l2);</span><br><span class="line">        <span class="keyword">return</span> l1;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        l2.next = merge(l2.next, l1);</span><br><span class="line">        <span class="keyword">return</span> l2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><ul><li><a href="https://leetcode.cn/problems/he-bing-liang-ge-pai-xu-de-lian-biao-lcof/solution/he-bing-liang-ge-pai-xu-de-lian-biao-by-g3z6g/">合并两个排序的链表 - 合并两个排序的链表 - 力扣（LeetCode）</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;递归&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="Recursion" scheme="https://pingpinggray.top/tags/Recursion/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对称的二叉树</title>
+    <link href="https://pingpinggray.top/post/150c34dd.html"/>
+    <id>https://pingpinggray.top/post/150c34dd.html</id>
+    <published>2023-03-22T15:39:03.000Z</published>
+    <updated>2023-04-02T12:42:08.741Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>广度优先搜索</li><li>递归</li></ul><span id="more"></span><h2 id="镜像判断"><a href="#镜像判断" class="headerlink" title="镜像判断"></a>镜像判断</h2><ul><li>当前节点的左右节点的值相同</li><li>当前节点的左子树与右子树镜像对称</li></ul><h2 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h2><h3 id="终止条件"><a href="#终止条件" class="headerlink" title="终止条件"></a>终止条件</h3><ul><li>左右节点均为 null，返回 true</li><li>左右节点仅有一个为 null，返回 false</li></ul><h3 id="搜索路径"><a href="#搜索路径" class="headerlink" title="搜索路径"></a>搜索路径</h3><ol><li>从根节点出发，使用两个指针分别指向左右节点</li><li>递归判断左指针的左节点与右指针的右节点以及左指针的右节点与右指针的左节点的对称性</li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="广度优先搜索-1"><a href="#广度优先搜索-1" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">bfs</span><span class="params">(TreeNode p, TreeNode q)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">null</span> == p &amp;&amp; <span class="literal">null</span> == q) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">null</span> == p || <span class="literal">null</span> == q) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> p.val == q.val &amp;&amp; bfs(p.left, q.right) &amp;&amp; bfs(p.right, q.left);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><ul><li><a href="https://leetcode.cn/problems/dui-cheng-de-er-cha-shu-lcof/">剑指 Offer 28. 对称的二叉树 - 力扣（LeetCode）</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;广度优先搜索&lt;/li&gt;
+&lt;li&gt;递归&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="BFS" scheme="https://pingpinggray.top/tags/BFS/"/>
+    
+    <category term="Recursion" scheme="https://pingpinggray.top/tags/Recursion/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop-Yarn</title>
+    <link href="https://pingpinggray.top/post/36f328db.html"/>
+    <id>https://pingpinggray.top/post/36f328db.html</id>
+    <published>2023-03-18T11:42:37.000Z</published>
+    <updated>2023-03-18T16:25:15.902Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>一个资源调度平台，负责为运算程序提供服务器运算资源，相当于一个分布式的操作系统平台。</li></ul><span id="more"></span><h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><h2 id="ResourceManager（RM）"><a href="#ResourceManager（RM）" class="headerlink" title="ResourceManager（RM）"></a>ResourceManager（RM）</h2><ul><li><p>独立的<strong>守护进程</strong>。</p></li><li><p>由 Scheduler 和 ApplicationsMaster（ASM） 组成。</p></li><li><p>处理 Client 请求。</p></li><li><p>监控 NodeManger。</p></li><li><p>启动&#x2F;监控 AppliacationMaster。</p></li><li><p>资源的分配与调度。</p></li></ul><h2 id="NodeManager（NM）"><a href="#NodeManager（NM）" class="headerlink" title="NodeManager（NM）"></a>NodeManager（NM）</h2><ul><li>每个节点对于一个 NodeManager，管理单个节点的资源。</li><li>处理来自 ResourceManager 的命令。</li><li>处理来自 ApplicationMaster 的命令。</li><li>监控节点状态、资源使用情况和 Container 运行情况，并定期回报给 ResourceManager。</li><li>类似 TaskTracker。</li></ul><h2 id="ApplicationMaster（AM）"><a href="#ApplicationMaster（AM）" class="headerlink" title="ApplicationMaster（AM）"></a>ApplicationMaster（AM）</h2><ul><li><p>每一个提交的 Job 都由一个与之对应的 ApplicationMaster 来管理。</p></li><li><p>负责数据的切片。</p></li><li><p>为应用程序申请资源并分配给内部任务。</p></li><li><p>任务的监控与容错。</p></li></ul><h2 id="Container"><a href="#Container" class="headerlink" title="Container"></a>Container</h2><ul><li>是资源的抽象。</li><li>封装了某个节点上的多维度资源，例如内存、CPU、磁盘、网络等。</li></ul><h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/image-20230318143430711.png" alt="image-20230318143430711"></p><ol><li>Client 向 RM 提交 Job，RM 会返回一个 ApplicationID 作为回应。</li><li>RM 根据从 Client 的 NM 收集的资源信息，调度一个合适的 NM，来启动一个 Container（常被称为 container0）以运行 AM 实例。</li><li>AM 创建成功后向 RM 中的 ASM 注册自己。</li><li>AM 注册成功后，会对数据进行切分，然后向 RM 申请资源，以 Container 的形式，RM 会根据调度策略提供资源。</li><li>AM 申请到资源成功后，会与 NM 通信，请求启动任务。</li><li>NM 接收到 AM 的请求后，根据 Job 提供的信息，启动对应的 Task。</li><li>启动后的每个 Task 会定时向 AM 提供自己的状态信息和执行的进度。</li><li>运行完成后 AM 会向 ASM 注销和关闭自己，AM 会释放相应的 Container。</li></ol><h1 id="资源调度器"><a href="#资源调度器" class="headerlink" title="资源调度器"></a>资源调度器</h1><h2 id="FIFO-Schedule-（先进先出调度器）"><a href="#FIFO-Schedule-（先进先出调度器）" class="headerlink" title="FIFO Schedule （先进先出调度器）"></a>FIFO Schedule （先进先出调度器）</h2><h2 id="Capacity-Scheduler（容量调度器）"><a href="#Capacity-Scheduler（容量调度器）" class="headerlink" title="Capacity Scheduler（容量调度器）"></a>Capacity Scheduler（容量调度器）</h2><ul><li>支持<strong>多队列</strong>，每个队列可配置一定的资源量，每个队列采用FIFO调度策略。</li><li>为了防止同一个用户的作业独占队列中的资源，该调度器会对同一用户提交的作业所占资源量进行限定。<ol><li>计算每个队列中正在运行的任务数与其应该分得的计算资源之间的比值，选择一个该比值最小的队列——最闲的。</li><li>按照作业优先级和提交时间顺序，同时考虑用户资源量限制和内存限制对队列内任务排序。</li></ol></li></ul><h2 id="Fair-Scheduler（公平调度器）"><a href="#Fair-Scheduler（公平调度器）" class="headerlink" title="Fair Scheduler（公平调度器）"></a>Fair Scheduler（公平调度器）</h2><ul><li>支持<strong>多队列多用户</strong>，每个队列中的资源量可以配置，同一队列中的作业<strong>公平共享</strong>队列中所有资源。</li><li>在资源有限的情况下，每个 Job 理想情况下获得的计算资源与实际获得的计算资源存在一种差距，这个差距就叫做<strong>缺额</strong>。在同一个队列中，Job 的资源<strong>缺额越大</strong>，越先获得资源优先执行，作业是按照缺额的高低来先后执行的。</li></ul><h1 id="任务的推测执行"><a href="#任务的推测执行" class="headerlink" title="任务的推测执行"></a>任务的推测执行</h1><ul><li>作业完成时间取决于最慢的任务完成时间。</li></ul><h2 id="执行机制"><a href="#执行机制" class="headerlink" title="执行机制"></a>执行机制</h2><ul><li>发现较慢的任务，比如运行速度远慢于任务平均速度。为其启动一个<strong>备份任务</strong>，同时运行。采用先运行完的结果。</li></ul><h2 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h2><ul><li>每个 Task 只能有一个备份任务。</li><li>当前 Job 已完成的 Task 比例必须不小于 0.05</li></ul><h2 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h2><ul><li><code>mapreduce.map.speculative</code> &#x3D; true</li></ul><h2 id="例外情况"><a href="#例外情况" class="headerlink" title="例外情况"></a>例外情况</h2><ul><li>Task 间存在严重的负载倾斜</li><li>特殊 Task，比如向数据库中写数据。</li></ul><h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><ul><li><p>假设某一时刻，Task 执行进度为 <code>progress</code>,则可通过一定的算法推测出该任务的最终完成时刻<code>estimateEndTime</code>。另一方面，如果此刻为该 Task 启动一个备份 Task，则可推断出它可能的完成时刻 estimateEndTime&#96;。</p></li><li><p>总是选择为 estimateEndTime-estimateEndTime’ 差值最大的 Task 启动备份Task。</p></li><li><p>为了防止大量 Task 同时启动备份 Task 造成的资源浪费，每个作业设置了同时启动的备份任务数目上限。</p></li><li><p>推测执行机制实际上采用了经典的优化算法：<strong>空间换时间</strong>，它同时启动多个相同任务处理相同的数据，并让这些任务<strong>竞争</strong>以缩短数据处理时间，这种方法需要占用更多的计算资源。在集群资源紧缺的情况下，应合理使用该机制，争取在多用少量资源的情况下，减少作业的计算时间。</p></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;一个资源调度平台，负责为运算程序提供服务器运算资源，相当于一个分布式的操作系统平台。&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="Big Data" scheme="https://pingpinggray.top/categories/Tech/Big-Data/"/>
+    
+    
+    <category term="Internship Experience" scheme="https://pingpinggray.top/tags/Internship-Experience/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop-MapReduce</title>
+    <link href="https://pingpinggray.top/post/b2b0389b.html"/>
+    <id>https://pingpinggray.top/post/b2b0389b.html</id>
+    <published>2023-03-17T10:44:24.000Z</published>
+    <updated>2023-03-18T16:25:15.900Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ul><li><p>一个分布式运算程序的编程框架，是用户开发“基于Hadoop的数据分析应用”的核心框架。 </p></li><li><p>核心功能是将用户编写的业务逻辑代码和自带默认组件整合成一个完整的分布式运算程序，并发运行在一个Hadoop集群上。</p></li></ul><span id="more"></span><h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul><li>易于编程：简单的实现一些接口，就可以完成一个分布式程序，这个分布式程序可以分布到大量廉价的PC机器上运行。也就是说你写一个分布式程序，跟写一个简单的串行程序是一模一样的。</li><li>良好的扩展性：当你的计算资源不能得到满足的时候，你可以通过简单的增加机器来扩展它的计算能力。</li><li>高容错性：设计的初衷就是使程序能够部署在廉价的 PC 机器上，这就要求它具有很高的容错性。比如其中一台机器挂了，它可以把上面的计算任务转移到另外一个节点上运行，这个过程不需要人工参与。</li><li>适合PB级以上海量数据的离线处理可：以实现上千台服务器集群并发工作，提供数据处理能力。</li></ul><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul><li>不擅长实时计算：无法在毫秒或者秒级内返回结果。</li><li>不擅长流式计算：输入数据集是静态的，不能动态变化，这是由自身的设计特点决定的。</li><li>多任务耗时：由于每执行一次任务后，结果都会存储磁盘中，多次操作会增大 IO 开销，这是由自身的设计特点决定的。</li><li>不擅长 DAG (有向图) 计算：没有相应的流程优化。</li></ul><h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><h2 id="MrAppMaster"><a href="#MrAppMaster" class="headerlink" title="MrAppMaster"></a>MrAppMaster</h2><ul><li>负责整个程序的<strong>过程调度</strong>及<strong>状态协调</strong>。</li></ul><h2 id="MapTask"><a href="#MapTask" class="headerlink" title="MapTask"></a>MapTask</h2><ul><li>负责 Map 阶段的整个数据处理流程。</li></ul><h3 id="工作机制"><a href="#工作机制" class="headerlink" title="工作机制"></a>工作机制</h3><ol><li>Read 阶段：通过用户编写的 RecordReader，从 InputSplit 中解析键值对。</li><li>Map 阶段：将解析出的 key&#x2F;value 交给用户编写 map() 函数处理，并产生一系列新的 key&#x2F;value。</li><li>Collect 阶段：在用户编写 map()函数中，当数据处理完成后，一般会调用 <code>OutputCollector.collect()</code> 输出结果。在该函数内部，它会将生成的 key&#x2F;value 分区（调用 Partitioner），并写入一个环形内存缓冲区中。</li><li>Spill 阶段：即“溢写”，当环形缓冲区满后，MapReduce 会将数据写到本地磁盘上， 生成一个临时文件。需要注意的是，将数据写入本地磁盘之前，先要对数据进行一次本地排序，并在必要时对数据进行合并、压缩等操作。<ol><li>利用快速排序算法对缓存区内的数据进行排序，排序方式是，先按照分区编号进行排序，然后按照 key 进行排序。</li><li>按照分区编号由小到大依次写入任务工作目录下的临时文件 <code>output/spillN.out</code>（N 表示当前溢写次数）中。如果用户设置了 Combiner，则写入文件之前，对每个分区中的数据进行一次聚集操作。 </li><li>将分区数据的元信息写到内存索引数据结构 <code>SpillRecord</code> 中，包括在临时文件中的偏移量、压缩前数据大小和压缩后数据大小。如果当前内存索引大小超过 1MB，则将内存索引写到文件 <code>output/spillN.out.index</code> 中。</li></ol></li><li>Combine 阶段：当所有数据处理完成后，将所有临时文件合并成一个大文件，保存到文件 <code>output/file.out</code> 中，同时生成相应的索引文件 <code>output/file.out.index</code>。 文件合并以分区为单位。对于某个分区，它将采用<strong>多轮递归合并</strong>的方式。每轮合并 <code>io.sort.factor</code>（默认 10）个文件，并将产生的文件重新加入待合并列表中，对文件排序后，重复以上过程，直到最终得到一个大文件。 让每个 MapTask 最终只生成一个数据文件，可避免同时打开大量文件和同时读取大量小文件产生的随机读取带来的开销。</li></ol><h3 id="并行度"><a href="#并行度" class="headerlink" title="并行度"></a>并行度</h3><ul><li>由切片数量决定</li></ul><h2 id="ReduceTask"><a href="#ReduceTask" class="headerlink" title="ReduceTask"></a>ReduceTask</h2><ul><li>负责 Reduce 阶段的整个数据处理流程。</li></ul><h3 id="工作机制-1"><a href="#工作机制-1" class="headerlink" title="工作机制"></a>工作机制</h3><ol><li>Copy 阶段：从各个 MapTask 上远程拷贝一片数据，并针对某一片数据，如果其大小超过一定阈值，则写到磁盘上，否则直接放到内存中。</li><li>Merge 阶段：在远程拷贝数据的同时，ReduceTask 启动了<strong>两个后台线程</strong>对内存和磁盘上的文件进行合并，以防止内存使用过多或磁盘上文件过多。</li><li>Sort 阶段：按 key 进行聚合。由于各个 MapTask 已经实现对自己的处理结果进行了局部排序，因此只需对所有数据进行<strong>一次归并排序即</strong>可。</li><li>Reduce 阶段：reduce() 函数将计算结果写到 HDFS 上。</li></ol><h3 id="并行度-1"><a href="#并行度-1" class="headerlink" title="并行度"></a>并行度</h3><ul><li>默认为 1，可手动设置</li><li>要考虑业务逻辑需求，有些情况下，需要计算全局汇总结果，就只能有 1 个ReduceTask</li><li>如果分区数不是 1，但是 并行度为 1，则不会执行分区过程，因为在 MapTask 中，执行分区的前提是先判断 ReduceNum 个数是否大于 1。不大于 1 则不执行。</li></ul><h2 id="JobClient"><a href="#JobClient" class="headerlink" title="JobClient"></a>JobClient</h2><ul><li>作业与集群交互的主要接口，提供了提交作业、跟踪其进度、访问组件任务的报告&#x2F;日志的功能，获取集群状态信息等工具。</li></ul><h2 id="ObTracker"><a href="#ObTracker" class="headerlink" title="ObTracker"></a>ObTracker</h2><ul><li>对应 NameNode，后台服务进程，负责监听并接收各个 TaskTracker 发送的心跳信息，包括资源使用情况和任务运行情况等信息；同时有容错和为任务调度提供决策依据的功能，其中作业控制模块，负责作业的分解和状态监控包括 TaskTracker 状态监控、作业状态监控和任务状态监控。</li></ul><h2 id="TaskTracker"><a href="#TaskTracker" class="headerlink" title="TaskTracker"></a>TaskTracker</h2><ul><li>对应 DataNode，JobTracker 和 Task 之间的桥梁：一方面，从 JobTracker 接收并执行各种命令：运行任务、提交任务、杀死任务等；另一方面，将本地节点上各个任务的状态通过心跳周期性汇报给 JobTracker。</li></ul><h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><ul><li>运算程序往往需要分成至少 2 个阶段。</li><li>第一个阶段的 MapTask 并发实例，完全并行运行，互不相干。</li><li>第二个阶段的 ReduceTask 并发实例互不相干，但是他们的数据依赖于上一个阶段的所有 MapTask 并发实例的输出。</li><li>编程模型只能包含一个 Map 阶段和一个 Reduce 阶段，如果用户的业务逻辑非常复杂，那就只能多个 MapReduce 程序，<strong>串行运行</strong>。</li></ul><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/70-20210323213006589.png" alt="MR"></p><ol><li>JobClient 向 JobTracker 申请可用Job ID。</li><li>JobClient 将运行 Job 所需要的资源拷贝到 HDFS 中，包括 MapReduce 程序打包的JAR文件、配置文件和客户端计算所得的输入切片信息，这些文件都存放在 JobTracker 专门为该作业创建的文件夹中，文件夹名为该作业的 Job ID。JAR文件默认会有10个副本（mapred.submit.replication）。</li><li>JobClient 向 JobTracker 提交 Job，JobTracker 接收到作业后，将其放在一个作业队列里，等待作业调度器对其进行调度。</li><li>当调度到该作业时，会根据输入切片信息为每个切片创建一个 MapTask，并将其分配给 TaskTracker 执行。</li><li>TaskTracker 会根据主机核的数量和内存的大小有分配固定数量的 map 槽和 reduce 槽：map 的任务分配遵循<strong>数据本地化（Data-Local）</strong>原则，将 map 任务分配给含有该 map 处理的数据块的 TaskTracker 上，同时将资源复制到该 TaskTracker 上来运行，这叫“<strong>运算移动，数据不移动</strong>”；分配 reduce 任务时则不考虑数据本地化。</li><li>JobTracker 初始化 Job。</li><li>JobTracker 从 HDFS 中获取输入切片。</li><li>与此同时，TaskTracker不断地向JobTracker汇报心跳信息，心跳中还携带着很多的信息，比如当前 map 任务完成的进度等。当 JobTracker 收到作业的最后一个任务完成信息时，便把该作业设置成“成功”。当 JobClient 查询状态时，如果它得知任务已完成，便显示一条消息给用户。</li><li>TaskTracker 得到 JobTracker 分配的任务后，从 HDFS 获取 Job 资源，若数据是本地的，不需拷贝数据。</li><li>TaskTracker 启动</li><li>JVM 子进程运运行</li></ol><h2 id="Input-Split-输入切片"><a href="#Input-Split-输入切片" class="headerlink" title="Input Split (输入切片)"></a>Input Split (输入切片)</h2><ul><li>数据切片只是在逻辑上对输入进行分片，并不会在磁盘上将其切分成片进行存储。</li><li>默认情况下，切片大小等于数据块大小。</li><li>输入分片（input split）只记录切片切片的<strong>元数据信息</strong>，例如起始位置、长度、所在节点列表等，并非数据本身。</li><li>切片时不考虑整体，而是逐个针对每个文件单独切片。</li><li>每个分片分配一个 MapTask 处理。</li></ul><h3 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h3><ul><li><code>mapreduce.input.fileinputformat.split.minsize</code> &#x3D; 1</li><li><code>mapreduce.input.fileinputformat.split.maxsize</code> &#x3D; <code>Long.MAXValue</code></li><li>切片大小 &#x3D; Math.max(minSize,Math.min(maxSize,blockSize));</li></ul><h2 id="Map-阶段"><a href="#Map-阶段" class="headerlink" title="Map 阶段"></a>Map 阶段</h2><p>就是程序员编写好的map函数了，因此map函数效率相对好控制，而且一般map操作都是本地化操作也就是在数据存储节点上进行；</p><h2 id="Combiner-阶段"><a href="#Combiner-阶段" class="headerlink" title="Combiner 阶段"></a>Combiner 阶段</h2><ul><li><p>Combiner 组件的父类是 Reducer，区别在于运行位置，Combiner 在每个MapTask 所在的节点运行。</p></li><li><p>目的在于对每个 MapTask 的输出进行<strong>局部合并</strong>，以<strong>减少网络传输量</strong>。</p></li><li><p>使用原则是不会影响到最终的业务输入，Combiner 的输出键值对应与 Reducer 的输出键值对对应。例如：只是求总数，最大值，最小值时可以使用 combiner，但做平均值计算时，最终的计算结果就会出错。</p></li></ul><h2 id="Shuffle-阶段"><a href="#Shuffle-阶段" class="headerlink" title="Shuffle 阶段"></a>Shuffle 阶段</h2><ul><li>shuffle 的本意是洗牌，把一组有一定规律的数据尽量打散转换成一组无规律的数据，而 MapReduce 中的 shuffle 更像是洗牌的逆过程，把一组无规律的数据尽量转换成一组<strong>具有一定规律的数据</strong>。</li></ul><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/d7cab57d19fe44908d931805e87e4894.jpeg" alt="img" style="zoom:67%;" /><ol><li>MapTask 收集输出的键值对，放到内存缓冲区中。</li><li>从内存缓冲区不断溢出本地磁盘文件，可能会溢出多个文件。</li><li>多个溢出文件会被合并成大的溢出文件。</li><li>在溢出过程及合并的过程中，都要调用 <code>Partitioner</code> 的 <code>getPartition()</code> 方法进行分区和针对 key 进行排序 。</li><li>ReduceTask 根据自己的分区号，去各个 MapTask 机器上取相应的结果分区数据。</li><li>ReduceTask 会通过<strong>归并排序</strong>将这些数据再合并成大文件。</li></ol><h4 id="参数设置-1"><a href="#参数设置-1" class="headerlink" title="参数设置"></a>参数设置</h4><ul><li>缓冲区大小会影响到 MapReduce 程序的执行效率，原则上说，缓冲区越大， 磁盘 io 的次数越少，执行速度就越快。</li><li><code>io.sort.mb</code> &#x3D; 1</li></ul><h2 id="Partitioner（分区）"><a href="#Partitioner（分区）" class="headerlink" title="Partitioner（分区）"></a>Partitioner（分区）</h2><ul><li>默认分区时根据 key 的 hashCode 对 ReduceTasks 的个数取模得到，用户无法控制存储分区位置。</li></ul><h2 id="Sort-排序"><a href="#Sort-排序" class="headerlink" title="Sort (排序)"></a>Sort (排序)</h2><ul><li><p>MapTask 和 ReduceTask 均会对数据按照 key 进行排序。</p></li><li><p>该操作属于 Hadoop 的默认行为，任何数据均会被排序，而不管逻辑上是否需要。</p></li><li><p>默认排序是按照字典顺序排序，使用<strong>快速排序</strong>。</p></li><li><p>对于 MapTask，它会将处理的结果暂时放到<strong>环形缓冲区</strong>中，当环形缓冲区使用率达到一定阈值后，再对缓冲区中的数据进行一次快速排序，并将这些有序数据<strong>溢写</strong>到磁盘上。当数据处理完毕后，它会对磁盘上所有文件进行<strong>归并排序</strong>。</p></li><li><p>对于Reduce Task,它从每个 MapTask 上远程拷贝相应的数据文件，如果文件大小超过一定阈值（默认 80），则&#x3D;&#x3D;进行一次排序&#x3D;&#x3D;，并溢写磁盘，否侧存储在内存中。如果内存中文件大小或者数目超过一定阈值，则进行一次合并，并将数据溢写到磁盘上；如果磁盘上文件数目达到一定阈值，则进行一次<strong>归并排序</strong>以生成一个更大文件。当所有数据拷贝完毕后，ReduceTask 统一对内存和磁盘上的所有数据进行一次<strong>归并排序</strong>。</p></li></ul><h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><ul><li>部分排序：根据输入记录的键对数据集排序，保证输出的每个文件内部有序。</li><li>全排序：最终输出结果只有一个文件，且文件内部有序。实现方式是只设置一个 ReduceTask。但该方法在处理大型文件时效率极低，因为一台机器处理所有文件，完全丧失了 MapReduce 所提供的并行架构。</li><li>辅助排序：GroupingComparator 分组，在 Reduce 端对 key 进行分组。当接收的 key 为 bean 对象时，比较其中的若干字段进行排序。</li><li>二次排序：在自定义排序过程中，如果 <code>compareTo</code> 中的判断条件为两个即为二次排序。</li></ul><h2 id="Spill（溢写）"><a href="#Spill（溢写）" class="headerlink" title="Spill（溢写）"></a>Spill（溢写）</h2><ul><li>当排序完成，便开始把数据刷到磁盘，刷磁盘的过程以分区为单位，一个分区写完，写下一个分区，分区内数据有序，最终实际上会多次溢写，然后生成多个文件。</li><li>或者如果缓冲区的内存达到了阀值的80%时候，这个守护线程也会把内容写到磁盘上，另外的20%内存可以继续写入要写进磁盘的数据。</li></ul><h2 id="Merge-合并"><a href="#Merge-合并" class="headerlink" title="Merge(合并)"></a>Merge(合并)</h2><ul><li>spill 会生成多个小文件，对于 Reduce 端拉取数据是相当低效的，那么这时候就有了 merge 的过程，合并的过程也是同分片的合并成一个片段（segment），最终所有的 segment 组装成一个最终文件。</li></ul><h2 id="Reduce阶段"><a href="#Reduce阶段" class="headerlink" title="Reduce阶段"></a>Reduce阶段</h2><ul><li>和map函数一样也是程序员编写的，最终结果是存储在hdfs上的。</li></ul><h3 id="拉取拷贝（fetch-copy）"><a href="#拉取拷贝（fetch-copy）" class="headerlink" title="拉取拷贝（fetch copy）"></a>拉取拷贝（fetch copy）</h3><ul><li>Reduce 向各个 Map 任务拉取对应数据，这个过程都是以 Http 协议完成，每个 Map 节点都会启动一个常驻的 <strong>HTTP server</strong> 服务，通过其拉取数据。</li><li>这个过程完全通过<strong>网络传输</strong>，是一个非常重量级的操作。</li></ul><h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><h2 id="性能瓶颈"><a href="#性能瓶颈" class="headerlink" title="性能瓶颈"></a>性能瓶颈</h2><ul><li>计算机性能：CPU、内存、磁盘、网络</li><li>数据倾斜</li><li>Map、Reduce 个数设置不合理</li><li>前置 Task 运行过长，导致后续 Task 长时间等待</li><li>小文件过多</li><li>大量的不可分块的超大文件</li><li>Spill 次数过多</li><li>Merge 次数过多</li></ul><h2 id="数据输入"><a href="#数据输入" class="headerlink" title="数据输入"></a>数据输入</h2><p>框架默认的 <code>TextInputFormat</code> 切片机制对文件进行切片，不管文件多小，都会是一个单独的切片，都会交给一个 MapTask。如果有大量小文件，就会产生大量的 MapTask，导致处理效率极其低下。</p><ul><li>Hadoop Archive：高效地将小文件放入 HDFS 块中的文件存档工具，它能够将多个小文件打包成一个 HAR 文件，这样就减少了 NameNode 的内存使用。 </li><li>Sequence File：由一系列的二进制键值对组成，如果 key 为文件名，value 为文件内容，则可以将大批小文件合并成一个大文件。</li><li>CombineFilelnputFormat：用于将多个文件合并成一个单独的切片，会考虑数据的存储位置。</li><li>开启JVM重用：对于大量小文件 Job,可以减少 45% 运行时间。开启重用后，一个 Task 运行完毕后，JVM 会继续运行其他 Task。设置 <code>mapreduce.job.jvm.numtasks</code> 在 10-20 之间。</li></ul><h2 id="Map-阶段-1"><a href="#Map-阶段-1" class="headerlink" title="Map 阶段"></a>Map 阶段</h2><ul><li>减少谥写次数：通过调整<code>io.sort.mb</code>及<code>sort.spill.percent</code>，增大触发溢写的内存上限，减少溢写次数，从而减少磁盘 IO。</li><li>减少合并次数：通过调整&#96;&#96;io.sort.factor&#96;，增大触发合并的文件数目，减少合并的次数，从而缩短处理时间。</li><li>在Map之后，不影响业务逻辑前提下，先进行 Combines 处理，减少I&#x2F;O。</li></ul><h2 id="Reduce-阶段"><a href="#Reduce-阶段" class="headerlink" title="Reduce 阶段"></a>Reduce 阶段</h2><ul><li>合理设置Map和Reduce数：两个都不能设置太少，也不能设置太多。太少，会导致 Task 等待，延长处理时间；太多，会导致 Task 间竞争资源，造成处理超时等错误。</li><li>设置Map、Reduce:共存：调整<code>slowstart.completedmaps</code>，使 Map 运行到一定程度后，Reduce 也开始运行，减少 Reduce 的等待时间。</li><li>规避使用 Reduce：因为 Reduce 在用于<strong>连接数据集</strong>的时候将会产生大量的网络消耗。</li><li>合理设置 Reduce 端的 Buffer：默认情况下，数据达到一个阈值，Buffer 中的数据就会写入磁盘，然后 Reduce 再从磁盘中获得所有的数据。也就是说，Buffer 和 Reduce 是没有直接关联的。设置 <code>mapreduce.reduce.input.buffer.percent</code>（默认为 0.0），使得 Buffer 中的一部分数据可以直接输送到 Reduce,减少 IO 开销。当值大于 0 的候，会保留指定比例的内存读 Buffer 中的数据直接发送给 Reduce 使用。</li></ul><h2 id="I-x2F-O-传输"><a href="#I-x2F-O-传输" class="headerlink" title="I&#x2F;O 传输"></a>I&#x2F;O 传输</h2><h3 id="数据压缩"><a href="#数据压缩" class="headerlink" title="数据压缩"></a>数据压缩</h3><ul><li><p>能够有效减少 HDFS 的读写字节数，提高网络带宽和磁盘空间的效率。在运行 MR时，I&#x2F;O操作、网络数据传输、Shuffle 和 Merge 要花大量的时间，尤其是数据规模很大和工作负载密集的情况下。</p></li><li><p>可以在任意 MapReduce 阶段启用。</p></li><li><p>但同时增加了 CPU 运算负担，运用不当也可能降低性能。</p></li><li><p>基本原则：运算密集型的 Job：少用压缩；I&#x2F;O 密集型的 Job：多用压缩。</p></li><li><p>使用 <code>SequenceFile</code> 二进制文件。</p></li></ul><h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><ul><li><code>Writable</code>：Java的序列化是一个重量级序列化框架（Serializable)，会附带很多额外的信息（各种校验信息，Header,继承体系等)，不便于在网络中高效传输。所以，Hadoop自己开发了一套序列化机制。</li></ul><h4 id="流程-1"><a href="#流程-1" class="headerlink" title="流程"></a>流程</h4><ol><li><p>实现 Writable 接口</p></li><li><p>必须有空参构造函数，因为在反序列化时，需要反射调用空参构造函数</p></li><li><p>重写序列号方法与反序列化方法，序列化的顺序和反序列化的顺序必须完全一致</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Override</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">write</span><span class="params">(DataOutput out)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">  out.writeLong(upFlow);</span><br><span class="line">  out.writeLong(downFlow);</span><br><span class="line">  out.writeLong(sumFlow);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Override</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">readFields</span><span class="params">(DataInput in)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">  upFlow = in.readLong();</span><br><span class="line">  downFlow = in.readLong();</span><br><span class="line">  sumFlow = in.readLong();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><h2 id="数据倾斜"><a href="#数据倾斜" class="headerlink" title="数据倾斜"></a>数据倾斜</h2><p>数据频率倾斜：某一区域的数据量要远远大于其他区域。</p><p>数据大小倾斜：部分数据的大小要远远大于平均值。</p><ul><li>抽样和范围分区：可以通过对原始数据进行抽样得到的结果集来<strong>预设分区边界值</strong>。</li><li>自定义分区：基于输出键进行自定义分区。</li><li>Combine 使用：Combine可以大量地减小数据倾斜。在可能的情况下，Combine的目的就是聚合并精简数据。</li><li>采用Map Join：尽量避免Reduce Join。</li></ul><h1 id="容错机制"><a href="#容错机制" class="headerlink" title="容错机制"></a>容错机制</h1><h2 id="JobTracker"><a href="#JobTracker" class="headerlink" title="JobTracker"></a>JobTracker</h2><p>无容错机制，挂掉之后需要人工介入，重启。</p><p>用户可通过配置一些参数，以便JobTracker重启后，让作业恢复运行，这样JobTracker重启前，会在histrory log中记录各个作业的运行状态，这样在JobTracker重启后，重新提交这些作业，并只对未完成的task进行重新调度。</p><h2 id="TaskTracker-1"><a href="#TaskTracker-1" class="headerlink" title="TaskTracker"></a>TaskTracker</h2><p>当超过参数超过的时间间隔时未向jobTracker汇报心跳，则认为它死亡，并将其从调度池中删除；</p><p>还可设置一些tasktracker host，表示这些节点不允许接入集群，也不会被分配task。</p><h2 id="Job"><a href="#Job" class="headerlink" title="Job"></a>Job</h2><p>当一个作业在某个tasktracker上失败的task个数超过设定值，则该tasktracker被加到该job的黑名单中</p><h2 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h2><p>每个map Task，每个reduce task都有最大尝试次数</p><h3 id="参数设置-2"><a href="#参数设置-2" class="headerlink" title="参数设置"></a>参数设置</h3><ul><li><code>mapreduce.map.maxattempts</code> &#x3D; 4</li><li><code>mapreduce.reduce.maxattemp</code> &#x3D; 4</li><li><code>mapreduce.task.timeout</code> &#x3D; 600000 ms</li></ul><h2 id="Record"><a href="#Record" class="headerlink" title="Record"></a>Record</h2><p>可设置跳过坏记录的条数。</p><h2 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h2><p>用户可配置多个磁盘目录，将map task中间结果分到不同的磁盘上，增强容错性。map task临时结果将被轮询写到这些目录上，以避免某个磁盘文件目录数据过多。<br>也可每次选择数据最少的磁盘目录写入，采样小顶堆等。</p><h1 id="FileSystem-Cache"><a href="#FileSystem-Cache" class="headerlink" title="FileSystem.Cache"></a>FileSystem.Cache</h1><ul><li><p>某种程度上相当于搞了个全局变量。</p></li><li><p>如果不使用 cache，每个FileSystem的实例都会建立一个到 NamenNde 的连接，而在大数据计算的场景下，MapReduce&#x2F;Spark 要对 HDFS 进行大量并发的读，不做缓存会造成超量的连接打到 NameNode 上，造成DDOS的效果。</p></li><li><p>但有了 cache 就意味着同一个文件系统的实例被同时使用，如果使用用 try，或者用完之后主动 close，就会导致这个文件系统实例的其它使用方意外出错。</p></li><li><p>因此不要主动 close， FileSystem 有一个 shutdown 的 hook 会负责最后关掉这些 FileSystem，以防止泄漏。</p></li><li><p>又因为缓存的粒度是文件系统级别的，一般的应用文件系统的个数不应该太多，所以不会是个大问题。</p></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;一个分布式运算程序的编程框架，是用户开发“基于Hadoop的数据分析应用”的核心框架。 &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;核心功能是将用户编写的业务逻辑代码和自带默认组件整合成一个完整的分布式运算程序，并发运行在一个Hadoop集群上。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="Big Data" scheme="https://pingpinggray.top/categories/Tech/Big-Data/"/>
+    
+    
+    <category term="Internship Experience" scheme="https://pingpinggray.top/tags/Internship-Experience/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>矩阵中的路径</title>
+    <link href="https://pingpinggray.top/post/386d387d.html"/>
+    <id>https://pingpinggray.top/post/386d387d.html</id>
+    <published>2022-10-03T13:53:16.000Z</published>
+    <updated>2022-10-03T23:06:13.424Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>深度优先搜索</li></ul><span id="more"></span><h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><ul><li>任意位置均可作为搜索的起点</li></ul><h3 id="终止条件"><a href="#终止条件" class="headerlink" title="终止条件"></a>终止条件</h3><ul><li>数组越界</li><li>当前位置已访问</li><li>当前字符与目标字符不匹配</li></ul><h3 id="匹配条件"><a href="#匹配条件" class="headerlink" title="匹配条件"></a>匹配条件</h3><ul><li>当前递归次数等于目标字符串长度</li></ul><h3 id="搜索步骤"><a href="#搜索步骤" class="headerlink" title="搜索步骤"></a>搜索步骤</h3><ul><li>标记当前位置为已访问</li><li>递归次数自增</li><li>向当前位置的四个方向继续搜索</li><li>回溯，标记当前位置为未访问</li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="深度优先搜索-1"><a href="#深度优先搜索-1" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j, <span class="type">int</span> idx)</span> &#123;</span><br><span class="line">    <span class="comment">// 如果数组越界、当前位置已访问或当前字符与目标字符不匹配，返回 false</span></span><br><span class="line">    <span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt;= m || j &lt; <span class="number">0</span> || j &gt;= n || visited[i][j] || board[i][j] != word.charAt(idx)) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 递归次数等于目标字符串长度，说明已经匹配到最后一个字符</span></span><br><span class="line">    <span class="keyword">if</span> (idx == word.length() - <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 标记当前位置已访问</span></span><br><span class="line">    visited[i][j] = <span class="literal">true</span>;</span><br><span class="line">    idx++;</span><br><span class="line">    <span class="comment">// 向当前位置的四个方向继续搜索，只要有一个方向能匹配到，就返回 true</span></span><br><span class="line">    <span class="type">boolean</span> <span class="variable">res</span> <span class="operator">=</span> dfs(i + <span class="number">1</span>, j, idx) || dfs(i - <span class="number">1</span>, j, idx) || dfs(i, j + <span class="number">1</span>, idx) || dfs(i, j - <span class="number">1</span>, idx);</span><br><span class="line">    <span class="comment">// 回溯，将当前位置标记为未访问</span></span><br><span class="line">    visited[i][j] = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/ju-zhen-zhong-de-lu-jing-lcof/">剑指 Offer 12. 矩阵中的路径 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;深度优先搜索&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="DFS" scheme="https://pingpinggray.top/tags/DFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>检查二进制字符串字段</title>
+    <link href="https://pingpinggray.top/post/d8f51433.html"/>
+    <id>https://pingpinggray.top/post/d8f51433.html</id>
+    <published>2022-10-02T17:47:31.000Z</published>
+    <updated>2022-10-02T17:54:50.125Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>方法一：模拟</li><li>方法二：字符串</li></ul><span id="more"></span><h2 id="模拟"><a href="#模拟" class="headerlink" title="模拟"></a>模拟</h2><ul><li>没有前导零，遍历到出现 0 后，检查后续是否有 1出现</li></ul><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul><li>由于没有先导零，则 0 后必不能出现 1，直接判断是否包含子串 01 即可</li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="模拟-1"><a href="#模拟-1" class="headerlink" title="模拟"></a>模拟</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历直到出现 0，当前连续 1 字段结束</span></span><br><span class="line"><span class="keyword">while</span> (idx &lt; len) &#123;</span><br><span class="line">    <span class="keyword">if</span> (s.charAt(idx) == CHAR_0) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    idx++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 若再出现字段 1，则不符合要求</span></span><br><span class="line"><span class="keyword">while</span> (idx &lt; len) &#123;</span><br><span class="line">    <span class="keyword">if</span> (s.charAt(idx) == CHAR_1) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    idx++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br></pre></td></tr></table></figure><h2 id="字符串-1"><a href="#字符串-1" class="headerlink" title="字符串"></a>字符串</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> !s.contains(<span class="string">&quot;01&quot;</span>);</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/check-if-binary-string-has-at-most-one-segment-of-ones/">1784. 检查二进制字符串字段 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;方法一：模拟&lt;/li&gt;
+&lt;li&gt;方法二：字符串&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="Simulation" scheme="https://pingpinggray.top/tags/Simulation/"/>
+    
+    <category term="Str" scheme="https://pingpinggray.top/tags/Str/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Jupyter Notebook-Configuration</title>
+    <link href="https://pingpinggray.top/post/e1e8753d.html"/>
+    <id>https://pingpinggray.top/post/e1e8753d.html</id>
+    <published>2022-10-02T16:44:38.000Z</published>
+    <updated>2022-10-03T09:09:13.948Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span><h1 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h1><h2 id="文件地址查找"><a href="#文件地址查找" class="headerlink" title="文件地址查找"></a>文件地址查找</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --generate-config</span><br></pre></td></tr></table></figure><h2 id="默认工作目录修改"><a href="#默认工作目录修改" class="headerlink" title="默认工作目录修改"></a>默认工作目录修改</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.NotebookApp.notebook_dir = &#x27;&#x27;</span><br></pre></td></tr></table></figure><h1 id="Conda-环境关联"><a href="#Conda-环境关联" class="headerlink" title="Conda 环境关联"></a>Conda 环境关联</h1><h2 id="nb-conda-安装"><a href="#nb-conda-安装" class="headerlink" title="nb_conda 安装"></a>nb_conda 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install nb_conda</span><br></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ul><li>重启后可在主页找到 <code>Conda</code> 标签</li><li>可在每一个 Notebook 中通过 <code>Kernel</code> 条目下的 <code>Change kernel</code> 切换运行环境</li></ul><h1 id="Nbextensions-插件配置"><a href="#Nbextensions-插件配置" class="headerlink" title="Nbextensions 插件配置"></a>Nbextensions 插件配置</h1><h2 id="Nbextensions-安装"><a href="#Nbextensions-安装" class="headerlink" title="Nbextensions 安装"></a>Nbextensions 安装</h2><ul><li>官网：<a href="https://jupyter-contrib-nbextensions.readthedocs.io/en/latest/install.html">Installing jupyter_contrib_nbextensions — jupyter_contrib_nbextensions 0.5.0 documentation (jupyter-contrib-nbextensions.readthedocs.io)</a></li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install jupyter_contrib_nbextensions</span><br><span class="line">jupyter contrib nbextension install --user <span class="comment"># Install javascript and css files</span></span><br></pre></td></tr></table></figure><h2 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h2><ul><li>重启后可在主页找到 <code>Nbextensions</code> 标签</li></ul><h2 id="插件推荐"><a href="#插件推荐" class="headerlink" title="插件推荐"></a>插件推荐</h2><ul><li>Code prettify</li><li>Collapsible Headings</li><li>highlighter</li><li>Hinterland</li><li>Scratchpad</li><li>Table of Contents (2)</li></ul><h1 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h1><h2 id="jupyterthemes-安装"><a href="#jupyterthemes-安装" class="headerlink" title="jupyterthemes 安装"></a>jupyterthemes 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install jupyterthemes</span><br></pre></td></tr></table></figure><h2 id="主题列表查看"><a href="#主题列表查看" class="headerlink" title="主题列表查看"></a>主题列表查看</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jt -l</span><br></pre></td></tr></table></figure><h2 id="主题切换"><a href="#主题切换" class="headerlink" title="主题切换"></a>主题切换</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jt -t &lt;theme_name&gt;</span><br></pre></td></tr></table></figure><h2 id="默认主题恢复"><a href="#默认主题恢复" class="headerlink" title="默认主题恢复"></a>默认主题恢复</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jt -r</span><br></pre></td></tr></table></figure><h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul><li>可自定义字体、样式、宽度、占屏比等</li><li>或与 Nbextensions <strong>插件不兼容</strong></li></ul><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://zhuanlan.zhihu.com/p/166165379">泣血整理，Jupyter Notebook最常用的五大配置技巧 - 知乎 (zhihu.com)</a></li><li><a href="https://zhuanlan.zhihu.com/p/33105153">Jupyter Notebook介绍、安装及使用教程 - 知乎 (zhihu.com)</a></li><li><a href="https://blog.csdn.net/weixin_44015669/article/details/104975271">给！最详版的Jupyter NBextensions 插件介绍_哆啦A梦_i的博客-CSDN博客_jupyter nbextension</a></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+
+&lt;h1 id=&quot;配置文件&quot;&gt;&lt;a href=&quot;#配置文件&quot; class=&quot;headerlink&quot; title=&quot;配置文件&quot;&gt;&lt;/a&gt;配置文件&lt;/h1&gt;&lt;h2 id=&quot;文件地址查找&quot;&gt;&lt;a href=&quot;#文件地址查找&quot; class=</summary>
+      
+    
+    
+    
+    <category term="Software" scheme="https://pingpinggray.top/categories/Software/"/>
+    
+    <category term="Jupyter Notebook" scheme="https://pingpinggray.top/categories/Software/Jupyter-Notebook/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Jupyter Notebook-Installation</title>
+    <link href="https://pingpinggray.top/post/1247f3dd.html"/>
+    <id>https://pingpinggray.top/post/1247f3dd.html</id>
+    <published>2022-10-02T16:43:27.000Z</published>
+    <updated>2022-10-02T17:54:50.123Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Jupyter Notebook是基于网页的用于交互计算的应用程序。其可被应用于全过程计算：开发、文档编写、运行代码和展示结果。</p></blockquote><span id="more"></span><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="通过-pip-安装"><a href="#通过-pip-安装" class="headerlink" title="通过 pip 安装"></a>通过 pip 安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install jupyter</span><br></pre></td></tr></table></figure><h2 id="通过-Anaconda-安装"><a href="#通过-Anaconda-安装" class="headerlink" title="通过 Anaconda 安装"></a>通过 Anaconda 安装</h2><ul><li>Anaconda 已自动安装 Jupyter NoteBook</li></ul><h3 id="Anaconda-下载"><a href="#Anaconda-下载" class="headerlink" title="Anaconda 下载"></a>Anaconda 下载</h3><ul><li>Anaconda 官网：<a href="https://www.anaconda.com/products/distribution">Anaconda | Anaconda Distribution</a></li></ul><h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install jupyter notebook</span><br></pre></td></tr></table></figure><h1 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h1><h2 id="默认启动"><a href="#默认启动" class="headerlink" title="默认启动"></a>默认启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure><h2 id="指定端口启动"><a href="#指定端口启动" class="headerlink" title="指定端口启动"></a>指定端口启动</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook --port &lt;port_number&gt;</span><br></pre></td></tr></table></figure><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul><li><a href="https://zhuanlan.zhihu.com/p/33105153">Jupyter Notebook介绍、安装及使用教程 - 知乎 (zhihu.com)</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Jupyter Notebook是基于网页的用于交互计算的应用程序。其可被应用于全过程计算：开发、文档编写、运行代码和展示结果。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Software" scheme="https://pingpinggray.top/categories/Software/"/>
+    
+    <category term="Jupyter Notebook" scheme="https://pingpinggray.top/categories/Software/Jupyter-Notebook/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>在LR字符串中交换相邻字符</title>
+    <link href="https://pingpinggray.top/post/ed90568f.html"/>
+    <id>https://pingpinggray.top/post/ed90568f.html</id>
+    <published>2022-10-01T17:01:14.000Z</published>
+    <updated>2022-10-01T17:06:01.355Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>双指针</li></ul><span id="more"></span><h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><ul><li>两种交换可视为 L 字符可一直左移，直到碰到 R 字符；R 字符可一直右移，直到碰到 L 字符</li><li>问题转化为两字符的相对位置是否一致</li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="两指针"><a href="#两指针" class="headerlink" title="两指针"></a>两指针</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 双指针同时遍历</span></span><br><span class="line"><span class="keyword">while</span> (i &lt; n &amp;&amp; j &lt; n) &#123;</span><br><span class="line">    <span class="comment">// 找到下一个不为 X 的字符</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt; n &amp;&amp; start.charAt(i) == CHAR_X) &#123;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (j &lt; n &amp;&amp; end.charAt(j) == CHAR_X) &#123;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (i &lt; n &amp;&amp; j &lt; n) &#123;</span><br><span class="line">        <span class="comment">// 如果两个字符不相等，说明顺序不一致</span></span><br><span class="line">        <span class="keyword">if</span> (start.charAt(i) != end.charAt(j)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> <span class="variable">ch</span> <span class="operator">=</span> start.charAt(i);</span><br><span class="line">        <span class="comment">// 字符为 L，i 应小于 j</span></span><br><span class="line">        <span class="keyword">if</span> (ch == CHAR_L &amp;&amp; j &gt; i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 字符为 R，i 应大于 j</span></span><br><span class="line">        <span class="keyword">if</span> (ch == CHAR_R &amp;&amp; j &lt; i) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        i++;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 如果有剩余的非 X 字符，说明顺序不一致</span></span><br><span class="line"><span class="keyword">while</span> (i &lt; n) &#123;</span><br><span class="line">    <span class="keyword">if</span> (start.charAt(i) != CHAR_X) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> (j &lt; n) &#123;</span><br><span class="line">    <span class="keyword">if</span> (end.charAt(j) != CHAR_X) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    j++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/swap-adjacent-in-lr-string/">777. 在LR字符串中交换相邻字符 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;双指针&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="Double Pointer" scheme="https://pingpinggray.top/tags/Double-Pointer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重新格式化电话号码</title>
+    <link href="https://pingpinggray.top/post/319e7fd2.html"/>
+    <id>https://pingpinggray.top/post/319e7fd2.html</id>
+    <published>2022-09-30T18:35:21.000Z</published>
+    <updated>2022-09-30T18:40:44.895Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>字符串</li></ul><span id="more"></span><h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><ul><li><p>正则替换预处理</p></li><li><p>前面的数字分组处理，特殊处理剩余的数字</p></li><li><p>当余数为 1 时，需要与前一组数字合并</p></li><li><p>当余数为 2 时，单组组成一组</p></li><li><p>当余数为 0 时，需要删除末尾多余的 -</p></li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="正则替换"><a href="#正则替换" class="headerlink" title="正则替换"></a>正则替换</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">number = number.replaceAll(<span class="string">&quot;[\\s-]&quot;</span>, <span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure><h2 id="字符串-1"><a href="#字符串-1" class="headerlink" title="字符串"></a>字符串</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 剩下的数字个数</span></span><br><span class="line"><span class="type">int</span> <span class="variable">remain</span> <span class="operator">=</span> n % <span class="number">3</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">group</span> <span class="operator">=</span> n / <span class="number">3</span>;</span><br><span class="line"><span class="comment">// 余数为1，需要与前面的一组合并</span></span><br><span class="line"><span class="keyword">if</span> (remain == <span class="number">1</span>) &#123;</span><br><span class="line">    group--;</span><br><span class="line">    remain += <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; group; i++) &#123;</span><br><span class="line">    sb.append(number, i * <span class="number">3</span>, i * <span class="number">3</span> + <span class="number">3</span>);</span><br><span class="line">    sb.append(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (remain == <span class="number">2</span>) &#123;</span><br><span class="line">    sb.append(number, n - <span class="number">2</span>, n);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (remain == <span class="number">4</span>) &#123;</span><br><span class="line">    sb.append(number, n - <span class="number">4</span>, n - <span class="number">2</span>);</span><br><span class="line">    sb.append(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">    sb.append(number, n - <span class="number">2</span>, n);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 余数为 0，没有剩下的数字，需要去掉最后一个 -</span></span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    sb.deleteCharAt(sb.length() - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/reformat-phone-number/">1694. 重新格式化电话号码 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;字符串&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="Str" scheme="https://pingpinggray.top/tags/Str/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>旋转数组的最小数字</title>
+    <link href="https://pingpinggray.top/post/6e519af2.html"/>
+    <id>https://pingpinggray.top/post/6e519af2.html</id>
+    <published>2022-09-29T19:18:08.000Z</published>
+    <updated>2022-09-29T19:28:50.525Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>二分查找</li></ul><span id="more"></span><h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><ul><li>序列变为分段有序，第一段序列的数值均大于 nums[0]，第二段则反之</li><li>当旋转点使得相同的数值发生分裂，则上述特性失效，故需要预处理，左移右边界</li><li>特殊考虑旋转了 0 个数值的情况，即本身有序</li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="二分查找-1"><a href="#二分查找-1" class="headerlink" title="二分查找"></a>二分查找</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 排除末尾与首位相等的情况</span></span><br><span class="line"><span class="keyword">while</span> (l &lt; r &amp;&amp; numbers[r] == numbers[<span class="number">0</span>]) &#123;</span><br><span class="line">    r--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> l + (r - l) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (numbers[mid] &lt; numbers[<span class="number">0</span>]) &#123;</span><br><span class="line">        r = mid;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 排除本身有序的情况</span></span><br><span class="line"><span class="keyword">return</span> Math.min(numbers[l], numbers[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/">剑指 Offer 11. 旋转数组的最小数字 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;二分查找&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="BinarySearch" scheme="https://pingpinggray.top/tags/BinarySearch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>青蛙跳台阶问题</title>
+    <link href="https://pingpinggray.top/post/77325807.html"/>
+    <id>https://pingpinggray.top/post/77325807.html</id>
+    <published>2022-09-28T14:54:02.000Z</published>
+    <updated>2022-09-28T14:59:09.608Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>动态规划</li></ul><span id="more"></span><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><ul><li>每一级台阶只能从前一级或前两级台阶上跳跃而来</li></ul><p>$$<br>dp[i] &#x3D; dp[i - 1] + dp[i - 2]<br>$$</p><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="动态规划-1"><a href="#动态规划-1" class="headerlink" title="动态规划"></a>动态规划</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[n + <span class="number">1</span>];</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">dp[<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">3</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    dp[i] = (dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>]) % MOD;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/">剑指 Offer 10- II. 青蛙跳台阶问题 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;动态规划&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="Dynamic Programming" scheme="https://pingpinggray.top/tags/Dynamic-Programming/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第 k 个数</title>
+    <link href="https://pingpinggray.top/post/2a9a6beb.html"/>
+    <id>https://pingpinggray.top/post/2a9a6beb.html</id>
+    <published>2022-09-28T14:15:41.000Z</published>
+    <updated>2022-09-28T14:59:09.605Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>多路并归</li></ul><span id="more"></span><h2 id="多路并归"><a href="#多路并归" class="headerlink" title="多路并归"></a>多路并归</h2><ul><li>后续数值均基于已有数值乘以 3、5 或 7 而来</li><li>所有数值均可归为 $arr[idx] \times 系数（即3、5、7）$ 得来的三个序列，使用三个指针分别指向上述序列</li><li>生成新的数值时，判断所属序列（不唯一），其对应指针右移</li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="多路并归-1"><a href="#多路并归-1" class="headerlink" title="多路并归"></a>多路并归</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] cache = <span class="keyword">new</span> <span class="title class_">int</span>[k];</span><br><span class="line">cache[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 三序列指针</span></span><br><span class="line"><span class="type">int</span> <span class="variable">idx3</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">idx5</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">idx7</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; k; i++) &#123;</span><br><span class="line">    <span class="comment">// 三序列最小值</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">num3</span> <span class="operator">=</span> cache[idx3] * <span class="number">3</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num5</span> <span class="operator">=</span> cache[idx5] * <span class="number">5</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num7</span> <span class="operator">=</span> cache[idx7] * <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line">    cache[i] = Math.min(Math.min(num3, num5), num7);</span><br><span class="line">    <span class="comment">// 三序列指针移动</span></span><br><span class="line">    <span class="keyword">if</span> (cache[i] == num3) &#123;</span><br><span class="line">        idx3++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cache[i] == num5) &#123;</span><br><span class="line">        idx5++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cache[i] == num7) &#123;</span><br><span class="line">        idx7++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/get-kth-magic-number-lcci/">面试题 17.09. 第 k 个数 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;多路并归&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="K-May Merge" scheme="https://pingpinggray.top/tags/K-May-Merge/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>消失的两个数字</title>
+    <link href="https://pingpinggray.top/post/788ed63c.html"/>
+    <id>https://pingpinggray.top/post/788ed63c.html</id>
+    <published>2022-09-26T12:48:59.000Z</published>
+    <updated>2022-09-26T12:53:23.954Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>数学</li></ul><span id="more"></span><h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><ol><li>消失的两数之和 &#x3D; n~1 求和减去当前数组求和</li><li>两数不相等，则必然位于两数之和的均值的两侧，可将问题转化为求消失的一个数字</li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="数学-1"><a href="#数学-1" class="headerlink" title="数学"></a>数学</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length + <span class="number">2</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> num: nums) &#123;</span><br><span class="line">    sum += num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 求消失的两数之和</span></span><br><span class="line"><span class="type">int</span> <span class="variable">sumTwo</span> <span class="operator">=</span> n * (n + <span class="number">1</span>) / <span class="number">2</span> - sum;</span><br><span class="line"><span class="type">int</span> <span class="variable">mean</span> <span class="operator">=</span> sumTwo / <span class="number">2</span>;</span><br><span class="line">sum = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 求消失的两数中较小的数，将问题转化为求消失的一个数</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> num: nums) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num &lt;= mean) &#123;</span><br><span class="line">        sum += num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="variable">x1</span> <span class="operator">=</span> mean * (mean + <span class="number">1</span>) / <span class="number">2</span> - sum;</span><br><span class="line"><span class="type">int</span> <span class="variable">x2</span> <span class="operator">=</span> sumTwo - x1;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/missing-two-lcci/">面试题 17.19. 消失的两个数字 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;数学&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="Math" scheme="https://pingpinggray.top/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>斐波那契数列</title>
+    <link href="https://pingpinggray.top/post/cc713db.html"/>
+    <id>https://pingpinggray.top/post/cc713db.html</id>
+    <published>2022-09-21T14:12:27.000Z</published>
+    <updated>2022-09-21T14:19:23.095Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>动态规划</li><li>记忆化搜索</li></ul><span id="more"></span><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p>$$<br>F(n) &#x3D; F(n-1) + F(n-2)<br>$$</p><h2 id="记忆化搜索"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索</h2><ul><li>存储计算值，供后续计算使用，避免重复计算</li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="动态规划-1"><a href="#动态规划-1" class="headerlink" title="动态规划"></a>动态规划</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="type">int</span> <span class="title function_">calculate</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> n;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 若缓存中已有计算值，则直接返回</span></span><br><span class="line">    <span class="keyword">if</span> (cache[n] != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> cache[n];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 计算并缓存</span></span><br><span class="line">    cache[n] = (calculate(n - <span class="number">1</span>) + calculate(n - <span class="number">2</span>)) % MOD;</span><br><span class="line">    <span class="keyword">return</span> cache[n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="记忆化搜索-1"><a href="#记忆化搜索-1" class="headerlink" title="记忆化搜索"></a>记忆化搜索</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 共享缓存</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="type">int</span>[] cache = <span class="keyword">new</span> <span class="title class_">int</span>[N];</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/fei-bo-na-qi-shu-lie-lcof/">剑指 Offer 10- I. 斐波那契数列 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;动态规划&lt;/li&gt;
+&lt;li&gt;记忆化搜索&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="Dynamic Programming" scheme="https://pingpinggray.top/tags/Dynamic-Programming/"/>
+    
+    <category term="Memory Search" scheme="https://pingpinggray.top/tags/Memory-Search/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用两个栈实现队列</title>
+    <link href="https://pingpinggray.top/post/f88f910f.html"/>
+    <id>https://pingpinggray.top/post/f88f910f.html</id>
+    <published>2022-09-21T13:33:32.000Z</published>
+    <updated>2022-09-21T14:19:23.098Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>栈</li></ul><span id="more"></span><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><ul><li>一个栈作为输入栈，当 appendTail 操作时 push 数据</li><li>一个栈作为输出栈，当 deleteHead 操作时，若该栈为空，则将输入栈的所有数据出栈并入输出栈，此时该栈的出栈顺序满足 deleteHead 要求</li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="栈-1"><a href="#栈-1" class="headerlink" title="栈"></a>栈</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">appendTail</span><span class="params">(<span class="type">int</span> value)</span> &#123;</span><br><span class="line">    inStack.push(value);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">deleteHead</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 如果 outStack 为空，将 inStack 中的元素全部压入 outStack</span></span><br><span class="line">    <span class="keyword">if</span> (outStack.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">while</span> (!inStack.isEmpty()) &#123;</span><br><span class="line">            outStack.push(inStack.pop());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 如果 outStack 仍为空，说明 inStack 也为空，返回 -1</span></span><br><span class="line">    <span class="keyword">if</span> (outStack.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> outStack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/">剑指 Offer 09. 用两个栈实现队列 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;栈&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>重建二叉树</title>
+    <link href="https://pingpinggray.top/post/97fc4ab0.html"/>
+    <id>https://pingpinggray.top/post/97fc4ab0.html</id>
+    <published>2022-09-21T11:12:09.000Z</published>
+    <updated>2022-09-21T11:20:21.331Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>递归</li></ul><span id="more"></span><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><ol><li>前序遍历的第一个节点为根节点</li><li>根据根节点将中序遍历划分为 [左子树｜根节点｜右子树]</li><li>根据中序遍历中左右子树的节点数将前序遍历划分为 [根节点｜左子树｜右子树]</li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="构建中序遍历索引"><a href="#构建中序遍历索引" class="headerlink" title="构建中序遍历索引"></a>构建中序遍历索引</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; idxMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line"><span class="comment">// 构建中序遍历的索引，加快查找</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; inorder.length; i++) &#123;</span><br><span class="line">    idxMap.put(inorder[i], i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="递归建树"><a href="#递归建树" class="headerlink" title="递归建树"></a>递归建树</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> TreeNode <span class="title function_">buildTree</span><span class="params">(<span class="type">int</span> preStart, <span class="type">int</span> preEnd, <span class="type">int</span> inStart, <span class="type">int</span> inEnd)</span> &#123;</span><br><span class="line">    <span class="comment">// 左边界大于右边界，递归终止</span></span><br><span class="line">    <span class="keyword">if</span> (preStart &gt; preEnd) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 前序遍历的第一个节点为根节点</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">preRootIdx</span> <span class="operator">=</span> preStart;</span><br><span class="line">    <span class="type">int</span> <span class="variable">rootVal</span> <span class="operator">=</span> preOrder[preRootIdx];</span><br><span class="line">    <span class="type">int</span> <span class="variable">inRootIdx</span> <span class="operator">=</span> idxMap.get(rootVal);</span><br><span class="line">    <span class="type">TreeNode</span> <span class="variable">root</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">TreeNode</span>(rootVal);</span><br><span class="line">    <span class="comment">// 前序遍历的左子树的左边界为前序遍历的第二个节点</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">preLeftStart</span> <span class="operator">=</span> preStart + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 左子树的节点数为中序遍历的根节点减去中序遍历的左边界</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">leftSize</span> <span class="operator">=</span> inRootIdx - inStart;</span><br><span class="line">    <span class="comment">// 前序遍历的左子树的右边界为前序遍历的左子树的左边界加上左子树的节点数减一</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">preLeftEnd</span> <span class="operator">=</span> preLeftStart + leftSize - <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 中序遍历的左子树的左边界为中序遍历的左边界</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">inLeftStart</span> <span class="operator">=</span> inStart;</span><br><span class="line">    <span class="comment">// 中序遍历的左子树的右边界为中序遍历的根节点减一</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">inLeftEnd</span> <span class="operator">=</span> inRootIdx - <span class="number">1</span>;</span><br><span class="line">    root.left = buildTree(preLeftStart, preLeftEnd, inLeftStart, inLeftEnd);</span><br><span class="line">    <span class="comment">// 前序遍历的右子树的左边界为前序遍历的左子树的右边界加一</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">preRightStart</span> <span class="operator">=</span> preLeftEnd + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 前序遍历的右子树的右边界为前序遍历的右边界</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">preRightEnd</span> <span class="operator">=</span> preEnd;</span><br><span class="line">    <span class="comment">// 中序遍历的右子树的左边界为中序遍历的根节点加一</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">inRightStart</span> <span class="operator">=</span> inRootIdx + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 中序遍历的右子树的右边界为中序遍历的右边界</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">inRightEnd</span> <span class="operator">=</span> inEnd;</span><br><span class="line">    root.right = buildTree(preRightStart, preRightEnd, inRightStart, inRightEnd);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/zhong-jian-er-cha-shu-lcof/">剑指 Offer 07. 重建二叉树 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;递归&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="Recursion" scheme="https://pingpinggray.top/tags/Recursion/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>相似度为 K 的字符串</title>
+    <link href="https://pingpinggray.top/post/83e18ceb.html"/>
+    <id>https://pingpinggray.top/post/83e18ceb.html</id>
+    <published>2022-09-20T19:31:02.000Z</published>
+    <updated>2022-09-20T19:36:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>广度优先搜索</li></ul><span id="more"></span><h2 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h2><ul><li><p>两字符串为字母异位词，保证必存在交换方案</p></li><li><p>给定的字符串的长度范围为 [1,20]，且只包含 6 种不同的字符，可以枚举所有可能的交换方案</p></li><li><p>搜索时通过剪枝提高效率</p></li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="广度优先搜索-1"><a href="#广度优先搜索-1" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">Queue&lt;Pair&lt;String, Integer&gt;&gt; queue = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;&gt;();</span><br><span class="line">Set&lt;String&gt; visited = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line"></span><br><span class="line">queue.offer(<span class="keyword">new</span> <span class="title class_">Pair</span>&lt;&gt;(s1, <span class="number">0</span>));</span><br><span class="line">visited.add(s1);</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">    Pair&lt;String, Integer&gt; pair = queue.poll();</span><br><span class="line">    <span class="type">String</span> <span class="variable">cur</span> <span class="operator">=</span> pair.getKey();</span><br><span class="line">    <span class="type">int</span> <span class="variable">step</span> <span class="operator">=</span> pair.getValue();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (cur.equals(s2)) &#123;</span><br><span class="line">        <span class="keyword">return</span> step;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> <span class="variable">idx</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// 剪枝，找到第一个不同的字符</span></span><br><span class="line">    <span class="keyword">while</span> (cur.charAt(idx) == s2.charAt(idx)) &#123;</span><br><span class="line">        idx++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> idx + <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="comment">// 剪枝，找到第一个不同的字符</span></span><br><span class="line">        <span class="keyword">if</span> (cur.charAt(i) == s2.charAt(i)) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 找到与 s2[idx] 相同的字符，交换</span></span><br><span class="line">        <span class="keyword">if</span> (cur.charAt(i) == s2.charAt(idx)) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">next</span> <span class="operator">=</span> swap(cur, idx, i);</span><br><span class="line">            <span class="keyword">if</span> (!visited.contains(next)) &#123;</span><br><span class="line">                queue.offer(<span class="keyword">new</span> <span class="title class_">Pair</span>&lt;&gt;(next, step + <span class="number">1</span>));</span><br><span class="line">                visited.add(next);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/k-similar-strings/">854. 相似度为 K 的字符串 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;广度优先搜索&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="BFS" scheme="https://pingpinggray.top/tags/BFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从尾到头打印链表</title>
+    <link href="https://pingpinggray.top/post/b724efa.html"/>
+    <id>https://pingpinggray.top/post/b724efa.html</id>
+    <published>2022-09-18T20:40:12.000Z</published>
+    <updated>2022-09-18T20:47:26.236Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>栈</li></ul><span id="more"></span><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><ul><li>先进后出，实现转置</li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="栈-1"><a href="#栈-1" class="headerlink" title="栈"></a>栈</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">while</span> (head != <span class="literal">null</span>) &#123;</span><br><span class="line">    stack.push(head.val);</span><br><span class="line">    head = head.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> stack.size();</span><br><span class="line"><span class="type">int</span>[] res = <span class="keyword">new</span> <span class="title class_">int</span>[sum];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; sum; i++) &#123;</span><br><span class="line">    res[i] = stack.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/">剑指 Offer 06. 从尾到头打印链表 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;栈&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="Stack" scheme="https://pingpinggray.top/tags/Stack/"/>
+    
+  </entry>
+  
+</feed>

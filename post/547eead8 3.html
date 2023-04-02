@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.1.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="0iM1o-efKbqYlCu_zW-bU1OIupeemwYcmetguLhpRj4">
+  <meta name="baidu-site-verification" content="code-oiXRLjFejQ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"pingpinggray.top","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.10.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":false,"nav":{"waline":{"order":-1},"gitalk":{"order":-2}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://pingpinggray.top/post/547eead8.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://pingpinggray.top/post/547eead8.html","path":"post/547eead8.html","title":"Java Source Code"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Java Source Code | Gray Dynasty</title>
+  
+
+
+
+
+<link rel="dns-prefetch" href="blog-vercel-sage.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Gray Dynasty" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Gray Dynasty</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-lang"><span class="nav-text">java.lang</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-1"><span class="nav-text">Object 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-1"><span class="nav-text">String 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AbstractStringBuilder-1"><span class="nav-text">AbstractStringBuilder 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuffer-1"><span class="nav-text">StringBuffer 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringBuilder-1"><span class="nav-text">StringBuilder 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StringLatin1"><span class="nav-text">StringLatin1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Boolean-2"><span class="nav-text">Boolean 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thread-2"><span class="nav-text">Thread 2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#java-util"><span class="nav-text">java.util</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#AbstractList-1"><span class="nav-text">AbstractList 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AbstractMap-1"><span class="nav-text">AbstractMap 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AbstractSet-1"><span class="nav-text">AbstractSet 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList-1"><span class="nav-text">ArrayList 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedList-1"><span class="nav-text">LinkedList 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashMap-1"><span class="nav-text">HashMap 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashtable-1"><span class="nav-text">Hashtable 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashSet-1"><span class="nav-text">HashSet 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedHashMap-1"><span class="nav-text">LinkedHashMap 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedHashSet-1"><span class="nav-text">LinkedHashSet 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeMap-1"><span class="nav-text">TreeMap 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeSet-1"><span class="nav-text">TreeSet 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vector-2"><span class="nav-text">Vector 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Queue-2"><span class="nav-text">Queue 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack-2"><span class="nav-text">Stack 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SortedMap-2"><span class="nav-text">SortedMap 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SortedSet-2"><span class="nav-text">SortedSet 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collections-3"><span class="nav-text">Collections 3</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Chris Gray"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Chris Gray</p>
+  <div class="site-description" itemprop="description">Chris Blog</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">96</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/ChrisGray0626" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ChrisGray0626" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://rxresu.me/r/MZbeJ3es" title="个人简历 → https:&#x2F;&#x2F;rxresu.me&#x2F;r&#x2F;MZbeJ3es" rel="noopener" target="_blank">个人简历</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://rxresu.me/r/JcVMR_6g" title="Resume → https:&#x2F;&#x2F;rxresu.me&#x2F;r&#x2F;JcVMR_6g" rel="noopener" target="_blank">Resume</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://pingpinggray.top/post/547eead8.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Chris Gray">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gray Dynasty">
+      <meta itemprop="description" content="Chris Blog">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Java Source Code | Gray Dynasty">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java Source Code
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-09-24 11:34:00" itemprop="dateCreated datePublished" datetime="2021-09-24T11:34:00+01:00">2021-09-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-14 08:26:08" itemprop="dateModified" datetime="2022-04-14T08:26:08+01:00">2022-04-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/post/547eead8.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/post/547eead8.html" data-xid="/post/547eead8.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/post/547eead8.html" class="post-meta-item leancloud_visitors" data-flag-title="Java Source Code" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>12k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>10 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="java-lang"><a href="#java-lang" class="headerlink" title="java.lang"></a>java.lang</h1><h2 id="Object-1"><a href="#Object-1" class="headerlink" title="Object 1"></a>Object 1</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">wait</span><span class="params">(<span class="type">long</span> timeout, <span class="type">int</span> nanos)</span> <span class="keyword">throws</span> InterruptedException &#123;</span><br><span class="line">  <span class="keyword">if</span> (timeout &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;timeout value is negative&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (nanos &lt; <span class="number">0</span> || nanos &gt; <span class="number">999999</span>) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(</span><br><span class="line">      <span class="string">&quot;nanosecond timeout value out of range&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (nanos &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    timeout++;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  wait(timeout);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h2 id="String-1"><a href="#String-1" class="headerlink" title="String 1"></a>String 1</h2><ul>
+<li>jdk1.8及以前String使用的是char数组，jdk1.9及以后使用的是byte数组。</li>
+<li>拥有equals()和hashcode()方法</li>
+</ul>
+<h3 id="hashCode"><a href="#hashCode" class="headerlink" title="hashCode()"></a>hashCode()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">h</span> <span class="operator">=</span> hash;</span><br><span class="line">    <span class="keyword">if</span> (h == <span class="number">0</span> &amp;&amp; value.length &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="type">char</span> val[] = value;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; value.length; i++) &#123;</span><br><span class="line">            h = <span class="number">31</span> * h + val[i];</span><br><span class="line">        &#125;</span><br><span class="line">        hash = h;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> h;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Equals"><a href="#Equals" class="headerlink" title="Equals()"></a>Equals()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object anObject)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span> == anObject) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (anObject <span class="keyword">instanceof</span> String) &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">anotherString</span> <span class="operator">=</span> (String)anObject;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> value.length;</span><br><span class="line">        <span class="keyword">if</span> (n == anotherString.value.length) &#123;</span><br><span class="line">            <span class="type">char</span> v1[] = value;</span><br><span class="line">            <span class="type">char</span> v2[] = anotherString.value;</span><br><span class="line">            <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (n-- != <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (v1[i] != v2[i])</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="AbstractStringBuilder-1"><a href="#AbstractStringBuilder-1" class="headerlink" title="AbstractStringBuilder 1"></a>AbstractStringBuilder 1</h2><h3 id="System-arraycopy"><a href="#System-arraycopy" class="headerlink" title="System.arraycopy"></a>System.arraycopy</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> AbstractStringBuilder <span class="title function_">delete</span><span class="params">(<span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line">  ...</span><br><span class="line">	System.arraycopy(value, start+len, value, start, count-end);</span><br><span class="line">	count -= len;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="str-getChars"><a href="#str-getChars" class="headerlink" title="str.getChars"></a>str.getChars</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> AbstractStringBuilder <span class="title function_">replace</span><span class="params">(<span class="type">int</span> start, <span class="type">int</span> end, String str)</span> &#123;</span><br><span class="line">	...</span><br><span class="line">  <span class="comment">// str.getChars(0, len, value, start);</span></span><br><span class="line">	str.getChars(value, start);</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Surrogate-Pairs"><a href="#Surrogate-Pairs" class="headerlink" title="Surrogate Pairs"></a>Surrogate Pairs</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">reverseAllValidSurrogatePairs</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; count - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="type">char</span> <span class="variable">c2</span> <span class="operator">=</span> value[i];</span><br><span class="line">        <span class="keyword">if</span> (Character.isLowSurrogate(c2)) &#123;</span><br><span class="line">            <span class="type">char</span> <span class="variable">c1</span> <span class="operator">=</span> value[i + <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (Character.isHighSurrogate(c1)) &#123;</span><br><span class="line">                value[i++] = c1;</span><br><span class="line">                value[i] = c2;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Unicode</li>
+</ul>
+<h2 id="StringBuffer-1"><a href="#StringBuffer-1" class="headerlink" title="StringBuffer 1"></a>StringBuffer 1</h2><ul>
+<li>Multiple Threads</li>
+</ul>
+<h3 id="transient"><a href="#transient" class="headerlink" title="transient"></a>transient</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> <span class="type">char</span>[] toStringCache;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>一旦变量被transient修饰，变量将不再是对象持久化的一部分，该变量内容在序列化后无法获得访问。</li>
+<li>transient关键字只能修饰变量，而不能修饰方法和类。注意，本地变量是不能被transient关键字修饰的。变量如果是用户自定义类变量，则该类需要实现Serializable接口。</li>
+<li>被transient关键字修饰的变量不再能被序列化，一个静态变量不管是否被transient修饰，均不能被序列化。</li>
+</ol>
+<h2 id="StringBuilder-1"><a href="#StringBuilder-1" class="headerlink" title="StringBuilder 1"></a>StringBuilder 1</h2><ul>
+<li>Single Thread</li>
+<li>线程不安全，但效率高</li>
+</ul>
+<h2 id="StringLatin1"><a href="#StringLatin1" class="headerlink" title="StringLatin1"></a>StringLatin1</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">indexOf</span><span class="params">(<span class="type">byte</span>[] value, <span class="type">int</span> valueCount, <span class="type">byte</span>[] str, <span class="type">int</span> strCount, <span class="type">int</span> fromIndex)</span> &#123;</span><br><span class="line">    <span class="type">byte</span> <span class="variable">first</span> <span class="operator">=</span> str[<span class="number">0</span>];</span><br><span class="line">    <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> (valueCount - strCount);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> fromIndex; i &lt;= max; i++) &#123;</span><br><span class="line">        <span class="comment">// Look for first character.</span></span><br><span class="line">        <span class="keyword">if</span> (value[i] != first) &#123;</span><br><span class="line">            <span class="keyword">while</span> (++i &lt;= max &amp;&amp; value[i] != first);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// Found first character, now look at the rest of value</span></span><br><span class="line">        <span class="keyword">if</span> (i &lt;= max) &#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i + <span class="number">1</span>;</span><br><span class="line">            <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> j + strCount - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; end &amp;&amp; value[j] == str[k]; j++, k++);</span><br><span class="line">            <span class="keyword">if</span> (j == end) &#123;</span><br><span class="line">                <span class="comment">// Found whole string.</span></span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Boolean-2"><a href="#Boolean-2" class="headerlink" title="Boolean 2"></a>Boolean 2</h2><h3 id="getBoolean-String-name"><a href="#getBoolean-String-name" class="headerlink" title="getBoolean(String name)"></a>getBoolean(String name)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">getBoolean</span><span class="params">(String name)</span> &#123;    <span class="type">boolean</span> <span class="variable">result</span> <span class="operator">=</span> <span class="literal">false</span>;    <span class="keyword">try</span> &#123;        result = parseBoolean(System.getProperty(name));    &#125; <span class="keyword">catch</span> (IllegalArgumentException | NullPointerException e) &#123;    &#125;    <span class="keyword">return</span> result;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当且仅当以参数命名的系统属性存在，且等于 “true” 字符串时，才返回 true。</p>
+<ol start="7">
+<li><p>Byte 2</p>
+</li>
+<li><p>Double 2</p>
+</li>
+<li><p>Float 2</p>
+</li>
+<li><p>Integer 2</p>
+</li>
+<li><p>Long 2</p>
+</li>
+<li><p>Short 2</p>
+</li>
+</ol>
+<h2 id="Thread-2"><a href="#Thread-2" class="headerlink" title="Thread 2"></a>Thread 2</h2><h3 id="native"><a href="#native" class="headerlink" title="native"></a>native</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">native</span> <span class="keyword">void</span> <span class="title function_">registerNatives</span><span class="params">()</span>;<span class="keyword">static</span> &#123;    registerNatives();&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>编写带有native声明的方法的Java类（java文件）</li>
+<li>使用javac命令编译编写的Java类（class文件）</li>
+<li>使用javah -jni 来生成后缀名为.h的头文件（.h的文件）</li>
+<li>使用其他语言（C、C++）实现本地方法</li>
+<li>将本地方法编写的文件生成动态链接库（dll文件）</li>
+</ol>
+<h3 id="clone"><a href="#clone" class="headerlink" title="clone()"></a>clone()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> Object <span class="title function_">clone</span><span class="params">()</span> <span class="keyword">throws</span> CloneNotSupportedException &#123;    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">CloneNotSupportedException</span>();&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><blockquote>
+<p>Waits at most millis milliseconds for this thread to die.</p>
+</blockquote>
+<p>主线程等待wait()当前子线程运行结束。</p>
+<ol start="14">
+<li><p>ThreadLocal 2</p>
+</li>
+<li><p>Enum 3</p>
+</li>
+<li><p>Throwable 3</p>
+</li>
+<li><p>Error 3</p>
+</li>
+<li><p>Exception 3</p>
+</li>
+<li><p>Class 4</p>
+</li>
+<li><p>ClassLoader 4</p>
+</li>
+<li><p>Compiler 4</p>
+</li>
+<li><p>System 4</p>
+</li>
+<li><p>Package 4</p>
+</li>
+<li><p>Void 4</p>
+</li>
+</ol>
+<h1 id="java-util"><a href="#java-util" class="headerlink" title="java.util"></a>java.util</h1><h2 id="AbstractList-1"><a href="#AbstractList-1" class="headerlink" title="AbstractList 1"></a>AbstractList 1</h2><h3 id="get"><a href="#get" class="headerlink" title="get()"></a>get()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">public</span> E <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>唯一的抽象方法</li>
+</ul>
+<h2 id="AbstractMap-1"><a href="#AbstractMap-1" class="headerlink" title="AbstractMap 1"></a>AbstractMap 1</h2><h3 id="put"><a href="#put" class="headerlink" title="put()"></a>put()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> V <span class="title function_">put</span><span class="params">(K key, V value)</span> &#123;    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">UnsupportedOperationException</span>();&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="AbstractSet-1"><a href="#AbstractSet-1" class="headerlink" title="AbstractSet 1"></a>AbstractSet 1</h2><h2 id="ArrayList-1"><a href="#ArrayList-1" class="headerlink" title="ArrayList 1"></a>ArrayList 1</h2><h3 id="EMPTY-ELEMENTDATA"><a href="#EMPTY-ELEMENTDATA" class="headerlink" title="EMPTY_ELEMENTDATA"></a>EMPTY_ELEMENTDATA</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object[] EMPTY_ELEMENTDATA = &#123;&#125;;<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = &#123;&#125;;<span class="keyword">public</span> <span class="title function_">ArrayList</span><span class="params">(<span class="type">int</span> initialCapacity)</span> &#123;  <span class="keyword">if</span> (initialCapacity &gt; <span class="number">0</span>) &#123;    <span class="built_in">this</span>.elementData = <span class="keyword">new</span> <span class="title class_">Object</span>[initialCapacity];  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (initialCapacity == <span class="number">0</span>) &#123;    <span class="built_in">this</span>.elementData = EMPTY_ELEMENTDATA;  &#125; <span class="keyword">else</span> &#123;    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;Illegal Capacity: &quot;</span>+                                       initialCapacity);  &#125;&#125;<span class="keyword">public</span> <span class="title function_">ArrayList</span><span class="params">()</span> &#123;  <span class="built_in">this</span>.elementData = DEFAULTCAPACITY_EMPTY_ELEMENTDATA;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>EMPTY_ELEMENTDATA，优化创建ArrayList空实例时产生不必要的空数组，使得所有ArrayList空实例都指向同一个空数组。</li>
+<li>DEFAULTCAPACITY_EMPTY_ELEMENTDATA，确保无参构成函数创建的实例在添加第一个元素时，最小的容量是默认大小10。</li>
+</ul>
+<h3 id="MAX-ARRAY-SIZE"><a href="#MAX-ARRAY-SIZE" class="headerlink" title="MAX_ARRAY_SIZE"></a>MAX_ARRAY_SIZE</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">MAX_ARRAY_SIZE</span> <span class="operator">=</span> Integer.MAX_VALUE - <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="grow-int-minCapacity"><a href="#grow-int-minCapacity" class="headerlink" title="grow(int minCapacity)"></a>grow(int minCapacity)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">newCapacity</span> <span class="operator">=</span> oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);jdk1<span class="number">.6</span>:<span class="type">int</span> <span class="variable">newCapacity</span> <span class="operator">=</span> (oldCapacity * <span class="number">3</span>)/<span class="number">2</span> + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>最小容量扩容至原有的1.5倍</li>
+<li>考虑了可能的整型溢出问题</li>
+</ul>
+<blockquote>
+<p>minCapacity is usually close to size, so this is a win</p>
+</blockquote>
+<h3 id="toArray"><a href="#toArray" class="headerlink" title="toArray()"></a>toArray()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Object[] toArray() &#123;    <span class="keyword">return</span> Arrays.copyOf(elementData, size);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>This method acts as bridge between array-based and collection-based APIs.</p>
+</blockquote>
+<h3 id="elementData-–size-x3D-null"><a href="#elementData-–size-x3D-null" class="headerlink" title="elementData[–size] &#x3D; null;"></a>elementData[–size] &#x3D; null;</h3><blockquote>
+<p>clear to let GC do its work</p>
+</blockquote>
+<ul>
+<li>为了让GC起作用，必须显式的为最后一个位置赋值null。</li>
+</ul>
+<h3 id="SubList"><a href="#SubList" class="headerlink" title="SubList"></a>SubList</h3><blockquote>
+<p>Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> List&lt;E&gt; <span class="title function_">subList</span><span class="params">(<span class="type">int</span> fromIndex, <span class="type">int</span> toIndex)</span> &#123;    subListRangeCheck(fromIndex, toIndex, size);    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">SubList</span>(<span class="built_in">this</span>, <span class="number">0</span>, fromIndex, toIndex);&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>subList方法返回的是一个视图SubList，即对源列表的映射，如果对其进行编辑操作，源列表也会受到影响。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">class</span> <span class="title class_">SubList</span> <span class="keyword">extends</span> <span class="title class_">AbstractList</span>&lt;E&gt; <span class="keyword">implements</span> <span class="title class_">RandomAccess</span> &#123;		<span class="keyword">private</span> <span class="keyword">final</span> AbstractList&lt;E&gt; parent;  	<span class="keyword">private</span> <span class="keyword">final</span> <span class="type">int</span> parentOffset;  	<span class="keyword">private</span> <span class="keyword">final</span> <span class="type">int</span> offset;  	<span class="type">int</span> size;  	...&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>SubList是一个ArrayList的内部类。</li>
+<li>SubList中没有数组、列表等属性来存储数据。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">checkForComodification</span><span class="params">()</span> &#123;  	<span class="keyword">if</span> (ArrayList.<span class="built_in">this</span>.modCount != <span class="built_in">this</span>.modCount)    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">ConcurrentModificationException</span>();&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>SubList进行添加、删除元素会抛出异常ConcurrentModificationException，触发fail-fast机制。</li>
+</ul>
+<h2 id="LinkedList-1"><a href="#LinkedList-1" class="headerlink" title="LinkedList 1"></a>LinkedList 1</h2><h3 id="node-int-index"><a href="#node-int-index" class="headerlink" title="node(int index)"></a>node(int index)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Node&lt;E&gt; <span class="title function_">node</span><span class="params">(<span class="type">int</span> index)</span> &#123;    <span class="comment">// assert isElementIndex(index);    if (index &lt; (size &gt;&gt; 1)) &#123;        Node&lt;E&gt; x = first;        for (int i = 0; i &lt; index; i++)            x = x.next;        return x;    &#125; else &#123;        Node&lt;E&gt; x = last;        for (int i = size - 1; i &gt; index; i--)            x = x.prev;        return x;    &#125;&#125;public E get(int index) &#123;  checkElementIndex(index);  return node(index).item;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>判断index位于链表前半部分还是后半部分</li>
+</ul>
+<h3 id="removeFirst"><a href="#removeFirst" class="headerlink" title="removeFirst()"></a>removeFirst()</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> E <span class="title function_">remove</span><span class="params">()</span> &#123;  <span class="keyword">return</span> removeFirst();&#125;<span class="keyword">public</span> E <span class="title function_">pop</span><span class="params">()</span> &#123;  <span class="keyword">return</span> removeFirst();&#125;<span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">removeFirstOccurrence</span><span class="params">(Object o)</span> &#123;  <span class="keyword">return</span> remove(o);&#125;<span class="keyword">public</span> E <span class="title function_">removeFirst</span><span class="params">()</span> &#123;    <span class="keyword">final</span> Node&lt;E&gt; f = first;    <span class="keyword">if</span> (f == <span class="literal">null</span>)        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">NoSuchElementException</span>();    <span class="keyword">return</span> unlinkFirst(f);&#125;<span class="keyword">private</span> E <span class="title function_">unlinkFirst</span><span class="params">(Node&lt;E&gt; f)</span> &#123;		...&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>公私分明</li>
+</ul>
+<h3 id="addLast-E-e"><a href="#addLast-E-e" class="headerlink" title="addLast(E e)"></a>addLast(E e)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addLast</span><span class="params">(E e)</span> &#123;    linkLast(e);&#125;<span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E e)</span> &#123;  linkLast(e);  <span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="isElementIndex-int-index"><a href="#isElementIndex-int-index" class="headerlink" title="isElementIndex(int index)"></a>isElementIndex(int index)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** * Tells if the argument is the index of an existing element. */</span><span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">isElementIndex</span><span class="params">(<span class="type">int</span> index)</span> &#123;    <span class="keyword">return</span> index &gt;= <span class="number">0</span> &amp;&amp; index &lt; size;&#125;<span class="comment">/** * Tells if the argument is the index of a valid position for an * iterator or an add operation. */</span><span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">isPositionIndex</span><span class="params">(<span class="type">int</span> index)</span> &#123;    <span class="keyword">return</span> index &gt;= <span class="number">0</span> &amp;&amp; index &lt;= size;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="HashMap-1"><a href="#HashMap-1" class="headerlink" title="HashMap 1"></a>HashMap 1</h2><h3 id="DEFAULT-INITIAL-CAPACITY"><a href="#DEFAULT-INITIAL-CAPACITY" class="headerlink" title="DEFAULT_INITIAL_CAPACITY"></a>DEFAULT_INITIAL_CAPACITY</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">DEFAULT_INITIAL_CAPACITY</span> <span class="operator">=</span> <span class="number">1</span> &lt;&lt; <span class="number">4</span>; <span class="comment">// aka 16</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>默认容量，也即数组长度。</li>
+<li>容量必须是2的次数幂，因为在查找hash地址时，会进行取模位运算。</li>
+</ul>
+<h3 id="TREEIFY-THRESHOLD"><a href="#TREEIFY-THRESHOLD" class="headerlink" title="TREEIFY_THRESHOLD"></a>TREEIFY_THRESHOLD</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">TREEIFY_THRESHOLD</span> <span class="operator">=</span> <span class="number">8</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>当链表长度超过阈值时，会将链表转换为红黑树，使HashMap的性能得到进一步提升。</li>
+</ul>
+<h3 id="hash-Object-key"><a href="#hash-Object-key" class="headerlink" title="hash(Object key)"></a>hash(Object key)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">hash</span><span class="params">(Object key)</span> &#123;    <span class="type">int</span> h;    <span class="keyword">return</span> (key == <span class="literal">null</span>) ? <span class="number">0</span> : (h = key.hashCode()) ^ (h &gt;&gt;&gt; <span class="number">16</span>);&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>key值进行hashcode以后，进行相与时候都是只用到了后四位，前面的很多位都没有能够得到使用,这样也可能会导致生成的下标值不能够完全散列。</li>
+<li>将生成的hashcode值的高16位于低16位进行异或运算，这样得到的值再进行相与，得到最散列的下标值。</li>
+</ul>
+<h3 id="tableSizeFor-int-cap"><a href="#tableSizeFor-int-cap" class="headerlink" title="tableSizeFor(int cap)"></a>tableSizeFor(int cap)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="title function_">tableSizeFor</span><span class="params">(<span class="type">int</span> cap)</span> &#123;    <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> cap - <span class="number">1</span>;    n |= n &gt;&gt;&gt; <span class="number">1</span>;    n |= n &gt;&gt;&gt; <span class="number">2</span>;    n |= n &gt;&gt;&gt; <span class="number">4</span>;    n |= n &gt;&gt;&gt; <span class="number">8</span>;    n |= n &gt;&gt;&gt; <span class="number">16</span>;    <span class="keyword">return</span> (n &lt; <span class="number">0</span>) ? <span class="number">1</span> : (n &gt;= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + <span class="number">1</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>反复操作把每一位数变成1。</li>
+<li>最后+1变成最近的2多整数次幂。</li>
+</ul>
+<h3 id="i-x3D-n-1-amp-hash"><a href="#i-x3D-n-1-amp-hash" class="headerlink" title="i &#x3D; (n - 1) &amp; hash"></a>i &#x3D; (n - 1) &amp; hash</h3><p>$$<br>(n - 1) &amp; hash &#x3D; hash % n<br>$$</p>
+<ul>
+<li>n为2多整数次幂，n-1即为全1位数。</li>
+</ul>
+<p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NQcmltZXIw,size_16,color_FFFFFF,t_70.png" alt="在这里插入图片描述"></p>
+<h3 id="putVal-int-hash-K-key-V-value-boolean-onlyIfAbsent-boolean-evict"><a href="#putVal-int-hash-K-key-V-value-boolean-onlyIfAbsent-boolean-evict" class="headerlink" title="putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict)"></a>putVal(int hash, K key, V value, boolean onlyIfAbsent, boolean evict)</h3><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NQcmltZXIw,size_16,color_FFFFFF,t_70-20210811104418939.png" alt="在这里插入图片描述"></p>
+<h2 id="Hashtable-1"><a href="#Hashtable-1" class="headerlink" title="Hashtable 1"></a>Hashtable 1</h2><blockquote>
+<p> it is recommended to use HashMap in place of Hashtable. If a thread-safe highly-concurrent implementation is desired, then it is recommended to use java.util.concurrent.ConcurrentHashMap in place of Hashtable.</p>
+</blockquote>
+<h3 id="threshold"><a href="#threshold" class="headerlink" title="threshold"></a>threshold</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">Hashtable</span><span class="params">()</span> &#123;    <span class="built_in">this</span>(<span class="number">11</span>, <span class="number">0.75f</span>);&#125;<span class="type">int</span> <span class="variable">newCapacity</span> <span class="operator">=</span> (oldCapacity &lt;&lt; <span class="number">1</span>) + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>默认的初始大小为11，之后每次扩充为原来的2n+1。</li>
+<li>会尽量使用素数、奇数作为容量的大小，使得简单取模的哈希结果会更加均匀。</li>
+</ul>
+<h3 id="abstract-class-Dictionary-lt-K-V-gt"><a href="#abstract-class-Dictionary-lt-K-V-gt" class="headerlink" title="abstract class Dictionary&lt;K,V&gt;"></a>abstract class Dictionary&lt;K,V&gt;</h3><ul>
+<li>已过时</li>
+</ul>
+<blockquote>
+<p>This class is obsolete. New implementations should implement the Map interface, rather than extending this class.</p>
+</blockquote>
+<h3 id="interface-Enumeration-lt-E-gt"><a href="#interface-Enumeration-lt-E-gt" class="headerlink" title="interface Enumeration&lt;E&gt;"></a>interface Enumeration&lt;E&gt;</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">synchronized</span> Enumeration&lt;K&gt; <span class="title function_">keys</span><span class="params">()</span> &#123;    <span class="keyword">return</span> <span class="built_in">this</span>.&lt;K&gt;getEnumeration(KEYS);&#125;<span class="keyword">public</span> <span class="keyword">synchronized</span> Enumeration&lt;V&gt; <span class="title function_">elements</span><span class="params">()</span> &#123;<span class="keyword">return</span> <span class="built_in">this</span>.&lt;V&gt;getEnumeration(VALUES);&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>已被迭代器重写，甚少被使用。</li>
+</ul>
+<blockquote>
+<p>The functionality of this interface is duplicated by the Iterator interface.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">default</span> Iterator&lt;E&gt; <span class="title function_">asIterator</span><span class="params">()</span> &#123;    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Iterator</span>&lt;&gt;() &#123;        <span class="meta">@Override</span> <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">hasNext</span><span class="params">()</span> &#123;            <span class="keyword">return</span> hasMoreElements();        &#125;        <span class="meta">@Override</span> <span class="keyword">public</span> E <span class="title function_">next</span><span class="params">()</span> &#123;            <span class="keyword">return</span> nextElement();        &#125;    &#125;;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以使用方法asIterator()转换为迭代器。</li>
+</ul>
+<blockquote>
+<p>It is possible to adapt an Enumeration to an Iterator by using the asIterator method.</p>
+</blockquote>
+<h3 id="hash-amp-0x7FFFFFFF-tab-length"><a href="#hash-amp-0x7FFFFFFF-tab-length" class="headerlink" title="(hash &amp; 0x7FFFFFFF) % tab.length"></a>(hash &amp; 0x7FFFFFFF) % tab.length</h3><ul>
+<li>相比hashmap，采用了直接取模。</li>
+<li>hash值和0x7FFFFFFF进行一次按位与操作，是为了保证得到的index的第一位为0，也就是为了得到一个有符号正数。</li>
+</ul>
+<h2 id="HashSet-1"><a href="#HashSet-1" class="headerlink" title="HashSet 1"></a>HashSet 1</h2><h3 id="PRESENT"><a href="#PRESENT" class="headerlink" title="PRESENT"></a>PRESENT</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Object</span> <span class="variable">PRESENT</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Object</span>(); <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">add</span><span class="params">(E e)</span> &#123;  <span class="keyword">return</span> map.put(e, PRESENT)==<span class="literal">null</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定义一个static finall的Object对象作为HashMap的虚拟的value。</li>
+</ul>
+<h3 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HashSet(<span class="type">int</span> initialCapacity, <span class="type">float</span> loadFactor, <span class="type">boolean</span> dummy) &#123;    map = <span class="keyword">new</span> <span class="title class_">LinkedHashMap</span>&lt;&gt;(initialCapacity, loadFactor);&#125;<span class="keyword">public</span> <span class="title function_">HashSet</span><span class="params">(<span class="type">int</span> initialCapacity, <span class="type">float</span> loadFactor)</span> &#123;  map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;(initialCapacity, loadFactor);&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>只被用来创建LinkedHashSet的私有方法。</li>
+<li>dummy参数用来区分其他(int float)构造函数</li>
+</ul>
+<h2 id="LinkedHashMap-1"><a href="#LinkedHashMap-1" class="headerlink" title="LinkedHashMap 1"></a>LinkedHashMap 1</h2><h3 id="accessOrder"><a href="#accessOrder" class="headerlink" title="accessOrder"></a>accessOrder</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">final</span> <span class="type">boolean</span> accessOrder;<span class="keyword">public</span> <span class="title function_">LinkedHashMap</span><span class="params">()</span> &#123;    <span class="built_in">super</span>();    accessOrder = <span class="literal">false</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>accessOrder&#x3D;false，按照插入元素的顺序遍历元素。</li>
+<li>accessOrder&#x3D;true，按照访问元素的顺序，即可实现最近最少使用策略(Least Recently Used，LRU)。</li>
+</ul>
+<h3 id="removeEldestEntry-Map-Entry-lt-K-V-gt-eldest"><a href="#removeEldestEntry-Map-Entry-lt-K-V-gt-eldest" class="headerlink" title="removeEldestEntry(Map.Entry&lt;K,V&gt; eldest)"></a>removeEldestEntry(Map.Entry&lt;K,V&gt; eldest)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="type">boolean</span> <span class="title function_">removeEldestEntry</span><span class="params">(Map.Entry&lt;K,V&gt; eldest)</span> &#123;    <span class="keyword">return</span> <span class="literal">false</span>;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>移除最早加入的Entry。</li>
+<li>默认不使用，但允许覆写。</li>
+</ul>
+<h3 id="afterNodeAccess-Node-lt-K-V-gt-e"><a href="#afterNodeAccess-Node-lt-K-V-gt-e" class="headerlink" title="afterNodeAccess(Node&lt;K,V&gt; e)"></a>afterNodeAccess(Node&lt;K,V&gt; e)</h3><ul>
+<li>在节点访问之后被调用，主要在put()已经存在的元素或get()时。</li>
+<li>如果accessOrder&#x3D;true，把当前访问节点移动到双向链表的末尾。</li>
+</ul>
+<h2 id="LinkedHashSet-1"><a href="#LinkedHashSet-1" class="headerlink" title="LinkedHashSet 1"></a>LinkedHashSet 1</h2><h3 id="LinkedHashMap-1"><a href="#LinkedHashMap-1" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">LinkedHashSet</span><span class="params">(<span class="type">int</span> initialCapacity, <span class="type">float</span> loadFactor)</span> &#123;    <span class="built_in">super</span>(initialCapacity, loadFactor, <span class="literal">true</span>);&#125;HashSet(<span class="type">int</span> initialCapacity, <span class="type">float</span> loadFactor, <span class="type">boolean</span> dummy) &#123;  map = <span class="keyword">new</span> <span class="title class_">LinkedHashMap</span>&lt;&gt;(initialCapacity, loadFactor);&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>底层调用LinkedHashMap实现。</li>
+</ul>
+<h2 id="TreeMap-1"><a href="#TreeMap-1" class="headerlink" title="TreeMap 1"></a>TreeMap 1</h2><ul>
+<li><p>继承NavigableMap，提供访问给定搜索目标的最接近匹配项的导航方法。</p>
+</li>
+<li><p>继承SortedMap，保证key有序性。</p>
+</li>
+</ul>
+<h2 id="TreeSet-1"><a href="#TreeSet-1" class="headerlink" title="TreeSet 1"></a>TreeSet 1</h2><ul>
+<li>底层为TreeMap</li>
+</ul>
+<h2 id="Vector-2"><a href="#Vector-2" class="headerlink" title="Vector 2"></a>Vector 2</h2><ul>
+<li>线程安全，开销增大</li>
+</ul>
+<h2 id="Queue-2"><a href="#Queue-2" class="headerlink" title="Queue 2"></a>Queue 2</h2><ul>
+<li>继承自Collection</li>
+<li>提供两类方法</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Throws exception</th>
+<th>Returns special value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Insert</td>
+<td>add(e)</td>
+<td>offer(e)</td>
+</tr>
+<tr>
+<td>Remove</td>
+<td>remove()</td>
+<td>poll()</td>
+</tr>
+<tr>
+<td>Examine</td>
+<td>element()</td>
+<td>peek()</td>
+</tr>
+</tbody></table>
+<h2 id="Stack-2"><a href="#Stack-2" class="headerlink" title="Stack 2"></a>Stack 2</h2><ul>
+<li>继承自Vector</li>
+<li>建议使用Deque</li>
+</ul>
+<h2 id="SortedMap-2"><a href="#SortedMap-2" class="headerlink" title="SortedMap 2"></a>SortedMap 2</h2><ul>
+<li>提供有序性的方法</li>
+</ul>
+<h2 id="SortedSet-2"><a href="#SortedSet-2" class="headerlink" title="SortedSet 2"></a>SortedSet 2</h2><h3 id="Spliterators"><a href="#Spliterators" class="headerlink" title="Spliterators"></a>Spliterators</h3><ul>
+<li>并行迭代器</li>
+</ul>
+<h2 id="Collections-3"><a href="#Collections-3" class="headerlink" title="Collections 3"></a>Collections 3</h2><h3 id="binarySearch"><a href="#binarySearch" class="headerlink" title="binarySearch"></a>binarySearch</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> &lt;T&gt;<span class="type">int</span> <span class="title function_">indexedBinarySearch</span><span class="params">(List&lt;? extends Comparable&lt;? <span class="built_in">super</span> T&gt;&gt; list, T key)</span> &#123;    <span class="type">int</span> <span class="variable">low</span> <span class="operator">=</span> <span class="number">0</span>;    <span class="type">int</span> <span class="variable">high</span> <span class="operator">=</span> list.size()-<span class="number">1</span>;    <span class="keyword">while</span> (low &lt;= high) &#123;        <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> (low + high) &gt;&gt;&gt; <span class="number">1</span>;        Comparable&lt;? <span class="built_in">super</span> T&gt; midVal = list.get(mid);        <span class="type">int</span> <span class="variable">cmp</span> <span class="operator">=</span> midVal.compareTo(key);        <span class="keyword">if</span> (cmp &lt; <span class="number">0</span>)            low = mid + <span class="number">1</span>;        <span class="keyword">else</span> <span class="keyword">if</span> (cmp &gt; <span class="number">0</span>)            high = mid - <span class="number">1</span>;        <span class="keyword">else</span>            <span class="keyword">return</span> mid; <span class="comment">// key found    &#125;    return -(low + 1);  // key not found&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>Arrays 3</li>
+<li>Comparator 3</li>
+<li>Iterator 3</li>
+<li>Base64 4</li>
+<li>Date 4</li>
+<li>EventListener 4</li>
+<li>Random 4</li>
+<li>SubList 4</li>
+<li>Timer 4</li>
+<li>UUID 4</li>
+<li>WeakHashMap 4</li>
+</ol>
+<p>3、java.util.concurrent</p>
+<ol>
+<li><p>ConcurrentHashMap 1</p>
+</li>
+<li><p>Executor 2</p>
+</li>
+<li><p>AbstractExecutorService 2</p>
+</li>
+<li><p>ExecutorService 2</p>
+</li>
+<li><p>ThreadPoolExecutor 2</p>
+</li>
+<li><p>BlockingQueue 2</p>
+</li>
+</ol>
+<p>7）AbstractQueuedSynchronizer 2</p>
+<p>8）CountDownLatch 2</p>
+<ol start="9">
+<li>FutureTask 2</li>
+</ol>
+<p>10）Semaphore 2</p>
+<p>11）CyclicBarrier 2</p>
+<p>13）CopyOnWriteArrayList 3</p>
+<p>14）SynchronousQueue 3</p>
+<p>15）BlockingDeque 3</p>
+<ol start="16">
+<li>Callable 4</li>
+</ol>
+<p>4、java.util.concurrent.atomic</p>
+<ol>
+<li><p>AtomicBoolean 2</p>
+</li>
+<li><p>AtomicInteger 2</p>
+</li>
+<li><p>AtomicLong 2</p>
+</li>
+<li><p>AtomicReference 3</p>
+</li>
+</ol>
+<p>5、java.lang.reflect</p>
+<ol>
+<li><p>Field 2</p>
+</li>
+<li><p>Method 2</p>
+</li>
+</ol>
+<p>6、java.lang.annotation</p>
+<ol>
+<li><p>Annotation 3</p>
+</li>
+<li><p>Target 3</p>
+</li>
+<li><p>Inherited 3</p>
+</li>
+<li><p>Retention 3</p>
+</li>
+<li><p>Documented 4</p>
+</li>
+<li><p>ElementType 4</p>
+</li>
+<li><p>Native 4</p>
+</li>
+<li><p>Repeatable 4</p>
+</li>
+</ol>
+<p>7、java.util.concurrent.locks</p>
+<ol>
+<li><p>Lock 2</p>
+</li>
+<li><p>Condition 2</p>
+</li>
+<li><p>ReentrantLock 2</p>
+</li>
+<li><p>ReentrantReadWriteLock 2</p>
+</li>
+</ol>
+<p>8、java.io</p>
+<ol>
+<li><p>File 3</p>
+</li>
+<li><p>InputStream  3</p>
+</li>
+<li><p>OutputStream 3</p>
+</li>
+<li><p>Reader 4</p>
+</li>
+<li><p>Writer 4</p>
+</li>
+</ol>
+<p>9、java.nio</p>
+<ol>
+<li><p>Buffer 3</p>
+</li>
+<li><p>ByteBuffer 4</p>
+</li>
+<li><p>CharBuffer 4</p>
+</li>
+<li><p>DoubleBuffer 4</p>
+</li>
+<li><p>FloatBuffer 4</p>
+</li>
+<li><p>IntBuffer 4</p>
+</li>
+<li><p>LongBuffer 4</p>
+</li>
+<li><p>ShortBuffer 4</p>
+</li>
+</ol>
+<p>10、java.sql</p>
+<ol>
+<li><p>Connection 3</p>
+</li>
+<li><p>Driver 3</p>
+</li>
+<li><p>DriverManager 3</p>
+</li>
+<li><p>JDBCType 3</p>
+</li>
+<li><p>ResultSet 4</p>
+</li>
+<li><p>Statement 4</p>
+</li>
+</ol>
+<p>11、java.net</p>
+<ol>
+<li><p>Socket 3</p>
+</li>
+<li><p>ServerSocket 3</p>
+</li>
+<li><p>URI 4</p>
+</li>
+<li><p>URL 4</p>
+</li>
+<li><p>URLEncoder 4</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/a541262a.html" rel="prev" title="Spring">
+                  <i class="fa fa-chevron-left"></i> Spring
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/df2849ec.html" rel="next" title="Java">
+                  Java <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments gitalk-container"></div>
+            </div>
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline-comments"></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备19041488号-1 </a>
+      <img src="/images/beian.png" alt="">
+  </div>
+
+<div class="copyright">
+  &copy; 2021.9 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chris Gray</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">121k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:50</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"blog-vercel-sage.vercel.app","placeholder":"Welcome to comment","avatar":"mm","pageSize":10,"visitor":true,"comment_count":false,"requiredFields":["nick"],"meta":["nick","mail"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/post/547eead8.html"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"ChrisGray0626","repo":"ChrisGray0626.github.io","client_id":"3782c574efca31c084de","client_secret":"f19fd10391350acd5b62659efaf44a94781b39d2","admin_user":"ChrisGray0626","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"0283d8988b9cc949f1deb0a469c2c8b3"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":200,"height":300,"hOffset":280},"mobile":{"show":true}});</script></body>
+</html>
