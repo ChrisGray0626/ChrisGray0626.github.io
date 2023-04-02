@@ -254,7 +254,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-04-02 14:18:46" itemprop="dateModified" datetime="2023-04-02T14:18:46+01:00">2023-04-02</time>
+      <time title="Modified: 2023-04-02 15:53:33" itemprop="dateModified" datetime="2023-04-02T15:53:33+01:00">2023-04-02</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -306,14 +306,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>13k</span>
+      <span>14k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>12 mins.</span>
+      <span>13 mins.</span>
     </span>
 </div>
 
@@ -484,7 +484,23 @@
 <p>一个 Stage 是否被提交，需要判断它的父 Stage 是否执行，只有其父 Stage 执行完毕才能提交当前 Stage。如果一个 Stage 没有父 Stage，那么从该 Stage 开始提交。</p>
 <p>Stage 提交时会将 Task 信息（分区信息以及方法等）序列化并打包成 TaskSet 交给 TaskScheduler。</p>
 <h2 id="Task-级调度"><a href="#Task-级调度" class="headerlink" title="Task 级调度"></a>Task 级调度</h2><p>DAGScheduler 将 Stage 打包到交给 TaskScheduler 后，TaskScheduler 会将 TaskSet 封装为 TaskSetManager 加入到调度队列中，TaskScheduler 以 TaskSetManager 为单元来调度任务，TaskScheduler 会从调度队列中按照指定的调度策略选择 TaskSetManager 去调度运行。</p>
-<h2 id="调度策略"><a href="#调度策略" class="headerlink" title="调度策略"></a>调度策略</h2><h3 id="FIFO"><a href="#FIFO" class="headerlink" title="FIFO"></a>FIFO</h3><h3 id="FAIR"><a href="#FAIR" class="headerlink" title="FAIR"></a>FAIR</h3><h1 id="数据倾斜"><a href="#数据倾斜" class="headerlink" title="数据倾斜"></a>数据倾斜</h1><p>数据倾斜就是我们在计算数据的时候，数据的分散度不够，导致大量的数据集中到了一台或者几台机器上计算，这些数据的计算速度远远低于平均计算速度，导致整个计算过程过慢。 </p>
+<h2 id="调度策略"><a href="#调度策略" class="headerlink" title="调度策略"></a>调度策略</h2><h3 id="FIFO"><a href="#FIFO" class="headerlink" title="FIFO"></a>FIFO</h3><h3 id="FAIR"><a href="#FAIR" class="headerlink" title="FAIR"></a>FAIR</h3><p>有一个 rootPool 和多个子 Pool，各个子 Pool 中存储着所有待分配的 TaskSetMagager，需要先对子 Pool 进行排序，再对子 Pool 里面的 TaskSetMagager 进行排序，因为 Pool 和 TaskSetMagager 都继承了 Schedulable 特质，因此使用相同的排序算法。 </p>
+<p>基于 Fair-share 比较，每个要排序的对象包含三个属性: <code>runningTasks</code>（正在运行的 Task 数）、<code>minShare</code>、<code>weight</code></p>
+<h4 id="参数设置-1"><a href="#参数设置-1" class="headerlink" title="参数设置"></a>参数设置</h4><ul>
+<li><code>fairscheduler.xml</code> 配置文件</li>
+</ul>
+<h4 id="比较过程"><a href="#比较过程" class="headerlink" title="比较过程"></a>比较过程</h4><ol>
+<li>runningTasks 比 minShare 小的先执行</li>
+<li>minShare 使用率低的先执行</li>
+<li>权重使用率（runningTasks 与 weight 的比值）低的先执行</li>
+<li>名字</li>
+</ol>
+<p>整体上来说就是通过 minShare 和 weight 这两个参数控制比较过程，可以做到让 minShare 使用率和权重使用率少（实际运行 task 比例较少）的先运行。 </p>
+<p>排序完成后，所有的 TaskSetManager 被放入一个 ArrayBuffer 里，之后依次被取出并发送给 Executor 执行。</p>
+<h3 id="失败重试"><a href="#失败重试" class="headerlink" title="失败重试"></a>失败重试</h3><p>Task 被提交到 Executor 启动执行后，Executor 会将执行状态上报给 SchedulerBackend，SchedulerBackend 则告诉 TaskScheduler，TaskScheduler 找到该 Task 对应的 TaskSetManager，并通知到该 TaskSetManager，这样 TaskSetManager 就知道 Task 的失败与成功状态。</p>
+<p>对于失败的 Task，会记录它失败的次数，如果失败次数还没有超过最大重试次数，那么就把它放回待调度的 Task 池子中，否则整个 Application 失败。</p>
+<h3 id="黑名单"><a href="#黑名单" class="headerlink" title="黑名单"></a>黑名单</h3><p>在记录 Task 失败次数过程中，会记录它上一次失败所在的 ExecutorId 和 Host，这样下次再调度这个 Task 时，会避免其被调度到上一次失败的节点上，起到一定的容错作用。黑名单记录还包含了其对应的“拉黑”时间，及这段时间内不再往这个节点上调度该 Task。</p>
+<h1 id="数据倾斜"><a href="#数据倾斜" class="headerlink" title="数据倾斜"></a>数据倾斜</h1><p>数据倾斜就是我们在计算数据的时候，数据的分散度不够，导致大量的数据集中到了一台或者几台机器上计算，这些数据的计算速度远远低于平均计算速度，导致整个计算过程过慢。 </p>
 <ul>
 <li>key 分布不均匀</li>
 <li>业务数据本身的特性</li>
@@ -659,13 +675,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">122k</span>
+    <span title="Symbols count total">123k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:51</span>
+    <span title="Reading time total">1:52</span>
   </span>
 </div>
 <div class="busuanzi-count">
