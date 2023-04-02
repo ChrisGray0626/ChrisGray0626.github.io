@@ -1868,13 +1868,6 @@
 <ul>
 <li>多生</li>
 </ul>
-<h2 id="任务划分"><a href="#任务划分" class="headerlink" title="任务划分"></a>任务划分</h2><ul>
-<li>Application：初始化一个 SparkContext 即生成一个 Application；</li>
-<li>Job：一个 Action 算子就会生成一个 Job；</li>
-<li>Stage：等于宽依赖 (ShuffleDependency) 的个数加 1；</li>
-<li>Task：一个 Stage 阶段中，最后一个 RDD 的分区个数就是 Task 的个数。</li>
-</ul>
-<p>注意：Application-&gt;Job-&gt;Stage-&gt;Task 每一层都是 1 对 n 的关系。</p>
 <h2 id="持久化"><a href="#持久化" class="headerlink" title="持久化"></a>持久化</h2><h3 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h3><ul>
 <li>通过 cache 或 persist 方法将前面的计算结果缓存</li>
 </ul>
@@ -1925,7 +1918,27 @@
 </ul>
 <p>向所有工作节点发送一个较大的只读变量，以供一个或多个 Spark 操作使用。</p>
 <p>如果在多个并行操作中使用同一个变量，Spark 会为每个任务分别发送。</p>
-<h1 id="任务调度机制"><a href="#任务调度机制" class="headerlink" title="任务调度机制"></a>任务调度机制</h1><h1 id="数据倾斜"><a href="#数据倾斜" class="headerlink" title="数据倾斜"></a>数据倾斜</h1><p>数据倾斜就是我们在计算数据的时候，数据的分散度不够，导致大量的数据集中到了一台或者几台机器上计算，这些数据的计算速度远远低于平均计算速度，导致整个计算过程过慢。 </p>
+<h1 id="任务调度"><a href="#任务调度" class="headerlink" title="任务调度"></a>任务调度</h1><p>总体来说分两路：Stage 级与 Task 级。</p>
+<ul>
+<li>Job 以 Action 方法为界，遇到一个 Action 方法则触发一个 Job；</li>
+<li>Stage 是 Job 的子集，以 RDD 宽依赖（即 Shuffle）为界，遇到 Shuffle 做一次划分；</li>
+<li>Task 是 Stage 的子集，以并行度（分区数）来衡量，分区数是多少，则有多少个 task。</li>
+</ul>
+<h2 id="架构-1"><a href="#架构-1" class="headerlink" title="架构"></a>架构</h2><h3 id="DAGScheduler"><a href="#DAGScheduler" class="headerlink" title="DAGScheduler"></a>DAGScheduler</h3><p>负责 Stage 级的调度，主要是将 job 切分成若干 Stages，并将每个 Stage 打包成 TaskSet 交给 TaskScheduler 调度。</p>
+<h3 id="TaskScheduler"><a href="#TaskScheduler" class="headerlink" title="TaskScheduler"></a>TaskScheduler</h3><p>负责 Task 级的调度，将 DAGScheduler 给过来的 TaskSet 按照指定的调度策略分发到 Executor 上执行，调度过程中 SchedulerBackend 负责提供可用资源（SchedulerBackend 有多种实现，分别对接不同的资源管理系统）。</p>
+<p>监控 Stage 的运行状态，只有 Executor 丢失或者 Task 由于 Fetch 失败才需要重新提交失败的 Stage 以调度运行失败的任务，其他类型的 Task 失败会在 TaskScheduler 的调度过程中重试。</p>
+<h3 id="TaskSetManager"><a href="#TaskSetManager" class="headerlink" title="TaskSetManager"></a>TaskSetManager</h3><p>负责监控管理同一个 Stage 中的 Tasks，TaskScheduler 以 TaskSetManager 为单元来调度任务。</p>
+<h3 id="SchedulerBackend"><a href="#SchedulerBackend" class="headerlink" title="SchedulerBackend"></a>SchedulerBackend</h3><p>通过 ApplicationMaster 申请资源</p>
+<p>接收 Executor 的注册信息，并维护 Executor 的状态</p>
+<p>不断从 TaskScheduler 中拿到合适的 Task 分发到 Executor 执行。</p>
+<h3 id="HeartbeatReceiver"><a href="#HeartbeatReceiver" class="headerlink" title="HeartbeatReceiver"></a>HeartbeatReceiver</h3><p>负责接收 Executor 的心跳信息，监控 Executor 的存活状况，并通知到 TaskScheduler。</p>
+<h2 id="Stage-级调度"><a href="#Stage-级调度" class="headerlink" title="Stage 级调度"></a>Stage 级调度</h2><p>从 DAG 切割开始，主要是由 DAGScheduler 来完成。当遇到一个 Action 操作后就会触发一个 Job 的计算，并交给 DAGScheduler 来提交。</p>
+<p>DAGScheduler 会根据 DAG 进行切分，将一个 Job 划分为若干 Stages，具体划分策略是，由最终的 RDD 不断通过依赖回溯判断父依赖是否是宽依赖，即以 Shuffle 为界，划分 Stage，窄依赖的 RDD 会被划分到同一个 Stage 中。</p>
+<p>划分的 Stages 分两类，一类叫做 ResultStage，为 DAG 最下游的 Stage，由 Action 方法决定；另一类叫做 ShuffleMapStage，为下游 Stage 准备数据。</p>
+<p>一个 Stage 是否被提交，需要判断它的父 Stage 是否执行，只有其父 Stage 执行完毕才能提交当前 Stage。如果一个 Stage 没有父 Stage，那么从该 Stage 开始提交。</p>
+<p>Stage 提交时会将 Task 信息（分区信息以及方法等）序列化并打包成 TaskSet 交给 TaskScheduler。</p>
+<h2 id="Task-级调度"><a href="#Task-级调度" class="headerlink" title="Task 级调度"></a>Task 级调度</h2><p>DAGScheduler 将 Stage 打包到交给 TaskScheduler 后，TaskScheduler 会将 TaskSet 封装为 TaskSetManager 加入到调度队列中，TaskScheduler 以 TaskSetManager 为单元来调度任务，TaskScheduler 会从调度队列中按照指定的调度策略选择 TaskSetManager 去调度运行。</p>
+<h2 id="调度策略"><a href="#调度策略" class="headerlink" title="调度策略"></a>调度策略</h2><h3 id="FIFO"><a href="#FIFO" class="headerlink" title="FIFO"></a>FIFO</h3><h3 id="FAIR"><a href="#FAIR" class="headerlink" title="FAIR"></a>FAIR</h3><h1 id="数据倾斜"><a href="#数据倾斜" class="headerlink" title="数据倾斜"></a>数据倾斜</h1><p>数据倾斜就是我们在计算数据的时候，数据的分散度不够，导致大量的数据集中到了一台或者几台机器上计算，这些数据的计算速度远远低于平均计算速度，导致整个计算过程过慢。 </p>
 <ul>
 <li>key 分布不均匀</li>
 <li>业务数据本身的特性</li>
@@ -3387,15 +3400,9 @@
       </categories>
   </entry>
   <entry>
-    <title></title>
-    <url>/post/0.html</url>
-    <content><![CDATA[<hr>
-<p>title： Network<br>tags：</p>
-<ul>
-<li>Interview Experience<br>abbrlink： af39be20<br>date： 2021-09-24 11：34：05</li>
-</ul>
-<hr>
-<h1 id="OSI模型"><a href="#OSI模型" class="headerlink" title="OSI模型"></a>OSI模型</h1><h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><ul>
+    <title>Network</title>
+    <url>/post/af39be20.html</url>
+    <content><![CDATA[<h1 id="OSI模型"><a href="#OSI模型" class="headerlink" title="OSI模型"></a>OSI模型</h1><h2 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h2><ul>
 <li>主要定义物理设备标准，如网线的接口类型、光纤的接口类型、各种传输介质的传输速率等。</li>
 <li>主要作用是传输比特流。</li>
 <li>这一层的数据叫做比特。</li>
@@ -3596,6 +3603,9 @@
         <category>Tech</category>
         <category>Network</category>
       </categories>
+      <tags>
+        <tag>Interview Experience</tag>
+      </tags>
   </entry>
   <entry>
     <title>对称的二叉树</title>
