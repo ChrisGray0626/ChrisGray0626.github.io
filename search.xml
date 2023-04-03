@@ -4995,4 +4995,34 @@
         <category>Spring</category>
       </categories>
   </entry>
+  <entry>
+    <title>包含min函数的栈</title>
+    <url>/post/11cbd9c1.html</url>
+    <content><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul>
+<li>栈</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>在每个元素入栈时把当前栈的最小值存储起来，在这之后无论何时，总能返回顶端元素对应的最小值。</p>
+<ol>
+<li>使用一个辅助栈，与元素栈同步插入与删除，用于存储与每个元素对应的最小值。<ol>
+<li>当一个元素要入栈时，取当前辅助栈的栈顶存储的最小值，与当前元素比较得出最小值，将这个最小值插入辅助栈中。</li>
+</ol>
+</li>
+<li>当一个元素要出栈时，辅助栈的栈顶元素也一并弹出。</li>
+</ol>
+<h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="栈-1"><a href="#栈-1" class="headerlink" title="栈"></a>栈</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">MinStack</span><span class="params">()</span> &#123;</span><br><span class="line">    stack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    minStack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    minStack.push(Integer.MAX_VALUE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">    stack.push(x);</span><br><span class="line">    minStack.push(Math.min(x, minStack.peek()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><ul>
+<li><a href="https://leetcode.cn/problems/bao-han-minhan-shu-de-zhan-lcof/">剑指 Offer 30. 包含min函数的栈 - 力扣（LeetCode）</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Stack</tag>
+      </tags>
+  </entry>
 </search>

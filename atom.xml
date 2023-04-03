@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2023-04-02T12:42:08.737Z</updated>
+  <updated>2023-04-03T09:44:32.337Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>包含min函数的栈</title>
+    <link href="https://pingpinggray.top/post/11cbd9c1.html"/>
+    <id>https://pingpinggray.top/post/11cbd9c1.html</id>
+    <published>2023-04-03T09:40:01.000Z</published>
+    <updated>2023-04-03T09:44:32.337Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>栈</li></ul><span id="more"></span><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>在每个元素入栈时把当前栈的最小值存储起来，在这之后无论何时，总能返回顶端元素对应的最小值。</p><ol><li>使用一个辅助栈，与元素栈同步插入与删除，用于存储与每个元素对应的最小值。<ol><li>当一个元素要入栈时，取当前辅助栈的栈顶存储的最小值，与当前元素比较得出最小值，将这个最小值插入辅助栈中。</li></ol></li><li>当一个元素要出栈时，辅助栈的栈顶元素也一并弹出。</li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="栈-1"><a href="#栈-1" class="headerlink" title="栈"></a>栈</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="title function_">MinStack</span><span class="params">()</span> &#123;</span><br><span class="line">    stack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    minStack = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">    minStack.push(Integer.MAX_VALUE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">push</span><span class="params">(<span class="type">int</span> x)</span> &#123;</span><br><span class="line">    stack.push(x);</span><br><span class="line">    minStack.push(Math.min(x, minStack.peek()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><ul><li><a href="https://leetcode.cn/problems/bao-han-minhan-shu-de-zhan-lcof/">剑指 Offer 30. 包含min函数的栈 - 力扣（LeetCode）</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;栈&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    
+    
+    <category term="Stack" scheme="https://pingpinggray.top/tags/Stack/"/>
+    
+  </entry>
   
   <entry>
     <title>二叉树的最近公共祖先</title>
@@ -497,31 +522,6 @@
     
     
     <category term="BFS" scheme="https://pingpinggray.top/tags/BFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从尾到头打印链表</title>
-    <link href="https://pingpinggray.top/post/b724efa.html"/>
-    <id>https://pingpinggray.top/post/b724efa.html</id>
-    <published>2022-09-18T20:40:12.000Z</published>
-    <updated>2022-09-18T20:47:26.236Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>栈</li></ul><span id="more"></span><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><ul><li>先进后出，实现转置</li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="栈-1"><a href="#栈-1" class="headerlink" title="栈"></a>栈</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();</span><br><span class="line"><span class="keyword">while</span> (head != <span class="literal">null</span>) &#123;</span><br><span class="line">    stack.push(head.val);</span><br><span class="line">    head = head.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> stack.size();</span><br><span class="line"><span class="type">int</span>[] res = <span class="keyword">new</span> <span class="title class_">int</span>[sum];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; sum; i++) &#123;</span><br><span class="line">    res[i] = stack.pop();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/">剑指 Offer 06. 从尾到头打印链表 - 力扣（LeetCode）</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;栈&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
-    
-    
-    <category term="Stack" scheme="https://pingpinggray.top/tags/Stack/"/>
     
   </entry>
   
