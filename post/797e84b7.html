@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">103</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -163,7 +163,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -254,7 +254,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-22 17:20:01" itemprop="dateModified" datetime="2022-04-22T17:20:01+01:00">2022-04-22</time>
+      <time title="Modified: 2023-06-07 19:22:16" itemprop="dateModified" datetime="2023-06-07T19:22:16+01:00">2023-06-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -306,7 +306,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>2k</span>
+      <span>1.9k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -402,13 +402,11 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">KafkaServer &#123;</span><br><span class="line">    org.apache.kafka.common.security.plain.PlainLoginModule required</span><br><span class="line">    username=&quot;admin&quot;</span><br><span class="line">    password=&quot;admin-secret&quot;</span><br><span class="line">    user_admin=&quot;admin-secret&quot;</span><br><span class="line">    user_alice=&quot;alice-secret&quot;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将 JAAS 配置文件的路径作为 JVM 的参数, 并传递到每一个 Kafka broker</p>
-<ol>
-<li>&#96;&#96;&#96;shell<br>-Djava.security.auth.login.config&#x3D;&#x2F;etc&#x2F;kafka&#x2F;kafka_server_jaas.conf<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1. 在 server.properties 中配置 SASL 端口和 SASL 机制</span><br><span class="line"></span><br><span class="line">   ```properties</span><br><span class="line">   listeners=SASL_SSL://host.name:port</span><br><span class="line">   security.inter.broker.protocol=SASL_SSL</span><br><span class="line">   sasl.mechanism.inter.broker.protocol=PLAIN</span><br><span class="line">   sasl.enabled.mechanisms=PLAIN</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Djava.security.auth.login.config=/etc/kafka/kafka_server_jaas.conf</span><br></pre></td></tr></table></figure></li>
+<li><p>在 <code>server.properties</code> 中配置 SASL 端口和 SASL 机制</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">listeners</span>=<span class="string">SASL_SSL://host.name:port</span></span><br><span class="line"><span class="attr">security.inter.broker.protocol</span>=<span class="string">SASL_SSL</span></span><br><span class="line"><span class="attr">sasl.mechanism.inter.broker.protocol</span>=<span class="string">PLAIN</span></span><br><span class="line"><span class="attr">sasl.enabled.mechanisms</span>=<span class="string">PLAIN</span></span><br></pre></td></tr></table></figure>
+<h2 id="Consumer-1"><a href="#Consumer-1" class="headerlink" title="Consumer"></a>Consumer</h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sasl.jaas.config</span>=<span class="string">org.apache.kafka.common.security.plain.PlainLoginModule required \</span></span><br><span class="line"><span class="string">	username=&quot;alice&quot; \</span></span><br><span class="line"><span class="string">	password=&quot;alice-secret&quot;;</span></span><br><span class="line"><span class="attr">security.protocol</span>=<span class="string">SASL_SSL</span></span><br><span class="line"><span class="attr">sasl.mechanism</span>=<span class="string">PLAIN</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-</li>
-</ol>
-<h2 id="Consumer-1"><a href="#Consumer-1" class="headerlink" title="Consumer"></a>Consumer</h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sasl.jaas.config</span>=<span class="string">org.apache.kafka.common.security.plain.PlainLoginModule required \</span></span><br><span class="line"><span class="string">	username=&quot;alice&quot; \</span></span><br><span class="line"><span class="string">	password=&quot;alice-secret&quot;;</span></span><br><span class="line"><span class="attr">security.protocol</span>=<span class="string">SASL_SSL</span></span><br><span class="line"><span class="attr">sasl.mechanism</span>=<span class="string">PLAIN</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
 <li><a target="_blank" rel="noopener" href="https://kafka.apache.org/documentation.html#consumerconfigs">https://kafka.apache.org/documentation.html#consumerconfigs</a></li>
 <li><a target="_blank" rel="noopener" href="https://kafka.apachecn.org/documentation.html#consumerconfigs">https://kafka.apachecn.org/documentation.html#consumerconfigs</a></li>
@@ -502,13 +500,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">130k</span>
+    <span title="Symbols count total">139k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:59</span>
+    <span title="Reading time total">2:06</span>
   </span>
 </div>
 <div class="busuanzi-count">

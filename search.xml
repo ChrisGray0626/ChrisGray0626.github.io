@@ -1845,9 +1845,7 @@
   <entry>
     <title>Hadoop-YARN</title>
     <url>/post/36f328db.html</url>
-    <content><![CDATA[<ul>
-<li>一个资源调度平台，负责为运算程序提供服务器运算资源，相当于一个分布式的操作系统平台。</li>
-</ul>
+    <content><![CDATA[<p>一个资源调度平台，负责为运算程序提供服务器运算资源，相当于一个分布式的操作系统平台。</p>
 <span id="more"></span>
 
 <h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><h2 id="ResourceManager（RM）"><a href="#ResourceManager（RM）" class="headerlink" title="ResourceManager（RM）"></a>ResourceManager（RM）</h2><ul>
@@ -2364,12 +2362,14 @@
 <ul>
 <li>查看当前安装的插件</li>
 </ul>
-<p>── @waline&#x2F;<a href="mailto:&#104;&#101;&#120;&#111;&#x2d;&#x6e;&#101;&#120;&#x74;&#x40;&#x32;&#46;&#48;&#46;&#x36;">&#104;&#101;&#120;&#111;&#x2d;&#x6e;&#101;&#120;&#x74;&#x40;&#x32;&#46;&#48;&#46;&#x36;</a><br>├── <a href="mailto:&#104;&#x65;&#120;&#x6f;&#64;&#54;&#x2e;&#x31;&#46;&#x30;">&#104;&#x65;&#120;&#x6f;&#64;&#54;&#x2e;&#x31;&#46;&#x30;</a><br>├── <a href="mailto:&#104;&#x65;&#120;&#111;&#x2d;&#97;&#98;&#98;&#x72;&#x6c;&#105;&#x6e;&#107;&#64;&#50;&#x2e;&#x32;&#46;&#49;">&#104;&#x65;&#120;&#111;&#x2d;&#97;&#98;&#98;&#x72;&#x6c;&#105;&#x6e;&#107;&#64;&#50;&#x2e;&#x32;&#46;&#49;</a><br>├── <a href="mailto:&#104;&#x65;&#x78;&#111;&#x2d;&#x61;&#100;&#x6d;&#105;&#x6e;&#x40;&#x32;&#46;&#51;&#46;&#x30;">&#104;&#x65;&#x78;&#111;&#x2d;&#x61;&#100;&#x6d;&#105;&#x6e;&#x40;&#x32;&#46;&#51;&#46;&#x30;</a><br>├── <a href="mailto:&#x68;&#101;&#x78;&#x6f;&#x2d;&#100;&#x65;&#112;&#108;&#111;&#121;&#101;&#x72;&#45;&#x67;&#x69;&#116;&#64;&#x33;&#46;&#48;&#x2e;&#48;">&#x68;&#101;&#x78;&#x6f;&#x2d;&#100;&#x65;&#112;&#108;&#111;&#121;&#101;&#x72;&#45;&#x67;&#x69;&#116;&#64;&#x33;&#46;&#48;&#x2e;&#48;</a><br>├── <a href="mailto:&#x68;&#x65;&#x78;&#x6f;&#45;&#100;&#105;&#114;&#x65;&#x63;&#116;&#111;&#114;&#121;&#x2d;&#x63;&#97;&#116;&#x65;&#x67;&#x6f;&#x72;&#x79;&#64;&#49;&#46;&#49;&#46;&#52;">&#x68;&#x65;&#x78;&#x6f;&#45;&#100;&#105;&#114;&#x65;&#x63;&#116;&#111;&#114;&#121;&#x2d;&#x63;&#97;&#116;&#x65;&#x67;&#x6f;&#x72;&#x79;&#64;&#49;&#46;&#49;&#46;&#52;</a><br>├── <a href="mailto:&#104;&#101;&#x78;&#x6f;&#45;&#x67;&#x65;&#110;&#101;&#114;&#97;&#116;&#x6f;&#x72;&#x2d;&#97;&#x72;&#99;&#x68;&#105;&#118;&#101;&#x40;&#49;&#46;&#x30;&#46;&#x30;">&#104;&#101;&#x78;&#x6f;&#45;&#x67;&#x65;&#110;&#101;&#114;&#97;&#116;&#x6f;&#x72;&#x2d;&#97;&#x72;&#99;&#x68;&#105;&#118;&#101;&#x40;&#49;&#46;&#x30;&#46;&#x30;</a><br>├── <a href="mailto:&#104;&#x65;&#x78;&#x6f;&#45;&#103;&#x65;&#x6e;&#101;&#114;&#x61;&#116;&#111;&#114;&#x2d;&#x63;&#97;&#x74;&#101;&#x67;&#x6f;&#114;&#x79;&#64;&#x31;&#46;&#48;&#x2e;&#48;">&#104;&#x65;&#x78;&#x6f;&#45;&#103;&#x65;&#x6e;&#101;&#114;&#x61;&#116;&#111;&#114;&#x2d;&#x63;&#97;&#x74;&#101;&#x67;&#x6f;&#114;&#x79;&#64;&#x31;&#46;&#48;&#x2e;&#48;</a><br>├── <a href="mailto:&#x68;&#101;&#x78;&#111;&#x2d;&#103;&#x65;&#x6e;&#x65;&#114;&#97;&#x74;&#111;&#x72;&#x2d;&#x66;&#101;&#x65;&#x64;&#x40;&#51;&#x2e;&#x30;&#x2e;&#48;">&#x68;&#101;&#x78;&#111;&#x2d;&#103;&#x65;&#x6e;&#x65;&#114;&#97;&#x74;&#111;&#x72;&#x2d;&#x66;&#101;&#x65;&#x64;&#x40;&#51;&#x2e;&#x30;&#x2e;&#48;</a><br>├── <a href="mailto:&#x68;&#x65;&#120;&#111;&#45;&#103;&#x65;&#x6e;&#101;&#x72;&#x61;&#x74;&#x6f;&#x72;&#45;&#105;&#x6e;&#100;&#101;&#x78;&#x40;&#x32;&#x2e;&#48;&#x2e;&#x30;">&#x68;&#x65;&#120;&#111;&#45;&#103;&#x65;&#x6e;&#101;&#x72;&#x61;&#x74;&#x6f;&#x72;&#45;&#105;&#x6e;&#100;&#101;&#x78;&#x40;&#x32;&#x2e;&#48;&#x2e;&#x30;</a><br>├── <a href="mailto:&#104;&#101;&#120;&#111;&#45;&#103;&#101;&#x6e;&#101;&#x72;&#97;&#116;&#x6f;&#114;&#x2d;&#x73;&#x65;&#97;&#x72;&#x63;&#104;&#100;&#98;&#64;&#49;&#46;&#52;&#x2e;&#x30;">&#104;&#101;&#120;&#111;&#45;&#103;&#101;&#x6e;&#101;&#x72;&#97;&#116;&#x6f;&#114;&#x2d;&#x73;&#x65;&#97;&#x72;&#x63;&#104;&#100;&#98;&#64;&#49;&#46;&#52;&#x2e;&#x30;</a><br>├── <a href="mailto:&#104;&#x65;&#x78;&#x6f;&#x2d;&#103;&#101;&#x6e;&#101;&#x72;&#x61;&#x74;&#x6f;&#x72;&#x2d;&#115;&#105;&#116;&#101;&#109;&#x61;&#x70;&#x40;&#51;&#x2e;&#48;&#46;&#x31;">&#104;&#x65;&#x78;&#x6f;&#x2d;&#103;&#101;&#x6e;&#101;&#x72;&#x61;&#x74;&#x6f;&#x72;&#x2d;&#115;&#105;&#116;&#101;&#109;&#x61;&#x70;&#x40;&#51;&#x2e;&#48;&#46;&#x31;</a><br>├── <a href="mailto:&#x68;&#x65;&#x78;&#111;&#x2d;&#103;&#101;&#x6e;&#101;&#x72;&#97;&#116;&#x6f;&#x72;&#x2d;&#x74;&#97;&#x67;&#64;&#49;&#46;&#48;&#x2e;&#48;">&#x68;&#x65;&#x78;&#111;&#x2d;&#103;&#101;&#x6e;&#101;&#x72;&#97;&#116;&#x6f;&#x72;&#x2d;&#x74;&#97;&#x67;&#64;&#49;&#46;&#48;&#x2e;&#48;</a><br>├── <a href="mailto:&#104;&#x65;&#120;&#x6f;&#x2d;&#x68;&#101;&#108;&#112;&#x65;&#114;&#x2d;&#108;&#x69;&#x76;&#x65;&#x32;&#100;&#64;&#x33;&#x2e;&#49;&#46;&#x31;">&#104;&#x65;&#120;&#x6f;&#x2d;&#x68;&#101;&#108;&#112;&#x65;&#114;&#x2d;&#108;&#x69;&#x76;&#x65;&#x32;&#100;&#64;&#x33;&#x2e;&#49;&#46;&#x31;</a><br>├── <a href="mailto:&#104;&#x65;&#120;&#111;&#45;&#x72;&#x65;&#x6e;&#100;&#101;&#114;&#101;&#x72;&#x2d;&#101;&#x6a;&#x73;&#64;&#x32;&#x2e;&#48;&#x2e;&#48;">&#104;&#x65;&#120;&#111;&#45;&#x72;&#x65;&#x6e;&#100;&#101;&#114;&#101;&#x72;&#x2d;&#101;&#x6a;&#x73;&#64;&#x32;&#x2e;&#48;&#x2e;&#48;</a><br>├── <a href="mailto:&#x68;&#x65;&#120;&#111;&#x2d;&#x72;&#101;&#x6e;&#100;&#x65;&#114;&#101;&#x72;&#x2d;&#109;&#x61;&#114;&#x6b;&#101;&#100;&#64;&#x35;&#46;&#x30;&#x2e;&#48;">&#x68;&#x65;&#120;&#111;&#x2d;&#x72;&#101;&#x6e;&#100;&#x65;&#114;&#101;&#x72;&#x2d;&#109;&#x61;&#114;&#x6b;&#101;&#100;&#64;&#x35;&#46;&#x30;&#x2e;&#48;</a><br>├── <a href="mailto:&#104;&#101;&#x78;&#111;&#45;&#114;&#101;&#110;&#x64;&#101;&#114;&#x65;&#114;&#x2d;&#x73;&#116;&#x79;&#x6c;&#x75;&#x73;&#64;&#x32;&#x2e;&#x30;&#x2e;&#x31;">&#104;&#101;&#x78;&#111;&#45;&#114;&#101;&#110;&#x64;&#101;&#114;&#x65;&#114;&#x2d;&#x73;&#116;&#x79;&#x6c;&#x75;&#x73;&#64;&#x32;&#x2e;&#x30;&#x2e;&#x31;</a><br>├── <a href="mailto:&#x68;&#101;&#x78;&#x6f;&#x2d;&#115;&#101;&#114;&#x76;&#x65;&#114;&#x40;&#51;&#x2e;&#x30;&#46;&#48;">&#x68;&#101;&#x78;&#x6f;&#x2d;&#115;&#101;&#114;&#x76;&#x65;&#114;&#x40;&#51;&#x2e;&#x30;&#46;&#48;</a><br>├── <a href="mailto:&#x68;&#x65;&#x78;&#x6f;&#45;&#116;&#x68;&#101;&#x6d;&#101;&#x2d;&#108;&#x61;&#110;&#100;&#x73;&#99;&#x61;&#112;&#101;&#64;&#x30;&#x2e;&#48;&#x2e;&#51;">&#x68;&#x65;&#x78;&#x6f;&#45;&#116;&#x68;&#101;&#x6d;&#101;&#x2d;&#108;&#x61;&#110;&#100;&#x73;&#99;&#x61;&#112;&#101;&#64;&#x30;&#x2e;&#48;&#x2e;&#51;</a><br>├── <a href="mailto:&#104;&#101;&#120;&#111;&#x2d;&#x77;&#x6f;&#114;&#x64;&#45;&#x63;&#111;&#x75;&#110;&#x74;&#x65;&#x72;&#x40;&#x30;&#x2e;&#48;&#46;&#x33;">&#104;&#101;&#120;&#111;&#x2d;&#x77;&#x6f;&#114;&#x64;&#45;&#x63;&#111;&#x75;&#110;&#x74;&#x65;&#x72;&#x40;&#x30;&#x2e;&#48;&#46;&#x33;</a><br>├── <a href="mailto:&#x6c;&#105;&#118;&#x65;&#x32;&#x64;&#x2d;&#119;&#x69;&#x64;&#103;&#x65;&#x74;&#45;&#x6d;&#x6f;&#x64;&#101;&#108;&#45;&#104;&#105;&#x6a;&#x69;&#107;&#x69;&#64;&#x31;&#46;&#48;&#46;&#x35;">&#x6c;&#105;&#118;&#x65;&#x32;&#x64;&#x2d;&#119;&#x69;&#x64;&#103;&#x65;&#x74;&#45;&#x6d;&#x6f;&#x64;&#101;&#108;&#45;&#104;&#105;&#x6a;&#x69;&#107;&#x69;&#64;&#x31;&#46;&#48;&#46;&#x35;</a><br>└── <a href="mailto:&#108;&#105;&#x76;&#101;&#x32;&#100;&#x2d;&#119;&#x69;&#100;&#103;&#x65;&#x74;&#x2d;&#x6d;&#111;&#x64;&#x65;&#108;&#x2d;&#116;&#111;&#114;&#x6f;&#x72;&#111;&#64;&#x31;&#x2e;&#48;&#46;&#x35;">&#108;&#105;&#x76;&#101;&#x32;&#100;&#x2d;&#119;&#x69;&#100;&#103;&#x65;&#x74;&#x2d;&#x6d;&#111;&#x64;&#x65;&#108;&#x2d;&#116;&#111;&#114;&#x6f;&#x72;&#111;&#64;&#x31;&#x2e;&#48;&#46;&#x35;</a></p>
+<p>── @waline&#x2F;<a href="mailto:&#x68;&#101;&#x78;&#111;&#45;&#110;&#x65;&#x78;&#x74;&#x40;&#x32;&#x2e;&#x30;&#46;&#54;">&#x68;&#101;&#x78;&#111;&#45;&#110;&#x65;&#x78;&#x74;&#x40;&#x32;&#x2e;&#x30;&#46;&#54;</a><br>├── <a href="mailto:&#x68;&#x65;&#120;&#111;&#64;&#x36;&#x2e;&#49;&#x2e;&#x30;">&#x68;&#x65;&#120;&#111;&#64;&#x36;&#x2e;&#49;&#x2e;&#x30;</a><br>├── <a href="mailto:&#x68;&#x65;&#120;&#111;&#x2d;&#x61;&#98;&#x62;&#x72;&#x6c;&#x69;&#110;&#x6b;&#64;&#x32;&#46;&#x32;&#46;&#49;">&#x68;&#x65;&#120;&#111;&#x2d;&#x61;&#98;&#x62;&#x72;&#x6c;&#x69;&#110;&#x6b;&#64;&#x32;&#46;&#x32;&#46;&#49;</a><br>├── <a href="mailto:&#x68;&#x65;&#120;&#x6f;&#x2d;&#x61;&#100;&#109;&#105;&#x6e;&#64;&#50;&#46;&#51;&#x2e;&#x30;">&#x68;&#x65;&#120;&#x6f;&#x2d;&#x61;&#100;&#109;&#105;&#x6e;&#64;&#50;&#46;&#51;&#x2e;&#x30;</a><br>├── <a href="mailto:&#x68;&#x65;&#x78;&#111;&#45;&#x64;&#101;&#112;&#108;&#x6f;&#121;&#x65;&#x72;&#45;&#x67;&#105;&#116;&#x40;&#51;&#x2e;&#48;&#x2e;&#48;">&#x68;&#x65;&#x78;&#111;&#45;&#x64;&#101;&#112;&#108;&#x6f;&#121;&#x65;&#x72;&#45;&#x67;&#105;&#116;&#x40;&#51;&#x2e;&#48;&#x2e;&#48;</a><br>├── <a href="mailto:&#x68;&#101;&#x78;&#x6f;&#45;&#x64;&#105;&#x72;&#101;&#99;&#116;&#111;&#114;&#121;&#x2d;&#x63;&#x61;&#x74;&#101;&#x67;&#111;&#114;&#121;&#64;&#49;&#x2e;&#49;&#46;&#52;">&#x68;&#101;&#x78;&#x6f;&#45;&#x64;&#105;&#x72;&#101;&#99;&#116;&#111;&#114;&#121;&#x2d;&#x63;&#x61;&#x74;&#101;&#x67;&#111;&#114;&#121;&#64;&#49;&#x2e;&#49;&#46;&#52;</a><br>├── <a href="mailto:&#x68;&#x65;&#120;&#111;&#x2d;&#103;&#101;&#x6e;&#x65;&#114;&#97;&#116;&#x6f;&#x72;&#45;&#x61;&#x72;&#99;&#104;&#105;&#118;&#x65;&#x40;&#x31;&#46;&#x30;&#x2e;&#x30;">&#x68;&#x65;&#120;&#111;&#x2d;&#103;&#101;&#x6e;&#x65;&#114;&#97;&#116;&#x6f;&#x72;&#45;&#x61;&#x72;&#99;&#104;&#105;&#118;&#x65;&#x40;&#x31;&#46;&#x30;&#x2e;&#x30;</a><br>├── <a href="mailto:&#104;&#101;&#120;&#x6f;&#45;&#x67;&#101;&#110;&#101;&#x72;&#97;&#x74;&#111;&#x72;&#x2d;&#x63;&#x61;&#x74;&#101;&#103;&#111;&#114;&#x79;&#x40;&#49;&#x2e;&#x30;&#x2e;&#x30;">&#104;&#101;&#120;&#x6f;&#45;&#x67;&#101;&#110;&#101;&#x72;&#97;&#x74;&#111;&#x72;&#x2d;&#x63;&#x61;&#x74;&#101;&#103;&#111;&#114;&#x79;&#x40;&#49;&#x2e;&#x30;&#x2e;&#x30;</a><br>├── <a href="mailto:&#x68;&#x65;&#x78;&#111;&#45;&#x67;&#x65;&#110;&#101;&#x72;&#x61;&#116;&#x6f;&#x72;&#45;&#102;&#x65;&#x65;&#100;&#64;&#x33;&#46;&#48;&#46;&#48;">&#x68;&#x65;&#x78;&#111;&#45;&#x67;&#x65;&#110;&#101;&#x72;&#x61;&#116;&#x6f;&#x72;&#45;&#102;&#x65;&#x65;&#100;&#64;&#x33;&#46;&#48;&#46;&#48;</a><br>├── <a href="mailto:&#x68;&#x65;&#x78;&#111;&#x2d;&#x67;&#x65;&#x6e;&#x65;&#114;&#97;&#x74;&#x6f;&#x72;&#45;&#x69;&#x6e;&#x64;&#101;&#x78;&#64;&#x32;&#x2e;&#x30;&#46;&#x30;">&#x68;&#x65;&#x78;&#111;&#x2d;&#x67;&#x65;&#x6e;&#x65;&#114;&#97;&#x74;&#x6f;&#x72;&#45;&#x69;&#x6e;&#x64;&#101;&#x78;&#64;&#x32;&#x2e;&#x30;&#46;&#x30;</a><br>├── <a href="mailto:&#104;&#101;&#x78;&#111;&#45;&#x67;&#x65;&#x6e;&#x65;&#114;&#x61;&#x74;&#111;&#x72;&#x2d;&#x73;&#x65;&#97;&#114;&#x63;&#x68;&#x64;&#x62;&#x40;&#49;&#46;&#52;&#x2e;&#48;">&#104;&#101;&#x78;&#111;&#45;&#x67;&#x65;&#x6e;&#x65;&#114;&#x61;&#x74;&#111;&#x72;&#x2d;&#x73;&#x65;&#97;&#114;&#x63;&#x68;&#x64;&#x62;&#x40;&#49;&#46;&#52;&#x2e;&#48;</a><br>├── <a href="mailto:&#x68;&#x65;&#x78;&#111;&#45;&#x67;&#101;&#110;&#x65;&#114;&#x61;&#116;&#x6f;&#114;&#45;&#x73;&#x69;&#x74;&#x65;&#109;&#x61;&#112;&#64;&#x33;&#46;&#x30;&#46;&#x31;">&#x68;&#x65;&#x78;&#111;&#45;&#x67;&#101;&#110;&#x65;&#114;&#x61;&#116;&#x6f;&#114;&#45;&#x73;&#x69;&#x74;&#x65;&#109;&#x61;&#112;&#64;&#x33;&#46;&#x30;&#46;&#x31;</a><br>├── <a href="mailto:&#104;&#101;&#120;&#111;&#45;&#103;&#101;&#x6e;&#101;&#x72;&#97;&#x74;&#111;&#x72;&#x2d;&#116;&#x61;&#x67;&#64;&#49;&#46;&#48;&#x2e;&#x30;">&#104;&#101;&#120;&#111;&#45;&#103;&#101;&#x6e;&#101;&#x72;&#97;&#x74;&#111;&#x72;&#x2d;&#116;&#x61;&#x67;&#64;&#49;&#46;&#48;&#x2e;&#x30;</a><br>├── <a href="mailto:&#104;&#x65;&#x78;&#111;&#45;&#x68;&#x65;&#108;&#112;&#x65;&#x72;&#x2d;&#x6c;&#x69;&#x76;&#x65;&#x32;&#x64;&#x40;&#x33;&#x2e;&#x31;&#x2e;&#49;">&#104;&#x65;&#x78;&#111;&#45;&#x68;&#x65;&#108;&#112;&#x65;&#x72;&#x2d;&#x6c;&#x69;&#x76;&#x65;&#x32;&#x64;&#x40;&#x33;&#x2e;&#x31;&#x2e;&#49;</a><br>├── <a href="mailto:&#x68;&#101;&#x78;&#111;&#45;&#114;&#x65;&#x6e;&#x64;&#x65;&#x72;&#101;&#114;&#x2d;&#x65;&#106;&#x73;&#x40;&#50;&#x2e;&#48;&#46;&#x30;">&#x68;&#101;&#x78;&#111;&#45;&#114;&#x65;&#x6e;&#x64;&#x65;&#x72;&#101;&#114;&#x2d;&#x65;&#106;&#x73;&#x40;&#50;&#x2e;&#48;&#46;&#x30;</a><br>├── <a href="mailto:&#104;&#x65;&#x78;&#x6f;&#45;&#114;&#101;&#110;&#x64;&#101;&#114;&#x65;&#114;&#x2d;&#x6d;&#x61;&#x72;&#x6b;&#101;&#x64;&#64;&#x35;&#x2e;&#48;&#x2e;&#x30;">&#104;&#x65;&#x78;&#x6f;&#45;&#114;&#101;&#110;&#x64;&#101;&#114;&#x65;&#114;&#x2d;&#x6d;&#x61;&#x72;&#x6b;&#101;&#x64;&#64;&#x35;&#x2e;&#48;&#x2e;&#x30;</a><br>├── <a href="mailto:&#104;&#101;&#120;&#x6f;&#x2d;&#114;&#x65;&#x6e;&#100;&#101;&#114;&#101;&#x72;&#x2d;&#115;&#116;&#121;&#108;&#x75;&#x73;&#x40;&#x32;&#x2e;&#x30;&#46;&#x31;">&#104;&#101;&#120;&#x6f;&#x2d;&#114;&#x65;&#x6e;&#100;&#101;&#114;&#101;&#x72;&#x2d;&#115;&#116;&#121;&#108;&#x75;&#x73;&#x40;&#x32;&#x2e;&#x30;&#46;&#x31;</a><br>├── <a href="mailto:&#104;&#101;&#120;&#x6f;&#45;&#115;&#x65;&#114;&#118;&#x65;&#x72;&#x40;&#51;&#x2e;&#x30;&#x2e;&#48;">&#104;&#101;&#120;&#x6f;&#45;&#115;&#x65;&#114;&#118;&#x65;&#x72;&#x40;&#51;&#x2e;&#x30;&#x2e;&#48;</a><br>├── <a href="mailto:&#104;&#101;&#120;&#111;&#x2d;&#116;&#104;&#x65;&#109;&#x65;&#x2d;&#108;&#x61;&#x6e;&#100;&#x73;&#99;&#x61;&#x70;&#x65;&#x40;&#x30;&#x2e;&#x30;&#x2e;&#x33;">&#104;&#101;&#120;&#111;&#x2d;&#116;&#104;&#x65;&#109;&#x65;&#x2d;&#108;&#x61;&#x6e;&#100;&#x73;&#99;&#x61;&#x70;&#x65;&#x40;&#x30;&#x2e;&#x30;&#x2e;&#x33;</a><br>├── <a href="mailto:&#x68;&#101;&#120;&#x6f;&#x2d;&#x77;&#x6f;&#x72;&#100;&#45;&#99;&#111;&#x75;&#110;&#x74;&#x65;&#x72;&#64;&#x30;&#x2e;&#x30;&#x2e;&#x33;">&#x68;&#101;&#120;&#x6f;&#x2d;&#x77;&#x6f;&#x72;&#100;&#45;&#99;&#111;&#x75;&#110;&#x74;&#x65;&#x72;&#64;&#x30;&#x2e;&#x30;&#x2e;&#x33;</a><br>├── <a href="mailto:&#108;&#105;&#118;&#101;&#x32;&#x64;&#x2d;&#x77;&#105;&#x64;&#103;&#101;&#x74;&#45;&#109;&#x6f;&#x64;&#x65;&#108;&#x2d;&#104;&#105;&#106;&#105;&#107;&#105;&#64;&#49;&#46;&#48;&#46;&#x35;">&#108;&#105;&#118;&#101;&#x32;&#x64;&#x2d;&#x77;&#105;&#x64;&#103;&#101;&#x74;&#45;&#109;&#x6f;&#x64;&#x65;&#108;&#x2d;&#104;&#105;&#106;&#105;&#107;&#105;&#64;&#49;&#46;&#48;&#46;&#x35;</a><br>└── <a href="mailto:&#x6c;&#x69;&#118;&#x65;&#x32;&#x64;&#x2d;&#x77;&#105;&#100;&#103;&#x65;&#116;&#x2d;&#x6d;&#x6f;&#100;&#101;&#108;&#45;&#x74;&#111;&#114;&#x6f;&#114;&#x6f;&#x40;&#x31;&#46;&#48;&#46;&#x35;">&#x6c;&#x69;&#118;&#x65;&#x32;&#x64;&#x2d;&#x77;&#105;&#100;&#103;&#x65;&#116;&#x2d;&#x6d;&#x6f;&#100;&#101;&#108;&#45;&#x74;&#111;&#114;&#x6f;&#114;&#x6f;&#x40;&#x31;&#46;&#48;&#46;&#x35;</a></p>
 <h1 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h1><ul>
 <li>NexT</li>
 </ul>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><p><a href="https://hexo.io/zh-cn/docs/">Hexo</a></p>
-<p><a href="http://theme-next.iissnan.com/">NexT</a></p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a href="https://hexo.io/zh-cn/docs/">Hexo</a></li>
+<li><a href="http://theme-next.iissnan.com/">NexT</a></li>
+</ul>
 ]]></content>
       <categories>
         <category>Tech</category>
@@ -2611,11 +2611,11 @@
 <h3 id="直接引用"><a href="#直接引用" class="headerlink" title="直接引用"></a>直接引用</h3><ul>
 <li>指向目标的指针，相对偏移量或是一个能间接定位到目标的句柄。如果有了直接引用，那引用的目标必定已经在内存中存在。</li>
 </ul>
-<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>执行类构造器 <code>&lt;clinit&gt;()</code> 方法</p>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>执行类构造器 <code>clinit()</code> 方法</p>
 <h3 id="类构造器"><a href="#类构造器" class="headerlink" title="类构造器"></a>类构造器</h3><ul>
-<li><clinit> 方法是由编译器自动收集类中的<strong>类变量的赋值操作</strong>和<strong>静态语句块中的语句</strong>合并而成的。</li>
-<li>虚拟机会保证子 <clinit> 方法执行之前，父类的 <clinit> 方法已经执行完毕。</li>
-<li>如果一个类中没有对静态变量赋值也没有静态语句块，那么编译器可以不为这个类生成 <clinit> 方法。</li>
+<li>clinit 方法是由编译器自动收集类中的<strong>类变量的赋值操作</strong>和<strong>静态语句块中的语句</strong>合并而成的。</li>
+<li>虚拟机会保证子 clinit 方法执行之前，父类的 clinit 方法已经执行完毕。</li>
+<li>如果一个类中没有对静态变量赋值也没有静态语句块，那么编译器可以不为这个类生成 clinit 方法。</li>
 <li>以下几种情况不会执行类初始化:<ul>
 <li>通过<strong>子类引用父类的静态字段</strong>，只会触发父类的初始化，而不会触发子类的初始化。</li>
 <li>定义<strong>对象数组</strong>，不会触发该类的初始化。</li>
@@ -3202,13 +3202,11 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">KafkaServer &#123;</span><br><span class="line">    org.apache.kafka.common.security.plain.PlainLoginModule required</span><br><span class="line">    username=&quot;admin&quot;</span><br><span class="line">    password=&quot;admin-secret&quot;</span><br><span class="line">    user_admin=&quot;admin-secret&quot;</span><br><span class="line">    user_alice=&quot;alice-secret&quot;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将 JAAS 配置文件的路径作为 JVM 的参数, 并传递到每一个 Kafka broker</p>
-<ol>
-<li>&#96;&#96;&#96;shell<br>-Djava.security.auth.login.config&#x3D;&#x2F;etc&#x2F;kafka&#x2F;kafka_server_jaas.conf<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">1. 在 server.properties 中配置 SASL 端口和 SASL 机制</span><br><span class="line"></span><br><span class="line">   ```properties</span><br><span class="line">   listeners=SASL_SSL://host.name:port</span><br><span class="line">   security.inter.broker.protocol=SASL_SSL</span><br><span class="line">   sasl.mechanism.inter.broker.protocol=PLAIN</span><br><span class="line">   sasl.enabled.mechanisms=PLAIN</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-Djava.security.auth.login.config=/etc/kafka/kafka_server_jaas.conf</span><br></pre></td></tr></table></figure></li>
+<li><p>在 <code>server.properties</code> 中配置 SASL 端口和 SASL 机制</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">listeners</span>=<span class="string">SASL_SSL://host.name:port</span></span><br><span class="line"><span class="attr">security.inter.broker.protocol</span>=<span class="string">SASL_SSL</span></span><br><span class="line"><span class="attr">sasl.mechanism.inter.broker.protocol</span>=<span class="string">PLAIN</span></span><br><span class="line"><span class="attr">sasl.enabled.mechanisms</span>=<span class="string">PLAIN</span></span><br></pre></td></tr></table></figure>
+<h2 id="Consumer-1"><a href="#Consumer-1" class="headerlink" title="Consumer"></a>Consumer</h2><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">sasl.jaas.config</span>=<span class="string">org.apache.kafka.common.security.plain.PlainLoginModule required \</span></span><br><span class="line"><span class="string">	username=&quot;alice&quot; \</span></span><br><span class="line"><span class="string">	password=&quot;alice-secret&quot;;</span></span><br><span class="line"><span class="attr">security.protocol</span>=<span class="string">SASL_SSL</span></span><br><span class="line"><span class="attr">sasl.mechanism</span>=<span class="string">PLAIN</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-</li>
-</ol>
-<h2 id="Consumer-1"><a href="#Consumer-1" class="headerlink" title="Consumer"></a>Consumer</h2><figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">sasl.jaas.config</span>=<span class="string">org.apache.kafka.common.security.plain.PlainLoginModule required \</span></span><br><span class="line"><span class="string">	username=&quot;alice&quot; \</span></span><br><span class="line"><span class="string">	password=&quot;alice-secret&quot;;</span></span><br><span class="line"><span class="attr">security.protocol</span>=<span class="string">SASL_SSL</span></span><br><span class="line"><span class="attr">sasl.mechanism</span>=<span class="string">PLAIN</span></span><br></pre></td></tr></table></figure>
-
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
 <li><a href="https://kafka.apache.org/documentation.html#consumerconfigs">https://kafka.apache.org/documentation.html#consumerconfigs</a></li>
 <li><a href="https://kafka.apachecn.org/documentation.html#consumerconfigs">https://kafka.apachecn.org/documentation.html#consumerconfigs</a></li>
@@ -3346,7 +3344,7 @@
 <ul>
 <li>生产者（Producer）</li>
 <li>消费者（Consumer）</li>
-<li>还有用来做数据集成的 Kafka Connect API 和流式处理的 Kafka Streams 等高阶客户端，但这些高阶客户端底层仍然是生产者和消费者API，它们只不过是在上层做了封装。</li>
+<li>还有用来做数据集成的 Kafka Connect API 和流式处理的 Kafka Streams 等高阶客户端，但这些高阶客户端底层仍然是生产者和消费者 API，它们只不过是在上层做了封装。</li>
 </ul>
 <h1 id="主题（Topic）"><a href="#主题（Topic）" class="headerlink" title="主题（Topic）"></a>主题（Topic）</h1><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/image-20220418164225275.png" alt="image-20220418164225275"></p>
 <ul>
@@ -3359,7 +3357,7 @@
 <li>Kafka 中的一台或多台服务器统称 broker。</li>
 <li><strong>Kafka</strong> 强依赖于 zookeeper ，每当一个 broker 启动时，它会将自己注册到 zookeeper 的临时节点；Kafka 利用 zookeeper 临时节点来管理 broker 生命周期。</li>
 <li>若干个 Broker 组成一个集群（Cluster），其中集群内某个 Broker 会成为集群控制器（Cluster Controller），它负责管理集群，包括分配分区到 Broker、监控 Broker 故障等。</li>
-<li>在集群内，一个分区 由一个 Broker 负责，这个 Broker 也称为这个分区的 Leader。</li>
+<li>在集群内，一个分区由一个 Broker 负责，这个 Broker 也称为这个分区的 Leader。</li>
 </ul>
 <h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><ul>
 <li><p>Kafka 的消息是存在于文件系统之上的，其高度依赖文件系统来存储和缓存消息。</p>
@@ -3457,7 +3455,8 @@
 <h2 id="分区分段-索引"><a href="#分区分段-索引" class="headerlink" title="分区分段+索引"></a>分区分段+索引</h2><p>Kafka的message是按topic分类存储的，topic中的数据又是按照一个一个的partition即分区存储到不同broker节点。每个partition对应了操作系统上的一个文件夹，partition实际上又是按照segment分段存储的。符合分布式系统分区分桶的设计思想。</p>
 <p>通过这种分区分段的设计，Kafka的message消息实际上是分布式存储在一个一个小的segment中的，每次文件操作也是直接操作的segment。为了进一步的查询优化，Kafka又默认为分段后的数据文件建立了索引文件，就是文件系统上的.index文件。这种分区分段+索引的设计，不仅提升了数据读取的效率，同时也提高了数据操作的并行度。</p>
 <h2 id="批量读写"><a href="#批量读写" class="headerlink" title="批量读写"></a>批量读写</h2><p>Kafka数据读写是批量的而不是单条的。在向Kafka写入数据时，可以启用批次写入，这样可以避免在网络上频繁传输单个消息带来的延迟和带宽开销。</p>
-<h2 id="批量压缩"><a href="#批量压缩" class="headerlink" title="批量压缩"></a>批量压缩</h2><p>在很多情况下，系统的瓶颈不是CPU或磁盘，而是网络IO，对于需要在广域网上的数据中心之间发送消息的数据流水线尤其如此。如果每个消息都压缩，但是压缩率相对很低，所以Kafka使用了批量压缩，即将多个消息一起压缩而不是单个消息压缩。<br>Kafka允许使用递归的消息集合，批量的消息可以通过压缩的形式传输并且在日志中也可以保持压缩格式，直到被消费者解压缩。Kafka把所有的消息都变成一个批量的文件，并且进行合理的批量压缩，减少网络IO损耗。</p>
+<h2 id="批量压缩"><a href="#批量压缩" class="headerlink" title="批量压缩"></a>批量压缩</h2><p>在很多情况下，系统的瓶颈不是CPU或磁盘，而是网络IO，对于需要在广域网上的数据中心之间发送消息的数据流水线尤其如此。如果每个消息都压缩，但是压缩率相对很低，所以Kafka使用了批量压缩，即将多个消息一起压缩而不是单个消息压缩。</p>
+<p>Kafka允许使用递归的消息集合，批量的消息可以通过压缩的形式传输并且在日志中也可以保持压缩格式，直到被消费者解压缩。Kafka把所有的消息都变成一个批量的文件，并且进行合理的批量压缩，减少网络IO损耗。</p>
 <h1 id="蓄水池机制"><a href="#蓄水池机制" class="headerlink" title="蓄水池机制"></a>蓄水池机制</h1><p>生产的流程主要就是一个producer线程和一个sender线程，它们之间通过BatchQueue来获取数据，它们的关系是一一对应的，所以kafka的生产过程都是异步过程，它的同步和异步指的是接收响应结果的模式是同步阻塞还是异步回调。</p>
 <p>同步接收是依据send之后返回Future，再调用Future的get方法进行阻塞等待。下面我们就从producer和sender两个类所对应的流程来进行分析，他们分别是消息收集过程和消息发送过程。消息的收集过程的数据最终是放在BatchQueue，像是将水流入了一个蓄水池的场景。</p>
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
@@ -4440,7 +4439,7 @@
 </ul>
 <h2 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">searchSingle</span><span class="params">(<span class="type">int</span> idx)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (idx % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[idx] == nums[idx - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[idx] == nums[idx + <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array/">540. 有序数组中的单一元素 - 力扣（LeetCode） (leetcode-cn.com)</a></p>
+<h2 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h2><p><a href="https://leetcode-cn.com/problems/single-element-in-a-sorted-array/">540. 有序数组中的单一元素 - 力扣（LeetCode） (leetcode-cn.com)</a><br>w</p>
 ]]></content>
       <categories>
         <category>Tech</category>
@@ -5169,5 +5168,227 @@
         <category>Tech</category>
         <category>Waline</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Data Warehouse</title>
+    <url>/post/2bcbefa4.html</url>
+    <content><![CDATA[<p>Data Warehouse （DW），数据仓库的目的是<strong>构建面向分析的集成化数据环境</strong>，为企业提供决策支持（Decision Support）。它出于<strong>分析性报告</strong>和<strong>决策支持</strong>的目的而创建。数据仓库本身并不“生产”任何数据，同时自身也不需要“消费”任何的数据，数据来源于外部，并且开放给外部应用，这也是为什么叫“仓库”，而不叫“工厂”的原因。</p>
+<span id="more"></span>
+
+<h1 id="业务痛点"><a href="#业务痛点" class="headerlink" title="业务痛点"></a>业务痛点</h1><ol>
+<li>无法应对频繁临时需求</li>
+<li>数据资产模糊</li>
+<li>数据质量低</li>
+<li>重复建设</li>
+<li>代码耦合性高</li>
+<li>问题难定位，周期长</li>
+</ol>
+<h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><h2 id="面向主题（Subject-Oriented）"><a href="#面向主题（Subject-Oriented）" class="headerlink" title="面向主题（Subject Oriented）"></a>面向主题（Subject Oriented）</h2><p>传统数据库中，最大的特点是面向应用进行数据的组织，各个业务系统可能是相互分离的。而数据仓库则是面向主题的。主题是一个抽象的概念，是较高层次上企业信息系统中的数据综合、归类并进行分析利用的抽象。在逻辑意义上，它是对应企业中某一宏观分析领域所涉及的分析对象。</p>
+<h2 id="集成性（Integrate）"><a href="#集成性（Integrate）" class="headerlink" title="集成性（Integrate）"></a>集成性（Integrate）</h2><p>通过对<strong>分散、独立、异构</strong>的数据库数据进行抽取、清理、转换和汇总便得到了数据仓库的数据，这样保证了数据仓库内的数据关于整个企业的<strong>一致性</strong>。</p>
+<h2 id="非易失性（Non-Volatile）-x2F-不可更新性"><a href="#非易失性（Non-Volatile）-x2F-不可更新性" class="headerlink" title="非易失性（Non-Volatile）&#x2F;不可更新性"></a>非易失性（Non-Volatile）&#x2F;不可更新性</h2><p>数据仓库的数据反映的是一段相当长的时间内<strong>历史数据的内容</strong>，是不同时点的数据库快照的集合，以及基于这些快照进行统计、综合和重组的导出数据。数据非易失性主要是针对应用而言的，数据仓库的用户对数据的操作大多是数据查询或比较复杂的挖掘，一旦数据进入数据仓库以后，一般情况下被较长时间保留。</p>
+<p>数据仓库中一般有大量的查询操作，但修改和删除操作很少。因此，数据经加工和集成进入数据仓库后是极少更新的，通常只需要定期的加载和更新。</p>
+<h2 id="时变性（Time-Variant）"><a href="#时变性（Time-Variant）" class="headerlink" title="时变性（Time Variant）"></a>时变性（Time Variant）</h2><p>数据仓库包含<strong>各种粒度的历史数据</strong>。数据仓库中的数据可能与某个特定日期、星期、月份、季度或者年份有关。数据仓库的目的是通过分析企业过去一段时间业务的经营状况，挖掘其中隐藏的模式。</p>
+<p>虽然数据仓库的用户不能修改数据，但并不是说数据仓库的数据是永远不变的。分析的结果只能反映过去的情况，当业务变化后，挖掘出的模式会失去时效性。因此数据仓库的数据需要更新，以适应决策的需要。从这个角度讲，数据仓库建设是一个项目，更是一个<strong>过程</strong>。数据仓库的数据随时间的变化表现在以下几个方面：</p>
+<ul>
+<li>数据仓库的数据时限一般要远远长于操作型数据的数据时限。</li>
+<li>操作型系统存储的是当前数据，而数据仓库中的数据是历史数据。</li>
+<li>数据仓库中的数据是按照时间顺序<strong>追加</strong>的，它们都带有时间属性。</li>
+</ul>
+<h1 id="与数据库的区别"><a href="#与数据库的区别" class="headerlink" title="与数据库的区别"></a>与数据库的区别</h1><h2 id="联机事务处理（OLTP）"><a href="#联机事务处理（OLTP）" class="headerlink" title="联机事务处理（OLTP）"></a>联机事务处理（OLTP）</h2><p>（On-Line Transaction Processing），也可以称面向交易的处理系统，它是针对具体业务在数据库联机的日常操作，通常对少数记录进行查询、修改。用户较为关心操作的响应时间、数据的安全性、完整性和并发的支持用户数等问题。传统的数据库系统作为数据管理的主要手段，主要用于操作型处理。</p>
+<h2 id="联机分析处理（OLAP）"><a href="#联机分析处理（OLAP）" class="headerlink" title="联机分析处理（OLAP）"></a>联机分析处理（OLAP）</h2><p>（On-Line Analytical Processing）一般针对某些主题历史数据进行分析，支持管理决策。</p>
+<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p>数据库设计是尽量避免冗余，一般针对某一业务应用进行设计，符合业务应用，但是不符合分析。数据仓库在设计是有意引入冗余，依照分析需求，分析维度、分析指标进行设计。</p>
+<p>数据库为<strong>捕获数据</strong>而设计，数据仓库为<strong>分析数据</strong>而设计。</p>
+<p>数据仓库，是在数据库已经大量存在的情况下，为了进一步挖掘数据资源、为了决策需要而产生的，它决不是所谓的“大型数据库”。</p>
+<h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><p>按照数据流入流出的过程，数据仓库架构可分为：</p>
+<ul>
+<li>源数据</li>
+<li>数据仓库</li>
+<li>数据应用</li>
+</ul>
+<h2 id="源数据"><a href="#源数据" class="headerlink" title="源数据"></a>源数据</h2><p>此层数据无任何更改，直接沿用外围系统数据结构和数据，不对外开放；为临时存储层，是接口数据的临时存储区域，为后一步的数据处理做准备。</p>
+<h2 id="数据仓库"><a href="#数据仓库" class="headerlink" title="数据仓库"></a>数据仓库</h2><p>也称为细节层，DW 层的数据应该是一致的、准确的、干净的数据，即对源系统数据进行了清洗（去除了杂质）后的数据。</p>
+<h2 id="数据应用"><a href="#数据应用" class="headerlink" title="数据应用"></a>数据应用</h2><p>前端应用直接读取的数据源；根据报表、专题分析需求而计算生成的数据。</p>
+<h2 id="ETL-过程"><a href="#ETL-过程" class="headerlink" title="ETL 过程"></a>ETL 过程</h2><p>数据仓库从各数据源获取数据及在数据仓库内的数据转换和流动都可以认为是 ETL 的过程，ETL 是数据仓库的流水线，也可以认为是数据仓库的血液，它维系着数据仓库中数据的新陈代谢，而数据仓库日常的管理和维护工作的大部分精力就是保持 ETL 的正常和稳定。</p>
+<h2 id="意义"><a href="#意义" class="headerlink" title="意义"></a>意义</h2><p>用空间换时间，通过大量的<strong>预处理</strong>来提升应用系统的用户体验（效率），因此数据仓库会存在<strong>大量冗余的数据</strong>；不分层的话，如果源业务系统的业务规则发生变化将会影响整个数据清洗过程，工作量巨大。</p>
+<p>通过数据分层管理可以<strong>简化数据清洗的过程</strong>，因为把原来一步的工作分到了多个步骤去完成，相当于把一个复杂的工作拆成了多个简单的工作，把一个大的黑盒变成了一个白盒，每一层的处理逻辑都相对简单和容易理解，这样我们比较容易保证每一个步骤的正确性，当数据发生错误的时候，往往我们只需要局部调整某个步骤即可。</p>
+<h1 id="建模方法"><a href="#建模方法" class="headerlink" title="建模方法"></a>建模方法</h1><h2 id="范式建模-（Third-Normal-Form，3NF）"><a href="#范式建模-（Third-Normal-Form，3NF）" class="headerlink" title="范式建模 （Third Normal Form，3NF）"></a>范式建模 （Third Normal Form，3NF）</h2><ol>
+<li>所有表中的数据都为原子数据，不可再分</li>
+<li>所有表中的所有字段都必须依赖主关键字</li>
+<li>所有表中的非主关键字段之间不能函数依赖关系</li>
+</ol>
+<h3 id="第一范式（1NF）"><a href="#第一范式（1NF）" class="headerlink" title="第一范式（1NF）"></a>第一范式（1NF）</h3><p>在关系模式 R 中的每一个具体关系 r 中，必须要有主键,并且每个属性值都是不可再分的最小数据单位，则称 R 是第一范式的关系。</p>
+<h3 id="第二范式（2NF）"><a href="#第二范式（2NF）" class="headerlink" title="第二范式（2NF）"></a>第二范式（2NF）</h3><p>如果关系模式 R 中的所有非主属性都完全依赖于主关键字，则称关系 R 是属于第二范式的。</p>
+<h3 id="第三范式（3NF）"><a href="#第三范式（3NF）" class="headerlink" title="第三范式（3NF）"></a>第三范式（3NF）</h3><p>关系模式 R 中的非主关键字不能依赖于其他非主关键字。即非主关键字之间不能有函数（传递）依赖关系。则称关系 R 是属于第三范式的。</p>
+<h2 id="维度建模"><a href="#维度建模" class="headerlink" title="维度建模"></a>维度建模</h2><p>维度建模是一种将数据结构化的逻辑设计方法，它将客观世界划分为度量和上下文。<strong>度量是常常是以数值形式出现，事实周围有上下文包围着，这种上下文被直观地分成独立的逻辑块，称之为维度。</strong></p>
+<h3 id="事实表"><a href="#事实表" class="headerlink" title="事实表"></a>事实表</h3><p>发生在现实世界中的操作型事件，其所产生的可度量数值，存储在事实表中。事实表表示对分析主题的度量。</p>
+<p>事实表的特征：表里没有存放实际的内容，他是一堆<strong>主键的集合</strong>，这些 ID 分别能对应到维度表中的一条记录。事实表包含了与各维度表相关联的<strong>外键</strong>，可与维度表关联。事实表的度量通常是数值类型，且记录数会不断增加，表数据规模迅速增长。它一般是<strong>行多列少</strong>，占了数据仓库的90%的空间。</p>
+<h4 id="事务事实表"><a href="#事务事实表" class="headerlink" title="事务事实表"></a>事务事实表</h4><p>它是面向事务的，其粒度是每一行对应一个事务，它是最细粒度的事实表。</p>
+<h4 id="周期快照事实表"><a href="#周期快照事实表" class="headerlink" title="周期快照事实表"></a>周期快照事实表</h4><p>它是按照良好的时间周期间隔(每天，每月)来捕捉业务活动的执行情况，一旦装入事实表就不会再去更新，它是事务事实表的补充，而非替代品。</p>
+<h4 id="累积快照事实表"><a href="#累积快照事实表" class="headerlink" title="累积快照事实表"></a>累积快照事实表</h4><p>它用于描述业务过程中某个不确定时间跨度里的活动，它随着业务活动的发生会不断的更新。</p>
+<h3 id="明细表（宽表）"><a href="#明细表（宽表）" class="headerlink" title="明细表（宽表）"></a>明细表（宽表）</h3><p>宽表从字面意义上讲就是字段比较多的数据库表。通常是指业务主题相关的指标、维度、属性关联在一起的一张数据库表。由于把不同的内容都放在同一张表存储，宽表已经不符合三范式的模型设计规范，随之带来的主要坏处就是数据的大量冗余，与之相对应的好处就是查询性能的提高与便捷。</p>
+<p>这种宽表的设计广泛应用于数据挖掘模型训练前的数据准备，通过把相关字段放在同一张表中，可以大大提高数据挖掘模型训练过程中迭代计算时的效率问题。</p>
+<h3 id="维度表"><a href="#维度表" class="headerlink" title="维度表"></a>维度表</h3><p>每个维度表都包含单一的主键列。维度表的主键可以作为与之关联的任何事实表的外键，当然，维度表行的描述环境应与事实表行完全对应。维度表通常比较宽，是<strong>扁平型非规范表</strong>，包含大量的<strong>低粒度的文本属性</strong>。</p>
+<p>维度表示你要对数据进行分析时所用的一个量，比如你要分析产品销售情况， 你可以选择按类别来进行分析，或按区域来分析。每个类别就构成一个维度。</p>
+<p>它是进入事实表的入口，丰富的维度属性给出了对事实表的分析切割能力，它一般是<strong>行少列多</strong>。</p>
+<h3 id="事实表-amp-维度表"><a href="#事实表-amp-维度表" class="headerlink" title="事实表 &amp; 维度表"></a>事实表 &amp; 维度表</h3><p>用于度量的事实表，事实表一般会有两个或者多个外健与维度表的主键进行关联。事实表的主键一般是组合健，表达多对多的关系。</p>
+<p>用于描述环境的维度表，单一主键，维度表的属性是所有查询约束和报表标示的来源。维度提供数据的入口点，提供所有 DW&#x2F;BI 分析的最终标识和分组。</p>
+<p>事实表的设计是以能够<strong>正确记录历史信息</strong>为准则，维度表的设计是以能够<strong>以合适的角度来聚合主题内容</strong>为准则。</p>
+<p>如果属性值是离散的，用于过滤和标记的，就放到维度表里，如果是属性值是连续取值，用于计算的，就放到事实表中。</p>
+<h3 id="星型模型"><a href="#星型模型" class="headerlink" title="星型模型"></a>星型模型</h3><p>星型模式是<strong>以事实表为中心</strong>，所有的维度表直接连接在事实表上，像星星一样。 星形模式的维度建模由一个事实表和一组维表成。</p>
+<h3 id="雪花模型"><a href="#雪花模型" class="headerlink" title="雪花模型"></a>雪花模型</h3><p>当有一个或多个维表没有直接连接到事实表上，而是通过其他维表连接到事实表上时，其图解就像多个雪花连接在一起，故称雪花模型。雪花模型是对星型模型的扩展。它对星型模型的维表进一步层次化，原有的各维表可能被扩展为<strong>小的事实表</strong>，形成一些局部的 “层次 “ 区域，这些被分解的表都连接到<strong>主维度表</strong>而不是事实表。</p>
+<p>虽然这种模型相比星型更规范一些，但是由于这种模型不太容易理解，维护成本比较高，而且性能方面需要关联多层维表，性能也比星型模型要低，所以一般不是很常用。</p>
+<h3 id="星座模式"><a href="#星座模式" class="headerlink" title="星座模式"></a>星座模式</h3><p>星座模式由星型模式延伸而来，星型模式基于一张事实表，而星座模式<strong>基于多张事实表</strong>，而且<strong>共享维度信息</strong>。 在很多时候维度空间内的事实表不止一个，而一个维表也可能被多个事实表用到。在业务发展后期，绝大部分维度建模都采用的是星座模式。</p>
+<h3 id="星型模型-amp-雪花模型"><a href="#星型模型-amp-雪花模型" class="headerlink" title="星型模型 &amp; 雪花模型"></a>星型模型 &amp; 雪花模型</h3><h4 id="查询性能"><a href="#查询性能" class="headerlink" title="查询性能"></a>查询性能</h4><p>OLTP-DW环节，由于雪花型要做多个表联接，性能会低于星型架构；</p>
+<p>DW-OLAP环节，由于雪花型架构更有利于度量值的聚合，因此性能要高于星型架构。</p>
+<h4 id="模型复杂度"><a href="#模型复杂度" class="headerlink" title="模型复杂度"></a>模型复杂度</h4><p>星型架构更简单方便处理。</p>
+<h4 id="层次结构"><a href="#层次结构" class="headerlink" title="层次结构"></a>层次结构</h4><p>雪花型架构更加贴近OLTP系统的结构，比较符合业务逻辑，层次比较清晰。</p>
+<h4 id="存储角度"><a href="#存储角度" class="headerlink" title="存储角度"></a>存储角度</h4><p>雪花型架构具有关系数据模型的所有优点，不会产生冗余数据。</p>
+<p>星型架构会产生数据冗余。</p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>一般建议使用星型模型。因为在实际项目中，往往最关注的是查询性能问题，至于磁盘空间一般都不是问题。</p>
+<p>在维度表数据量极大，需要节省存储空间的情况下，或者是业务逻辑比较复杂、必须要体现清晰的层次概念情况下，可以使用雪花型模型。</p>
+<h3 id="建模过程"><a href="#建模过程" class="headerlink" title="建模过程"></a>建模过程</h3><h4 id="1-选择业务过程"><a href="#1-选择业务过程" class="headerlink" title="1. 选择业务过程"></a>1. 选择业务过程</h4><p>维度建模是紧贴业务的，所以必须以业务为根基进行建模，根据运营提供的需求及日后的易扩展性等进行选择业务。</p>
+<h4 id="2-声明粒度"><a href="#2-声明粒度" class="headerlink" title="2. 声明粒度"></a>2. 声明粒度</h4><p>在同一事实表中，必须具有相同的粒度（存在一对一的关系），同一事实表中不要混用多种不同的粒度，不同的粒度数据建立不同的事实表。并且从给定的业务过程获取数据时，强烈建议从关注原子粒度开始设计，也就是从<strong>最细粒度</strong>开始，因为原子粒度能够承受无法预期的用户查询。但是上卷汇总粒度对查询性能的提升很重要的，所以对于有明确需求的数据，我们建立针对需求的上卷汇总粒度，对需求不明朗的数据我们建立原子粒度。</p>
+<h4 id="3-确认维度"><a href="#3-确认维度" class="headerlink" title="3. 确认维度"></a>3. 确认维度</h4><p>如果该列是<strong>对具体值的描述</strong>，是一个文本或常量，某一约束和行标识的参与者，此时该属性往往是维度属性。牢牢掌握事实表的粒度，就能将所有可能存在的维度区分开，并且要确保维度表中不能出现重复数据，应使维度主键唯一。</p>
+<h4 id="4-确认事实"><a href="#4-确认事实" class="headerlink" title="4. 确认事实"></a>4. 确认事实</h4><p>事实表是用来度量的，基本上都以数量值表示，事实表中的每行对应一个度量，每行中的数据是一个特定级别的细节数据，称为粒度。维度建模的核心原则之一是<strong>同一事实表中的所有度量必须具有相同的粒度</strong>。这样能确保不会出现重复计算度量的问题。有时候往往不能确定该列数据是事实属性还是维度属性。记住最实用的事实就是数值类型和可加类事实。所以可以通过分析该列是否是一种包含多个值并作为计算的参与者的度量，这种情况下该列往往是事实。</p>
+<h1 id="元数据管理"><a href="#元数据管理" class="headerlink" title="元数据管理"></a>元数据管理</h1><h2 id="元数据"><a href="#元数据" class="headerlink" title="元数据"></a>元数据</h2><p>元数据（Meta Date），主要记录数据仓库中模型的定义、各层级间的映射关系、监控数据仓库的数据状态及 ETL 的任务运行状态。一般会通过<strong>元数据资料库</strong>（Metadata Repository）来统一地存储和管理元数据，其主要目的是使数据仓库的设计、部署、操作和管理能达成协同和一致。元数据是数据仓库管理系统的重要组成部分，元数据管理是企业级数据仓库中的关键组件，贯穿数据仓库构建的整个过程，直接影响着数据仓库的构建、使用和维护。</p>
+<h2 id="ETL-中的应用"><a href="#ETL-中的应用" class="headerlink" title="ETL 中的应用"></a>ETL 中的应用</h2><p>构建数据仓库的主要步骤之一是 ETL。这时元数据将发挥重要的作用，它定义了源数据系统到数据仓库的映射、数据转换的规则、数据仓库的逻辑结构、数据更新的规则、数据导入历史记录以及装载周期等相关内容。数据抽取和转换的专家以及数据仓库管理员正是通过元数据高效地构建数据仓库。</p>
+<h2 id="技术元数据"><a href="#技术元数据" class="headerlink" title="技术元数据"></a>技术元数据</h2><p>技术元数据为开发和管理数据仓库的 IT 人员使用，它描述了与数据仓库开发、管理和维护相关的数据，包括数据源信息、数据转换描述、数据仓库模型、数据清洗与更新规则、数据映射和访问权限等。</p>
+<h2 id="业务元数据"><a href="#业务元数据" class="headerlink" title="业务元数据"></a>业务元数据</h2><p>业务元数据为管理层和业务分析人员服务，从业务角度描述数据，包括商务术语、数据仓库中有什么数据、数据的位置和数据的可用性等，帮助业务人员更好地理解数据仓库中哪些数据是可用的以及如何使用。</p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>元数据不仅定义了数据仓库中数据的模式、来源、抽取和转换规则等，而且是整个数据仓库系统运行的基础，元数据把数据仓库系统中各个松散的组件联系起来，组成了一个有机的整体。</p>
+<h1 id="分层"><a href="#分层" class="headerlink" title="分层"></a>分层</h1><h2 id="ODS-Operation-Data-Store-操作数据层"><a href="#ODS-Operation-Data-Store-操作数据层" class="headerlink" title="ODS (Operation Data Store) 操作数据层"></a>ODS (Operation Data Store) 操作数据层</h2><p>数据仓库准备区，主要将各个业务数据导入到大数据平台，作为业务数据的快照存储。为 DWD 层提供基础原始数据，可减少对业务系统的影响。</p>
+<p>建模方式及原则：</p>
+<ol>
+<li>从业务系统增量抽取</li>
+<li>保留时间由业务需求决定</li>
+<li>可分表进行周期存储</li>
+<li>数据不做清洗转换与业务系统数据模型保持一致</li>
+<li>按主题逻辑划分</li>
+</ol>
+<h2 id="DWD-Data-Warehouse-Detail-数据明细层"><a href="#DWD-Data-Warehouse-Detail-数据明细层" class="headerlink" title="DWD (Data Warehouse Detail) 数据明细层"></a>DWD (Data Warehouse Detail) 数据明细层</h2><p>对 ODS 层数据进行清洗、维度退化、脱敏等，并基于<strong>维度建模</strong>，设计事实表和维度表，这个时候可以设计面向分析的大宽表。</p>
+<h2 id="DWS-Data-Warehouse-Summary-公共汇总层"><a href="#DWS-Data-Warehouse-Summary-公共汇总层" class="headerlink" title="DWS(Data Warehouse Summary) 公共汇总层"></a>DWS(Data Warehouse Summary) 公共汇总层</h2><p>基于 DWD 层上的基础数据，整合汇总成分析某一个<strong>主题域</strong>的服务数据，一般是也是面向分析宽表或者是面向某个注意的汇总表。DWS层应覆盖80%的应用场景，这样我们才能快速响应数据需求</p>
+<p>为DW层提供细粒度数据，DWS按各个维度ID进行粗粒度汇总聚合，如按交易来源，交易类型进行汇合 。</p>
+<p>建模方式及原则：</p>
+<ol>
+<li>聚合、汇总增加派生事实；</li>
+<li>关联其它主题的事实表，DW层可能会跨主题域；</li>
+<li>保持高粒度汇总数据；</li>
+<li>数据模型可能采用反范式设计，合并信息等。</li>
+</ol>
+<h2 id="ADS-Application-Data-Service-应用数据层"><a href="#ADS-Application-Data-Service-应用数据层" class="headerlink" title="ADS(Application Data Service) 应用数据层"></a>ADS(Application Data Service) 应用数据层</h2><p>ADS 层面向用户应用和分析需求，包括前端报表、分析图表、KPI、仪表盘、OLAP、专题等分析，面向最终结果用户；适合作OLAP、报表模型；根据DW层经过聚合汇总统计后的粗粒度事实表。</p>
+<p>建模方式及原则：</p>
+<ol>
+<li>保持数据量小；</li>
+<li>维度建模，星形模型；</li>
+<li>各位维度代理键+度量；</li>
+<li>增加数据业务日期字段，支持数据重跑；</li>
+<li>不分表存储</li>
+</ol>
+<h2 id="DM-（Data-Market-数据集市层"><a href="#DM-（Data-Market-数据集市层" class="headerlink" title="DM （Data Market) 数据集市层"></a>DM （Data Market) 数据集市层</h2><p>主要是提供数据产品和数据分析的数据，一般会存放在ES、Mysql、也可能直接存储在 hive 中或者 druid 供数据分析和数据挖掘使用。主要解决部门用户报表和分析需求而建立数据库，数据集市就代表数据仓库的<strong>主题域</strong>。</p>
+<p>DM 是面向<strong>单个主题</strong>的，所以它不会从全局考虑进行建设，只专注于自己的数据、往往是某个业务线，例如流量主题、社交主题、电商主题等等。</p>
+<h2 id="DIM，维度层"><a href="#DIM，维度层" class="headerlink" title="DIM，维度层"></a>DIM，维度层</h2><p>维表层，所以其实维度层就是大量维表构成的，为了统一管理这些维度表，所以我们就建设维度层，维度表本身也有很多类型，例如稳定维度维表，渐变维度维表。</p>
+<p>建模方式及原则：</p>
+<ol>
+<li>尽可能生成丰富的维度属性。</li>
+<li>尽可能多的给出包含一些富有意义的文字性描述。</li>
+<li>区分数值型属性和事实。</li>
+<li>尽量沉淀出通用的维度属性。</li>
+</ol>
+<h1 id="数据一致性"><a href="#数据一致性" class="headerlink" title="数据一致性"></a>数据一致性</h1><h2 id="CAP-理论"><a href="#CAP-理论" class="headerlink" title="CAP 理论"></a>CAP 理论</h2><p>Consistency，Availability和Partition Tolerance，理论认为数据一致性（C）、系统可用性（A）和网络分区容忍性（P），在系统中的任何时刻三个性质中只能同时保证两个性质成立，而网络常常又是不可靠的。</p>
+<h2 id="数据一致性模型"><a href="#数据一致性模型" class="headerlink" title="数据一致性模型"></a>数据一致性模型</h2><p>一些分布式系统通过复制数据来提高系统的可靠性和容错性，并且将数据的不同的副本存放在不同的机器。</p>
+<p>由于维护数据副本的一致性代价高，因此许多系统采用弱一致性来提高性能。</p>
+<p>强一致性： 要求无论更新操作实在哪一个副本执行，之后所有的读操作都要能获得最新的数据。</p>
+<p>弱一致性：用户读到某一操作对系统特定数据的更新需要一段时间，我们称这段时间为“不一致性窗口”。</p>
+<p>最终一致性：是弱一致性的一种特例，保证用户最终能够读取到某操作对系统特定数据的更新。</p>
+<h1 id="维度退化"><a href="#维度退化" class="headerlink" title="维度退化"></a>维度退化</h1><p>不可能将所有与业务相关的维度分类到一个紧凑的表集合中。类似这样的情况，将一个或者多个维度<strong>存储到事实表中</strong>是合适的选择。采用这种方法，存储事实表中的维度列被称为退化维度，退化维度的过程称为维度退化。</p>
+<p>当一个维度没有数据仓库需要的任何数据的时候就可以退化此维度，需要把退化的相关数据迁移到事实表中，然后删除退化的维度。与其他存储在维度表中的维度一样，退化维度也可以进行事实表的过滤查询，实现聚合操作等。</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><ul>
+<li>减少事实表和维度表的关联</li>
+<li>减少维度的数量， 简化维度数据仓库模式。</li>
+<li>ETL 过程简化。</li>
+<li>更好的查询性能，可以让 <code>group by</code> 等操作变得更快。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>Big Data</category>
+      </categories>
+      <tags>
+        <tag>Internship Experience</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>树的子结构</title>
+    <url>/post/53dd15fc.html</url>
+    <content><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul>
+<li>递归<span id="more"></span>
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2></li>
+</ul>
+<ol>
+<li>递归判断 A 的当前节点是否包含 B。</li>
+<li>分别递归遍历 A 的左右子树，过程中递归判断当前节点是否包含 B。<h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="递归-1"><a href="#递归-1" class="headerlink" title="递归"></a>递归</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSubStructure</span><span class="params">(TreeNode A, TreeNode B)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (B == <span class="literal">null</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> isContained(A, B) || (A != <span class="literal">null</span> &amp;&amp; (isSubStructure(A.left, B) || isSubStructure(A.right, B)));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">isContained</span><span class="params">(TreeNode A, TreeNode B)</span> &#123;</span><br><span class="line">	<span class="comment">// B 遍历结束，说明 B 是 A 的子结构</span></span><br><span class="line">	<span class="keyword">if</span> (B == <span class="literal">null</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (A == <span class="literal">null</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (A.val != B.val) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> isContained(A.left, B.left) &amp;&amp; isContained(A.right, B.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1></li>
+</ol>
+<ul>
+<li><a href="https://leetcode.cn/problems/shu-de-zi-jie-gou-lcof/">剑指 Offer 26. 树的子结构 - 力扣（LeetCode）</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Recursion</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器人的运动范围</title>
+    <url>/post/6f7abd.html</url>
+    <content><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul>
+<li>广度优先搜索</li>
+<li>深度优先搜索<span id="more"></span>
+<h2 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h2>经典 BFS<h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2>经典 DFS<h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="广度优先搜索-1"><a href="#广度优先搜索-1" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">movingCount</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> n, <span class="type">int</span> k)</span> &#123;  </span><br><span class="line">	<span class="built_in">this</span>.k = k;  </span><br><span class="line">	<span class="type">boolean</span>[][] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[m][n];  </span><br><span class="line">	<span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;  </span><br><span class="line">	Queue&lt;<span class="type">int</span>[]&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();  </span><br><span class="line">	queue.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">0</span>, <span class="number">0</span>&#125;);  </span><br><span class="line">	<span class="keyword">while</span> (!queue.isEmpty()) &#123;  </span><br><span class="line">		<span class="type">int</span>[] cur = queue.poll();  </span><br><span class="line">		<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> cur[<span class="number">0</span>], j = cur[<span class="number">1</span>];  </span><br><span class="line">		<span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt;= m || j &lt; <span class="number">0</span> || j &gt;= n || visited[i][j] || !isAccessed(i, j)) &#123;  </span><br><span class="line">			<span class="keyword">continue</span>;  </span><br><span class="line">		&#125;  </span><br><span class="line">		visited[i][j] = <span class="literal">true</span>;  </span><br><span class="line">		count++;  </span><br><span class="line">		queue.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;i + <span class="number">1</span>, j&#125;);  </span><br><span class="line">		queue.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;i, j + <span class="number">1</span>&#125;);  </span><br><span class="line">	&#125;  </span><br><span class="line">	<span class="keyword">return</span> count;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="深度优先搜索-1"><a href="#深度优先搜索-1" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;  </span><br><span class="line">	<span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt;= visited.length || j &lt; <span class="number">0</span> || j &gt;= visited[<span class="number">0</span>].length || visited[i][j] || !isAccessed(i, j)) &#123;  </span><br><span class="line">		<span class="keyword">return</span>;  </span><br><span class="line">	&#125;  </span><br><span class="line">	  </span><br><span class="line">	visited[i][j] = <span class="literal">true</span>;  </span><br><span class="line">	count++;  </span><br><span class="line">	search(i + <span class="number">1</span>, j);  </span><br><span class="line">	search(i, j + <span class="number">1</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1></li>
+<li><a href="https://leetcode.cn/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/">剑指 Offer 13. 机器人的运动范围 - 力扣（LeetCode）</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>BFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>老鼠和奶酪</title>
+    <url>/post/81b8074c.html</url>
+    <content><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul>
+<li>贪心</li>
+<li>优先队列<span id="more"></span>
+<h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h2></li>
+</ul>
+<ol>
+<li>假设 n 块奶酪都被第二只小鼠吃掉，记为 $sum$。</li>
+<li>如果第 i 块奶酪被第一只小鼠吃掉，数值差值记为 $diff[i]$。</li>
+<li>差值 $diff$ 降序排列，取前 k 个值与 $sum$ 相加即为结果。<h2 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h2>使用优先队列在一次遍历中维护 $diff$ 中前 k 个最大值。<blockquote>
+<p>会增加时间和空间的开销。</p>
+</blockquote>
+<h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; reward1.length; i++) &#123;  </span><br><span class="line">	sum += reward2[i];  </span><br><span class="line">	queue.add(reward1[i] - reward2[i]);  </span><br><span class="line">	  </span><br><span class="line">	<span class="keyword">if</span> (queue.size() &gt; k) &#123;  </span><br><span class="line">	queue.poll();  </span><br><span class="line">	&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1></li>
+</ol>
+<ul>
+<li><a href="https://leetcode.cn/problems/mice-and-cheese/">2611. 老鼠和奶酪 - 力扣（LeetCode）</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tech</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Greedy</tag>
+        <tag>PriorityQueue</tag>
+      </tags>
   </entry>
 </search>

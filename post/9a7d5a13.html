@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">103</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -163,7 +163,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -254,7 +254,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-21 10:10:19" itemprop="dateModified" datetime="2022-04-21T10:10:19+01:00">2022-04-21</time>
+      <time title="Modified: 2023-06-08 11:10:32" itemprop="dateModified" datetime="2023-06-08T11:10:32+01:00">2023-06-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -338,7 +338,7 @@
 <ul>
 <li>生产者（Producer）</li>
 <li>消费者（Consumer）</li>
-<li>还有用来做数据集成的 Kafka Connect API 和流式处理的 Kafka Streams 等高阶客户端，但这些高阶客户端底层仍然是生产者和消费者API，它们只不过是在上层做了封装。</li>
+<li>还有用来做数据集成的 Kafka Connect API 和流式处理的 Kafka Streams 等高阶客户端，但这些高阶客户端底层仍然是生产者和消费者 API，它们只不过是在上层做了封装。</li>
 </ul>
 <h1 id="主题（Topic）"><a href="#主题（Topic）" class="headerlink" title="主题（Topic）"></a>主题（Topic）</h1><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/image-20220418164225275.png" alt="image-20220418164225275"></p>
 <ul>
@@ -351,7 +351,7 @@
 <li>Kafka 中的一台或多台服务器统称 broker。</li>
 <li><strong>Kafka</strong> 强依赖于 zookeeper ，每当一个 broker 启动时，它会将自己注册到 zookeeper 的临时节点；Kafka 利用 zookeeper 临时节点来管理 broker 生命周期。</li>
 <li>若干个 Broker 组成一个集群（Cluster），其中集群内某个 Broker 会成为集群控制器（Cluster Controller），它负责管理集群，包括分配分区到 Broker、监控 Broker 故障等。</li>
-<li>在集群内，一个分区 由一个 Broker 负责，这个 Broker 也称为这个分区的 Leader。</li>
+<li>在集群内，一个分区由一个 Broker 负责，这个 Broker 也称为这个分区的 Leader。</li>
 </ul>
 <h1 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h1><ul>
 <li><p>Kafka 的消息是存在于文件系统之上的，其高度依赖文件系统来存储和缓存消息。</p>
@@ -449,7 +449,8 @@
 <h2 id="分区分段-索引"><a href="#分区分段-索引" class="headerlink" title="分区分段+索引"></a>分区分段+索引</h2><p>Kafka的message是按topic分类存储的，topic中的数据又是按照一个一个的partition即分区存储到不同broker节点。每个partition对应了操作系统上的一个文件夹，partition实际上又是按照segment分段存储的。符合分布式系统分区分桶的设计思想。</p>
 <p>通过这种分区分段的设计，Kafka的message消息实际上是分布式存储在一个一个小的segment中的，每次文件操作也是直接操作的segment。为了进一步的查询优化，Kafka又默认为分段后的数据文件建立了索引文件，就是文件系统上的.index文件。这种分区分段+索引的设计，不仅提升了数据读取的效率，同时也提高了数据操作的并行度。</p>
 <h2 id="批量读写"><a href="#批量读写" class="headerlink" title="批量读写"></a>批量读写</h2><p>Kafka数据读写是批量的而不是单条的。在向Kafka写入数据时，可以启用批次写入，这样可以避免在网络上频繁传输单个消息带来的延迟和带宽开销。</p>
-<h2 id="批量压缩"><a href="#批量压缩" class="headerlink" title="批量压缩"></a>批量压缩</h2><p>在很多情况下，系统的瓶颈不是CPU或磁盘，而是网络IO，对于需要在广域网上的数据中心之间发送消息的数据流水线尤其如此。如果每个消息都压缩，但是压缩率相对很低，所以Kafka使用了批量压缩，即将多个消息一起压缩而不是单个消息压缩。<br>Kafka允许使用递归的消息集合，批量的消息可以通过压缩的形式传输并且在日志中也可以保持压缩格式，直到被消费者解压缩。Kafka把所有的消息都变成一个批量的文件，并且进行合理的批量压缩，减少网络IO损耗。</p>
+<h2 id="批量压缩"><a href="#批量压缩" class="headerlink" title="批量压缩"></a>批量压缩</h2><p>在很多情况下，系统的瓶颈不是CPU或磁盘，而是网络IO，对于需要在广域网上的数据中心之间发送消息的数据流水线尤其如此。如果每个消息都压缩，但是压缩率相对很低，所以Kafka使用了批量压缩，即将多个消息一起压缩而不是单个消息压缩。</p>
+<p>Kafka允许使用递归的消息集合，批量的消息可以通过压缩的形式传输并且在日志中也可以保持压缩格式，直到被消费者解压缩。Kafka把所有的消息都变成一个批量的文件，并且进行合理的批量压缩，减少网络IO损耗。</p>
 <h1 id="蓄水池机制"><a href="#蓄水池机制" class="headerlink" title="蓄水池机制"></a>蓄水池机制</h1><p>生产的流程主要就是一个producer线程和一个sender线程，它们之间通过BatchQueue来获取数据，它们的关系是一一对应的，所以kafka的生产过程都是异步过程，它的同步和异步指的是接收响应结果的模式是同步阻塞还是异步回调。</p>
 <p>同步接收是依据send之后返回Future，再调用Future的get方法进行阻塞等待。下面我们就从producer和sender两个类所对应的流程来进行分析，他们分别是消息收集过程和消息发送过程。消息的收集过程的数据最终是放在BatchQueue，像是将水流入了一个蓄水池的场景。</p>
 <h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
@@ -547,13 +548,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">130k</span>
+    <span title="Symbols count total">139k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:59</span>
+    <span title="Reading time total">2:06</span>
   </span>
 </div>
 <div class="busuanzi-count">
