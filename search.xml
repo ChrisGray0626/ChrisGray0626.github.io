@@ -4999,4 +4999,73 @@
         <tag>Internship Experience</tag>
       </tags>
   </entry>
+  <entry>
+    <title>铺瓷砖</title>
+    <url>/post/5312cc86.html</url>
+    <content><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul>
+<li>深度优先搜索</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><ol>
+<li>Do 访问 (x, y)：<ol>
+<li>If 抵达右边界，换行，结束。</li>
+<li>If 抵达下边界，保存当前瓷砖数为最小瓷砖数，结束。</li>
+<li>If filled，访问 (x, y + 1)。</li>
+<li>If 当前当前瓷砖数 + 1 &gt; 最小瓷砖数，说明该方案不是最优解，结束。</li>
+<li>Do 选择填充正方形，边长 $len \in [1, \min(n - x, m - y)]$：<ol>
+<li>If 已填充，break。</li>
+<li>填充正方形。</li>
+<li>访问 (x, y + len)。</li>
+<li>取消填充。</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="深度优先搜索-1"><a href="#深度优先搜索-1" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> cnt)</span> &#123;</span><br><span class="line">	<span class="comment">// 抵达右边界，换行</span></span><br><span class="line">	<span class="keyword">if</span> (y == m) &#123;</span><br><span class="line">		dfs(x + <span class="number">1</span>, <span class="number">0</span>, cnt);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 抵达下边界，结束</span></span><br><span class="line">	<span class="keyword">if</span> (x == n) &#123;</span><br><span class="line">		minCnt = cnt;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (filled[x][y]) &#123;</span><br><span class="line">		dfs(x, y + <span class="number">1</span>, cnt);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 如果继续填充，则超过当前最小值，结束</span></span><br><span class="line">	<span class="keyword">if</span> (++cnt &gt;= minCnt) &#123;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> Math.min(n - x, m - y);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= maxLen; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (isFilled(x, y, i)) &#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		fill(x, y, i);</span><br><span class="line">		dfs(x, y + i, cnt);</span><br><span class="line">		unFill(x, y, i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><ul>
+<li><a href="https://leetcode.cn/problems/tiling-a-rectangle-with-the-fewest-squares/">1240. 铺瓷砖 - 力扣（LeetCode） (leetcode-cn.com)</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>栈的压入、弹出序列</title>
+    <url>/post/447cc728.html</url>
+    <content><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul>
+<li>栈</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>模拟入栈、出栈过程。</p>
+<ol>
+<li>do 访问 $num \in pushed$：<ol>
+<li>num 入栈。</li>
+<li>do 出栈 While 栈顶元素 &#x3D; popped[i]：<ol>
+<li>出栈。</li>
+<li>i++。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>判断栈是否为空。</li>
+</ol>
+<h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="栈-1"><a href="#栈-1" class="headerlink" title="栈"></a>栈</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">validateStackSequences</span><span class="params">(<span class="type">int</span>[] pushed, <span class="type">int</span>[] popped)</span> &#123;</span><br><span class="line">	Deque&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;Integer&gt;();</span><br><span class="line">	<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> num: pushed) &#123;</span><br><span class="line">		stack.push(num);</span><br><span class="line">		<span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peek() == popped[i]) &#123;</span><br><span class="line">			stack.pop();</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/">栈的压入、弹出序列 - 力扣（LeetCode）</a></p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Stack</tag>
+      </tags>
+  </entry>
 </search>

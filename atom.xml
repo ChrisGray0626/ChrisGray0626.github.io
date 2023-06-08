@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2023-04-03T21:03:54.000Z</updated>
+  <updated>2023-06-08T13:59:15.254Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>栈的压入、弹出序列</title>
+    <link href="https://pingpinggray.top/post/447cc728.html"/>
+    <id>https://pingpinggray.top/post/447cc728.html</id>
+    <published>2023-06-08T13:50:17.000Z</published>
+    <updated>2023-06-08T13:59:15.254Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>栈</li></ul><span id="more"></span><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>模拟入栈、出栈过程。</p><ol><li>do 访问 $num \in pushed$：<ol><li>num 入栈。</li><li>do 出栈 While 栈顶元素 &#x3D; popped[i]：<ol><li>出栈。</li><li>i++。</li></ol></li></ol></li><li>判断栈是否为空。</li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="栈-1"><a href="#栈-1" class="headerlink" title="栈"></a>栈</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">validateStackSequences</span><span class="params">(<span class="type">int</span>[] pushed, <span class="type">int</span>[] popped)</span> &#123;</span><br><span class="line">Deque&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;Integer&gt;();</span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> num: pushed) &#123;</span><br><span class="line">stack.push(num);</span><br><span class="line"><span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peek() == popped[i]) &#123;</span><br><span class="line">stack.pop();</span><br><span class="line">i++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/">栈的压入、弹出序列 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;栈&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
+    
+    
+    <category term="Stack" scheme="https://pingpinggray.top/tags/Stack/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>铺瓷砖</title>
+    <link href="https://pingpinggray.top/post/5312cc86.html"/>
+    <id>https://pingpinggray.top/post/5312cc86.html</id>
+    <published>2023-06-08T12:11:29.000Z</published>
+    <updated>2023-06-08T12:27:41.015Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>深度优先搜索</li></ul><span id="more"></span><h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><ol><li>Do 访问 (x, y)：<ol><li>If 抵达右边界，换行，结束。</li><li>If 抵达下边界，保存当前瓷砖数为最小瓷砖数，结束。</li><li>If filled，访问 (x, y + 1)。</li><li>If 当前当前瓷砖数 + 1 &gt; 最小瓷砖数，说明该方案不是最优解，结束。</li><li>Do 选择填充正方形，边长 $len \in [1, \min(n - x, m - y)]$：<ol><li>If 已填充，break。</li><li>填充正方形。</li><li>访问 (x, y + len)。</li><li>取消填充。</li></ol></li></ol></li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="深度优先搜索-1"><a href="#深度优先搜索-1" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> cnt)</span> &#123;</span><br><span class="line"><span class="comment">// 抵达右边界，换行</span></span><br><span class="line"><span class="keyword">if</span> (y == m) &#123;</span><br><span class="line">dfs(x + <span class="number">1</span>, <span class="number">0</span>, cnt);</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 抵达下边界，结束</span></span><br><span class="line"><span class="keyword">if</span> (x == n) &#123;</span><br><span class="line">minCnt = cnt;</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (filled[x][y]) &#123;</span><br><span class="line">dfs(x, y + <span class="number">1</span>, cnt);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 如果继续填充，则超过当前最小值，结束</span></span><br><span class="line"><span class="keyword">if</span> (++cnt &gt;= minCnt) &#123;</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> Math.min(n - x, m - y);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= maxLen; i++) &#123;</span><br><span class="line"><span class="keyword">if</span> (isFilled(x, y, i)) &#123;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">fill(x, y, i);</span><br><span class="line">dfs(x, y + i, cnt);</span><br><span class="line">unFill(x, y, i);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><ul><li><a href="https://leetcode.cn/problems/tiling-a-rectangle-with-the-fewest-squares/">1240. 铺瓷砖 - 力扣（LeetCode） (leetcode-cn.com)</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;深度优先搜索&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
+    
+    
+    <category term="DFS" scheme="https://pingpinggray.top/tags/DFS/"/>
+    
+  </entry>
   
   <entry>
     <title>Network</title>
@@ -453,52 +499,6 @@
     
     
     <category term="Dynamic Programming" scheme="https://pingpinggray.top/tags/Dynamic-Programming/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第 k 个数</title>
-    <link href="https://pingpinggray.top/post/2a9a6beb.html"/>
-    <id>https://pingpinggray.top/post/2a9a6beb.html</id>
-    <published>2022-09-28T14:15:41.000Z</published>
-    <updated>2022-09-28T14:59:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>多路并归</li></ul><span id="more"></span><h2 id="多路并归"><a href="#多路并归" class="headerlink" title="多路并归"></a>多路并归</h2><ul><li>后续数值均基于已有数值乘以 3、5 或 7 而来</li><li>所有数值均可归为 $arr[idx] \times 系数（即3、5、7）$ 得来的三个序列，使用三个指针分别指向上述序列</li><li>生成新的数值时，判断所属序列（不唯一），其对应指针右移</li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="多路并归-1"><a href="#多路并归-1" class="headerlink" title="多路并归"></a>多路并归</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] cache = <span class="keyword">new</span> <span class="title class_">int</span>[k];</span><br><span class="line">cache[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 三序列指针</span></span><br><span class="line"><span class="type">int</span> <span class="variable">idx3</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">idx5</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">idx7</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; k; i++) &#123;</span><br><span class="line">    <span class="comment">// 三序列最小值</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">num3</span> <span class="operator">=</span> cache[idx3] * <span class="number">3</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num5</span> <span class="operator">=</span> cache[idx5] * <span class="number">5</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">num7</span> <span class="operator">=</span> cache[idx7] * <span class="number">7</span>;</span><br><span class="line"></span><br><span class="line">    cache[i] = Math.min(Math.min(num3, num5), num7);</span><br><span class="line">    <span class="comment">// 三序列指针移动</span></span><br><span class="line">    <span class="keyword">if</span> (cache[i] == num3) &#123;</span><br><span class="line">        idx3++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cache[i] == num5) &#123;</span><br><span class="line">        idx5++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cache[i] == num7) &#123;</span><br><span class="line">        idx7++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/get-kth-magic-number-lcci/">面试题 17.09. 第 k 个数 - 力扣（LeetCode）</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;多路并归&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
-    
-    
-    <category term="K-May Merge" scheme="https://pingpinggray.top/tags/K-May-Merge/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>消失的两个数字</title>
-    <link href="https://pingpinggray.top/post/788ed63c.html"/>
-    <id>https://pingpinggray.top/post/788ed63c.html</id>
-    <published>2022-09-26T12:48:59.000Z</published>
-    <updated>2022-09-26T12:53:23.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>数学</li></ul><span id="more"></span><h2 id="数学"><a href="#数学" class="headerlink" title="数学"></a>数学</h2><ol><li>消失的两数之和 &#x3D; n~1 求和减去当前数组求和</li><li>两数不相等，则必然位于两数之和的均值的两侧，可将问题转化为求消失的一个数字</li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="数学-1"><a href="#数学-1" class="headerlink" title="数学"></a>数学</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length + <span class="number">2</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> num: nums) &#123;</span><br><span class="line">    sum += num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 求消失的两数之和</span></span><br><span class="line"><span class="type">int</span> <span class="variable">sumTwo</span> <span class="operator">=</span> n * (n + <span class="number">1</span>) / <span class="number">2</span> - sum;</span><br><span class="line"><span class="type">int</span> <span class="variable">mean</span> <span class="operator">=</span> sumTwo / <span class="number">2</span>;</span><br><span class="line">sum = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 求消失的两数中较小的数，将问题转化为求消失的一个数</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> num: nums) &#123;</span><br><span class="line">    <span class="keyword">if</span> (num &lt;= mean) &#123;</span><br><span class="line">        sum += num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="variable">x1</span> <span class="operator">=</span> mean * (mean + <span class="number">1</span>) / <span class="number">2</span> - sum;</span><br><span class="line"><span class="type">int</span> <span class="variable">x2</span> <span class="operator">=</span> sumTwo - x1;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/missing-two-lcci/">面试题 17.19. 消失的两个数字 - 力扣（LeetCode）</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;数学&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
-    
-    
-    <category term="Math" scheme="https://pingpinggray.top/tags/Math/"/>
     
   </entry>
   
