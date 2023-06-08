@@ -35,9 +35,9 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    <category term="Technology_Stack" scheme="https://pingpinggray.top/categories/Technology-Stack/"/>
     
-    <category term="Network" scheme="https://pingpinggray.top/categories/Tech/Network/"/>
+    <category term="Network" scheme="https://pingpinggray.top/categories/Technology-Stack/Network/"/>
     
     
     <category term="Interview Experience" scheme="https://pingpinggray.top/tags/Interview-Experience/"/>
@@ -49,7 +49,7 @@
     <link href="https://pingpinggray.top/post/53dd15fc.html"/>
     <id>https://pingpinggray.top/post/53dd15fc.html</id>
     <published>2023-06-07T15:31:33.000Z</published>
-    <updated>2023-06-07T15:56:47.610Z</updated>
+    <updated>2023-06-08T10:43:39.770Z</updated>
     
     <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>递归<span id="more"></span><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2></li></ul><ol><li>递归判断 A 的当前节点是否包含 B。</li><li>分别递归遍历 A 的左右子树，过程中递归判断当前节点是否包含 B。<h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="递归-1"><a href="#递归-1" class="headerlink" title="递归"></a>递归</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSubStructure</span><span class="params">(TreeNode A, TreeNode B)</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (B == <span class="literal">null</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> isContained(A, B) || (A != <span class="literal">null</span> &amp;&amp; (isSubStructure(A.left, B) || isSubStructure(A.right, B)));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">isContained</span><span class="params">(TreeNode A, TreeNode B)</span> &#123;</span><br><span class="line"><span class="comment">// B 遍历结束，说明 B 是 A 的子结构</span></span><br><span class="line"><span class="keyword">if</span> (B == <span class="literal">null</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (A == <span class="literal">null</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (A.val != B.val) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> isContained(A.left, B.left) &amp;&amp; isContained(A.right, B.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1></li></ol><ul><li><a href="https://leetcode.cn/problems/shu-de-zi-jie-gou-lcof/">剑指 Offer 26. 树的子结构 - 力扣（LeetCode）</a></li></ul>]]></content>
     
@@ -59,9 +59,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="Recursion" scheme="https://pingpinggray.top/tags/Recursion/"/>
@@ -73,7 +71,7 @@
     <link href="https://pingpinggray.top/post/6f7abd.html"/>
     <id>https://pingpinggray.top/post/6f7abd.html</id>
     <published>2023-06-07T13:08:08.000Z</published>
-    <updated>2023-06-07T15:56:47.455Z</updated>
+    <updated>2023-06-08T10:43:39.773Z</updated>
     
     <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>广度优先搜索</li><li>深度优先搜索<span id="more"></span><h2 id="广度优先搜索"><a href="#广度优先搜索" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h2>经典 BFS<h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2>经典 DFS<h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="广度优先搜索-1"><a href="#广度优先搜索-1" class="headerlink" title="广度优先搜索"></a>广度优先搜索</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">movingCount</span><span class="params">(<span class="type">int</span> m, <span class="type">int</span> n, <span class="type">int</span> k)</span> &#123;  </span><br><span class="line"><span class="built_in">this</span>.k = k;  </span><br><span class="line"><span class="type">boolean</span>[][] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[m][n];  </span><br><span class="line"><span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;  </span><br><span class="line">Queue&lt;<span class="type">int</span>[]&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();  </span><br><span class="line">queue.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;<span class="number">0</span>, <span class="number">0</span>&#125;);  </span><br><span class="line"><span class="keyword">while</span> (!queue.isEmpty()) &#123;  </span><br><span class="line"><span class="type">int</span>[] cur = queue.poll();  </span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> cur[<span class="number">0</span>], j = cur[<span class="number">1</span>];  </span><br><span class="line"><span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt;= m || j &lt; <span class="number">0</span> || j &gt;= n || visited[i][j] || !isAccessed(i, j)) &#123;  </span><br><span class="line"><span class="keyword">continue</span>;  </span><br><span class="line">&#125;  </span><br><span class="line">visited[i][j] = <span class="literal">true</span>;  </span><br><span class="line">count++;  </span><br><span class="line">queue.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;i + <span class="number">1</span>, j&#125;);  </span><br><span class="line">queue.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;i, j + <span class="number">1</span>&#125;);  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">return</span> count;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="深度优先搜索-1"><a href="#深度优先搜索-1" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;  </span><br><span class="line"><span class="keyword">if</span> (i &lt; <span class="number">0</span> || i &gt;= visited.length || j &lt; <span class="number">0</span> || j &gt;= visited[<span class="number">0</span>].length || visited[i][j] || !isAccessed(i, j)) &#123;  </span><br><span class="line"><span class="keyword">return</span>;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">visited[i][j] = <span class="literal">true</span>;  </span><br><span class="line">count++;  </span><br><span class="line">search(i + <span class="number">1</span>, j);  </span><br><span class="line">search(i, j + <span class="number">1</span>);  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1></li><li><a href="https://leetcode.cn/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/">剑指 Offer 13. 机器人的运动范围 - 力扣（LeetCode）</a></li></ul>]]></content>
     
@@ -84,9 +82,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="DFS" scheme="https://pingpinggray.top/tags/DFS/"/>
@@ -100,7 +96,7 @@
     <link href="https://pingpinggray.top/post/81b8074c.html"/>
     <id>https://pingpinggray.top/post/81b8074c.html</id>
     <published>2023-06-07T12:00:53.000Z</published>
-    <updated>2023-06-07T15:56:47.549Z</updated>
+    <updated>2023-06-08T10:43:39.775Z</updated>
     
     <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>贪心</li><li>优先队列<span id="more"></span><h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h2></li></ul><ol><li>假设 n 块奶酪都被第二只小鼠吃掉，记为 $sum$。</li><li>如果第 i 块奶酪被第一只小鼠吃掉，数值差值记为 $diff[i]$。</li><li>差值 $diff$ 降序排列，取前 k 个值与 $sum$ 相加即为结果。<h2 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h2>使用优先队列在一次遍历中维护 $diff$ 中前 k 个最大值。<blockquote><p>会增加时间和空间的开销。</p></blockquote><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; reward1.length; i++) &#123;  </span><br><span class="line">sum += reward2[i];  </span><br><span class="line">queue.add(reward1[i] - reward2[i]);  </span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span> (queue.size() &gt; k) &#123;  </span><br><span class="line">queue.poll();  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1></li></ol><ul><li><a href="https://leetcode.cn/problems/mice-and-cheese/">2611. 老鼠和奶酪 - 力扣（LeetCode）</a></li></ul>]]></content>
     
@@ -111,9 +107,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="Greedy" scheme="https://pingpinggray.top/tags/Greedy/"/>
@@ -138,9 +132,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="Stack" scheme="https://pingpinggray.top/tags/Stack/"/>
@@ -163,9 +155,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="DFS" scheme="https://pingpinggray.top/tags/DFS/"/>
@@ -188,9 +178,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="Recursion" scheme="https://pingpinggray.top/tags/Recursion/"/>
@@ -214,9 +202,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="Recursion" scheme="https://pingpinggray.top/tags/Recursion/"/>
@@ -239,9 +225,11 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    <category term="Technology_Stack" scheme="https://pingpinggray.top/categories/Technology-Stack/"/>
     
-    <category term="Big Data" scheme="https://pingpinggray.top/categories/Tech/Big-Data/"/>
+    <category term="Big_Data" scheme="https://pingpinggray.top/categories/Technology-Stack/Big-Data/"/>
+    
+    <category term="Hadoop" scheme="https://pingpinggray.top/categories/Technology-Stack/Big-Data/Hadoop/"/>
     
     
     <category term="Internship Experience" scheme="https://pingpinggray.top/tags/Internship-Experience/"/>
@@ -267,9 +255,11 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
+    <category term="Technology_Stack" scheme="https://pingpinggray.top/categories/Technology-Stack/"/>
     
-    <category term="Big Data" scheme="https://pingpinggray.top/categories/Tech/Big-Data/"/>
+    <category term="Big_Data" scheme="https://pingpinggray.top/categories/Technology-Stack/Big-Data/"/>
+    
+    <category term="Hadoop" scheme="https://pingpinggray.top/categories/Technology-Stack/Big-Data/Hadoop/"/>
     
     
     <category term="Internship Experience" scheme="https://pingpinggray.top/tags/Internship-Experience/"/>
@@ -292,9 +282,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="DFS" scheme="https://pingpinggray.top/tags/DFS/"/>
@@ -318,9 +306,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="Simulation" scheme="https://pingpinggray.top/tags/Simulation/"/>
@@ -394,9 +380,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="Double Pointer" scheme="https://pingpinggray.top/tags/Double-Pointer/"/>
@@ -419,9 +403,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="Str" scheme="https://pingpinggray.top/tags/Str/"/>
@@ -444,9 +426,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="BinarySearch" scheme="https://pingpinggray.top/tags/BinarySearch/"/>
@@ -469,9 +449,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="Dynamic Programming" scheme="https://pingpinggray.top/tags/Dynamic-Programming/"/>
@@ -494,9 +472,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="K-May Merge" scheme="https://pingpinggray.top/tags/K-May-Merge/"/>
@@ -519,9 +495,7 @@
     
     
     
-    <category term="Tech" scheme="https://pingpinggray.top/categories/Tech/"/>
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/Tech/LeetCode/"/>
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
     
     
     <category term="Math" scheme="https://pingpinggray.top/tags/Math/"/>
