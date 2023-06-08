@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.1.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="0iM1o-efKbqYlCu_zW-bU1OIupeemwYcmetguLhpRj4">
+  <meta name="baidu-site-verification" content="code-oiXRLjFejQ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"pingpinggray.top","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.10.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":false,"nav":{"waline":{"order":-1},"gitalk":{"order":-2}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://pingpinggray.top/post/39223cc.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://pingpinggray.top/post/39223cc.html","path":"post/39223cc.html","title":"Hadoop-HDFS"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hadoop-HDFS | Gray Dynasty</title>
+  
+
+
+
+
+<link rel="dns-prefetch" href="blog-vercel-sage.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Gray Dynasty" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Gray Dynasty</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-text">特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-text">架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NameNode"><span class="nav-text">NameNode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataNode"><span class="nav-text">DataNode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SecondaryNameNode"><span class="nav-text">SecondaryNameNode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Client"><span class="nav-text">Client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%80%E9%99%90%E6%80%A7"><span class="nav-text">局限性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Block"><span class="nav-text">Block</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%99%E6%B5%81%E7%A8%8B"><span class="nav-text">写流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%AF%E6%9C%AC%E8%8A%82%E7%82%B9%E9%80%89%E6%8B%A9"><span class="nav-text">副本节点选择</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AF%BB%E6%B5%81%E7%A8%8B"><span class="nav-text">读流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86"><span class="nav-text">元数据管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-text">工作机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-text">流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E7%BE%A4%E5%AE%89%E5%85%A8%E6%A8%A1%E5%BC%8F"><span class="nav-text">集群安全模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B-1"><span class="nav-text">流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8"><span class="nav-text">数据存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6-1"><span class="nav-text">工作机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="nav-text">数据完整性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%89%E7%BA%BF%E6%97%B6%E9%99%90"><span class="nav-text">掉线时限</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E5%8F%AF%E7%94%A8"><span class="nav-text">高可用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E8%A6%81%E7%82%B9"><span class="nav-text">工作要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E6%95%85%E9%9A%9C%E8%BD%AC%E7%A7%BB%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-text">自动故障转移工作机制</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Chris Gray"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Chris Gray</p>
+  <div class="site-description" itemprop="description">Chris Blog</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/ChrisGray0626" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ChrisGray0626" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://rxresu.me/r/MZbeJ3es" title="个人简历 → https:&#x2F;&#x2F;rxresu.me&#x2F;r&#x2F;MZbeJ3es" rel="noopener" target="_blank">个人简历</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://rxresu.me/r/JcVMR_6g" title="Resume → https:&#x2F;&#x2F;rxresu.me&#x2F;r&#x2F;JcVMR_6g" rel="noopener" target="_blank">Resume</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://pingpinggray.top/post/39223cc.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Chris Gray">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gray Dynasty">
+      <meta itemprop="description" content="Chris Blog">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Hadoop-HDFS | Gray Dynasty">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hadoop-HDFS
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-09-24 11:34:05" itemprop="dateCreated datePublished" datetime="2021-09-24T11:34:05+01:00">2021-09-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-03-21 11:33:32" itemprop="dateModified" datetime="2023-03-21T11:33:32+00:00">2023-03-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech/" itemprop="url" rel="index"><span itemprop="name">Tech</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tech/Big-Data/" itemprop="url" rel="index"><span itemprop="name">Big Data</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/post/39223cc.html#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/post/39223cc.html" data-xid="/post/39223cc.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span id="/post/39223cc.html" class="post-meta-item leancloud_visitors" data-flag-title="Hadoop-HDFS" title="Views">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>3.9k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h1><ul>
+<li>不支持并发写入</li>
+<li>不支持文件当随机修改，仅支持数据追加（append）</li>
+</ul>
+<span id="more"></span>
+
+<h1 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h1><h2 id="NameNode"><a href="#NameNode" class="headerlink" title="NameNode"></a>NameNode</h2><ul>
+<li>守护进程，负责维护整个文件系统，存储着整个文件系统的<strong>元数据信息</strong>，管理命名空间</li>
+<li>配置副本策略（？</li>
+<li>管理数据块（block）映射信息</li>
+<li>处理读写请求</li>
+<li>其中镜像备份 <code>Fsimage</code> 和 日志备份 <code>Edit.log</code> 的内容 namenode 不会持久化存储，而是在启动时重建这些数据</li>
+</ul>
+<h2 id="DataNode"><a href="#DataNode" class="headerlink" title="DataNode"></a>DataNode</h2><ul>
+<li>具体工作节点，存储实际的数据块</li>
+<li>执行数据块的读写操作</li>
+</ul>
+<h2 id="SecondaryNameNode"><a href="#SecondaryNameNode" class="headerlink" title="SecondaryNameNode"></a>SecondaryNameNode</h2><ul>
+<li>主要负责定期合并 <code>Fsimage</code> 和 <code>Edit.log</code>，并推送给 NameNode</li>
+<li>在紧急情况下，可辅助恢复 NameNode</li>
+</ul>
+<h2 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h2><ul>
+<li>文件切分</li>
+<li>节点交互</li>
+</ul>
+<h2 id="局限性"><a href="#局限性" class="headerlink" title="局限性"></a>局限性</h2><ul>
+<li><p>Namespace 限制：由于 NameNode 在内存中存储所有的元数据，因此单个 NameNode 所能存储的对象（文件+块）数目受到 NameNode 所在 JVM 的 heap size 的限制。</p>
+</li>
+<li><p>隔离问题：由于仅有一个 NameNode，无法隔离各个程序，因此 HDFS 上的一个实验程序就很有可能影响整个 HDFS 上运行的程序。</p>
+</li>
+<li><p>性能问题：由于仅有一个 NameNode，整个 HDFS 的吞吐量受限于单个 NameNode 的吞吐量。</p>
+</li>
+</ul>
+<h2 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h2><ul>
+<li>物理上分块存储</li>
+<li><code>dfs.blocksize</code> &#x3D; 64M</li>
+<li>最佳配置：寻址时间为传输时间的 1%；块的设置取决于<strong>磁盘传输速率</strong></li>
+<li>块设置过小，会增加寻址时间；块设置过大，传输时间过久</li>
+</ul>
+<h1 id="写流程"><a href="#写流程" class="headerlink" title="写流程"></a>写流程</h1><ol>
+<li>Client 与 NameNode 建立连接，创建文件元数据信息</li>
+<li>NameNode 判断元数据是否有效</li>
+<li>NameNode 触发副本存放策略，返回一个有序的 DataNode 列表</li>
+<li>Client 与 DataNode 建立管道连接，Client 将文件块切成一个个 &#x3D;&#x3D;Packet&#x3D;&#x3D;</li>
+<li>Client 将 Packet 放入管道并向第一个 DataNode 传输</li>
+<li>第一个 DataNode 保存后发送给第二个 DataNode，第二个DataNode保存后以此类推</li>
+<li>几个 DataNode 会与 NameNode 建立<strong>心跳</strong>，确认传输完成后完成写流程</li>
+</ol>
+<h2 id="副本节点选择"><a href="#副本节点选择" class="headerlink" title="副本节点选择"></a>副本节点选择</h2><ul>
+<li>若 Client 在集群内，则第一个副本在其所处节点上， 否则随机选择一个节点</li>
+<li>第二个副本选择与第一个所处相同机架的随机节点</li>
+<li>第三个副本选择不同机架的随机节点</li>
+</ul>
+<h1 id="读流程"><a href="#读流程" class="headerlink" title="读流程"></a>读流程</h1><ol>
+<li>Client 通过 &#x3D;&#x3D;Distribution File System&#x3D;&#x3D;与 NameNode 交互</li>
+<li>NamdNode 通过查询元数据信息，获取文件块的位置，NameNode 会按照距离策略排序返回 &#x3D;&#x3D;DataNode 列表&#x3D;&#x3D;</li>
+<li>Client 从最近的 DataNode 开始读，先建立管道，然后 DataNode 以 Packet为单位将数据传给 Client</li>
+</ol>
+<h1 id="元数据管理"><a href="#元数据管理" class="headerlink" title="元数据管理"></a>元数据管理</h1><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/4so1l1z2dy.png" alt="4so1l1z2dy"></p>
+<p>采用内存 + 磁盘的方式进行元数据的管理：内存-&gt; NameNode，磁盘-&gt;Fsimage &amp; Edits。</p>
+<ul>
+<li>Fsimage：NameNode 中对元数据进行持久化存储生成的序列化文件，保存了最新的元数据检查点包含所有目录和文件索引。</li>
+<li>Edits：记录Client 更新元数据信息的每一步操作，只进行追加操作，以日志的形式记录，保存自最新检查点后的命名空间的变化。</li>
+</ul>
+<h2 id="工作机制"><a href="#工作机制" class="headerlink" title="工作机制"></a>工作机制</h2><p>NameNode 启动时，先滚动 Edits 并生成一个空的 <code>edits.inprogress</code>，然后加载 Edits 和 Fsimage 到内存中，此时 NameNode 内存就持有最新的元数据信息。</p>
+<p>Client 开始对 NameNode 发送元数据的增删改的请求，这些请求的操作首先会被记录到 edits.inprogress 中，如果此时 NameNode 挂掉，重启后会从 Edits 中读取元数据的信息。然后，NameNode 会根据 Edits 按步执行。</p>
+<p>由于 Edits 中记录的操作会越来越多，Edits 文件会越来越大，导致 NameNode 在启动加载 Edits 时会很慢，所以需要定期对 Edits 和 Fsimage 进行合并：将Edits 和 Fsimage 加载到内存中 ， 按照 Edits 按步执行 ， 最终形成新的 Fsimage。 </p>
+<h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol>
+<li>启动 NameNode，创建&#x2F;直接加载 Fsimage 和 Edits</li>
+<li>Client 对元数据进行增删改请求</li>
+<li>NameNode 记录操作日志，更新 Edits</li>
+<li>NameNode 在内存中对数据进行增删改</li>
+<li>Secondary NameNode 询问 NameNode 是否需要 CheckPoint（触发 CheckPoint 需要满足两个条件中的任意一个，定时时间 1 h 到或 Edits 中数据已写满 64 M），并直接带回 NameNode 结果</li>
+<li>Secondary NameNode 请求执行 CheckPoint</li>
+<li>NameNode 滚动 Edits 并生成一个空的 edits.inprogress（滚动 Edits 的目的是给 Edits 打个标记，以后所有新的操作都写入 edits.inprogress），其他未合并的 Edits 和 Fsimag 会拷贝到 SecondaryNameNode</li>
+<li>SecondaryNameNode 加载 Edits 和 Fsimage 加载到内存中进行合并，生成 <code>fsimage.chkpoint</code></li>
+<li>拷贝 fsimage.chkpoint 到 NameNode</li>
+<li>NameNode 将 fsimage.chkpoint 重新命名成 Fsimage</li>
+</ol>
+<h1 id="集群安全模式"><a href="#集群安全模式" class="headerlink" title="集群安全模式"></a>集群安全模式</h1><ul>
+<li><p>集群处于安全模式，不能执行重要操作（写操作）。</p>
+</li>
+<li><p>集群启动完成后，自动退出安全模式。</p>
+</li>
+<li><p>在启动一个刚刚格式化的 HDFS集群时，因为系统中还没有任何块，所以 NameNode 不会进入安全模式。</p>
+</li>
+</ul>
+<h2 id="流程-1"><a href="#流程-1" class="headerlink" title="流程"></a>流程</h2><ol>
+<li>NameNode 启动：首先将 Fsimage 载入内存，并执行 Edits 中的各项操作。一旦在内存中成功建立文件系统元数据的映像，则创建一个新的 Fsimage 和一个空的Edits。此时，NameNode 开始监听 DataNode 请求。这个过程期间，NameNode 一直运行在安全模式，即 NameNode 的文件系统对于 Client 来说是只读的。 </li>
+<li>DataNode 启动：在安全模式下，各个 DataNode 会向 NameNode 发送最新的块列表信息。</li>
+<li>安全模式退出：判断如果满足“最小副本条件”，NameNode 会在30秒钟之后就退出安全模式。最小副本条件指的是在整个文件系统中 99.9% 的块满足最小副本级别（默认值：&#96;&#96;dfs.replication.min&#96; &#x3D; 1)。</li>
+</ol>
+<h1 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h1><h2 id="工作机制-1"><a href="#工作机制-1" class="headerlink" title="工作机制"></a>工作机制</h2><ul>
+<li>一个数据块在 DataNode 上以文件形式存储在磁盘上，包括两个文件，一个是数据本身，一个是元数据，包括数据块的长度，块数据的校验和，以及时间戳。 </li>
+<li>DataNode 启动后向 NameNode 注册，通过后，周期性（1 小时）地向 NameNode 上报所有的块信息。</li>
+<li>心跳每 3 秒一次，返回结果带有 NameNode 给该 DataNode 的命令。如果超过 10 分钟没有收到 DataNode 的心跳，则认为该节点不可用。</li>
+<li>集群运行中可以安全加入和退出一些机器。</li>
+</ul>
+<h2 id="数据完整性"><a href="#数据完整性" class="headerlink" title="数据完整性"></a>数据完整性</h2><ul>
+<li>（周期性）验证 <code>checkSum</code></li>
+</ul>
+<h2 id="掉线时限"><a href="#掉线时限" class="headerlink" title="掉线时限"></a>掉线时限</h2><h3 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h3><ul>
+<li>Timeout &#x3D; 2 * <code>dfs.namenode.hearteat.recheck-interval</code> + 10 * <code>dfs.hearteat.interval</code></li>
+<li>dfs.namenode.hearteat.recheck-interval &#x3D; 300000 ms</li>
+<li>dfs.hearteat.interval &#x3D; 3 s</li>
+</ul>
+<h1 id="高可用"><a href="#高可用" class="headerlink" title="高可用"></a>高可用</h1><ul>
+<li>通过双 NameNode 消除单点故障</li>
+</ul>
+<h2 id="工作要点"><a href="#工作要点" class="headerlink" title="工作要点"></a>工作要点</h2><ul>
+<li>NameNode 各自存储一份元数据</li>
+<li>Edits 日志只有 Active 状态的 NameNode 节点可以做写操作，两个 NameNode 都可以读取 Edits</li>
+<li>共享的 Edits 放在一个共享存储中管理</li>
+<li>需要一个状态管理功能模块，防止 <code>brain split</code> 的发生</li>
+</ul>
+<h2 id="自动故障转移工作机制"><a href="#自动故障转移工作机制" class="headerlink" title="自动故障转移工作机制"></a>自动故障转移工作机制</h2><ul>
+<li>故障检测：集群中的每个 NameNode 在 ZooKeeper 中维护了一个持久会话，如果机器崩溃，ZooKeeper 中的会话将终止，ZooKeeper 会通知另一个 NameNode 需要触发故障转移。</li>
+<li>现役 NameNode 选择：ZooKeeper 提供了一个简单的机制用于选择唯一的一个节点为 active 状态。如果现役 NameNode 崩溃，另一个节点可能从 ZooKeeper 获得特殊的排外锁以表明它应该成为现役 NameNode。</li>
+</ul>
+<h3 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h3><p>ZKFC 是自动故障转移中的另一个新组件，是 ZooKeeper 的客户端，也监视和管理 NameNode 的状态。每个运行 NameNode 的主机也运行了一个 ZKFC 进程。</p>
+<ul>
+<li>健康监测：ZKFC 使用一个健康检查命令定期地 ping 与之在相同主机的 NameNode， 只要该 NameNode 及时地回复健康状态，ZKFC 认为该节点是健康的。如果该节点崩溃、冻结或进入不健康状态，将标识该节点为非健康的。</li>
+<li>会话管理：当本地 NameNode 是健康的，ZKFC 保持一个在 ZooKeeper 中打开的会话。如果本地 NameNode 处于 active 状态，ZKFC 也保持一个特殊的 znode 锁， 该锁使用了 ZooKeeper 对短暂节点的支持，如果会话终止，锁节点将自动删除。 </li>
+<li>基于 ZooKeeper 的 NameNode 选择：如果本地 NameNode 是健康的，且 ZKFC 发现没有其它的节点当前持有 znode 锁，它将为自己获取该锁。如果成功，则它将使本地的 NameNode 的状态为 Active 并负责运行故障转移进程。</li>
+</ul>
+<h3 id="假死"><a href="#假死" class="headerlink" title="假死"></a>假死</h3><p>同时出现两个 Active 状态的 NameNode，出现脑裂现象</p>
+<ul>
+<li><code>kill</code> 指令</li>
+<li>用户自定义脚本程序</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Internship-Experience/" rel="tag"># Internship Experience</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/7c5f14c6.html" rel="prev" title="Hive">
+                  <i class="fa fa-chevron-left"></i> Hive
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/ef636ad6.html" rel="next" title="HBase">
+                  HBase <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments gitalk-container"></div>
+            </div>
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline-comments"></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备19041488号-1 </a>
+      <img src="/images/beian.png" alt="">
+  </div>
+
+<div class="copyright">
+  &copy; 2021.9 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chris Gray</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">123k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:52</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"blog-vercel-sage.vercel.app","placeholder":"Welcome to comment","avatar":"mm","pageSize":10,"visitor":true,"comment_count":false,"requiredFields":["nick"],"meta":["nick","mail"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/post/39223cc.html"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"ChrisGray0626","repo":"ChrisGray0626.github.io","client_id":"3782c574efca31c084de","client_secret":"f19fd10391350acd5b62659efaf44a94781b39d2","admin_user":"ChrisGray0626","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"728dc7713049145f23307d8ee8af3a61"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":200,"height":300,"hOffset":280},"mobile":{"show":true}});</script></body>
+</html>

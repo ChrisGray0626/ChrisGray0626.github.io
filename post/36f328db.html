@@ -31,10 +31,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://pingpinggray.top/post/36f328db.html","path":"post/36f328db.html","title":"Hadoop-Yarn"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://pingpinggray.top/post/36f328db.html","path":"post/36f328db.html","title":"Hadoop-YARN"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hadoop-Yarn | Gray Dynasty</title>
+<title>Hadoop-YARN | Gray Dynasty</title>
   
 
 
@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -231,12 +231,12 @@
     </span>
     
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hadoop-Yarn | Gray Dynasty">
+      <meta itemprop="name" content="Hadoop-YARN | Gray Dynasty">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hadoop-Yarn
+          Hadoop-YARN
         </h1>
 
         <div class="post-meta-container">
@@ -246,9 +246,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-03-18 11:42:37 / Modified: 16:25:15" itemprop="dateCreated datePublished" datetime="2023-03-18T11:42:37+00:00">2023-03-18</time>
+      <time title="Created: 2023-03-18 11:42:37" itemprop="dateCreated datePublished" datetime="2023-03-18T11:42:37+00:00">2023-03-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-04-03 23:42:54" itemprop="dateModified" datetime="2023-04-03T23:42:54+01:00">2023-04-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -286,7 +292,7 @@
   </span>
   
   
-    <span id="/post/36f328db.html" class="post-meta-item leancloud_visitors" data-flag-title="Hadoop-Yarn" title="Views">
+    <span id="/post/36f328db.html" class="post-meta-item leancloud_visitors" data-flag-title="Hadoop-YARN" title="Views">
       <span class="post-meta-item-icon">
         <i class="far fa-eye"></i>
       </span>
@@ -365,22 +371,17 @@
 <li>AM 创建成功后向 RM 中的 ASM 注册自己。</li>
 <li>AM 注册成功后，会对数据进行切分，然后向 RM 申请资源，以 Container 的形式，RM 会根据调度策略提供资源。</li>
 <li>AM 申请到资源成功后，会与 NM 通信，请求启动任务。</li>
-<li>NM 接收到 AM 的请求后，根据 Job 提供的信息，启动对应的 Task。</li>
 <li>启动后的每个 Task 会定时向 AM 提供自己的状态信息和执行的进度。</li>
 <li>运行完成后 AM 会向 ASM 注销和关闭自己，AM 会释放相应的 Container。</li>
 </ol>
-<h1 id="资源调度器"><a href="#资源调度器" class="headerlink" title="资源调度器"></a>资源调度器</h1><h2 id="FIFO-Schedule-（先进先出调度器）"><a href="#FIFO-Schedule-（先进先出调度器）" class="headerlink" title="FIFO Schedule （先进先出调度器）"></a>FIFO Schedule （先进先出调度器）</h2><h2 id="Capacity-Scheduler（容量调度器）"><a href="#Capacity-Scheduler（容量调度器）" class="headerlink" title="Capacity Scheduler（容量调度器）"></a>Capacity Scheduler（容量调度器）</h2><ul>
-<li>支持<strong>多队列</strong>，每个队列可配置一定的资源量，每个队列采用FIFO调度策略。</li>
-<li>为了防止同一个用户的作业独占队列中的资源，该调度器会对同一用户提交的作业所占资源量进行限定。<ol>
+<h1 id="资源调度器"><a href="#资源调度器" class="headerlink" title="资源调度器"></a>资源调度器</h1><h2 id="FIFO-Schedule-（先进先出调度器）"><a href="#FIFO-Schedule-（先进先出调度器）" class="headerlink" title="FIFO Schedule （先进先出调度器）"></a>FIFO Schedule （先进先出调度器）</h2><h2 id="Capacity-Scheduler（容量调度器）"><a href="#Capacity-Scheduler（容量调度器）" class="headerlink" title="Capacity Scheduler（容量调度器）"></a>Capacity Scheduler（容量调度器）</h2><p>支持<strong>多队列</strong>，每个队列可配置一定的资源量，每个队列采用FIFO调度策略。</p>
+<p>为了防止同一个用户的作业独占队列中的资源，该调度器会对同一用户提交的作业所占资源量进行限定。</p>
+<ol>
 <li>计算每个队列中正在运行的任务数与其应该分得的计算资源之间的比值，选择一个该比值最小的队列——最闲的。</li>
 <li>按照作业优先级和提交时间顺序，同时考虑用户资源量限制和内存限制对队列内任务排序。</li>
 </ol>
-</li>
-</ul>
-<h2 id="Fair-Scheduler（公平调度器）"><a href="#Fair-Scheduler（公平调度器）" class="headerlink" title="Fair Scheduler（公平调度器）"></a>Fair Scheduler（公平调度器）</h2><ul>
-<li>支持<strong>多队列多用户</strong>，每个队列中的资源量可以配置，同一队列中的作业<strong>公平共享</strong>队列中所有资源。</li>
-<li>在资源有限的情况下，每个 Job 理想情况下获得的计算资源与实际获得的计算资源存在一种差距，这个差距就叫做<strong>缺额</strong>。在同一个队列中，Job 的资源<strong>缺额越大</strong>，越先获得资源优先执行，作业是按照缺额的高低来先后执行的。</li>
-</ul>
+<h2 id="Fair-Scheduler（公平调度器）"><a href="#Fair-Scheduler（公平调度器）" class="headerlink" title="Fair Scheduler（公平调度器）"></a>Fair Scheduler（公平调度器）</h2><p>支持<strong>多队列多用户</strong>，每个队列中的资源量可以配置，同一队列中的作业<strong>公平共享</strong>队列中所有资源。</p>
+<p>在资源有限的情况下，每个 Job 理想情况下获得的计算资源与实际获得的计算资源存在一种差距，这个差距就叫做<strong>缺额</strong>。在同一个队列中，Job 的资源<strong>缺额越大</strong>，越先获得资源优先执行，作业是按照缺额的高低来先后执行的。</p>
 <h1 id="任务的推测执行"><a href="#任务的推测执行" class="headerlink" title="任务的推测执行"></a>任务的推测执行</h1><ul>
 <li>作业完成时间取决于最慢的任务完成时间。</li>
 </ul>
@@ -398,16 +399,10 @@
 <li>Task 间存在严重的负载倾斜</li>
 <li>特殊 Task，比如向数据库中写数据。</li>
 </ul>
-<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><ul>
-<li><p>假设某一时刻，Task 执行进度为 <code>progress</code>,则可通过一定的算法推测出该任务的最终完成时刻<code>estimateEndTime</code>。另一方面，如果此刻为该 Task 启动一个备份 Task，则可推断出它可能的完成时刻 estimateEndTime&#96;。</p>
-</li>
-<li><p>总是选择为 estimateEndTime-estimateEndTime’ 差值最大的 Task 启动备份Task。</p>
-</li>
-<li><p>为了防止大量 Task 同时启动备份 Task 造成的资源浪费，每个作业设置了同时启动的备份任务数目上限。</p>
-</li>
-<li><p>推测执行机制实际上采用了经典的优化算法：<strong>空间换时间</strong>，它同时启动多个相同任务处理相同的数据，并让这些任务<strong>竞争</strong>以缩短数据处理时间，这种方法需要占用更多的计算资源。在集群资源紧缺的情况下，应合理使用该机制，争取在多用少量资源的情况下，减少作业的计算时间。</p>
-</li>
-</ul>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>假设某一时刻，Task 执行进度为 <code>progress</code>,则可通过一定的算法推测出该任务的最终完成时刻 <code>estimateEndTime</code>。另一方面，如果此刻为该 Task 启动一个备份 Task，则可推断出它可能的完成时刻 <code>estimateEndTime&#39;</code>。</p>
+<p>总是选择为 <code>estimateEndTime-estimateEndTime&#39;</code> 差值最大的 Task 启动备份 Task。</p>
+<p>为了防止大量 Task 同时启动备份 Task 造成的资源浪费，每个作业设置了同时启动的备份任务数目上限。</p>
+<p>推测执行机制实际上采用了经典的优化算法：<strong>空间换时间</strong>，它同时启动多个相同任务处理相同的数据，并让这些任务<strong>竞争</strong>以缩短数据处理时间，这种方法需要占用更多的计算资源。在集群资源紧缺的情况下，应合理使用该机制，争取在多用少量资源的情况下，减少作业的计算时间。</p>
 
     </div>
 
@@ -499,13 +494,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">123k</span>
+    <span title="Symbols count total">130k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:52</span>
+    <span title="Reading time total">1:59</span>
   </span>
 </div>
 <div class="busuanzi-count">

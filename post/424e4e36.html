@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -254,7 +254,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2022-04-14 08:26:08" itemprop="dateModified" datetime="2022-04-14T08:26:08+01:00">2022-04-14</time>
+      <time title="Modified: 2023-04-21 10:35:02" itemprop="dateModified" datetime="2023-04-21T10:35:02+01:00">2023-04-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -306,7 +306,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>5.8k</span>
+      <span>5.6k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -341,18 +341,18 @@
 <li>一块较小的内存空间, 是当前线程所执行的字节码的行号指示器，每个线程都有独立的程序计数器。</li>
 <li>是唯一一个在虚拟机中没有规定任何 OutOfMemoryError 情况的内存区域。</li>
 </ul>
-<h3 id="Java虚拟机栈"><a href="#Java虚拟机栈" class="headerlink" title="Java虚拟机栈"></a>Java虚拟机栈</h3><ul>
+<h3 id="Java-虚拟机栈"><a href="#Java-虚拟机栈" class="headerlink" title="Java 虚拟机栈"></a>Java 虚拟机栈</h3><ul>
 <li><p>用于描述方法执行，一个线程的方法的调用和返回对应栈的压栈和出栈。</p>
 </li>
 <li><p>主要存放一些基本的数据类型和对象句柄（引用）；存取速度比堆快，仅次于寄存器，栈数据可以共享；静态分配内存，编译时确定生存期大小。</p>
 </li>
-<li><p>每个方法在执行的同时都会创建一个栈帧(Stack Frame) 用于存储局部变量表、操作数栈、动态链接、方法出口等信息。</p>
+<li><p>每个方法在执行的同时都会创建一个栈帧 (Stack Frame) 用于存储局部变量表、操作数栈、动态链接、方法出口等信息。</p>
 </li>
 <li><p>栈帧是用来存储数据和部分过程结果的数据结构，同时也被用来处理动态链接 (Dynamic Linking)、 方法返回值和异常分派(Dispatch Exception)。栈帧随着方法调用而创建，随着方法结束而销毁。</p>
 </li>
 </ul>
 <h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><ul>
-<li>与Java虚拟机栈作用类似，区别是前者为Native 方法服务，后者为 Java 方法服务。</li>
+<li>与 Java 虚拟机栈作用类似，区别是后者为 Native 方法服务，前者为 Java 方法服务。</li>
 </ul>
 <h2 id="线程共享区域"><a href="#线程共享区域" class="headerlink" title="线程共享区域"></a>线程共享区域</h2><ul>
 <li>随虚拟机的启动&#x2F;关闭而创建&#x2F;销毁。</li>
@@ -413,7 +413,7 @@
 </ul>
 <h3 id="标记-整理算法（Mark-Compact）"><a href="#标记-整理算法（Mark-Compact）" class="headerlink" title="标记-整理算法（Mark-Compact）"></a>标记-整理算法（Mark-Compact）</h3><ul>
 <li>结合了以上两个算法，为了避免缺陷而提出。</li>
-<li>标记阶段和 Mark-Sweep 算法相同，标记后不是清理对象，而是将存活对象移向内存的一端。然后清除端边界外的对象。如图:</li>
+<li>标记阶段和 Mark-Sweep 算法相同，标记后不是清理对象，而是将存活对象移向内存的一端。然后清除端边界外的对象。</li>
 </ul>
 <h3 id="分代收集算法"><a href="#分代收集算法" class="headerlink" title="分代收集算法"></a>分代收集算法</h3><ul>
 <li>目前大部分 JVM 所采用的方法，核心思想是根据对象存活的不同生命周期将内存划分为不同区域，根据不同区域选择不同算法。</li>
@@ -422,7 +422,7 @@
 <h4 id="新生代与复制算法"><a href="#新生代与复制算法" class="headerlink" title="新生代与复制算法"></a>新生代与复制算法</h4><ul>
 <li>每次只使用 Eden 和 From Survivor 区域存储，当内存不够时触发 MinorGC 进行垃圾回收。</li>
 <li>Eden 和 From Survivor 区域中存活的对象复制到 To Survivor 区域，同时把这些对象的年龄+1。</li>
-<li>如果有对象的年龄达到了老年的标准（默认为15岁），或者 To Servicor 区域位置不够，就复制到老年代。</li>
+<li>如果有对象的年龄达到了老年的标准（默认为15岁），或者 To Survivor 区域位置不够，就复制到老年代。</li>
 <li>清空 Eden 和 From Survivor 区域。</li>
 <li>From Survivor 和 To Survivor 互换，原 To Survivor 成为下一次 GC 时的 From Survivor 区域。</li>
 </ul>
@@ -460,7 +460,7 @@
 <li>多线程、复制算法、吞吐量</li>
 <li>重点关注的是程序达到一个可控制的吞吐量（Thoughput）。</li>
 <li>吞吐量：CPU 用于运行用户代码的时间&#x2F;CPU 总消耗时间，即运行用户代码时间&#x2F;(运行用户代码时间+垃圾收集时间)。</li>
-<li>采用自适应调节策略。</li>
+<li>采用<strong>自适应调节策略</strong>。</li>
 <li>主要适用于在后台运算而不需要太多交互的任务。</li>
 </ul>
 <h3 id="Serial-Old"><a href="#Serial-Old" class="headerlink" title="Serial Old"></a>Serial Old</h3><ul>
@@ -477,25 +477,27 @@
 </ol>
 </li>
 </ul>
-<h3 id="Parallel-Old收集器"><a href="#Parallel-Old收集器" class="headerlink" title="Parallel Old收集器"></a>Parallel Old收集器</h3><ul>
+<h3 id="Parallel-Old"><a href="#Parallel-Old" class="headerlink" title="Parallel Old"></a>Parallel Old</h3><ul>
 <li>多线程、标记-整理算法、吞吐量</li>
 <li>Parallel Scavenge 的老年代版本。</li>
-<li>JDK1.6开始提供。</li>
+<li>JDK1.6 开始提供。</li>
 </ul>
-<h3 id="CMS收集器"><a href="#CMS收集器" class="headerlink" title="CMS收集器"></a>CMS收集器</h3><ul>
+<h3 id="CMS-收集器"><a href="#CMS-收集器" class="headerlink" title="CMS 收集器"></a>CMS 收集器</h3><ul>
 <li>多线程、标记-清除算法</li>
 <li>年老代垃圾收集器，最主要目标是获取最短垃圾回收停顿时间，从而为交互比较高的程序提高用户体验。</li>
+</ul>
+<ol>
 <li>初始标记：标记 GC Roots 能直接关联的对象，速度很快，仍然需要暂停所有的工作线程。</li>
 <li>并发标记：进行 GC Roots 跟踪的过程，和用户线程一起工作，不需要暂停工作线程。</li>
 <li>重新标记：为了修正在并发标记期间，因用户程序继续运行而导致标记产生变动的那一部分对象的标记记录，仍然需要暂停所有的工作线程。</li>
 <li>并发清除：清除 GC Roots 不可达对象，和用户线程一起工作，不需要暂停工作线程。</li>
-<li>由于耗时最长的并发标记和并发清除过程中，垃圾收集线程可以和用户现在一起并发工作，因此总体上来看 CMS 和用户线程是一起并发地执行的。</li>
-</ul>
+</ol>
+<p>由于耗时最长的并发标记和并发清除过程中，垃圾收集线程可以和用户现在一起并发工作，因此总体上来看 CMS 和用户线程是一起并发地执行的。</p>
 <h3 id="G1（Garbage-first）收集器"><a href="#G1（Garbage-first）收集器" class="headerlink" title="G1（Garbage first）收集器"></a>G1（Garbage first）收集器</h3><ul>
 <li>标记-整理算法、分区收集算法、吞吐量</li>
-<li>可以非常精确控制停顿时间，在不牺牲吞吐量前提下，实现低停顿垃圾回收。</li>
-<li>避免全区域垃圾收集，把堆内存划分为大小固定的几个独立区域，并且跟踪这些区域 的垃圾收集进度，同时在后台维护一个优先级列表，每次根据所允许的收集时间，优先回收垃圾最多的区域。</li>
 </ul>
+<p>可以非常精确控制停顿时间，在不牺牲吞吐量前提下，实现低停顿垃圾回收。</p>
+<p>避免全区域垃圾收集，把堆内存划分为大小固定的几个独立区域，并且跟踪这些区域的垃圾收集进度，同时在后台维护一个优先级列表，每次根据所允许的收集时间，优先回收垃圾最多的区域。</p>
 <h1 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h1><h2 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h2><ul>
 <li>最常见的引用类型。</li>
 <li>把一个对象赋给一个引用变量，这个引用变量就是一个强引用。</li>
@@ -517,36 +519,30 @@
 <li>主要作用是跟踪对象被垃圾回收的状态。</li>
 </ul>
 <h1 id="类加载机制"><a href="#类加载机制" class="headerlink" title="类加载机制"></a>类加载机制</h1><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poYW9jdWl0,size_16,color_FFFFFF,t_70.jpeg" alt="img"></p>
+<p>将类的 <code>.class</code> 文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个 <code>java.lang.Class</code> 对象，用来封装类在方法区内的数据结构。</p>
+<p>最终产品是位于堆区中的 Class 对象，Class 对象封装了类在方法区内的数据结构，并提供了访问方法区内的数据结构的接口。</p>
+<h2 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h2><p>在内存中生成一个代表这个类的 java.lang.Class 对象，作为方法区这个类的各种数据的入口。</p>
+<p>一般的加载来源包括从本地路径下编译生成的、jar包中的、远程网络以及动态代理实时编译的.class文件。</p>
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>主要是为了保证加载进来的字节流符合虚拟机规范，不会造成安全错误。</p>
 <ul>
-<li>将类的.class文件中的二进制数据读入到内存中，将其放在运行时数据区的方法区内，然后在堆区创建一个java.lang.Class对象，用来封装类在方法区内的数据结构。</li>
-<li>最终产品是位于堆区中的Class对象，Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口。</li>
-</ul>
-<h2 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h2><ul>
-<li><p>在内存中生成一个代表这个类的 java.lang.Class 对象，作为方法区这个类的各种数据的入口。</p>
+<li><p>对于文件格式的验证，比如常量中是否有不被支持的常量，文件中是否有不规范的或者附加的其他信息。</p>
 </li>
-<li><p>一般的加载来源包括从本地路径下编译生成的、jar包中的、远程网络以及动态代理实时编译的.class文件。</p>
-</li>
-</ul>
-<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><ul>
-<li><p>主要是为了保证加载进来的字节流符合虚拟机规范，不会造成安全错误。</p>
-</li>
-<li><p>包括对于文件格式的验证，比如常量中是否有不被支持的常量，文件中是否有不规范的或者附加的其他信息。</p>
-</li>
-<li><p>对于元数据的验证，比如该类是否继承了被final修饰的类，类中的字段、方法是否与父类冲突，是否出现了不合理的重载。</p>
+<li><p>对于元数据的验证，比如该类是否继承了被 final 修饰的类，类中的字段、方法是否与父类冲突，是否出现了不合理的重载。</p>
 </li>
 <li><p>对于字节码的验证，保证程序语义的合理性，比如要保证类型转换的合理性。</p>
 </li>
 <li><p>对于符号引用的验证，比如校验符号引用中通过全限定名是否能够找到对应的类，校验符号引用中的访问性（private，public等）是否可被当前类访问。</p>
 </li>
 </ul>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
-<li><p>主要是为类变量分配内存，并且赋予初值，即在方法区中分配这些变量所使 用的内存空间。</p>
-</li>
-<li><p>初值不是代码中具体写的初始化的值，而是Java虚拟机根据不同变量类型的默认初始值：8种基本类型的初值，默认为0；引用类型的初值则为null；常量的初值即为代码中设置的值。</p>
-</li>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>主要是为类变量分配内存，并且赋予初值，即在方法区中分配这些变量所使用的内存空间。</p>
+<p>初值不是代码中具体写的初始化的值，而是Java虚拟机根据不同变量类型的默认初始值：</p>
+<ul>
+<li>8 种基本类型的初值，默认为 0；</li>
+<li>引用类型的初值则为 null；</li>
+<li>常量的初值即为代码中设置的值。</li>
 </ul>
 <h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><ul>
-<li>将常量池内的符号引用（类名、方法名、字段名等）替换为直接引用（具体的内存地址或偏移量）。</li>
+<li>将常量池内的<strong>符号引用</strong>（类名、方法名、字段名等）替换为<strong>直接引用</strong>（具体的内存地址或偏移量）。</li>
 </ul>
 <h3 id="符号引用"><a href="#符号引用" class="headerlink" title="符号引用"></a>符号引用</h3><ul>
 <li>一个字符串，这个字符串给出了一些能够唯一性识别一个方法，一个变量，一个类的相关信息。</li>
@@ -556,21 +552,17 @@
 <h3 id="直接引用"><a href="#直接引用" class="headerlink" title="直接引用"></a>直接引用</h3><ul>
 <li>指向目标的指针，相对偏移量或是一个能间接定位到目标的句柄。如果有了直接引用，那引用的目标必定已经在内存中存在。</li>
 </ul>
-<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p> 初始化阶段是类加载最后一个阶段，前面的类加载阶段之后，除了在加载阶段可以自定义类加载 器以外，其它操作都由 JVM 主导。到了初始阶段，才开始真正执行类中定义的 Java 程序代码。</p>
-<ul>
-<li>对类变量初始化，是执行类构造器的过程。</li>
-</ul>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><p>执行类构造器 <code>&lt;clinit&gt;()</code> 方法</p>
 <h3 id="类构造器"><a href="#类构造器" class="headerlink" title="类构造器"></a>类构造器</h3><ul>
-<li>初始化阶段是执行类构造器<client>方法的过程。</li>
-<li><client>方法是由编译器自动收集类中的<strong>类变量的赋值操作</strong>和<strong>静态语句块中的语句</strong>合并而成的。</li>
-<li>虚拟机会保证子<client>方法执行之前，父类 的<client>方法已经执行完毕。</li>
-<li>如果一个类中没有对静态变量赋值也没有静态语句块，那么编译器可以不为这个类生成<client>方法。</li>
+<li><clinit> 方法是由编译器自动收集类中的<strong>类变量的赋值操作</strong>和<strong>静态语句块中的语句</strong>合并而成的。</li>
+<li>虚拟机会保证子 <clinit> 方法执行之前，父类的 <clinit> 方法已经执行完毕。</li>
+<li>如果一个类中没有对静态变量赋值也没有静态语句块，那么编译器可以不为这个类生成 <clinit> 方法。</li>
 <li>以下几种情况不会执行类初始化:<ul>
 <li>通过<strong>子类引用父类的静态字段</strong>，只会触发父类的初始化，而不会触发子类的初始化。</li>
 <li>定义<strong>对象数组</strong>，不会触发该类的初始化。</li>
 <li><strong>常量</strong>在编译期间会存入调用类的常量池中，本质上并没有直接引用定义常量的类，不会触发定义常量所在的类的初始化。</li>
-<li>通过<strong>类名获取 Class 对象</strong>，不会触发类的初始化。</li>
-<li>通过 <strong>Class.forName 方法</strong>加载指定类，如果指定参数 initialize 为 false 时，也不会触发类初始化（这个参数是告诉虚拟机，是否要对类进行初始化）。</li>
+<li>通过<strong>类名</strong>获取 Class 对象，不会触发类的初始化。</li>
+<li>通过 <strong>Class.forName 方法</strong>加载指定类，如果指定参数 initialize （是否要对类进行初始化）为 false 时，也不会触发类初始化。</li>
 <li>通过 <strong>ClassLoader 默认的 loadClass 方法</strong>，不会触发该类的初始化。</li>
 </ul>
 </li>
@@ -580,22 +572,20 @@
 </ul>
 <p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/IMG_2E0E61ED56CE-1.jpeg" alt="IMG_2E0E61ED56CE-1"></p>
 <h3 id="启动类加载器-Bootstrap-ClassLoader"><a href="#启动类加载器-Bootstrap-ClassLoader" class="headerlink" title="启动类加载器(Bootstrap ClassLoader)"></a>启动类加载器(Bootstrap ClassLoader)</h3><ul>
-<li>负责加载 JAVA_HOME\lib 目录中的，或通过-Xbootclasspath 参数指定路径中的，且 虚拟机认可的类。</li>
+<li>负责加载 <code>JAVA_HOME\lib</code> 目录中的，或通过 <code>-Xbootclasspath</code> 参数指定路径中的，且 JVM 认可的类。</li>
 </ul>
 <h3 id="扩展类加载器-Extension-ClassLoader"><a href="#扩展类加载器-Extension-ClassLoader" class="headerlink" title="扩展类加载器(Extension ClassLoader)"></a>扩展类加载器(Extension ClassLoader)</h3><ul>
-<li>负责加载 JAVA_HOME\lib\ext 目录中的，或通过 java.ext.dirs 系统变量指定路径中的类库。</li>
+<li>负责加载 <code>JAVA_HOME\lib\ext</code> 目录中的，或通过 <code>java.ext.dirs</code> 系统变量指定路径中的类库。</li>
 </ul>
 <h3 id="应用程序类加载器-Application-ClassLoader"><a href="#应用程序类加载器-Application-ClassLoader" class="headerlink" title="应用程序类加载器(Application ClassLoader)"></a>应用程序类加载器(Application ClassLoader)</h3><ul>
-<li>负责加载用户路径(classpath)上的类库。</li>
+<li>负责加载用户路径 (classpath) 上的类库。</li>
 </ul>
 <h3 id="自定义加载器（User-ClassLoader）"><a href="#自定义加载器（User-ClassLoader）" class="headerlink" title="自定义加载器（User ClassLoader）"></a>自定义加载器（User ClassLoader）</h3><ul>
-<li>通过继承 <strong>java.lang.ClassLoader</strong> 实现。</li>
+<li>通过继承 <code>java.lang.ClassLoader</code> 实现。</li>
 </ul>
-<h2 id="双亲委派机制"><a href="#双亲委派机制" class="headerlink" title="双亲委派机制"></a>双亲委派机制</h2><ul>
-<li>当一个类收到了类加载请求，他首先不会尝试自己去加载这个类，而是把这个请求<strong>委派给父类</strong>去完成，每一个层次类加载器都是如此，因此所有的加载请求都应该传送到启动类加载器。</li>
-<li>只有当父类加载器反馈自己无法完成这个请求的时候(在它的加载路径下没有找到所需加载的Class)，子类加载器才会尝试自己去加载。</li>
-<li>好处是不管是哪个加载器加载同一个类，最终都是委托给顶层的启动类加载器进行加载，这样就保证了使用不同的类加载器最终得到的都是同一个 Object 对象。</li>
-</ul>
+<h2 id="双亲委派机制"><a href="#双亲委派机制" class="headerlink" title="双亲委派机制"></a>双亲委派机制</h2><p>当一个类收到了类加载请求，他首先不会尝试自己去加载这个类，而是把这个请求<strong>委派给父类</strong>去完成，每一个层次类加载器都是如此，因此所有的加载请求都应该传送到启动类加载器。</p>
+<p>只有当父类加载器反馈自己无法完成这个请求的时候(在它的加载路径下没有找到所需加载的 Class)，子类加载器才会尝试自己去加载。</p>
+<p>不管是哪个加载器加载同一个类，最终都是委托给顶层的启动类加载器进行加载，这样就保证了使用不同的类加载器最终得到的都是同一个 Object 对象。</p>
 
     </div>
 
@@ -687,13 +677,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">123k</span>
+    <span title="Symbols count total">130k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:52</span>
+    <span title="Reading time total">1:59</span>
   </span>
 </div>
 <div class="busuanzi-count">

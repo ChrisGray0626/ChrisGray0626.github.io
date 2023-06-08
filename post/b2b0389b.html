@@ -137,7 +137,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-text">特点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-text">架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MrAppMaster"><span class="nav-text">MrAppMaster</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MapTask"><span class="nav-text">MapTask</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ReduceTask"><span class="nav-text">ReduceTask</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JobClient"><span class="nav-text">JobClient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ObTracker"><span class="nav-text">ObTracker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TaskTracker"><span class="nav-text">TaskTracker</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-text">流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Split-%E8%BE%93%E5%85%A5%E5%88%87%E7%89%87"><span class="nav-text">Input Split (输入切片)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-%E9%98%B6%E6%AE%B5"><span class="nav-text">Map 阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Combiner-%E9%98%B6%E6%AE%B5"><span class="nav-text">Combiner 阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shuffle-%E9%98%B6%E6%AE%B5"><span class="nav-text">Shuffle 阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Partitioner%EF%BC%88%E5%88%86%E5%8C%BA%EF%BC%89"><span class="nav-text">Partitioner（分区）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sort-%E6%8E%92%E5%BA%8F"><span class="nav-text">Sort (排序)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spill%EF%BC%88%E6%BA%A2%E5%86%99%EF%BC%89"><span class="nav-text">Spill（溢写）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge-%E5%90%88%E5%B9%B6"><span class="nav-text">Merge(合并)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce%E9%98%B6%E6%AE%B5"><span class="nav-text">Reduce阶段</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-text">性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E7%93%B6%E9%A2%88"><span class="nav-text">性能瓶颈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%BE%93%E5%85%A5"><span class="nav-text">数据输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-%E9%98%B6%E6%AE%B5-1"><span class="nav-text">Map 阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce-%E9%98%B6%E6%AE%B5"><span class="nav-text">Reduce 阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-x2F-O-%E4%BC%A0%E8%BE%93"><span class="nav-text">I&#x2F;O 传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C"><span class="nav-text">数据倾斜</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%B9%E9%94%99%E6%9C%BA%E5%88%B6"><span class="nav-text">容错机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JobTracker"><span class="nav-text">JobTracker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TaskTracker-1"><span class="nav-text">TaskTracker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Job"><span class="nav-text">Job</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Task"><span class="nav-text">Task</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Record"><span class="nav-text">Record</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E7%9B%98"><span class="nav-text">磁盘</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FileSystem-Cache"><span class="nav-text">FileSystem.Cache</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%89%B9%E7%82%B9"><span class="nav-text">特点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E7%82%B9"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-text">缺点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84"><span class="nav-text">架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MrAppMaster"><span class="nav-text">MrAppMaster</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MapTask"><span class="nav-text">MapTask</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ReduceTask"><span class="nav-text">ReduceTask</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JobClient"><span class="nav-text">JobClient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JobTracker"><span class="nav-text">JobTracker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TaskTracker"><span class="nav-text">TaskTracker</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B"><span class="nav-text">流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input-Split-%E8%BE%93%E5%85%A5%E5%88%87%E7%89%87"><span class="nav-text">Input Split (输入切片)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-%E9%98%B6%E6%AE%B5"><span class="nav-text">Map 阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Combiner-%E9%98%B6%E6%AE%B5"><span class="nav-text">Combiner 阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shuffle-%E9%98%B6%E6%AE%B5"><span class="nav-text">Shuffle 阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Partitioner%EF%BC%88%E5%88%86%E5%8C%BA%EF%BC%89"><span class="nav-text">Partitioner（分区）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sort-%E6%8E%92%E5%BA%8F"><span class="nav-text">Sort (排序)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spill%EF%BC%88%E6%BA%A2%E5%86%99%EF%BC%89"><span class="nav-text">Spill（溢写）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge-%E5%90%88%E5%B9%B6"><span class="nav-text">Merge(合并)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce%E9%98%B6%E6%AE%B5"><span class="nav-text">Reduce阶段</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-text">性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E7%93%B6%E9%A2%88"><span class="nav-text">性能瓶颈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E8%BE%93%E5%85%A5"><span class="nav-text">数据输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-%E9%98%B6%E6%AE%B5-1"><span class="nav-text">Map 阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce-%E9%98%B6%E6%AE%B5"><span class="nav-text">Reduce 阶段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I-x2F-O-%E4%BC%A0%E8%BE%93"><span class="nav-text">I&#x2F;O 传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C"><span class="nav-text">数据倾斜</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%B9%E9%94%99%E6%9C%BA%E5%88%B6"><span class="nav-text">容错机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JobTracker-1"><span class="nav-text">JobTracker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TaskTracker-1"><span class="nav-text">TaskTracker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Job"><span class="nav-text">Job</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Task"><span class="nav-text">Task</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Record"><span class="nav-text">Record</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A3%81%E7%9B%98"><span class="nav-text">磁盘</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FileSystem-Cache"><span class="nav-text">FileSystem.Cache</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -254,7 +254,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-03-18 16:25:15" itemprop="dateModified" datetime="2023-03-18T16:25:15+00:00">2023-03-18</time>
+      <time title="Modified: 2023-04-03 22:55:00" itemprop="dateModified" datetime="2023-04-03T22:55:00+01:00">2023-04-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -306,7 +306,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>8.2k</span>
+      <span>8k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -325,9 +325,9 @@
     
     <div class="post-body" itemprop="articleBody">
         <h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><ul>
-<li><p>一个分布式运算程序的编程框架，是用户开发“基于Hadoop的数据分析应用”的核心框架。 </p>
+<li><p>一个分布式运算程序的编程框架，是用户开发“基于 Hadoop 的数据分析应用”的核心框架。 </p>
 </li>
-<li><p>核心功能是将用户编写的业务逻辑代码和自带默认组件整合成一个完整的分布式运算程序，并发运行在一个Hadoop集群上。</p>
+<li><p>核心功能是将用户编写的业务逻辑代码和自带默认组件整合成一个完整的分布式运算程序，并发运行在一个 Hadoop 集群上。</p>
 </li>
 </ul>
 <span id="more"></span>
@@ -336,7 +336,7 @@
 <li>易于编程：简单的实现一些接口，就可以完成一个分布式程序，这个分布式程序可以分布到大量廉价的PC机器上运行。也就是说你写一个分布式程序，跟写一个简单的串行程序是一模一样的。</li>
 <li>良好的扩展性：当你的计算资源不能得到满足的时候，你可以通过简单的增加机器来扩展它的计算能力。</li>
 <li>高容错性：设计的初衷就是使程序能够部署在廉价的 PC 机器上，这就要求它具有很高的容错性。比如其中一台机器挂了，它可以把上面的计算任务转移到另外一个节点上运行，这个过程不需要人工参与。</li>
-<li>适合PB级以上海量数据的离线处理可：以实现上千台服务器集群并发工作，提供数据处理能力。</li>
+<li>适合 PB 级以上海量数据的离线处理可：以实现上千台服务器集群并发工作，提供数据处理能力。</li>
 </ul>
 <h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><ul>
 <li>不擅长实时计算：无法在毫秒或者秒级内返回结果。</li>
@@ -382,59 +382,50 @@
 <h2 id="JobClient"><a href="#JobClient" class="headerlink" title="JobClient"></a>JobClient</h2><ul>
 <li>作业与集群交互的主要接口，提供了提交作业、跟踪其进度、访问组件任务的报告&#x2F;日志的功能，获取集群状态信息等工具。</li>
 </ul>
-<h2 id="ObTracker"><a href="#ObTracker" class="headerlink" title="ObTracker"></a>ObTracker</h2><ul>
+<h2 id="JobTracker"><a href="#JobTracker" class="headerlink" title="JobTracker"></a>JobTracker</h2><ul>
 <li>对应 NameNode，后台服务进程，负责监听并接收各个 TaskTracker 发送的心跳信息，包括资源使用情况和任务运行情况等信息；同时有容错和为任务调度提供决策依据的功能，其中作业控制模块，负责作业的分解和状态监控包括 TaskTracker 状态监控、作业状态监控和任务状态监控。</li>
 </ul>
 <h2 id="TaskTracker"><a href="#TaskTracker" class="headerlink" title="TaskTracker"></a>TaskTracker</h2><ul>
 <li>对应 DataNode，JobTracker 和 Task 之间的桥梁：一方面，从 JobTracker 接收并执行各种命令：运行任务、提交任务、杀死任务等；另一方面，将本地节点上各个任务的状态通过心跳周期性汇报给 JobTracker。</li>
 </ul>
-<h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><ul>
-<li>运算程序往往需要分成至少 2 个阶段。</li>
-<li>第一个阶段的 MapTask 并发实例，完全并行运行，互不相干。</li>
-<li>第二个阶段的 ReduceTask 并发实例互不相干，但是他们的数据依赖于上一个阶段的所有 MapTask 并发实例的输出。</li>
-<li>编程模型只能包含一个 Map 阶段和一个 Reduce 阶段，如果用户的业务逻辑非常复杂，那就只能多个 MapReduce 程序，<strong>串行运行</strong>。</li>
+<h1 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h1><p>运算程序往往需要分成至少 2 个阶段：</p>
+<ul>
+<li><p>第一个阶段的 MapTask 并发实例，完全并行运行，互不相干。</p>
+</li>
+<li><p>第二个阶段的 ReduceTask 并发实例互不相干，但是他们的数据依赖于上一个阶段的所有 MapTask 并发实例的输出。</p>
+</li>
 </ul>
+<p>编程模型只能包含一个 Map 阶段和一个 Reduce 阶段，如果用户的业务逻辑非常复杂，那就只能多个 MapReduce 程序，<strong>串行运行</strong>。</p>
 <p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/70-20210323213006589.png" alt="MR"></p>
 <ol>
-<li>JobClient 向 JobTracker 申请可用Job ID。</li>
-<li>JobClient 将运行 Job 所需要的资源拷贝到 HDFS 中，包括 MapReduce 程序打包的JAR文件、配置文件和客户端计算所得的输入切片信息，这些文件都存放在 JobTracker 专门为该作业创建的文件夹中，文件夹名为该作业的 Job ID。JAR文件默认会有10个副本（mapred.submit.replication）。</li>
+<li>JobClient 向 JobTracker 申请可用 JobID。</li>
+<li>JobClient 将运行 Job 所需要的资源拷贝到 HDFS 中，包括 MapReduce 程序打包的 JAR 文件、配置文件和客户端计算所得的输入切片信息，这些文件都存放在 JobTracker 专门为该作业创建的文件夹中，文件夹名为该作业的 JobID。JAR文件默认会有10个副本（mapred.submit.replication）。</li>
 <li>JobClient 向 JobTracker 提交 Job，JobTracker 接收到作业后，将其放在一个作业队列里，等待作业调度器对其进行调度。</li>
 <li>当调度到该作业时，会根据输入切片信息为每个切片创建一个 MapTask，并将其分配给 TaskTracker 执行。</li>
 <li>TaskTracker 会根据主机核的数量和内存的大小有分配固定数量的 map 槽和 reduce 槽：map 的任务分配遵循<strong>数据本地化（Data-Local）</strong>原则，将 map 任务分配给含有该 map 处理的数据块的 TaskTracker 上，同时将资源复制到该 TaskTracker 上来运行，这叫“<strong>运算移动，数据不移动</strong>”；分配 reduce 任务时则不考虑数据本地化。</li>
 <li>JobTracker 初始化 Job。</li>
 <li>JobTracker 从 HDFS 中获取输入切片。</li>
-<li>与此同时，TaskTracker不断地向JobTracker汇报心跳信息，心跳中还携带着很多的信息，比如当前 map 任务完成的进度等。当 JobTracker 收到作业的最后一个任务完成信息时，便把该作业设置成“成功”。当 JobClient 查询状态时，如果它得知任务已完成，便显示一条消息给用户。</li>
+<li>与此同时，TaskTracker 不断地向 JobTracker 汇报心跳信息，心跳中还携带着很多的信息，比如当前 map 任务完成的进度等。当 JobTracker 收到作业的最后一个任务完成信息时，便把该作业设置成“成功”。当 JobClient 查询状态时，如果它得知任务已完成，便显示一条消息给用户。</li>
 <li>TaskTracker 得到 JobTracker 分配的任务后，从 HDFS 获取 Job 资源，若数据是本地的，不需拷贝数据。</li>
 <li>TaskTracker 启动</li>
 <li>JVM 子进程运运行</li>
 </ol>
-<h2 id="Input-Split-输入切片"><a href="#Input-Split-输入切片" class="headerlink" title="Input Split (输入切片)"></a>Input Split (输入切片)</h2><ul>
-<li>数据切片只是在逻辑上对输入进行分片，并不会在磁盘上将其切分成片进行存储。</li>
-<li>默认情况下，切片大小等于数据块大小。</li>
-<li>输入分片（input split）只记录切片切片的<strong>元数据信息</strong>，例如起始位置、长度、所在节点列表等，并非数据本身。</li>
-<li>切片时不考虑整体，而是逐个针对每个文件单独切片。</li>
-<li>每个分片分配一个 MapTask 处理。</li>
-</ul>
+<h2 id="Input-Split-输入切片"><a href="#Input-Split-输入切片" class="headerlink" title="Input Split (输入切片)"></a>Input Split (输入切片)</h2><p>数据切片只是在逻辑上对输入进行分片，并不会在磁盘上将其切分成片进行存储。默认情况下，切片大小等于数据块大小，只记录切片切片的<strong>元数据信息</strong>，例如起始位置、长度、所在节点列表等，并非数据本身。</p>
+<p>切片时不考虑整体，而是逐个针对每个文件单独切片。</p>
+<p>每个分片分配一个 MapTask 处理。</p>
 <h3 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h3><ul>
 <li><code>mapreduce.input.fileinputformat.split.minsize</code> &#x3D; 1</li>
 <li><code>mapreduce.input.fileinputformat.split.maxsize</code> &#x3D; <code>Long.MAXValue</code></li>
 <li>切片大小 &#x3D; Math.max(minSize,Math.min(maxSize,blockSize));</li>
 </ul>
-<h2 id="Map-阶段"><a href="#Map-阶段" class="headerlink" title="Map 阶段"></a>Map 阶段</h2><p>就是程序员编写好的map函数了，因此map函数效率相对好控制，而且一般map操作都是本地化操作也就是在数据存储节点上进行；</p>
-<h2 id="Combiner-阶段"><a href="#Combiner-阶段" class="headerlink" title="Combiner 阶段"></a>Combiner 阶段</h2><ul>
-<li><p>Combiner 组件的父类是 Reducer，区别在于运行位置，Combiner 在每个MapTask 所在的节点运行。</p>
-</li>
-<li><p>目的在于对每个 MapTask 的输出进行<strong>局部合并</strong>，以<strong>减少网络传输量</strong>。</p>
-</li>
-<li><p>使用原则是不会影响到最终的业务输入，Combiner 的输出键值对应与 Reducer 的输出键值对对应。例如：只是求总数，最大值，最小值时可以使用 combiner，但做平均值计算时，最终的计算结果就会出错。</p>
-</li>
-</ul>
-<h2 id="Shuffle-阶段"><a href="#Shuffle-阶段" class="headerlink" title="Shuffle 阶段"></a>Shuffle 阶段</h2><ul>
-<li>shuffle 的本意是洗牌，把一组有一定规律的数据尽量打散转换成一组无规律的数据，而 MapReduce 中的 shuffle 更像是洗牌的逆过程，把一组无规律的数据尽量转换成一组<strong>具有一定规律的数据</strong>。</li>
-</ul>
+<h2 id="Map-阶段"><a href="#Map-阶段" class="headerlink" title="Map 阶段"></a>Map 阶段</h2><p>一般 map 操作都是本地化操作也就是在数据存储节点上进行；</p>
+<h2 id="Combiner-阶段"><a href="#Combiner-阶段" class="headerlink" title="Combiner 阶段"></a>Combiner 阶段</h2><p>Combiner 组件的父类是 Reducer，区别在于运行位置，Combiner 在每个MapTask 所在的节点运行。</p>
+<p>目的在于对每个 MapTask 的输出进行<strong>局部合并</strong>，以<strong>减少网络传输量</strong>。</p>
+<p>使用原则是不会影响到最终的业务输入，Combiner 的输出键值对应与 Reducer 的输出键值对对应。例如：只是求总数，最大值，最小值时可以使用 combiner，但做平均值计算时，最终的计算结果就会出错。</p>
+<h2 id="Shuffle-阶段"><a href="#Shuffle-阶段" class="headerlink" title="Shuffle 阶段"></a>Shuffle 阶段</h2><p>shuffle 的本意是洗牌，把一组有一定规律的数据尽量打散转换成一组无规律的数据，而 MapReduce 中的 shuffle 更像是洗牌的逆过程，把一组无规律的数据尽量转换成一组<strong>具有一定规律的数据</strong>。</p>
 <img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/d7cab57d19fe44908d931805e87e4894.jpeg" alt="img" style="zoom:67%;" />
 
-<ol>
+<h3 id="流程-1"><a href="#流程-1" class="headerlink" title="流程"></a>流程</h3><ol>
 <li>MapTask 收集输出的键值对，放到内存缓冲区中。</li>
 <li>从内存缓冲区不断溢出本地磁盘文件，可能会溢出多个文件。</li>
 <li>多个溢出文件会被合并成大的溢出文件。</li>
@@ -449,38 +440,19 @@
 <h2 id="Partitioner（分区）"><a href="#Partitioner（分区）" class="headerlink" title="Partitioner（分区）"></a>Partitioner（分区）</h2><ul>
 <li>默认分区时根据 key 的 hashCode 对 ReduceTasks 的个数取模得到，用户无法控制存储分区位置。</li>
 </ul>
-<h2 id="Sort-排序"><a href="#Sort-排序" class="headerlink" title="Sort (排序)"></a>Sort (排序)</h2><ul>
-<li><p>MapTask 和 ReduceTask 均会对数据按照 key 进行排序。</p>
-</li>
-<li><p>该操作属于 Hadoop 的默认行为，任何数据均会被排序，而不管逻辑上是否需要。</p>
-</li>
-<li><p>默认排序是按照字典顺序排序，使用<strong>快速排序</strong>。</p>
-</li>
-<li><p>对于 MapTask，它会将处理的结果暂时放到<strong>环形缓冲区</strong>中，当环形缓冲区使用率达到一定阈值后，再对缓冲区中的数据进行一次快速排序，并将这些有序数据<strong>溢写</strong>到磁盘上。当数据处理完毕后，它会对磁盘上所有文件进行<strong>归并排序</strong>。</p>
-</li>
-<li><p>对于Reduce Task,它从每个 MapTask 上远程拷贝相应的数据文件，如果文件大小超过一定阈值（默认 80），则&#x3D;&#x3D;进行一次排序&#x3D;&#x3D;，并溢写磁盘，否侧存储在内存中。如果内存中文件大小或者数目超过一定阈值，则进行一次合并，并将数据溢写到磁盘上；如果磁盘上文件数目达到一定阈值，则进行一次<strong>归并排序</strong>以生成一个更大文件。当所有数据拷贝完毕后，ReduceTask 统一对内存和磁盘上的所有数据进行一次<strong>归并排序</strong>。</p>
-</li>
-</ul>
+<h2 id="Sort-排序"><a href="#Sort-排序" class="headerlink" title="Sort (排序)"></a>Sort (排序)</h2><p>MapTask 和 ReduceTask 均会对数据按照 key 进行排序，默认排序是按照字典顺序排序，使用<strong>快速排序</strong>。该操作属于 Hadoop 的默认行为，任何数据均会被排序，而不管逻辑上是否需要。</p>
+<p>对于 MapTask，它会将处理的结果暂时放到<strong>环形缓冲区</strong>中，当环形缓冲区使用率达到一定阈值后，再对缓冲区中的数据进行一次快速排序，并将这些有序数据<strong>溢写</strong>到磁盘上。当数据处理完毕后，它会对磁盘上所有文件进行<strong>归并排序</strong>。</p>
+<p>对于 ReduceTask，它从每个 MapTask 上远程拷贝相应的数据文件，如果文件大小超过一定阈值（默认 80），则进行一次排序，并溢写磁盘，否侧存储在内存中。如果磁盘上文件数目达到一定阈值，则进行一次<strong>归并排序</strong>以生成一个更大文件。当所有数据拷贝完毕后，ReduceTask 统一对内存和磁盘上的所有数据进行一次<strong>归并排序</strong>。</p>
 <h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><ul>
 <li>部分排序：根据输入记录的键对数据集排序，保证输出的每个文件内部有序。</li>
 <li>全排序：最终输出结果只有一个文件，且文件内部有序。实现方式是只设置一个 ReduceTask。但该方法在处理大型文件时效率极低，因为一台机器处理所有文件，完全丧失了 MapReduce 所提供的并行架构。</li>
 <li>辅助排序：GroupingComparator 分组，在 Reduce 端对 key 进行分组。当接收的 key 为 bean 对象时，比较其中的若干字段进行排序。</li>
 <li>二次排序：在自定义排序过程中，如果 <code>compareTo</code> 中的判断条件为两个即为二次排序。</li>
 </ul>
-<h2 id="Spill（溢写）"><a href="#Spill（溢写）" class="headerlink" title="Spill（溢写）"></a>Spill（溢写）</h2><ul>
-<li>当排序完成，便开始把数据刷到磁盘，刷磁盘的过程以分区为单位，一个分区写完，写下一个分区，分区内数据有序，最终实际上会多次溢写，然后生成多个文件。</li>
-<li>或者如果缓冲区的内存达到了阀值的80%时候，这个守护线程也会把内容写到磁盘上，另外的20%内存可以继续写入要写进磁盘的数据。</li>
-</ul>
-<h2 id="Merge-合并"><a href="#Merge-合并" class="headerlink" title="Merge(合并)"></a>Merge(合并)</h2><ul>
-<li>spill 会生成多个小文件，对于 Reduce 端拉取数据是相当低效的，那么这时候就有了 merge 的过程，合并的过程也是同分片的合并成一个片段（segment），最终所有的 segment 组装成一个最终文件。</li>
-</ul>
-<h2 id="Reduce阶段"><a href="#Reduce阶段" class="headerlink" title="Reduce阶段"></a>Reduce阶段</h2><ul>
-<li>和map函数一样也是程序员编写的，最终结果是存储在hdfs上的。</li>
-</ul>
-<h3 id="拉取拷贝（fetch-copy）"><a href="#拉取拷贝（fetch-copy）" class="headerlink" title="拉取拷贝（fetch copy）"></a>拉取拷贝（fetch copy）</h3><ul>
-<li>Reduce 向各个 Map 任务拉取对应数据，这个过程都是以 Http 协议完成，每个 Map 节点都会启动一个常驻的 <strong>HTTP server</strong> 服务，通过其拉取数据。</li>
-<li>这个过程完全通过<strong>网络传输</strong>，是一个非常重量级的操作。</li>
-</ul>
+<h2 id="Spill（溢写）"><a href="#Spill（溢写）" class="headerlink" title="Spill（溢写）"></a>Spill（溢写）</h2><p>当排序完成，便开始把数据刷到磁盘，刷磁盘的过程以分区为单位，一个分区写完，写下一个分区，分区内数据有序，最终实际上会多次溢写，然后生成多个文件。或者如果缓冲区的内存达到了阀值的80%时候，这个守护线程也会把内容写到磁盘上，另外的20%内存可以继续写入要写进磁盘的数据。</p>
+<h2 id="Merge-合并"><a href="#Merge-合并" class="headerlink" title="Merge(合并)"></a>Merge(合并)</h2><p>spill 会生成多个小文件，对于 Reduce 端拉取数据是相当低效的，那么这时候就有了 merge 的过程，合并的过程也是同分片的合并成一个片段（segment），最终所有的 segment 组装成一个最终文件。</p>
+<h2 id="Reduce阶段"><a href="#Reduce阶段" class="headerlink" title="Reduce阶段"></a>Reduce阶段</h2><h3 id="拉取拷贝（fetch-copy）"><a href="#拉取拷贝（fetch-copy）" class="headerlink" title="拉取拷贝（fetch copy）"></a>拉取拷贝（fetch copy）</h3><p>Reduce 向各个 Map 任务拉取对应数据，这个过程都是以 HTTP 协议完成，每个 Map 节点都会启动一个常驻的 <strong>HTTP server</strong> 服务，通过其拉取数据。</p>
+<p>这个过程完全通过<strong>网络传输</strong>，是一个非常重量级的操作。</p>
 <h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><h2 id="性能瓶颈"><a href="#性能瓶颈" class="headerlink" title="性能瓶颈"></a>性能瓶颈</h2><ul>
 <li>计算机性能：CPU、内存、磁盘、网络</li>
 <li>数据倾斜</li>
@@ -501,11 +473,11 @@
 <h2 id="Map-阶段-1"><a href="#Map-阶段-1" class="headerlink" title="Map 阶段"></a>Map 阶段</h2><ul>
 <li>减少谥写次数：通过调整<code>io.sort.mb</code>及<code>sort.spill.percent</code>，增大触发溢写的内存上限，减少溢写次数，从而减少磁盘 IO。</li>
 <li>减少合并次数：通过调整&#96;&#96;io.sort.factor&#96;，增大触发合并的文件数目，减少合并的次数，从而缩短处理时间。</li>
-<li>在Map之后，不影响业务逻辑前提下，先进行 Combines 处理，减少I&#x2F;O。</li>
+<li>在 Map 之后，不影响业务逻辑前提下，先进行 Combines 处理，减少I&#x2F;O。</li>
 </ul>
 <h2 id="Reduce-阶段"><a href="#Reduce-阶段" class="headerlink" title="Reduce 阶段"></a>Reduce 阶段</h2><ul>
-<li>合理设置Map和Reduce数：两个都不能设置太少，也不能设置太多。太少，会导致 Task 等待，延长处理时间；太多，会导致 Task 间竞争资源，造成处理超时等错误。</li>
-<li>设置Map、Reduce:共存：调整<code>slowstart.completedmaps</code>，使 Map 运行到一定程度后，Reduce 也开始运行，减少 Reduce 的等待时间。</li>
+<li>合理设置 Map 和 Reduce 数：两个都不能设置太少，也不能设置太多。太少，会导致 Task 等待，延长处理时间；太多，会导致 Task 间竞争资源，造成处理超时等错误。</li>
+<li>设置 Map、Reduce 共存：调整<code>slowstart.completedmaps</code>，使 Map 运行到一定程度后，Reduce 也开始运行，减少 Reduce 的等待时间。</li>
 <li>规避使用 Reduce：因为 Reduce 在用于<strong>连接数据集</strong>的时候将会产生大量的网络消耗。</li>
 <li>合理设置 Reduce 端的 Buffer：默认情况下，数据达到一个阈值，Buffer 中的数据就会写入磁盘，然后 Reduce 再从磁盘中获得所有的数据。也就是说，Buffer 和 Reduce 是没有直接关联的。设置 <code>mapreduce.reduce.input.buffer.percent</code>（默认为 0.0），使得 Buffer 中的一部分数据可以直接输送到 Reduce,减少 IO 开销。当值大于 0 的候，会保留指定比例的内存读 Buffer 中的数据直接发送给 Reduce 使用。</li>
 </ul>
@@ -524,7 +496,7 @@
 <h3 id="序列化"><a href="#序列化" class="headerlink" title="序列化"></a>序列化</h3><ul>
 <li><code>Writable</code>：Java的序列化是一个重量级序列化框架（Serializable)，会附带很多额外的信息（各种校验信息，Header,继承体系等)，不便于在网络中高效传输。所以，Hadoop自己开发了一套序列化机制。</li>
 </ul>
-<h4 id="流程-1"><a href="#流程-1" class="headerlink" title="流程"></a>流程</h4><ol>
+<h4 id="流程-2"><a href="#流程-2" class="headerlink" title="流程"></a>流程</h4><ol>
 <li><p>实现 Writable 接口</p>
 </li>
 <li><p>必须有空参构造函数，因为在反序列化时，需要反射调用空参构造函数</p>
@@ -540,31 +512,23 @@
 <li>Combine 使用：Combine可以大量地减小数据倾斜。在可能的情况下，Combine的目的就是聚合并精简数据。</li>
 <li>采用Map Join：尽量避免Reduce Join。</li>
 </ul>
-<h1 id="容错机制"><a href="#容错机制" class="headerlink" title="容错机制"></a>容错机制</h1><h2 id="JobTracker"><a href="#JobTracker" class="headerlink" title="JobTracker"></a>JobTracker</h2><p>无容错机制，挂掉之后需要人工介入，重启。</p>
-<p>用户可通过配置一些参数，以便JobTracker重启后，让作业恢复运行，这样JobTracker重启前，会在histrory log中记录各个作业的运行状态，这样在JobTracker重启后，重新提交这些作业，并只对未完成的task进行重新调度。</p>
-<h2 id="TaskTracker-1"><a href="#TaskTracker-1" class="headerlink" title="TaskTracker"></a>TaskTracker</h2><p>当超过参数超过的时间间隔时未向jobTracker汇报心跳，则认为它死亡，并将其从调度池中删除；</p>
-<p>还可设置一些tasktracker host，表示这些节点不允许接入集群，也不会被分配task。</p>
-<h2 id="Job"><a href="#Job" class="headerlink" title="Job"></a>Job</h2><p>当一个作业在某个tasktracker上失败的task个数超过设定值，则该tasktracker被加到该job的黑名单中</p>
-<h2 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h2><p>每个map Task，每个reduce task都有最大尝试次数</p>
+<h1 id="容错机制"><a href="#容错机制" class="headerlink" title="容错机制"></a>容错机制</h1><h2 id="JobTracker-1"><a href="#JobTracker-1" class="headerlink" title="JobTracker"></a>JobTracker</h2><p>无容错机制，挂掉之后需要人工介入，重启。</p>
+<p>用户可通过配置一些参数，以便 JobTracker 重启后，让作业恢复运行，这样 JobTracker 重启前，会在 histrory log 中记录各个作业的运行状态，以便在重启后，重新提交这些作业，并只对未完成的 Task 进行重新调度。</p>
+<h2 id="TaskTracker-1"><a href="#TaskTracker-1" class="headerlink" title="TaskTracker"></a>TaskTracker</h2><p>当超过参数超过的时间间隔时未向 JobTracker 汇报心跳，则认为它死亡，并将其从调度池中删除；</p>
+<p>还可设置一些 TaskTracker host，表示这些节点不允许接入集群，也不会被分配 Task。</p>
+<h2 id="Job"><a href="#Job" class="headerlink" title="Job"></a>Job</h2><p>当一个作业在某个 Tasktracker 上失败的 Task 个数超过设定值，则该 Tasktracker 被加到该 Job 的黑名单中</p>
+<h2 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h2><p>每个 MapTask，每个 ReduceTask 都有最大尝试次数</p>
 <h3 id="参数设置-2"><a href="#参数设置-2" class="headerlink" title="参数设置"></a>参数设置</h3><ul>
 <li><code>mapreduce.map.maxattempts</code> &#x3D; 4</li>
 <li><code>mapreduce.reduce.maxattemp</code> &#x3D; 4</li>
 <li><code>mapreduce.task.timeout</code> &#x3D; 600000 ms</li>
 </ul>
 <h2 id="Record"><a href="#Record" class="headerlink" title="Record"></a>Record</h2><p>可设置跳过坏记录的条数。</p>
-<h2 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h2><p>用户可配置多个磁盘目录，将map task中间结果分到不同的磁盘上，增强容错性。map task临时结果将被轮询写到这些目录上，以避免某个磁盘文件目录数据过多。<br>也可每次选择数据最少的磁盘目录写入，采样小顶堆等。</p>
-<h1 id="FileSystem-Cache"><a href="#FileSystem-Cache" class="headerlink" title="FileSystem.Cache"></a>FileSystem.Cache</h1><ul>
-<li><p>某种程度上相当于搞了个全局变量。</p>
-</li>
-<li><p>如果不使用 cache，每个FileSystem的实例都会建立一个到 NamenNde 的连接，而在大数据计算的场景下，MapReduce&#x2F;Spark 要对 HDFS 进行大量并发的读，不做缓存会造成超量的连接打到 NameNode 上，造成DDOS的效果。</p>
-</li>
-<li><p>但有了 cache 就意味着同一个文件系统的实例被同时使用，如果使用用 try，或者用完之后主动 close，就会导致这个文件系统实例的其它使用方意外出错。</p>
-</li>
-<li><p>因此不要主动 close， FileSystem 有一个 shutdown 的 hook 会负责最后关掉这些 FileSystem，以防止泄漏。</p>
-</li>
-<li><p>又因为缓存的粒度是文件系统级别的，一般的应用文件系统的个数不应该太多，所以不会是个大问题。</p>
-</li>
-</ul>
+<h2 id="磁盘"><a href="#磁盘" class="headerlink" title="磁盘"></a>磁盘</h2><p>用户可配置多个磁盘目录，将 MapTask 中间结果分到不同的磁盘上，增强容错性。</p>
+<h1 id="FileSystem-Cache"><a href="#FileSystem-Cache" class="headerlink" title="FileSystem.Cache"></a>FileSystem.Cache</h1><p>某种程度上相当于搞了个全局变量。</p>
+<p>如果不使用 cache，每个 FileSystem 的实例都会建立一个到 NamenNde 的连接，而在大数据计算的场景下，MapReduce&#x2F;Spark 要对 HDFS 进行大量并发的读，不做缓存会造成超量的连接打到 NameNode 上，造成 DDOS 的效果。</p>
+<p>但有了 cache 就意味着同一个文件系统的实例被同时使用，如果使用用 try，或者用完之后主动 close，就会导致这个文件系统实例的其它使用方意外出错。因此不要主动 close， FileSystem 有一个 shutdown 的 hook 会负责最后关掉这些 FileSystem，以防止泄漏。</p>
+<p>又因为缓存的粒度是文件系统级别的，一般的应用文件系统的个数不应该太多，所以不会是个大问题。</p>
 
     </div>
 
@@ -605,8 +569,8 @@
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/post/36f328db.html" rel="next" title="Hadoop-Yarn">
-                  Hadoop-Yarn <i class="fa fa-chevron-right"></i>
+                <a href="/post/36f328db.html" rel="next" title="Hadoop-YARN">
+                  Hadoop-YARN <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -656,13 +620,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">123k</span>
+    <span title="Symbols count total">130k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:52</span>
+    <span title="Reading time total">1:59</span>
   </span>
 </div>
 <div class="busuanzi-count">
