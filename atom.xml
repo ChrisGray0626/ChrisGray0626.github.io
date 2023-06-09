@@ -6,7 +6,7 @@
   <link href="https://pingpinggray.top/atom.xml" rel="self"/>
   
   <link href="https://pingpinggray.top/"/>
-  <updated>2023-06-08T13:59:15.254Z</updated>
+  <updated>2023-06-09T10:59:29.654Z</updated>
   <id>https://pingpinggray.top/</id>
   
   <author>
@@ -17,11 +17,57 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>二叉树中和为某一值的路径</title>
+    <link href="https://pingpinggray.top/post/ffeb5a9f.html"/>
+    <id>https://pingpinggray.top/post/ffeb5a9f.html</id>
+    <published>2023-06-09T10:55:01.000Z</published>
+    <updated>2023-06-09T10:59:29.654Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>深度优先搜索</li></ul><span id="more"></span><h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><ol><li>do 访问节点：<ol><li>If NULL，return。</li><li>添加当前节点。</li><li>If 叶子节点，判断路径总和是否等于给定目标和的路径。</li><li>递归访问左右子节点。</li><li>移除当前节点。</li></ol></li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">search</span><span class="params">(TreeNode root, List&lt;Integer&gt; path)</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (root == <span class="literal">null</span>) &#123;</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">path.add(root.val);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (root.left == <span class="literal">null</span> &amp;&amp; root.right == <span class="literal">null</span>) &#123;</span><br><span class="line"><span class="comment">// List 求和</span></span><br><span class="line"><span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> path.stream().mapToInt(Integer::intValue).sum();</span><br><span class="line"><span class="keyword">if</span> (sum == target) &#123;</span><br><span class="line">paths.add(<span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;(path));</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">search(root.left, path);</span><br><span class="line">search(root.right, path);</span><br><span class="line"></span><br><span class="line">path.remove(path.size() - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/er-cha-shu-zhong-he-wei-mou-yi-zhi-de-lu-jing-lcof/">二叉树中和为某一值的路径 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;深度优先搜索&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
+    
+    
+    <category term="DFS" scheme="https://pingpinggray.top/tags/DFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉搜索树的后序遍历序列</title>
+    <link href="https://pingpinggray.top/post/123e7ea7.html"/>
+    <id>https://pingpinggray.top/post/123e7ea7.html</id>
+    <published>2023-06-09T10:07:30.000Z</published>
+    <updated>2023-06-09T10:13:32.317Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>递归</li></ul><span id="more"></span><h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p>二叉搜索树定义： 左子树中所有节点的值 &lt; 根节点的值；右子树中所有节点的值 &gt; 根节点的值；其左右子树也分别为二叉搜索树。</p><ol><li>找到根节点，划分左右子树区间。</li><li>根据二叉搜索树定义，验证左右子树区间。</li><li>递归分别验证左右子树。</li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="递归-1"><a href="#递归-1" class="headerlink" title="递归"></a>递归</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">verify</span><span class="params">(<span class="type">int</span> start, <span class="type">int</span> end)</span> &#123;</span><br><span class="line"><span class="keyword">if</span> (start &gt;= end) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="variable">root</span> <span class="operator">=</span> postorder[end];</span><br><span class="line"><span class="type">int</span> <span class="variable">idx</span> <span class="operator">=</span> start;</span><br><span class="line"><span class="keyword">while</span> (idx &lt; end &amp;&amp; postorder[idx] &lt; root) &#123;</span><br><span class="line">idx++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> idx;</span><br><span class="line"><span class="keyword">while</span> (idx &lt; end &amp;&amp; postorder[idx] &gt; root) &#123;</span><br><span class="line">idx++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (idx != end) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> verify(start, mid - <span class="number">1</span>) &amp;&amp; verify(mid, end - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/">二叉搜索树的后序遍历序列 - 力扣（LeetCode）</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;递归&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
+    
+    
+    <category term="Recursion" scheme="https://pingpinggray.top/tags/Recursion/"/>
+    
+  </entry>
+  
+  <entry>
     <title>栈的压入、弹出序列</title>
     <link href="https://pingpinggray.top/post/447cc728.html"/>
     <id>https://pingpinggray.top/post/447cc728.html</id>
     <published>2023-06-08T13:50:17.000Z</published>
-    <updated>2023-06-08T13:59:15.254Z</updated>
+    <updated>2023-06-08T14:15:05.605Z</updated>
     
     <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>栈</li></ul><span id="more"></span><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>模拟入栈、出栈过程。</p><ol><li>do 访问 $num \in pushed$：<ol><li>num 入栈。</li><li>do 出栈 While 栈顶元素 &#x3D; popped[i]：<ol><li>出栈。</li><li>i++。</li></ol></li></ol></li><li>判断栈是否为空。</li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="栈-1"><a href="#栈-1" class="headerlink" title="栈"></a>栈</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">validateStackSequences</span><span class="params">(<span class="type">int</span>[] pushed, <span class="type">int</span>[] popped)</span> &#123;</span><br><span class="line">Deque&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">ArrayDeque</span>&lt;Integer&gt;();</span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> num: pushed) &#123;</span><br><span class="line">stack.push(num);</span><br><span class="line"><span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peek() == popped[i]) &#123;</span><br><span class="line">stack.pop();</span><br><span class="line">i++;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/zhan-de-ya-ru-dan-chu-xu-lie-lcof/">栈的压入、弹出序列 - 力扣（LeetCode）</a></p>]]></content>
     
@@ -44,7 +90,7 @@
     <link href="https://pingpinggray.top/post/5312cc86.html"/>
     <id>https://pingpinggray.top/post/5312cc86.html</id>
     <published>2023-06-08T12:11:29.000Z</published>
-    <updated>2023-06-08T12:27:41.015Z</updated>
+    <updated>2023-06-08T14:15:05.603Z</updated>
     
     <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>深度优先搜索</li></ul><span id="more"></span><h2 id="深度优先搜索"><a href="#深度优先搜索" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><ol><li>Do 访问 (x, y)：<ol><li>If 抵达右边界，换行，结束。</li><li>If 抵达下边界，保存当前瓷砖数为最小瓷砖数，结束。</li><li>If filled，访问 (x, y + 1)。</li><li>If 当前当前瓷砖数 + 1 &gt; 最小瓷砖数，说明该方案不是最优解，结束。</li><li>Do 选择填充正方形，边长 $len \in [1, \min(n - x, m - y)]$：<ol><li>If 已填充，break。</li><li>填充正方形。</li><li>访问 (x, y + len)。</li><li>取消填充。</li></ol></li></ol></li></ol><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="深度优先搜索-1"><a href="#深度优先搜索-1" class="headerlink" title="深度优先搜索"></a>深度优先搜索</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y, <span class="type">int</span> cnt)</span> &#123;</span><br><span class="line"><span class="comment">// 抵达右边界，换行</span></span><br><span class="line"><span class="keyword">if</span> (y == m) &#123;</span><br><span class="line">dfs(x + <span class="number">1</span>, <span class="number">0</span>, cnt);</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 抵达下边界，结束</span></span><br><span class="line"><span class="keyword">if</span> (x == n) &#123;</span><br><span class="line">minCnt = cnt;</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (filled[x][y]) &#123;</span><br><span class="line">dfs(x, y + <span class="number">1</span>, cnt);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 如果继续填充，则超过当前最小值，结束</span></span><br><span class="line"><span class="keyword">if</span> (++cnt &gt;= minCnt) &#123;</span><br><span class="line"><span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> Math.min(n - x, m - y);</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= maxLen; i++) &#123;</span><br><span class="line"><span class="keyword">if</span> (isFilled(x, y, i)) &#123;</span><br><span class="line"><span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line">fill(x, y, i);</span><br><span class="line">dfs(x, y + i, cnt);</span><br><span class="line">unFill(x, y, i);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><ul><li><a href="https://leetcode.cn/problems/tiling-a-rectangle-with-the-fewest-squares/">1240. 铺瓷砖 - 力扣（LeetCode） (leetcode-cn.com)</a></li></ul>]]></content>
     
@@ -453,52 +499,6 @@
     
     
     <category term="Str" scheme="https://pingpinggray.top/tags/Str/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>旋转数组的最小数字</title>
-    <link href="https://pingpinggray.top/post/6e519af2.html"/>
-    <id>https://pingpinggray.top/post/6e519af2.html</id>
-    <published>2022-09-29T19:18:08.000Z</published>
-    <updated>2022-09-29T19:28:50.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>二分查找</li></ul><span id="more"></span><h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><ul><li>序列变为分段有序，第一段序列的数值均大于 nums[0]，第二段则反之</li><li>当旋转点使得相同的数值发生分裂，则上述特性失效，故需要预处理，左移右边界</li><li>特殊考虑旋转了 0 个数值的情况，即本身有序</li></ul><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="二分查找-1"><a href="#二分查找-1" class="headerlink" title="二分查找"></a>二分查找</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 排除末尾与首位相等的情况</span></span><br><span class="line"><span class="keyword">while</span> (l &lt; r &amp;&amp; numbers[r] == numbers[<span class="number">0</span>]) &#123;</span><br><span class="line">    r--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (l &lt; r) &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> l + (r - l) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (numbers[mid] &lt; numbers[<span class="number">0</span>]) &#123;</span><br><span class="line">        r = mid;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 排除本身有序的情况</span></span><br><span class="line"><span class="keyword">return</span> Math.min(numbers[l], numbers[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/xuan-zhuan-shu-zu-de-zui-xiao-shu-zi-lcof/">剑指 Offer 11. 旋转数组的最小数字 - 力扣（LeetCode）</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;二分查找&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
-    
-    
-    <category term="BinarySearch" scheme="https://pingpinggray.top/tags/BinarySearch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>青蛙跳台阶问题</title>
-    <link href="https://pingpinggray.top/post/77325807.html"/>
-    <id>https://pingpinggray.top/post/77325807.html</id>
-    <published>2022-09-28T14:54:02.000Z</published>
-    <updated>2022-09-28T14:59:09.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul><li>动态规划</li></ul><span id="more"></span><h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><ul><li>每一级台阶只能从前一级或前两级台阶上跳跃而来</li></ul><p>$$<br>dp[i] &#x3D; dp[i - 1] + dp[i - 2]<br>$$</p><h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="动态规划-1"><a href="#动态规划-1" class="headerlink" title="动态规划"></a>动态规划</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[n + <span class="number">1</span>];</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">dp[<span class="number">2</span>] = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">3</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    dp[i] = (dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>]) % MOD;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/">剑指 Offer 10- II. 青蛙跳台阶问题 - 力扣（LeetCode）</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;题解方法&quot;&gt;&lt;a href=&quot;#题解方法&quot; class=&quot;headerlink&quot; title=&quot;题解方法&quot;&gt;&lt;/a&gt;题解方法&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;动态规划&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="LeetCode" scheme="https://pingpinggray.top/categories/LeetCode/"/>
-    
-    
-    <category term="Dynamic Programming" scheme="https://pingpinggray.top/tags/Dynamic-Programming/"/>
     
   </entry>
   
