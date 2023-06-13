@@ -1861,7 +1861,7 @@
         <category>LeetCode</category>
       </categories>
       <tags>
-        <tag>Boyer–Moore majority vote algorithm</tag>
+        <tag>Boyer-Moore Majority Vote Algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -5103,6 +5103,58 @@
       </categories>
       <tags>
         <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字符串的排列</title>
+    <url>/post/1854530d.html</url>
+    <content><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul>
+<li>回溯</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h2><ul>
+<li>通过字符交换，依次固定第 i 位字符。</li>
+<li>需要排除重复字符，保证在第 i 位上每种字符只出现一次。</li>
+</ul>
+<ol>
+<li>遍历交换第 i 位。</li>
+<li>递归搜索第 i + 1 位。</li>
+<li>恢复交换第 i 位。</li>
+</ol>
+<h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="回溯-1"><a href="#回溯-1" class="headerlink" title="回溯"></a>回溯</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">search</span><span class="params">(<span class="type">int</span> index)</span> &#123;</span><br><span class="line">	<span class="comment">// 搜索至末位，将结果加入 res</span></span><br><span class="line">	<span class="keyword">if</span> (index == chars.length - <span class="number">1</span>) &#123;</span><br><span class="line">		res.add(<span class="keyword">new</span> <span class="title class_">String</span>(chars));</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	Set&lt;Character&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> index; i &lt; chars.length; i++) &#123;</span><br><span class="line">		<span class="comment">// 当前字符已存在于当前位置，跳过</span></span><br><span class="line">		<span class="keyword">if</span> (set.contains(chars[i])) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		set.add(chars[i]);</span><br><span class="line">		swap(index, i);</span><br><span class="line">		search(index + <span class="number">1</span>);</span><br><span class="line">		swap(index, i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/zi-fu-chuan-de-pai-lie-lcof/">字符串的排列 - 力扣（LeetCode）</a></p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>BackTrack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>复杂链表的复制</title>
+    <url>/post/68dc24ea.html</url>
+    <content><![CDATA[<h1 id="题解方法"><a href="#题解方法" class="headerlink" title="题解方法"></a>题解方法</h1><ul>
+<li>递归</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><ul>
+<li>构建原节点和新节点的映射。</li>
+<li>由于当前节点的 next 和 random 可能还未创建，先将当前节点存入 map 中，而后在递归地创建其 next 和 random 节点。</li>
+<li>如果当前节点已经被创建，则直接返回新节点。</li>
+</ul>
+<h1 id="核心代码"><a href="#核心代码" class="headerlink" title="核心代码"></a>核心代码</h1><h2 id="递归-1"><a href="#递归-1" class="headerlink" title="递归"></a>递归</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> Node <span class="title function_">copy</span><span class="params">(Node node)</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> (node == <span class="literal">null</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 如果该节点已经被复制过，则直接返回</span></span><br><span class="line">	<span class="keyword">if</span> (!map.containsKey(node)) &#123;</span><br><span class="line">		<span class="type">Node</span> <span class="variable">newNode</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(node.val);</span><br><span class="line">		<span class="comment">// 先将新节点放入 map 中，再递归复制 next 和 random</span></span><br><span class="line">		map.put(node, newNode);</span><br><span class="line">		newNode.next = copy(node.next);</span><br><span class="line">		newNode.random = copy(node.random);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> map.get(node);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="题目来源"><a href="#题目来源" class="headerlink" title="题目来源"></a>题目来源</h1><p><a href="https://leetcode.cn/problems/fu-za-lian-biao-de-fu-zhi-lcof/">复杂链表的复制 - 力扣（LeetCode）</a></p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Recursion</tag>
       </tags>
   </entry>
 </search>
