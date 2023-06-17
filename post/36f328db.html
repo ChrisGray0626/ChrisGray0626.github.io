@@ -152,7 +152,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-count">107</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -254,7 +254,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-06-07 19:16:52" itemprop="dateModified" datetime="2023-06-07T19:16:52+01:00">2023-06-07</time>
+      <time title="Modified: 2023-06-15 14:15:42" itemprop="dateModified" datetime="2023-06-15T14:15:42+01:00">2023-06-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -401,7 +401,7 @@
 <li>Task 间存在严重的负载倾斜</li>
 <li>特殊 Task，比如向数据库中写数据。</li>
 </ul>
-<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>假设某一时刻，Task 执行进度为 <code>progress</code>,则可通过一定的算法推测出该任务的最终完成时刻 <code>estimateEndTime</code>。另一方面，如果此刻为该 Task 启动一个备份 Task，则可推断出它可能的完成时刻 <code>estimateEndTime&#39;</code>。</p>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>假设某一时刻，Task 执行进度为 <code>progress</code>,则可通过一定的算法推测出该任务的最终完成时刻 <code>estimateEndTime</code>。另一方面，如果此刻为该 Task 启动一个备份 Task，则可推断出它可能的完成时刻 &#96;estimateEndTime’。</p>
 <p>总是选择为 <code>estimateEndTime-estimateEndTime&#39;</code> 差值最大的 Task 启动备份 Task。</p>
 <p>为了防止大量 Task 同时启动备份 Task 造成的资源浪费，每个作业设置了同时启动的备份任务数目上限。</p>
 <p>推测执行机制实际上采用了经典的优化算法：<strong>空间换时间</strong>，它同时启动多个相同任务处理相同的数据，并让这些任务<strong>竞争</strong>以缩短数据处理时间，这种方法需要占用更多的计算资源。在集群资源紧缺的情况下，应合理使用该机制，争取在多用少量资源的情况下，减少作业的计算时间。</p>
@@ -496,13 +496,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">131k</span>
+    <span title="Symbols count total">132k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:59</span>
+    <span title="Reading time total">2:01</span>
   </span>
 </div>
 <div class="busuanzi-count">
