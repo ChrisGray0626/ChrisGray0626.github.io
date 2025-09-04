@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="0iM1o-efKbqYlCu_zW-bU1OIupeemwYcmetguLhpRj4">
+  <meta name="baidu-site-verification" content="code-oiXRLjFejQ">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" integrity="sha256-jTIdiMuX/e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.elephantgris.space","root":"/","images":"/images","scheme":"Pisces","darkmode":true,"version":"8.10.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"waline","storage":true,"lazyload":false,"nav":{"waline":{"order":-1},"gitalk":{"order":-2}},"activeClass":"waline"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://blog.elephantgris.space/post/9a7d5a13.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://blog.elephantgris.space/post/9a7d5a13.html","path":"post/9a7d5a13.html","title":"Kafka"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Kafka | Gray Dynasty</title>
+  
+
+
+
+
+<link rel="dns-prefetch" href="blog-vercel-sage.vercel.app">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="Gray Dynasty" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Gray Dynasty</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E5%BF%B5"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8"><span class="nav-text">数据存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Message"><span class="nav-text">Message</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segment"><span class="nav-text">Segment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="nav-text">文件系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Producer"><span class="nav-text">Producer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="nav-text">负载均衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E5%8F%91%E9%80%81"><span class="nav-text">批量发送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%B9%E9%87%8F%E5%8E%8B%E7%BC%A9"><span class="nav-text">批量压缩</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Consumer"><span class="nav-text">Consumer</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Consumer-Group"><span class="nav-text">Consumer Group</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E5%8F%AF%E7%94%A8"><span class="nav-text">高可用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%AF%E9%9D%A0%E6%80%A7%E4%BC%A0%E8%BE%93"><span class="nav-text">可靠性传输</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Consumer-%E7%AB%AF"><span class="nav-text">Consumer 端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka-%E7%AB%AF"><span class="nav-text">Kafka 端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Producer-%E7%AB%AF"><span class="nav-text">Producer 端</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1"><span class="nav-text">数据丢失</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Producer-%E7%AB%AF-1"><span class="nav-text">Producer 端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Broker-%E7%AB%AF"><span class="nav-text">Broker 端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Consumer-%E7%AB%AF-1"><span class="nav-text">Consumer 端</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%8E%E5%BB%B6%E8%BF%9F%E9%AB%98%E5%90%9E%E5%90%90"><span class="nav-text">低延迟高吞吐</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E8%AF%BB%E5%86%99"><span class="nav-text">顺序读写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-Cache"><span class="nav-text">Page Cache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E6%8B%B7%E8%B4%9D%E6%8A%80%E6%9C%AF"><span class="nav-text">零拷贝技术</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%93%84%E6%B0%B4%E6%B1%A0%E6%9C%BA%E5%88%B6"><span class="nav-text">蓄水池机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-text">参考文献</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Chris Gray"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Chris Gray</p>
+  <div class="site-description" itemprop="description">Chris Blog</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/ChrisGray0626" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ChrisGray0626" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://rxresu.me/r/MZbeJ3es" title="个人简历 → https:&#x2F;&#x2F;rxresu.me&#x2F;r&#x2F;MZbeJ3es" rel="noopener" target="_blank">个人简历</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://rxresu.me/r/JcVMR_6g" title="Resume → https:&#x2F;&#x2F;rxresu.me&#x2F;r&#x2F;JcVMR_6g" rel="noopener" target="_blank">Resume</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://blog.elephantgris.space/post/9a7d5a13.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Chris Gray">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gray Dynasty">
+      <meta itemprop="description" content="Chris Blog">
+    </span>
+    
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Kafka | Gray Dynasty">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Kafka
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-05-19 11:34:00" itemprop="dateCreated datePublished" datetime="2022-05-19T11:34:00+08:00">2022-05-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-06-08 23:38:59" itemprop="dateModified" datetime="2023-06-08T23:38:59+08:00">2023-06-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Stack/" itemprop="url" rel="index"><span itemprop="name">Technology_Stack</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Technology-Stack/Kafka/" itemprop="url" rel="index"><span itemprop="name">Kafka</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline: </span>
+  
+    <a title="waline" href="/post/9a7d5a13.html#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/post/9a7d5a13.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>3.7k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>13 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>Apache Kafka 是一个分布式流处理平台。</p>
+<ul>
+<li>Kafka 作为一个集群，运行在一台或者多台服务器上.</li>
+<li>Kafka 通过 <em>Topic</em> 对存储的流数据进行分类。</li>
+<li>每条记录中包含一个 key，一个 value 和一个 timestamp（时间戳）。</li>
+</ul>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h1><p><img src="https://chrisgray.oss-cn-beijing.aliyuncs.com/Imageshack/image-20220418164341950.png" alt="image-20220418164341950"></p>
+<ul>
+<li>Producer：生产者</li>
+<li>Consumer：消费者</li>
+<li>Topic：Kafka 中的消息<strong>以 Topic 为单位</strong>进行归类，生产者负责将消息发送到特定的 Topic（发送到 Kafka 集群中的每一条消息都要指定一个 Topic），而消费者负责订阅 Topic 并进行消费。</li>
+<li>Partition：Topic 是一个逻辑上的概念，它还可以细分为多个 Partition，一个 Partition 只属于单个 Topic。同一 Topic 下的不同 Partition 包含的消息是不同的，Partition 在存储层面可以看作一个可追加的日志文件（Log），消息在被追加到 Partition 日志文件的时候都会分配一个特定的偏移量（offset）。</li>
+<li>Broker: Kafka 中的一台或多台服务器统称 Broker。</li>
+<li>Zookeeper：Kafka 强依赖于 zookeeper ，每当一个 Broker 启动时，它会将自己注册到 zookeeper 的<strong>临时节点</strong>；Kafka 利用 zookeeper 临时节点来管理 Broker 生命周期。</li>
+<li>Cluster：若干个 Broker 组成一个集群（Cluster），其中集群内某个 Broker 会成为集群控制器（Cluster Controller），它负责管理集群，包括分配 Partition 到 Broker、监控 Broker 故障等。</li>
+<li>Leader：在集群内，一个 Partition 由一个 Broker 负责，这个 Broker 也称为这个 Partition 的 Leader。</li>
+</ul>
+<h1 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h1><h2 id="Message"><a href="#Message" class="headerlink" title="Message"></a>Message</h2><p>Partition 中的每条 Message 包含了以下三个属性：offset，MessageSize，data。</p>
+<ul>
+<li>offset：是 Message 在 Partition 中的唯一标识，可以认为 offset 是 Partition 中 Message 的 id，Kafka 通过它来保证消息在 Partition 内的顺序性，不过 offset 并不跨越 Partition，Kafka 保证的是 <strong>Partition 有序</strong>而不是 Topic 有序。</li>
+<li>MessageSize：表示消息内容 data 的大小。</li>
+<li>data：Message 的具体内容。</li>
+</ul>
+<h2 id="Segment"><a href="#Segment" class="headerlink" title="Segment"></a>Segment</h2><p>Partition 物理上由多个 segment 文件组成，每个 segment 大小相等，顺序读写，符合分布式系统 Partition 分桶的设计思想。每个 segment 数据文件<strong>以该段中最小的 offset 命名</strong>，文件扩展名为 .log。这样在查找指定 offset 的 Message 的时候，用<strong>二分查找</strong>就可以定位到该 Message 在哪个 segment 数据文件中。</p>
+<p>Kafka 的 message 是按 Topic 分类存储的，Topic 中的数据又是按照一个一个的 Partition 即 Partition 存储到不同 Broker 节点。每个 Partition 对应了操作系统上的一个文件夹，Partition 实际上又是按照 segment 分段存储的。符合分布式系统 Partition 分桶的设计思想。</p>
+<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><p>Kafka 的消息是存在于文件系统之上的，其高度依赖文件系统来存储和缓存消息。每一个 Partition 最终对应一个目录，里面存储所有的消息和索引文件。默认情况下，每一个 Topic 在创建时如果不指定 Partition 数量时只会创建 1 个 Partition。命名规则是：<code>&lt;Topic_name&gt;-&lt;Partition_id&gt;</code> 。</p>
+<p>任何发布到 Partition 的消息都会被<strong>追加到 Partition 文件的尾部</strong>，这样的顺序写磁盘操作让 Kafka 的效率非常高。每一条被发送到 Broker 的消息，会根据规则被存储到具体的 Partition 中。如果规则设置的合理，所有消息可以均匀分布到不同的 Partition 中。</p>
+<p>Kafka 为每个分段后的数据文件建立了索引文件，文件名与数据文件的名字是一样的，只是文件扩展名为 .index。index 文件中并没有为数据文件中的每条 Message 建立索引，而是采用了<strong>稀疏存储</strong>的方式，<strong>每隔一定字节的数据建立一条索引</strong>。这样避免了索引文件占用过多的空间，从而可以将索引文件保留在内存中。</p>
+<h1 id="Producer"><a href="#Producer" class="headerlink" title="Producer"></a>Producer</h1><h2 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h2><p>由于 Topic 由多个 Partition 组成，且 Partition 会均衡分布到不同 Broker 上，因此，为了有效利用 Broker 集群的性能，提高消息的吞吐量，Producer 可以通过<strong>随机</strong>或者 <strong>hash</strong> 等方式，将消息平均发送到多个 Partition 上，以实现负载均衡。</p>
+<h2 id="批量发送"><a href="#批量发送" class="headerlink" title="批量发送"></a>批量发送</h2><p>批量发送是提高消息吞吐量重要的方式，Producer 端可以在内存中合并多条消息后，以<strong>一次请求的方式</strong>发送了批量的消息给 Broker，从而大大减少 Broker 存储消息的 IO 操作次数。但也一定程度上影响了消息的实时性。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">相当于以时延为代价，换取更好的吞吐量。</span><br></pre></td></tr></table></figure>
+
+<h2 id="批量压缩"><a href="#批量压缩" class="headerlink" title="批量压缩"></a>批量压缩</h2><p>Producer 端可以通过 GZIP 或 Snappy 格式对消息集合进行压缩。Producer 端进行压缩之后，在 Consumer 端需进行解压。压缩的好处就是减少传输的数据量，减轻对网络传输的压力。</p>
+<p>如果每个消息都压缩，那么压缩率就会相对很低，所以 Kafka 使用了批量压缩，即将多个消息一起压缩而不是单个消息压缩。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在对大数据处理上，瓶颈往往体现在网络上而不是 CPU（压缩和解压会耗掉部分 CPU 资源）。</span><br></pre></td></tr></table></figure>
+
+<h1 id="Consumer"><a href="#Consumer" class="headerlink" title="Consumer"></a>Consumer</h1><h2 id="Consumer-Group"><a href="#Consumer-Group" class="headerlink" title="Consumer Group"></a>Consumer Group</h2><p>同一 Consumer Group 中的多个 Consumer 实例，同时消费同一个 Topic 中的不同 Partition，以实现并行消费。</p>
+<p>当 Consumer 数量大于 Topic 数量时，多余的 Consumer 将会空闲。</p>
+<h1 id="高可用"><a href="#高可用" class="headerlink" title="高可用"></a>高可用</h1><ul>
+<li>Topic 的每个 Partition 存在于不同的 Broker 上，Topic 的数据，是分散放在多个机器上的，每个机器存放一部分数据。Kafka 0.8 以后，提供 Replica 副本机制：每个 Partition 的数据都会同步到其它机器上，形成自己的多个 Replica 副本；所有 Replica 会选举一个 Leader，其他 Replica 就是 Follower。</li>
+<li>生产和消费均只与 Leader 产生联系：<ul>
+<li>写的时候，Producer 就写入 Leader，然后 Leader 将数据落地写本地磁盘，接着其他 Follower 自己主动从 Leader 来 Pull 数据。一旦所有 Follower 同步好数据，就会发送 <code>ack</code> 给 Leader，Leader 收到所有 Follower 的 ack 之后，就会返回写成功的消息给 Producer。</li>
+<li>读的时候，Consumer 只会从 Leader 中读，但是只有当一个 Message 已经被所有 Follower 都同步成功并返回 <code>ack</code> 的时候，这个消息才会被 Consumer 读到。</li>
+</ul>
+</li>
+<li>Kafka 会均匀地将一个 Partition 的所有 Replica 分布在不同的机器上，提高容错性。如果某个 Broker 宕机了，该 Broker 上面的 Partition 在其他机器上都有副本。如果这个宕机的 Broker 上面有某个 Partition 的 Leader，此时会从 Follower 中重新选举一个新的 Leader 出来，继续读写新的 Leader 即可。</li>
+</ul>
+<h1 id="可靠性传输"><a href="#可靠性传输" class="headerlink" title="可靠性传输"></a>可靠性传输</h1><h2 id="Consumer-端"><a href="#Consumer-端" class="headerlink" title="Consumer 端"></a>Consumer 端</h2><ul>
+<li>唯一可能导致消费者弄丢数据的情况——消费者自动提交 offset，但消费端因为某些原因未能消费数据。因此可以关闭自动提交 offset，在处理完之后消费者手动提交 offset，就可以保证数据不会丢。但此时可能会有<strong>重复消费</strong>，需要消费端自行保证<strong>幂等性</strong>。</li>
+</ul>
+<h2 id="Kafka-端"><a href="#Kafka-端" class="headerlink" title="Kafka 端"></a>Kafka 端</h2><ul>
+<li>Kafka 某个 Broker 宕机，然后重新选举 Partition 的 Leader。如果此时其他的 Follower 刚好还有些数据没有同步，导致部分数据丢失。</li>
+<li>给 Topic 设置参数副本数量 <code>Replication.factor</code> ：这个值必须大于 1，要求每个 Partition 必须有至少 2 个副本。</li>
+<li>在 Kafka 服务端设置参数最小同步副本数 <code>min.insync.Replicas</code>：这个值必须大于 1，要求一个 Leader 至少感知到有至少一个 Follower 还跟自己保持联系。</li>
+<li>在 Producer 端设置 <code>acks=all</code>：这个是要求每条数据，必须是写入所有 Replica 之后，才能认为是写成功了。</li>
+<li>在 Producer 端设置 <code>retries=MAX （较大值）</code>：要求一旦写入失败，就无限重试。</li>
+</ul>
+<h2 id="Producer-端"><a href="#Producer-端" class="headerlink" title="Producer 端"></a>Producer 端</h2><ul>
+<li>设置 <code>acks=all</code> ，一定不会丢。</li>
+<li>你的 Leader 接收到消息，所有的 Follower 都同步到消息之后，才认为本次写成功；如果没满足这个条件，生产者会自动不断重试。</li>
+</ul>
+<h1 id="数据丢失"><a href="#数据丢失" class="headerlink" title="数据丢失"></a>数据丢失</h1><ol>
+<li>如果 auto.commit.enable&#x3D;true，当 consumer fetch 了一些数据但还没有完全处理掉的时候，刚好到 commit interval 出发了提交 offset 操作，接着 consumer crash 掉了。这时已经 fetch 的数据还没有处理完成但已经被 commit 掉，因此没有机会再次被处理，数据丢失。</li>
+<li>网络负载很高或者磁盘很忙写入失败的情况下，没有自动重试重发消息。</li>
+<li>如果磁盘坏了，会丢失已经落盘的数据</li>
+<li>单批数据的长度超过限制会丢失数据，报 kafka.common.MessageSizeTooLargeException 异常</li>
+<li>Partition Leader 在未完成副本数 follows 的备份时就宕机的情况，即使选举出了新的 Leader 但是已经 push 的数据因为未备份就丢失了</li>
+<li>kafka 的数据一开始就是存储在 PageCache 上的，定期 flush 到磁盘上的，也就是说，不是每个消息都被存储在磁盘了，如果出现断电或者机器故障等，PageCache 上的数据就丢失了。</li>
+<li>由于 Kafka consumer 默认是自动提交位移的，所以如果在消息处理完成前就提交了 offset，那么就有可能造成数据的丢失。</li>
+</ol>
+<h2 id="Producer-端-1"><a href="#Producer-端-1" class="headerlink" title="Producer 端"></a>Producer 端</h2><ol>
+<li>Replication.factor，副本的数量，至少大于 1；</li>
+<li>min.insync.Replications，必须大于 1，要求每个 Leader 至少感知到有一个 Follower 和自己保持同步；</li>
+<li>ack &#x3D; all，确保每个数据必须是写入了所有副本之后，才算写成功；</li>
+<li>retries，需要重新发送次数；</li>
+<li>log.flush.interval.messages、log.flush.interval.ms，配置 flush 间隔。</li>
+</ol>
+<h2 id="Broker-端"><a href="#Broker-端" class="headerlink" title="Broker 端"></a>Broker 端</h2><p>Topic 设置多 Partition，Partition 自适应所在机器，为了让各 Partition 均匀分布在所在的 Broker 中，Partition 数要大于 Broker 数。</p>
+<p>Partition 是 kafka 进行并行读写的单位，是提升 kafka 速度的关键。</p>
+<ol>
+<li>Broker 能接收消息的最大字节数的设置一定要比消费端能消费的最大字节数要小，否则 Broker 就会因为消费端无法使用这个消息而挂起。</li>
+<li>Broker 可赋值的消息的最大字节数设置一定要比能接受的最大字节数大，否则 Broker 就会因为数据量的问题无法复制副本，导致数据丢失。</li>
+</ol>
+<h2 id="Consumer-端-1"><a href="#Consumer-端-1" class="headerlink" title="Consumer 端"></a>Consumer 端</h2><ol>
+<li>enable.auto.commit&#x3D;false ，关闭自动提交位移，并在消息被完整处理之后再手动提交位移。</li>
+</ol>
+<h1 id="低延迟高吞吐"><a href="#低延迟高吞吐" class="headerlink" title="低延迟高吞吐"></a>低延迟高吞吐</h1><h2 id="顺序读写"><a href="#顺序读写" class="headerlink" title="顺序读写"></a>顺序读写</h2><p>Kafka 将消息记录持久化到本地磁盘中，实际上不管是内存还是磁盘，快或慢关键在于寻址的方式，基于磁盘的随机读写确实很慢，但磁盘的顺序读写性能却很高。</p>
+<p>Kafka 的 message 是不断追加到本地磁盘文件末尾的，而不是随机的写入，这使得 Kafka 写入吞吐量得到了显著提升 。每一个 Partition 其实都是一个文件 ，收到消息后 Kafka 会把数据插入到文件末尾。</p>
+<p>同样这种方法不能删除数据 ，所以 Kafka 是不会删除数据的，它会把所有的数据都保留下来，每个消费者 Consumer 对每个 Topic 都有一个 offset 用来表示读取到了第几条数据 。</p>
+<p>如果不删除硬盘肯定会被撑满，所以 Kakfa 提供了两种策略来删除数据，一是基于时间，二是基于 Partition 文件大小。</p>
+<h2 id="Page-Cache"><a href="#Page-Cache" class="headerlink" title="Page Cache"></a>Page Cache</h2><p>为了优化读写性能，Kafka 利用了操作系统本身的 Page Cache，即利用<strong>操作系统自身的内存</strong>而不是 JVM 空间内存。这样做的好处有：</p>
+<ol>
+<li>避免 Object 消耗：如果是使用 Java 堆，Java 对象的内存消耗比较大，通常是所存储数据的两倍甚至更多。</li>
+<li>避免 GC 问题：随着 JVM 中数据不断增多，垃圾回收将会变得复杂与缓慢，使用系统缓存就不会存在 GC 问题。</li>
+</ol>
+<p>相比于使用 JVM 或 in-memory cache 等数据结构，利用操作系统的 Page Cache 更加简单可靠。首先，操作系统层面的<strong>缓存利用率会更高</strong>，因为存储的都是<strong>紧凑的字节结构</strong>而不是独立的对象。其次，操作系统本身也对于 Page Cache 做了大量优化，提供了 write-behind、read-ahead 以及 flush 等多种机制。再者，即使服务进程重启，系统缓存依然不会消失，避免了 in-process cache <strong>重建缓存</strong>的过程。</p>
+<h2 id="零拷贝技术"><a href="#零拷贝技术" class="headerlink" title="零拷贝技术"></a>零拷贝技术</h2><p>当 Kafka 客户端从服务器读取数据时，如果不使用零拷贝技术，那么大致需要经历这样的一个过程：</p>
+<ol>
+<li>操作系统将数据从磁盘上读入到内核空间的读缓冲区中。</li>
+<li>应用程序（也就是 Kafka）从内核空间的读缓冲区将数据拷贝到<strong>用户空间的缓冲区中</strong>。</li>
+<li>应用程序将数据从用户空间的缓冲区再写回到内核空间的 socket 缓冲区中。</li>
+<li>操作系统将 socket 缓冲区中的数据拷贝到 NIC 缓冲区中，然后通过网络发送给客户端。</li>
+</ol>
+<p>Kafka 使用零拷贝技术，即直接将数据从内核空间的读缓冲区直接拷贝到内核空间的 socket 缓冲区，然后再写入到 NIC 缓冲区，避免了在内核空间和用户空间之间穿梭。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">零拷贝并非指一次拷贝都没有，而是避免了在内核空间和用户空间（的读缓冲区）之间的拷贝。</span><br></pre></td></tr></table></figure>
+
+<h1 id="蓄水池机制"><a href="#蓄水池机制" class="headerlink" title="蓄水池机制"></a>蓄水池机制</h1><p>生产的流程主要就是一个 Producer 线程和一个 sender 线程，它们之间通过 BatchQueue 来获取数据，它们的关系是一一对应的，所以 kafka 的生产过程都是异步过程，它的同步和异步指的是接收响应结果的模式是同步阻塞还是异步回调。</p>
+<p>同步接收是依据 send 之后返回 Future，再调用 Future 的 get 方法进行阻塞等待。下面我们就从 Producer 和 sender 两个类所对应的流程来进行分析，他们分别是消息收集过程和消息发送过程。消息的收集过程的数据最终是放在 BatchQueue，像是将水流入了一个蓄水池的场景。</p>
+<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34319644/article/details/96586147">https://blog.csdn.net/qq_34319644/article/details/96586147</a></li>
+<li><a target="_blank" rel="noopener" href="https://doocs.github.io/advanced-java/#/docs/high-concurrency/why-mq">https://doocs.github.io/advanced-java/#/docs/high-concurrency/why-mq</a></li>
+<li><a target="_blank" rel="noopener" href="https://doocs.github.io/advanced-java/#/docs/high-concurrency/how-to-ensure-high-availability-of-message-queues">https://doocs.github.io/advanced-java/#/docs/high-concurrency/how-to-ensure-high-availability-of-message-queues</a></li>
+<li><a target="_blank" rel="noopener" href="https://doocs.github.io/advanced-java/#/docs/high-concurrency/how-to-ensure-the-reliable-transmission-of-messages">https://doocs.github.io/advanced-java/#/docs/high-concurrency/how-to-ensure-the-reliable-transmission-of-messages</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1787280">https://cloud.tencent.com/developer/article/1787280</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="followme">
+  <span>Welcome to my other publishing channels</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/atom.xml">
+          <span class="icon">
+            <i class="fa fa-rss"></i>
+          </span>
+
+          <span class="label">RSS</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/post/95cf66c8.html" rel="prev" title="220516周报">
+                  <i class="fa fa-chevron-left"></i> 220516周报
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/post/49784e8c.html" rel="next" title="220523周报">
+                  220523周报 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-waline">waline</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments gitalk-container"></div>
+            </div>
+            <div class="tab-pane waline" id="comment-waline">
+              <div class="comments" id="waline"></div>
+            </div>
+        </div>
+      </div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备19041488号-1 </a>
+      <img src="/images/beian.png" alt="">
+  </div>
+
+<div class="copyright">
+  &copy; 2021.9 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chris Gray</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">60k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js","integrity":"sha256-r+3itOMtGGjap0x+10hu6jW/gZCzxHsoKrOd7gyRSGY="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"blog-vercel-sage.vercel.app","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"placeholder":"Welcome to comment","avatar":"mm","meta":["nick","mail"],"pageSize":10,"visitor":true,"comment_count":false,"requiredFields":["nick"],"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","el":"#waline","comment":true,"path":"/post/9a7d5a13.html"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"ChrisGray0626","repo":"ChrisGray0626.github.io","client_id":"3782c574efca31c084de","client_secret":"f19fd10391350acd5b62659efaf44a94781b39d2","admin_user":"ChrisGray0626","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"dd51393f1f3191c9b113bcb3f2fd364f"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":200,"height":300,"hOffset":280},"mobile":{"show":true}});</script></body>
+</html>
